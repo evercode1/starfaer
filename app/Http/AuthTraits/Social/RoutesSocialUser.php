@@ -44,7 +44,7 @@ trait RoutesSocialUser
 
         }
 
-        return redirect()->route('pages.index');
+        return redirect()->route('home');
     }
 
     private function getUserFromSocialite($provider)
