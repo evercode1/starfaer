@@ -33,6 +33,8 @@
             </ul>
         </div>
 
+            <div class="col-md-4 col-md-offset-2"v-show="$parent.total > 5">
+
             <div class="row">
                 <div class="right mt-20">
 
@@ -41,6 +43,8 @@
                     <input v-model="$parent.go_to_page" class="number-input"></input>
 
                 </div>
+
+            </div>
 
             </div>
     </div>
