@@ -26,7 +26,7 @@
     </li>
 </ul>
 <div class="navbar-fixed">
-    <nav class="navbar blue">
+    <nav class="navbar blue darken-1">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo ml-10">Star Faer</a>
 

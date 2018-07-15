@@ -1,5 +1,5 @@
 <ul id="sidenav-left" class="sidenav sidenav-fixed">
-    <li><a href="dashboard.html" class="logo-container">Star Faer<i class="material-icons left">spa</i></a></li>
+    <li><a href="/" class="logo-container">Star Faer<i class="material-icons left">spa</i></a></li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li class="bold waves-effect active"><a class="collapsible-header">Pages<i class="material-icons chevron">chevron_left</i></a>
