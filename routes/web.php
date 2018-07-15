@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+
+// API Routes
+
+Route::get('api/user-data', 'ApiController@userData');
+
+// Socialite routes
+
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+// User routes
+
+Route::resource('user', 'UserController');
