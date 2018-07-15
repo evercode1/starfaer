@@ -24,6 +24,7 @@ class User extends Authenticatable
         'is_subscribed',
         'is_admin',
         'status_id',
+        'is_terms_accepted'
 
     ];
 
