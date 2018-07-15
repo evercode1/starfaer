@@ -39,7 +39,7 @@
         </nav>
     </div>
 
-    @include('layouts.admin-dash-partials.side-nav')
+    @include('layouts.home-partials.side-nav')
 
     <div id="dropdown1" class="dropdown-content notifications">
         <div class="notifications-title">notifications</div>
