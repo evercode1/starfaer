@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use Illuminate\Auth\Events\Registered;
-use App\Events\ConfirmationRequest;
+
 
 class AuthController extends RegisterController
 {
@@ -92,8 +92,6 @@ class AuthController extends RegisterController
         $this->guard()->login($user);
 
         event(new RegistrationCompleted($user));
-
-        event(new ConfirmationRequest($user));
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());

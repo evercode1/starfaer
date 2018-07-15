@@ -26,6 +26,7 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('api/user-data', 'ApiController@userData');
 
+
 // Socialite routes
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');

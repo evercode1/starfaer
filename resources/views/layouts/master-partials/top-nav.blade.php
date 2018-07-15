@@ -36,7 +36,19 @@
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{ Auth::user()->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
+
+                @else
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                </ul>
+
+
                 @endif
+
+
         </div>
     </nav>
 </div>
