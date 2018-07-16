@@ -46,6 +46,16 @@ Route::get('/privacy-policy', 'PagesController@privacy')->name('pages.privacy');
 
 Route::get('/terms-of-service', 'PagesController@terms')->name('pages.terms');
 
+// Password Reset Request
+
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+
+// Settings routes
+
+Route::get('settings', 'SettingsController@edit');
+
+Route::patch('settings', 'SettingsController@update')->name('user-update');
+
 
 // Socialite routes
 
