@@ -1,18 +1,26 @@
 <template>
     <div class="container">
+
+        <div class="row mt-20">
+
+        <div class="left mt-50" v-show="$parent.showCreateButton"> <a v-bind:href="$parent.createUrl">
+
+            <button type="button" class="waves-effect waves-light btn">
+
+                Create New
+
+            </button>
+
+
+        </a>
+
+        </div>
+
+        </div>
+
         <div class="row">
 
-            <div class="pull-left" v-show="$parent.showCreateButton"> <a v-bind:href="$parent.createUrl">
 
-                <button type="button" class="btn btn-lg btn-primary grid-results">
-
-                    Create New
-
-                </button>
-
-            </a>
-
-            </div>
             <div class="col-md-4 col-md-offset-2"v-show="$parent.total > 5">
 
 

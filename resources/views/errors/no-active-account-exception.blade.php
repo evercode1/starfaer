@@ -1,4 +1,4 @@
-@extends('layouts.master-register-login')
+@extends('layouts.masters.master-register-login')
 
 @section('content')
 

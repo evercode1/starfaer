@@ -11,20 +11,40 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//  Admin Routes
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 
 // API Routes
 
+Route::get('api/content-data', 'ApiController@contentData');
 Route::get('api/user-data', 'ApiController@userData');
+
+// Auth Routes
+
+Auth::routes();
+
+// Content Routes
+
+Route::post('content-delete/{content}', 'ContentController@destroy');
+
+Route::resource('/content', 'ContentController', ['except' => ['destroy']]);
+
+// Home Routes
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Pages Routes
+
+Route::get('/', 'PagesController@index')->name('welcome');
+
+Route::get('/about', 'PagesController@about')->name('pages.about');
+
+Route::get('/privacy-policy', 'PagesController@privacy')->name('pages.privacy');
+
+Route::get('/terms-of-service', 'PagesController@terms')->name('pages.terms');
 
 
 // Socialite routes
