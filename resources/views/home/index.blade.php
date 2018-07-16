@@ -3,4 +3,5 @@
 @section('content')
 
     @include('home.auth-grid')
+    
 @endsection
