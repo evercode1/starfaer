@@ -24,6 +24,7 @@
             <div class="col s6 m3">
                 <h5>Contact</h5>
                 <ul>
+                    <li><a href="/support-messages">Support</a></li>
                     <li><a href="#!">Twitter</a></li>
                     <li><a href="#!">Facebook</a></li>
                     <li><a href="#!">Github</a></li>

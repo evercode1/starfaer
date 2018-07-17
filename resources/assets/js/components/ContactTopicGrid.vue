@@ -4,7 +4,7 @@
 
         <div>
 
-            <h1 class="flow-text grey-text text-darken-1">Users</h1>
+            <h1 class="flow-text grey-text text-darken-1">Contact Topics</h1>
 
             <search-box></search-box>
 
@@ -37,32 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/user/' + row.Id + '/edit'"> {{ row.Name }}</a>
-
-                            </td>
-
-                            <td>
-
-                                <a v-bind:href="'/user/' + row.Id + '/edit'"> {{ row.Email }}</a>
-
-                            </td>
-
-                            <td>
-
-                                {{ showStatus(row.Status) }}
-
-                            </td>
-
-
-                            <td>
-
-                                {{ showSubscribed(row.Subscribed) }}
-
-                            </td>
-
-                            <td>
-
-                                {{ showAdmin(row.Admin) }}
+                                 {{ row.Name }}
 
                             </td>
 
@@ -70,21 +45,31 @@
 
                             <td>
 
-                                   {{ row.Joined }}
+                                   {{ row.Created }}
 
                             </td>
 
                             <td >
 
-                                <a v-bind:href="'/user/' + row.Id + '/edit'">
+                                <a v-bind:href="'/contact-topic/' + row.Id + '/edit'">
 
-                                <button type="button" class="btn waves-effect waves-light">
+                                <button type="button" class="btn waves-effect waves-light mt-5">
 
                                         Edit
 
                                 </button>
 
                                 </a>
+
+
+                                <button class="btn waves-effect waves-light mt-5"
+                                        @click="confirmDelete(row.Id)">
+
+                                        Delete
+
+                                </button>
+
+
 
                             </td>
 
@@ -123,13 +108,13 @@
 
         mounted: function () {
 
-            gridData.loadData('api/user-data', this);
+            gridData.loadData('api/contact-topic-data', this);
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Email', 'Status', 'Subscribed','Admin', 'Joined'],
+                gridColumns: ['Id', 'Name', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -141,9 +126,9 @@
                 last_page_url: null,
                 go_to_page: null,
                 sortOrder: 1,
-                sortKey: 'id',
-                createUrl: '/user/create',
-                showCreateButton: false
+                sortKey: '',
+                createUrl: '/contact-topic/create',
+                showCreateButton: true
             }
         },
 
@@ -162,7 +147,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/user-data', this);
+                gridData.getQueryData(request, 'api/contact-topic-data', this);
 
             },
 
@@ -196,23 +181,28 @@
                 return this.go_to_page <= parseInt(this.last_page);
             },
 
-            showStatus: function(status){
+            confirmDelete: function(id){
 
-                return status == 10 ? 'Active'  : 'Inactive';
 
-            },
 
-            showAdmin: function(admin){
+                if(confirm("Are you sure you want to delete?")){
 
-                return admin == 1 ? 'Yes'  : 'No';
+                    axios.post('/contact-topic-delete/' + id)
 
-            },
+                            .then(response => {
 
-            showSubscribed: function(subscribed){
 
-                return subscribed == 1 ? 'Yes'  : 'No';
+                                gridData.loadData('api/contact-topic-data', this);
+
+                            })
+
+
+                }
+
+
 
             }
+
 
         }
 

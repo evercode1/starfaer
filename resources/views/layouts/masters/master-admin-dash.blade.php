@@ -7,6 +7,8 @@
 
     @yield('meta')
 
+    @yield('title')
+
 </head>
 
 <body class="has-fixed-sidenav" role="document">

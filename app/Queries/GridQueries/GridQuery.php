@@ -35,7 +35,11 @@ class GridQuery
 
         list($column, $direction) = static::setDefaults($query);
 
+
+
         if ($request->has('column')) {
+
+
 
             $column = $request->get('column');
 
@@ -44,16 +48,22 @@ class GridQuery
 
                 $direction = $request->get('direction') == 1 ? 'asc' : 'desc';
 
+
+
                 return [$column, $direction];
 
             } else {
 
                 $direction = $request->get('direction') == 1 ? 'desc' : 'asc';
 
+
+
                 return [$column, $direction];
 
             }
         }
+
+
 
         return [$column, $direction];
 
@@ -80,14 +90,7 @@ class GridQuery
                 $column = 'id';
                 $direction = 'desc';
                 break;
-            case $query instanceof VideoQuery :
-                $column = 'videos.created_at';
-                $direction = 'desc';
-                break;
-            case $query instanceof AllArticlesQuery :
-                $column = 'posts.created_at';
-                $direction = 'desc';
-                break;
+
             default:
                 $column = 'id';
                 $direction = 'asc';
@@ -102,6 +105,8 @@ class GridQuery
     public static function keywordFilter(Request $request, $query, $column, $direction)
     {
         $keyword = $request->get('keyword');
+
+
 
         return response()->json($query->filteredData($column, $direction, $keyword));
 

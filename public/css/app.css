@@ -70,6 +70,26 @@ body {
   margin-bottom: 30px;
 }
 
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
 .mt-10 {
   margin-top: 10px;
 }
@@ -100,6 +120,28 @@ body {
 
 .ml-30 {
   margin-left: 30px;
+}
+
+.square-badge-blue {
+  border-radius: 3px;
+  width: 50px;
+  height: 15px;
+  background: #3a8dfa;
+  padding: 5px;
+  color: white;
+}
+
+.square-badge-grey {
+  border-radius: 3px;
+  width: 50px;
+  height: 15px;
+  background: #e3e8eb;
+  padding: 5px;
+  color: #343434;
+}
+
+.make-bold {
+  font-weight: bold;
 }
 
 .navbar-laravel {

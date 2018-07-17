@@ -5,6 +5,10 @@
     @include('layouts.home-partials.meta')
     @include('layouts.home-partials.css')
 
+    @yield('meta')
+
+    @yield('title')
+
 </head>
 
 <body class="has-fixed-sidenav" role="document">

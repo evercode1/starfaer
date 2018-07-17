@@ -12,6 +12,16 @@
                     </ul>
                 </div>
             </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Support<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/open-contacts" class="waves-effect">Open Support Requests<i class="material-icons">record_voice_over</i></a></li>
+                        <li><a href="/closed-contacts" class="waves-effect">Closed Support Requests<i class="material-icons">done</i></a></li>
+                        <li><a href="/contact" class="waves-effect">All Support Requests<i class="material-icons">clear_all</i></a></li>
+                        <li><a href="/contact-topic" class="waves-effect">Support Topics<i class="material-icons">list_alt</i></a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="bold waves-effect"><a class="collapsible-header">Charts<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>

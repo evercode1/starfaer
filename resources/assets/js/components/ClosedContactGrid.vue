@@ -4,7 +4,7 @@
 
         <div>
 
-            <h1 class="flow-text grey-text text-darken-1">Users</h1>
+            <h1 class="flow-text grey-text text-darken-1">Closed Support Requests</h1>
 
             <search-box></search-box>
 
@@ -31,19 +31,27 @@
 
                             <td>
 
-                                   {{ row.Id }}
+                                {{ row.Id }}
 
                             </td>
 
                             <td>
 
-                                <a v-bind:href="'/user/' + row.Id + '/edit'"> {{ row.Name }}</a>
+                                {{ row.User }}
 
                             </td>
 
                             <td>
 
-                                <a v-bind:href="'/user/' + row.Id + '/edit'"> {{ row.Email }}</a>
+                                {{ row.Topic }}
+
+                            </td>
+
+
+
+                            <td>
+
+                                 <a v-bind:href="'/contact/' + row.Id">{{ trimMessage(row.Message) }}</a>
 
                             </td>
 
@@ -56,35 +64,32 @@
 
                             <td>
 
-                                {{ showSubscribed(row.Subscribed) }}
-
-                            </td>
-
-                            <td>
-
-                                {{ showAdmin(row.Admin) }}
+                                {{ row.Created }}
 
                             </td>
 
 
-
-                            <td>
-
-                                   {{ row.Joined }}
-
-                            </td>
 
                             <td >
 
-                                <a v-bind:href="'/user/' + row.Id + '/edit'">
+                                <a v-bind:href="'/contact/' + row.Id + '/edit'">
 
-                                <button type="button" class="btn waves-effect waves-light">
+                                    <button type="button" class="btn waves-effect waves-light mt-5">
 
                                         Edit
 
-                                </button>
+                                    </button>
 
                                 </a>
+
+                                    <button class="btn waves-effect waves-light mt-5"
+                                            @click="confirmDelete(row.Id)">
+
+                                        Delete
+
+                                    </button>
+
+
 
                             </td>
 
@@ -116,20 +121,21 @@
     export default {
 
         components: {'pagination' : require('./Pagination'),
-                     'search-box' : require('./SearchBox'),
-                     'grid-count' : require('./GridCount'),
-                     'page-number' : require('./PageNumber'),
-                     'table-head' : require('./TableHead')},
+            'search-box' : require('./SearchBox'),
+            'grid-count' : require('./GridCount'),
+            'page-number' : require('./PageNumber'),
+            'table-head' : require('./TableHead')},
 
         mounted: function () {
 
-            gridData.loadData('api/user-data', this);
+            gridData.loadData('api/closed-contact-data', this);
+
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Email', 'Status', 'Subscribed','Admin', 'Joined'],
+                gridColumns: ['Id','User', 'Topic', 'Message', 'Status', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -140,9 +146,9 @@
                 first_page_url: null,
                 last_page_url: null,
                 go_to_page: null,
-                sortOrder: 1,
-                sortKey: 'id',
-                createUrl: '/user/create',
+                sortOrder: -1,
+                sortKey: '',
+                createUrl: '/contact/create',
                 showCreateButton: false
             }
         },
@@ -152,7 +158,7 @@
             sortBy: function (key){
                 this.sortKey = key;
                 this.sortOrder = (this.sortOrder == 1) ? -1 : 1;
-                this.getData(1);
+                this.getData(this.current_page);
             },
 
             search: function(query){
@@ -162,7 +168,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/user-data', this);
+                gridData.getQueryData(request, 'api/closed-contact-data', this);
 
             },
 
@@ -196,21 +202,46 @@
                 return this.go_to_page <= parseInt(this.last_page);
             },
 
-            showStatus: function(status){
+            trimMessage: function(message){
 
-                return status == 10 ? 'Active'  : 'Inactive';
+                return message.substring(0, 10) + '...';
 
-            },
-
-            showAdmin: function(admin){
-
-                return admin == 1 ? 'Yes'  : 'No';
 
             },
 
-            showSubscribed: function(subscribed){
+            showStatus:  function(status){
 
-                return subscribed == 1 ? 'Yes'  : 'No';
+                switch(status){
+
+                    case 1 :
+
+                        return 'Open';
+                        break;
+
+                    case 0 :
+
+                        return 'Closed';
+                        break;
+
+                }
+
+            },
+
+            confirmDelete: function (id){
+
+                if(confirm("Are you sure you want to delete?")){
+
+                    axios.post('/contact-delete/' + id)
+                            .then(response => {
+
+                        gridData.loadData('api/closed-contact-data', this);
+
+                })
+
+
+                }
+
+
 
             }
 

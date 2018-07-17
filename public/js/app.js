@@ -1633,6 +1633,696 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ClosedContactGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('api/closed-contact-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'User', 'Topic', 'Message', 'Status', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: -1,
+            sortKey: '',
+            createUrl: '/contact/create',
+            showCreateButton: false
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(this.current_page);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, 'api/closed-contact-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        trimMessage: function trimMessage(message) {
+
+            return message.substring(0, 10) + '...';
+        },
+
+        showStatus: function showStatus(status) {
+
+            switch (status) {
+
+                case 1:
+
+                    return 'Open';
+                    break;
+
+                case 0:
+
+                    return 'Closed';
+                    break;
+
+            }
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/contact-delete/' + id).then(function (response) {
+
+                    gridData.loadData('api/closed-contact-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('api/contact-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'User', 'Topic', 'Message', 'Status', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: -1,
+            sortKey: 'id',
+            createUrl: '/contact/create',
+            showCreateButton: false
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(this.current_page);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, 'api/contact-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        trimMessage: function trimMessage(message) {
+
+            return message.substring(0, 10) + '...';
+        },
+
+        showStatus: function showStatus(status) {
+
+            switch (status) {
+
+                case 1:
+
+                    return 'Open';
+                    break;
+
+                case 0:
+
+                    return 'Closed';
+                    break;
+
+            }
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/contact-delete/' + id).then(function (response) {
+
+                    gridData.loadData('api/contact-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactTopicGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('api/contact-topic-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'Name', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: 1,
+            sortKey: '',
+            createUrl: '/contact-topic/create',
+            showCreateButton: true
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(1);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, 'api/contact-topic-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/contact-topic-delete/' + id).then(function (response) {
+
+                    gridData.loadData('api/contact-topic-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContentGrid.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1825,6 +2515,250 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
                 axios.post('/content-delete/' + id).then(function (response) {
 
                     gridData.loadData('api/content-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/OpenContactGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('api/open-contact-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'User', 'Topic', 'Message', 'Status', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: -1,
+            sortKey: '',
+            createUrl: '/contact/create',
+            showCreateButton: false
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(this.current_page);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, 'api/open-contact-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        trimMessage: function trimMessage(message) {
+
+            return message.substring(0, 10) + '...';
+        },
+
+        showStatus: function showStatus(status) {
+
+            switch (status) {
+
+                case 1:
+
+                    return 'Open';
+                    break;
+
+                case 0:
+
+                    return 'Closed';
+                    break;
+
+            }
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/contact-delete/' + id).then(function (response) {
+
+                    gridData.loadData('api/open-contact-data', _this);
                 });
             }
         }
@@ -36643,6 +37577,153 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2c2e2053\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ClosedContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      [
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Closed Support Requests")
+        ]),
+        _vm._v(" "),
+        _c("search-box"),
+        _vm._v(" "),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                [
+                  _c("table-head"),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.gridData, function(row) {
+                      return _c("tr", [
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Id) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.User) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Topic) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", { attrs: { href: "/contact/" + row.Id } }, [
+                            _vm._v(_vm._s(_vm.trimMessage(row.Message)))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(_vm.showStatus(row.Status)) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Created) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            { attrs: { href: "/contact/" + row.Id + "/edit" } },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn waves-effect waves-light mt-5",
+                                  attrs: { type: "button" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\n                                    Edit\n\n                                "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn waves-effect waves-light mt-5",
+                              on: {
+                                click: function($event) {
+                                  _vm.confirmDelete(row.Id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n\n                                    Delete\n\n                                "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    })
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("page-number")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("pagination")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2c2e2053", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2feefb78\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContentGrid.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36653,27 +37734,21 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c(
       "div",
-      { staticClass: "col-lg-12" },
       [
-        _c("h1", [_vm._v("Content")]),
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Content")
+        ]),
         _vm._v(" "),
         _c("search-box"),
         _vm._v(" "),
-        _c("div", { staticClass: "pull-right" }, [_c("grid-count")], 1),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
         _vm._v(" "),
         _c(
           "section",
-          { staticClass: "panel mt-25" },
           [
-            _c("div", { staticClass: "panel-title" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
+            _c("div", { staticClass: "row" }, [
               _c(
                 "table",
-                {
-                  staticClass:
-                    "table table-bordered table-striped table-responsive"
-                },
                 [
                   _c("table-head"),
                   _vm._v(" "),
@@ -36713,7 +37788,8 @@ var render = function() {
                               _c(
                                 "button",
                                 {
-                                  staticClass: "btn btn-default",
+                                  staticClass:
+                                    "btn waves-effect waves-light mt-5",
                                   attrs: { type: "button" }
                                 },
                                 [
@@ -36728,7 +37804,7 @@ var render = function() {
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-danger pull-right mr-10",
+                              staticClass: "btn waves-effect waves-light mt-5",
                               on: {
                                 click: function($event) {
                                   _vm.confirmDelete(row.Id)
@@ -36990,6 +38066,135 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3a15348c\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContactTopicGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      [
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Contact Topics")
+        ]),
+        _vm._v(" "),
+        _c("search-box"),
+        _vm._v(" "),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                [
+                  _c("table-head"),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.gridData, function(row) {
+                      return _c("tr", [
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                               " +
+                              _vm._s(row.Id) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                             " +
+                              _vm._s(row.Name) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                               " +
+                              _vm._s(row.Created) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                href: "/contact-topic/" + row.Id + "/edit"
+                              }
+                            },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn waves-effect waves-light mt-5",
+                                  attrs: { type: "button" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\n                                    Edit\n\n                            "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn waves-effect waves-light mt-5",
+                              on: {
+                                click: function($event) {
+                                  _vm.confirmDelete(row.Id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n\n                                    Delete\n\n                            "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    })
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("page-number")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("pagination")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3a15348c", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4200f42f\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/PageNumber.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37035,6 +38240,300 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-43f1dff5\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/OpenContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      [
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Open Support Requests")
+        ]),
+        _vm._v(" "),
+        _c("search-box"),
+        _vm._v(" "),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                [
+                  _c("table-head"),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.gridData, function(row) {
+                      return _c("tr", [
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Id) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.User) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Topic) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", { attrs: { href: "/contact/" + row.Id } }, [
+                            _vm._v(_vm._s(_vm.trimMessage(row.Message)))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(_vm.showStatus(row.Status)) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Created) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            { attrs: { href: "/contact/" + row.Id + "/edit" } },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn waves-effect waves-light mt-5",
+                                  attrs: { type: "button" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\n                                    Edit\n\n                                "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn waves-effect waves-light mt-5",
+                              on: {
+                                click: function($event) {
+                                  _vm.confirmDelete(row.Id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n\n                                    Delete\n\n                                "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    })
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("page-number")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("pagination")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-43f1dff5", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5d34541f\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      [
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Support Requests")
+        ]),
+        _vm._v(" "),
+        _c("search-box"),
+        _vm._v(" "),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c("div", { staticClass: "row" }, [
+              _c(
+                "table",
+                [
+                  _c("table-head"),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.gridData, function(row) {
+                      return _c("tr", [
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Id) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.User) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Topic) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", { attrs: { href: "/contact/" + row.Id } }, [
+                            _vm._v(_vm._s(_vm.trimMessage(row.Message)))
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(_vm.showStatus(row.Status)) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            "\n\n                            " +
+                              _vm._s(row.Created) +
+                              "\n\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            { attrs: { href: "/contact/" + row.Id + "/edit" } },
+                            [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn waves-effect waves-light mt-5",
+                                  attrs: { type: "button" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\n                                    Edit\n\n                                "
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn waves-effect waves-light mt-5",
+                              on: {
+                                click: function($event) {
+                                  _vm.confirmDelete(row.Id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n\n                                    Delete\n\n                                "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    })
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("page-number")
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("pagination")
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5d34541f", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-62977330\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/UserGrid.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37045,27 +38544,21 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c(
       "div",
-      { staticClass: "col-lg-12" },
       [
-        _c("h1", [_vm._v("Users")]),
+        _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+          _vm._v("Users")
+        ]),
         _vm._v(" "),
         _c("search-box"),
         _vm._v(" "),
-        _c("div", { staticClass: "pull-right" }, [_c("grid-count")], 1),
+        _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
         _vm._v(" "),
         _c(
           "section",
-          { staticClass: "panel mt-25" },
           [
-            _c("div", { staticClass: "panel-title" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
+            _c("div", { staticClass: "row" }, [
               _c(
                 "table",
-                {
-                  staticClass:
-                    "table table-bordered table-striped table-responsive"
-                },
                 [
                   _c("table-head"),
                   _vm._v(" "),
@@ -37137,7 +38630,7 @@ var render = function() {
                               _c(
                                 "button",
                                 {
-                                  staticClass: "btn btn-default",
+                                  staticClass: "btn waves-effect waves-light",
                                   attrs: { type: "button" }
                                 },
                                 [
@@ -48396,8 +49889,156 @@ if (token) {
 /***/ "./resources/assets/js/components.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-Vue.component('user-grid', __webpack_require__("./resources/assets/js/components/UserGrid.vue"));
+Vue.component('closed-contact-grid', __webpack_require__("./resources/assets/js/components/ClosedContactGrid.vue"));
+Vue.component('contact-grid', __webpack_require__("./resources/assets/js/components/ContactGrid.vue"));
+Vue.component('contact-topic-grid', __webpack_require__("./resources/assets/js/components/ContactTopicGrid.vue"));
 Vue.component('content-grid', __webpack_require__("./resources/assets/js/components/ContentGrid.vue"));
+Vue.component('open-contact-grid', __webpack_require__("./resources/assets/js/components/OpenContactGrid.vue"));
+Vue.component('user-grid', __webpack_require__("./resources/assets/js/components/UserGrid.vue"));
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/ClosedContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ClosedContactGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2c2e2053\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ClosedContactGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ClosedContactGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2c2e2053", Component.options)
+  } else {
+    hotAPI.reload("data-v-2c2e2053", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/ContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-5d34541f\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContactGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ContactGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d34541f", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d34541f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/ContactTopicGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ContactTopicGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-3a15348c\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ContactTopicGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ContactTopicGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3a15348c", Component.options)
+  } else {
+    hotAPI.reload("data-v-3a15348c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 
@@ -48486,6 +50127,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-1932567c", Component.options)
   } else {
     hotAPI.reload("data-v-1932567c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/OpenContactGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/OpenContactGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-43f1dff5\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/OpenContactGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/OpenContactGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43f1dff5", Component.options)
+  } else {
+    hotAPI.reload("data-v-43f1dff5", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

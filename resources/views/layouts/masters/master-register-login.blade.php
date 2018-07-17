@@ -4,11 +4,15 @@
 
     @include('layouts.master-partials.meta')
 
-    @yield('title')
+
 
     @include('layouts.master-partials.css')
 
     @include('layouts.master-partials.shiv')
+
+    @yield('meta')
+
+    @yield('title')
 
 </head>
 
@@ -26,7 +30,7 @@
 
         @include('layouts.master-partials.scripts')
 
-
+        @yield('scripts')
 
 </body>
 </html>
