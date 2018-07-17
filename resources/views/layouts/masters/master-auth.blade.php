@@ -22,6 +22,8 @@
 
 @include('layouts.home-partials.scripts')
 
+@yield('scripts')
+
 </body>
 
 

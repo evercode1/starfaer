@@ -31,6 +31,18 @@ class PagesController extends Controller
 
     }
 
+    public function cancelAccountConfirmation()
+    {
+
+
+        $content = Content::where('name', 'cancel account confirmation')->first();
+
+
+        return view('content.show', compact('content'));
+
+
+    }
+
     public function privacy()
     {
 

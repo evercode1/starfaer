@@ -26,6 +26,10 @@ Route::get('api/user-data', 'ApiController@userData');
 
 Auth::routes();
 
+// Cancel Account Routes
+
+Route::patch('/cancel', 'CancelUserController@update')->name('cancel-user-account');
+
 // Content Routes
 
 Route::post('content-delete/{content}', 'ContentController@destroy');
@@ -41,6 +45,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PagesController@index')->name('welcome');
 
 Route::get('/about', 'PagesController@about')->name('pages.about');
+
+Route::get('/cancel-account-confirmation', 'PagesController@cancelAccountConfirmation')->name('cancel.cancel-account-confirmation');
 
 Route::get('/privacy-policy', 'PagesController@privacy')->name('pages.privacy');
 
@@ -62,6 +68,13 @@ Route::patch('settings', 'SettingsController@update')->name('user-update');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+// Unsubscribe Routes
+
+Route::get('/unsubscribe', 'UnsubscribeController@edit')->name('unsubscribe');
+Route::post('/unsubscribe', 'UnsubscribeController@store')->name('unsubscribe-store');
+Route::get('/unsubscribe/confirmation', 'UnsubscribeController@confirm')->name('unsubscribe-confirmation');
+
 
 // User routes
 
