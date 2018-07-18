@@ -15,7 +15,7 @@
                 <h1 class="flow-text grey-text text-darken-1">{{ $contact->contactTopic->name }}</h1>
 
 
-                <p class="blog-post-meta">{{ $contact->created_at }} by <a href="#">{{ $contact->user->name }}</a></p>
+                <p>{{ $contact->created_at }} by <a href="#">{{ $contact->user->name }}</a></p>
 
                 <span class="grey-text lighten-5">{{ $contact->user->name }} said:</span>
 

@@ -1,42 +1,28 @@
 @extends('layouts.masters.master-auth')
 
-
-
 @section('content')
-
-    <div class="col-sm-8 blog-main">
 
 
         <div class="container">
 
+            <div class="row">
 
-            <div class="col-md-8 mt-25">
+                    <h1 class="flow-text grey-text text-darken-1">Contact Us</h1>
 
-                <div class="blog-post">
+            </div>
 
-                    <h2 class="blog-post-title">Contact Us</h2>
+        <div class="row">
 
-
-
-
-        <section class="white-background rounded-corners-10 pad-20">
-
+        <section>
 
             @include('contact.create-form')
 
-
         </section>
 
-        </div> <!-- end column -->
+        </div>
 
-
-    </div>  <!-- end column -->
 
     </div>  <!-- end container -->
-
-    </div>  <!-- end column -->
-
-
 
 
 @endsection

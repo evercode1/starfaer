@@ -34,7 +34,7 @@
     <div class="row">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Create
 

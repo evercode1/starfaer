@@ -1,4 +1,4 @@
-<form class="form form-border mt-25"
+<form class="mt-25"
       role="form"
       method="POST"
       action="{{ url('/reply') }}">
@@ -19,7 +19,6 @@
         <label class="control-label">Your Reply</label>
 
         <textarea name="reply"
-                  class="form-control"
                   rows="20"
                   value="{{ old('reply') }}"></textarea>
 
@@ -38,10 +37,10 @@
 
     <!-- submit button -->
 
-    <div class="form-group">
+    <div class="row">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Reply
 

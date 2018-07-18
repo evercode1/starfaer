@@ -10,9 +10,9 @@
 
     <div class="form-group{{ $errors->has('contact_topic_id') ? ' has-error' : '' }}">
 
-        <label class="control-label">Topic</label>
+        <label>Topic</label>
 
-        <select class="form-control" id="contact_topic_id" name="contact_topic_id">
+        <select id="contact_topic_id" name="contact_topic_id">
 
             <option value="">Please Choose One</option>
 
@@ -67,7 +67,7 @@
     <div class="mt-10 mb-20">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Create
 
