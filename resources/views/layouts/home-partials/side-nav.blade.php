@@ -12,6 +12,13 @@
                     </ul>
                 </div>
             </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Videos<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/all-videos" class="waves-effect">All Videos<i class="material-icons">videocam</i></a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="bold waves-effect"><a class="collapsible-header">Charts<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
