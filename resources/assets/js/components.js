@@ -1,7 +1,19 @@
+Vue.component('all-videos', require('./components/AllVideos.vue'));
+Vue.component('category-grid', require('./components/CategoryGrid.vue'));
+Vue.component('category-list', require('./components/CategoryList.vue'));
 Vue.component('closed-contact-grid', require('./components/ClosedContactGrid.vue'));
 Vue.component('contact-grid', require('./components/ContactGrid.vue'));
 Vue.component('contact-topic-grid', require('./components/ContactTopicGrid.vue'));
 Vue.component('content-grid', require('./components/ContentGrid.vue'));
+Vue.component('level-grid', require('./components/LevelGrid.vue'));
 Vue.component('open-contact-grid', require('./components/OpenContactGrid.vue'));
+Vue.component('total-videos', require('./components/TotalVideos.vue'));
 Vue.component('user-grid', require('./components/UserGrid.vue'));
-
+Vue.component('videos-by-category-list', require('./components/VideosByCategoryList.vue'));
+Vue.component('videos-by-category-grid', require('./components/VideosByCategoryGrid.vue'));
+Vue.component('videos-by-level-grid', require('./components/VideosByLevelGrid.vue'));
+Vue.component('videos-by-level-list', require('./components/VideosByLevelList.vue'));
+Vue.component('video-chart', require('./components/VideoChart.vue'));
+Vue.component('video-pie-chart', require('./components/VideoPieChart.vue'));
+Vue.component('video-list', require('./components/VideoList.vue'));
+Vue.component('video-grid', require('./components/VideoGrid.vue'));

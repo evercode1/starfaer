@@ -16,15 +16,33 @@
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
+// All Video Route
+
+Route::get('all-videos', 'AllVideosController@index');
+Route::get('all-videos/{id}-{slug?}', 'AllVideosController@show')->name('all-videos.show');
+
+
 
 // API Routes
 
+Route::get('api/all-video-data', 'ApiController@allVideoData');
+Route::get('api/category-data', 'ApiController@categoryData');
+Route::get('api/category-list', 'ApiController@categoryList');
 Route::get('api/closed-contact-data', 'ApiController@closedContactData');
 Route::get('api/contact-data', 'ApiController@ContactData');
 Route::get('api/contact-topic-data', 'ApiController@ContactTopicData');
 Route::get('api/content-data', 'ApiController@contentData');
+Route::get('api/level-data', 'ApiController@levelData');
 Route::get('api/open-contact-data', 'ApiController@openContactData');
+Route::get('api/total-videos', 'ApiController@totalVideos');
 Route::get('api/user-data', 'ApiController@userData');
+Route::get('api/videos-by-category-data', 'ApiController@videosByCategoryData');
+Route::get('api/videos-by-level-data', 'ApiController@videosByLevelData');
+Route::get('api/videos-by-category-list-data', 'ApiController@videosByCategoryListData');
+Route::get('api/videos-by-level-list-data', 'ApiController@videosByLevelListData');
+Route::get('api/video-data', 'ApiController@videoData');
+Route::get('api/video-chart', 'ApiController@videoChartData');
+Route::get('api/video-list-data', 'ApiController@videoListData');
 
 // Auth Routes
 
@@ -33,6 +51,12 @@ Auth::routes();
 // Cancel Account Routes
 
 Route::patch('/cancel', 'CancelUserController@update')->name('cancel-user-account');
+
+// Category Routes
+
+Route::post('category-delete/{category}', 'CategoryController@destroy');
+
+Route::resource('category', 'CategoryController');
 
 // Content Routes
 
@@ -57,6 +81,12 @@ Route::resource('/contact-topic', 'ContactTopicController', ['except' => ['destr
 // Home Routes
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Level Routes
+
+Route::post('level-delete/{level}', 'LevelController@destroy');
+
+Route::resource('level', 'LevelController');
 
 // Messages route
 
@@ -111,3 +141,13 @@ Route::get('/unsubscribe/confirmation', 'UnsubscribeController@confirm')->name('
 // User routes
 
 Route::resource('user', 'UserController');
+
+// Video Routes
+
+Route::get('videos-by-category/{id}', 'VideosByCategoryController@index');
+
+Route::get('videos-by-level/{id}', 'VideosByLevelController@index');
+
+Route::post('video-delete/{video}', 'VideoController@destroy');
+
+Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
