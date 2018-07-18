@@ -1,4 +1,5 @@
 Vue.component('all-videos', require('./components/AllVideos.vue'));
+Vue.component('book-grid', require('./components/BookGrid.vue'));
 Vue.component('category-grid', require('./components/CategoryGrid.vue'));
 Vue.component('category-list', require('./components/CategoryList.vue'));
 Vue.component('closed-contact-grid', require('./components/ClosedContactGrid.vue'));

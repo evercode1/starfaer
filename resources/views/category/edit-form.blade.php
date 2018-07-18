@@ -1,4 +1,4 @@
-<form class="form form-border mt-25"
+<form class="mt-20"
       role="form"
       method="POST"
       action="{{ url('/category/'. $category->id) }}">
@@ -8,12 +8,11 @@
 
 <!-- category name input -->
 
-    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
 
-        <label class="control-label">Category Name</label>
+        <label>Category Name</label>
 
         <input type="text"
-               class="form-control"
                name="name"
                value="{{ $category->name }}" />
 
@@ -32,10 +31,10 @@
 
     <!-- submit button -->
 
-    <div class="form-group">
+    <div class="row">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Update
 

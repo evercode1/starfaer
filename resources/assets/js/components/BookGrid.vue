@@ -2,7 +2,7 @@
 
     <div class="row">
 
-        <h1 class="flow-text grey-text text-darken-1">All Videos</h1>
+        <h1 class="flow-text grey-text text-darken-1">Books</h1>
 
             <search-box></search-box>
 
@@ -14,46 +14,61 @@
 
 
 
-            <section class="mt-20">
+            <section class="row">
 
 
-                <div class="row">
+                <div class="mt-20">
 
                     <table>
 
-                        <video-table-head></video-table-head>
+                        <table-head></table-head>
 
                         <tbody>
 
                         <tr v-for="row in gridData">
 
+                            <td> <a v-bind:href="'/book/' + row.Id ">
+                                <img v-bind:src="'/imgs/books/thumbnails/thumb-' + row.Name + '.' + row.Ext "></a>
+                            </td>
 
                             <td>
 
-                                <a v-bind:href="'/all-videos/' + row.Id + '-' + row.Slug">{{ row.Title }}</a>
+                                 {{ row.Title }}
 
                             </td>
 
                             <td>
 
-                                {{ row.Author }}
+                                 {{ row.Author }}
 
                             </td>
 
                             <td>
 
-                                {{ row.Category }}
+                               <a v-bind:href="row.Url" target="_blank"> {{ row.Url }} </a>
+
+                            </td>
+
+
+
+
+                            <td>
+
+                                {{ showFeatured(row.Featured) }}
 
                             </td>
 
                             <td>
 
-                                {{ formatLevelName(row.Level) }}
+                                {{ showActive(row.Active) }}
 
                             </td>
 
+                            <td>
 
+                                {{ row.Published }}
 
+                            </td>
 
                             <td>
 
@@ -62,6 +77,28 @@
                             </td>
 
 
+
+                            <td >
+
+                                <a v-bind:href="'/book/' + row.Id + '/edit'">
+
+                                    <button type="button" class="waves-effect waves-light btn mt-5">
+
+                                        Edit
+
+                                    </button>
+
+                                </a>
+
+
+                                <button class="waves-effect waves-light btn mt-5"
+                                        @click="confirmDelete(row.Id)">
+
+                                    Delete
+
+                                </button>
+
+                            </td>
 
                         </tr>
 
@@ -77,7 +114,7 @@
 
             <pagination></pagination>
 
-        </div>
+
 
     </div>
 
@@ -94,17 +131,17 @@
             'search-box' : require('./SearchBox'),
             'grid-count' : require('./GridCount'),
             'page-number' : require('./PageNumber'),
-            'video-table-head' : require('./VideoTableHead')},
+            'table-head' : require('./TableHead')},
 
         mounted: function () {
 
-            gridData.loadData('api/all-video-data', this);
+            gridData.loadData('api/book-data', this);
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Title', 'Author', 'Cat','Level', 'Added'],
+                gridColumns: ['Thumbnail', 'Title', 'Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -115,10 +152,10 @@
                 first_page_url: null,
                 last_page_url: null,
                 go_to_page: null,
-                sortOrder: -1,
+                sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/video/create',
-                showCreateButton: false
+                createUrl: '/book/create',
+                showCreateButton: true
             }
         },
 
@@ -127,7 +164,7 @@
             sortBy: function (key){
                 this.sortKey = key;
                 this.sortOrder = (this.sortOrder == 1) ? -1 : 1;
-                this.getData(this.current_page);
+                this.getData(1);
             },
 
             search: function(query){
@@ -137,7 +174,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/all-video-data', this);
+                gridData.getQueryData(request, 'api/book-data', this);
 
             },
 
@@ -172,18 +209,37 @@
             },
 
 
-            formatFeatured: function(featured){
+            showFeatured: function(featured){
 
                 return featured == 1 ? 'Yes'  : 'No';
 
             },
 
-            formatLevelName(level){
+            showActive: function(active){
 
-                return level.charAt(0).toUpperCase() + level.slice(1);
+                return active == 1 ? 'Yes'  : 'No';
+
+            },
+
+            confirmDelete: function(id){
+
+                if(confirm("Are you sure you want to delete?")){
+
+                    axios.post('/book-delete/' + id)
+                            .then(response => {
+
+                                gridData.loadData('/api/book-data', this);
+
+                            })
+
+
+                }
+
 
 
             }
+
+
 
         }
 

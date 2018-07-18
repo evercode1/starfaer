@@ -1,4 +1,4 @@
-<form class="form form-border mt-25"
+<form class="mt-20"
       role="form"
       method="POST"
       action="{{ url('/video') }}">
@@ -7,12 +7,11 @@
 
 <!-- title input -->
 
-    <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('title') ? ' has-error' : '' }}">
 
-        <label class="control-label">Title</label>
+        <label>Title</label>
 
         <input type="text"
-               class="form-control"
                name="title"
                value="{{ old('title') }}" />
 
@@ -28,11 +27,11 @@
 
     <!-- category select -->
 
-    <div class="form-group{{ $errors->has('category_id') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('category_id') ? ' has-error' : '' }}">
 
-        <label class="control-label">Category</label>
+        <label>Category</label>
 
-        <select class="form-control" id="category_id" name="category_id">
+        <select id="category_id" name="category_id">
 
             <option value="">Please Choose One</option>
 
@@ -58,11 +57,11 @@
 
     <!-- level select -->
 
-    <div class="form-group{{ $errors->has('level_id') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('level_id') ? ' has-error' : '' }}">
 
-        <label class="control-label">Level</label>
+        <label>Level</label>
 
-        <select class="form-control" id="level_id" name="level_id">
+        <select id="level_id" name="level_id">
 
             <option value="">Please Choose One</option>
 
@@ -88,12 +87,11 @@
 
     <!-- author input -->
 
-    <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('author') ? ' has-error' : '' }}">
 
-        <label class="control-label">Author</label>
+        <label>Author</label>
 
         <input type="text"
-               class="form-control"
                name="author"
                value="{{ old('author') }}" />
 
@@ -109,11 +107,11 @@
 
     <!-- description input -->
 
-    <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('description') ? ' has-error' : '' }}">
 
         <label class="control-label">Description</label>
 
-        <textarea class="form-control"
+        <textarea
                   rows="5"
                   name="description"
                   >{{ old('description') }}</textarea>
@@ -131,12 +129,11 @@
 
     <!-- url input -->
 
-    <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('url') ? ' has-error' : '' }}">
 
-        <label class="control-label">Url</label>
+        <label>Url</label>
 
         <input type="text"
-               class="form-control"
                name="url"
                value="{{ old('url') }}" />
 
@@ -152,11 +149,11 @@
 
     <!-- embed_code input -->
 
-    <div class="form-group{{ $errors->has('embed_code') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('embed_code') ? ' has-error' : '' }}">
 
-        <label class="control-label">Embed Code</label>
+        <label>Embed Code</label>
 
-        <textarea class="form-control"
+        <textarea
                   rows="5"
                   name="embed_code"
                   >{{ old('embed_code') }}</textarea>
@@ -175,11 +172,11 @@
 
     <!-- is_featured select -->
 
-    <div class="form-group{{ $errors->has('is_featured') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('is_featured') ? ' has-error' : '' }}">
 
-        <label class="control-label">Is Featured?</label>
+        <label>Is Featured?</label>
 
-        <select class="form-control" id="is_featured" name="is_featured">
+        <select id="is_featured" name="is_featured">
 
             <option value="0">No</option>
             <option value="1">Yes</option>
@@ -201,10 +198,10 @@
 
     <!-- submit button -->
 
-    <div class="form-group">
+    <div class="row">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Create
 

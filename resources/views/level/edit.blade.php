@@ -5,36 +5,18 @@
 
     <div class="container ">
 
+            <div class="row">
 
+                <h1 class="flow-text grey-text text-darken-1">Edit Level</h1>
 
+                <section class="mt-20">
 
-            <div class="col-md-8 col-md-offset-2">
+                @include('level.edit-form')
 
-        <h1 class="section-title">Edit Level</h1>
+                </section>
 
-
-
-        <section class="white-background rounded-corners-10 pad-20">
-
-
-            @include('level.edit-form')
-
-
-        </section>
-
-        </div>
-
-
-
-
-
-
-
-
+            </div>
 
     </div>
-
-
-
-
+    
 @endsection

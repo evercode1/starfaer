@@ -5,37 +5,18 @@
 
     <div class="container ">
 
+            <div class="row">
 
+                <h1 class="flow-text grey-text text-darken-1">Create Level</h1>
 
+                <section class="mt-20">
 
+                    @include('level.create-form')
 
-            <div class="col-md-8 col-md-offset-2">
-
-        <h1 class="section-title">Create Level</h1>
-
-
-
-        <section class="white-background rounded-corners-10 pad-20">
-
-
-            @include('level.create-form')
-
-
-        </section>
+                </section>
 
         </div>
 
-
-
-
-
-
-
-
-
     </div>
-
-
-
 
 @endsection

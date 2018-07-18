@@ -25,7 +25,7 @@ use App\Queries\GridQueries\VideoQuery;
 use App\Queries\GridQueries\CategoryQuery;
 use App\Queries\CategoryListQuery;
 use App\Queries\GridQueries\LevelQuery;
-
+use App\Queries\GridQueries\BookQuery;
 class ApiController extends Controller
 {
 
@@ -33,6 +33,13 @@ class ApiController extends Controller
     {
 
         return GridQuery::sendData($request, new VideoQuery);
+
+    }
+
+    public function bookData(Request $request)
+    {
+
+        return GridQuery::sendData($request, new BookQuery);
 
     }
 

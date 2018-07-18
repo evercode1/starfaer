@@ -22,43 +22,40 @@
 
 
 
-    <div class="col-sm-8 blog-main">
-
-
         <div class="container">
 
-            <div class="col-md-8 mt-25">
+            <div class="row">
 
-                <h2 class="blog-post-title">{{ ucfirst($levelName ) }}</h2>
-
-                <p class="blog-post-meta">List of videos at the {{ ucfirst($levelName ) }} level.</p>
-
-                <br/>
+                <h1 class="flow-text grey-text text-darken-1">{{ ucfirst($levelName ) }}</h1>
 
 
-                    <div class="blog-post">
+
+                <p>List of videos at the {{ ucfirst($levelName ) }} level.</p>
+
+
+
+                    <div class="row">
 
                         <videos-by-level-grid
                                 :level="{{ json_encode($levelId) }}">
                         </videos-by-level-grid>
 
-                        <div class="pull-right"><a href="/all-videos">all videos...</a></div>
+                        <div class="right"><a href="/all-videos">all videos...</a></div>
 
                         <br/>
 
 
 
 
-                    </div><!-- end blog-post -->
+                    </div><!-- end row -->
 
 
 
-            </div> <!-- end column -->
+            </div> <!-- end row -->
 
 
     </div> <!-- end container -->
 
-    </div><!--  end blog-main -->
 
 
 

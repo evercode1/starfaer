@@ -2,13 +2,13 @@
 
     <div class="row">
 
-        <div class="col-lg-12">
 
-            <h1>Levels</h1>
+
+        <h1 class="flow-text grey-text text-darken-1">Levels</h1>
 
             <search-box></search-box>
 
-            <div class="pull-right">
+            <div class="right">
 
                 <grid-count></grid-count>
 
@@ -16,12 +16,12 @@
 
 
 
-            <section class="panel mt-25">
-                <div class="panel-title"></div>
+            <section class="mt-20">
 
-                <div class="panel-body">
 
-                    <table class="table table-bordered table-striped table-responsive">
+                <div class="row">
+
+                    <table>
 
                         <table-head></table-head>
 
@@ -53,7 +53,7 @@
 
                                 <a v-bind:href="'/level/' + row.Id + '/edit'">
 
-                                <button type="button" class="btn btn-default ml-10">
+                                <button type="button" class="waves-effect waves-light btn mt-5">
 
                                         Edit
 
@@ -62,7 +62,7 @@
                                 </a>
 
 
-                                <button class="btn btn-danger pull-right mr-10"
+                                <button class="waves-effect waves-light btn mt-5"
                                         @click="confirmDelete(row.Id)">
 
                                         Delete
@@ -87,7 +87,7 @@
 
             <pagination></pagination>
 
-        </div>
+
 
     </div>
 

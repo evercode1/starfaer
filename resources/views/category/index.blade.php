@@ -10,20 +10,12 @@
 
     <div class="container">
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="row">
 
-        <category-grid></category-grid>
+            <category-grid></category-grid>
+
+        </div>
 
     </div>
-
-
-    </div>
-
-
-
-
-
-
-
 
 @endsection

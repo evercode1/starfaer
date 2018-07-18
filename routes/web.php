@@ -26,6 +26,7 @@ Route::get('all-videos/{id}-{slug?}', 'AllVideosController@show')->name('all-vid
 // API Routes
 
 Route::get('api/all-video-data', 'ApiController@allVideoData');
+Route::get('api/book-data', 'ApiController@bookData');
 Route::get('api/category-data', 'ApiController@categoryData');
 Route::get('api/category-list', 'ApiController@categoryList');
 Route::get('api/closed-contact-data', 'ApiController@closedContactData');
@@ -48,6 +49,12 @@ Route::get('api/video-list-data', 'ApiController@videoListData');
 
 Auth::routes();
 
+// Book Routes
+
+Route::post('book-delete/{book}', 'BookController@destroy');
+
+Route::resource('book', 'BookController', ['except' => ['destroy']]);
+
 // Cancel Account Routes
 
 Route::patch('/cancel', 'CancelUserController@update')->name('cancel-user-account');
@@ -56,7 +63,7 @@ Route::patch('/cancel', 'CancelUserController@update')->name('cancel-user-accoun
 
 Route::post('category-delete/{category}', 'CategoryController@destroy');
 
-Route::resource('category', 'CategoryController');
+Route::resource('category', 'CategoryController', ['except' => ['destroy']]);
 
 // Content Routes
 
@@ -86,7 +93,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('level-delete/{level}', 'LevelController@destroy');
 
-Route::resource('level', 'LevelController');
+Route::resource('level', 'LevelController', ['except' => ['destroy']]);
 
 // Messages route
 

@@ -5,35 +5,18 @@
 
     <div class="container ">
 
+            <div class="row">
 
+                <h1 class="flow-text grey-text text-darken-1">Create Category</h1>
 
-            <div class="col-md-8 col-md-offset-2">
+                <section class="mt-20">
 
-        <h1 class="section-title">Create Category</h1>
+                    @include('category.create-form')
 
+                </section>
 
-
-        <section class="white-background rounded-corners-10 pad-20">
-
-
-            @include('category.create-form')
-
-
-        </section>
-
-        </div>
-
-
-
-
-
-
-
-
+            </div>
 
     </div>
-
-
-
 
 @endsection

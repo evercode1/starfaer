@@ -3,13 +3,13 @@
 
 @section('content')
 
-    <div class="container ">
+    <div class="container">
 
-            <div class="col-md-8 col-md-offset-2">
+                <h1 class="flow-text grey-text text-darken-1">Edit Video</h1>
 
-        <h1 class="section-title">Edit Video</h1>
+        <div class="row">
 
-        <section class="row">
+        <section class="mt-20">
 
 
             @include('video.edit-form')
@@ -17,7 +17,7 @@
 
         </section>
 
-        </div>  <!-- end column -->
+        </div>  <!-- end row -->
 
 
     </div> <!-- end container -->

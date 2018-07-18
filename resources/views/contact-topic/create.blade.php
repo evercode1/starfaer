@@ -10,12 +10,9 @@
 
             <h1 class="flow-text grey-text text-darken-1">Create Topic</h1>
 
-
         <section>
 
-
             @include('contact-topic.create-form')
-
 
         </section>
 

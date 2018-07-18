@@ -2,13 +2,13 @@
 
     <div class="row">
 
-        <div class="col-lg-12">
 
-            <h1>Videos</h1>
+
+            <h1 class="flow-text grey-text text-darken-1">Videos</h1>
 
             <search-box></search-box>
 
-            <div class="pull-right">
+            <div class="right">
 
                 <grid-count></grid-count>
 
@@ -16,12 +16,12 @@
 
 
 
-            <section class="panel mt-25">
-                <div class="panel-title"></div>
+            <section class="row">
 
-                <div class="panel-body">
 
-                    <table class="table table-bordered table-striped table-responsive">
+                <div>
+
+                    <table>
 
                         <table-head></table-head>
 
@@ -80,7 +80,7 @@
 
                                 <a v-bind:href="'/video/' + row.Id + '/edit'">
 
-                                    <button type="button" class="btn btn-default">
+                                    <button type="button" class="btn waves-effect waves-light mt-5">
 
                                         Edit
 
@@ -88,7 +88,7 @@
 
                                 </a>
 
-                                <button class="btn btn-danger pull-left mt-5"
+                                <button class="btn waves-effect waves-light mt-5"
                                         @click="confirmDelete(row.Id)">
 
                                     Delete
@@ -111,7 +111,7 @@
 
             <pagination></pagination>
 
-        </div>
+
 
     </div>
 

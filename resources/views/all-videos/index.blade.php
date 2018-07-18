@@ -20,31 +20,23 @@
 
 @section('content')
 
-    <div class="col-sm-8 blog-main">
 
         <div class="container">
 
-            <div class="col-md-8 mt-25">
+            <div class="row">
 
-                <div class="blog-post">
-
-                    <h2 class="blog-post-title">Videos</h2>
-
-                    <p class="blog-post-meta">All Star Faer Videos</p>
-
+                <div class="mt-20">
 
                     <all-videos></all-videos>
 
+                </div>
 
-
-                </div><!-- end blog-post -->
-
-            </div> <!-- end column -->
+            </div> <!-- end row -->
 
         </div><!-- end container -->
 
 
-    </div> <!--  end blog-main -->
+
 
 
     @endsection

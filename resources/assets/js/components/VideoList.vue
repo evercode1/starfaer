@@ -43,11 +43,6 @@
                     this.videos = response.data;
 
 
-
-
-
-
-
                 });
 
             }

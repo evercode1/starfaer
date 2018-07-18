@@ -19,21 +19,20 @@
 
 @section('content')
 
-    <div class="col-sm-8 blog-main">
-
         <div class="container">
 
-            <div class="col-md-8 mt-25">
+            <div class="row">
 
-                <div class="blog-post">
+                <div class="mt-20">
 
-                    <h2 class="blog-post-title">{{ $video->title }}</h2>
+                    <h1 class="flow-text grey-text text-darken-1">{{ $video->title }}</h1>
 
-                    <p>by {{ $video->author }}</p>
 
-                    <P>Added on {{ $video->created_at }}</P>
+                    <p><strong>By:</strong> {{ $video->author }}</p>
 
-                    <p class="blog-post-meta">{{ $video->description }}</p>
+                    <P><strong>Added on:</strong> {{ $video->created_at }}</P>
+
+                    <p><strong>Title:</strong>  {{ $video->description }}</p>
 
                     <div>
                         <div class="video-container">
@@ -44,17 +43,12 @@
 
                     </div>
 
-                    <div class="text-center mt-20 mb-40">
+                    <div class="center mt-20">
 
                         <a href="/all-videos"><i class="fa fa-video-camera" aria-hidden="true"></i>  Click here for all videos</a>
 
                     </div>
 
-                    <br />
-
-
-
-                    <warning :message="{{ json_encode($videoWarning)}}"></warning>
 
                 </div><!-- end blog-post -->
 
@@ -62,8 +56,6 @@
 
         </div><!-- end container -->
 
-
-    </div> <!--  end blog-main -->
 
 
     @endsection
