@@ -29,7 +29,8 @@
 
                         @if($reply)
 
-                        <li class="collection-item grey-text lighten-4">Support replied on {{ $reply->created_at->format('m-d-Y') }}:
+                        <li class="collection-item grey-text lighten-4">
+                            Support replied on {{ $reply->created_at->format('m-d-Y') }}:
 
 
 
@@ -37,7 +38,8 @@
 
                         </li>
 
-                        <li class="collection-item grey-text lighten-4"> In reply to your {{ $message->created_at->format('m-d-Y') }} message:
+                        <li class="collection-item grey-text lighten-4">
+                            In reply to your {{ $message->created_at->format('m-d-Y') }} message:
 
                         @endif
 

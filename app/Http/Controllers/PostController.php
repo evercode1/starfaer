@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Post;
 use Illuminate\Support\Facades\Redirect;
+use App\Rules\IsValidCategory;
 
 class PostController extends Controller
 {
@@ -56,7 +57,7 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required|string|unique:posts|max:100',
             'body' => 'required|string|max:10000',
-            'category_id' => 'required|isValidCategory',
+            'category_id' => 'required', new IsValidCategory(),
             'is_published' => 'required|boolean'
 
         ]);
@@ -116,9 +117,15 @@ class PostController extends Controller
 
         }
 
-        $articleWarning = 'article-warning';
+        if ( Auth::check() ){
 
-        return view('post.show', compact('post', 'articleWarning'));
+            return view('post.show', compact('post'));
+
+
+        }
+
+
+        return view('post.show-guest', compact('post'));
 
     }
 
@@ -156,7 +163,7 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required|string|max:100|unique:posts,title,' .$post->id,
             'body' => 'required|string|max:10000',
-            'category_id' => 'required|isValidCategory',
+            'category_id' => 'required', new IsValidCategory(),
             'is_published' => 'required|boolean'
 
         ]);

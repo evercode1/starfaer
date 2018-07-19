@@ -2,13 +2,11 @@
 
     <div class="row">
 
-        <div class="col-lg-12">
-
-
+        <h1 class="flow-text grey-text text-darken-1">All Articles</h1>
 
             <search-box></search-box>
 
-            <div class="pull-right">
+            <div class="right">
 
                 <grid-count></grid-count>
 
@@ -16,12 +14,12 @@
 
 
 
-            <section class="panel mt-25">
-                <div class="panel-title"></div>
+            <section class="mt-20">
 
-                <div class="panel-body">
 
-                    <table class="table table-bordered table-striped table-responsive">
+                <div class="row">
+
+                    <table>
 
                         <video-table-head></video-table-head>
 
@@ -32,7 +30,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/all-articles/' + row.Id + '-' + row.Slug">{{ row.Title }}</a>
+                                <a v-bind:href="'/post/' + row.Id + '-' + row.Slug">{{ row.Title }}</a>
 
                             </td>
 
@@ -65,7 +63,7 @@
 
             <pagination></pagination>
 
-        </div>
+
 
     </div>
 
@@ -86,7 +84,7 @@
 
         mounted: function () {
 
-            gridData.loadData('api/all-article-data', this);
+            gridData.loadData('api/all-articles-data', this);
 
         },
         data: function () {
@@ -125,7 +123,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/all-article-data', this);
+                gridData.getQueryData(request, 'api/all-articles-data', this);
 
             },
 

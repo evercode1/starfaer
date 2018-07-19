@@ -50,7 +50,13 @@
                     </div>
 
 
-                </div><!-- end blog-post -->
+                </div><!-- end video -->
+
+                <div class="comments row mt-50">
+
+                    <div id="disqus_thread"></div>
+
+                </div>
 
             </div> <!-- end column -->
 
@@ -59,4 +65,26 @@
 
 
     @endsection
+
+@section('scripts')
+
+    <script id="dsq-count-scr" src="//star-faer.disqus.com/count.js" async></script>
+
+    <script>
+
+        var disqus_config = function () {
+            this.page.url = 'https://www.starfaer.com/video/{{ $video->id }}';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '{{ $video->id }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://star-faer.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+
+    </script>
+
+@endsection
 

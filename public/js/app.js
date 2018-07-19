@@ -1867,8 +1867,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -1883,7 +1881,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
 
     mounted: function mounted() {
 
-        gridData.loadData('api/all-article-data', this);
+        gridData.loadData('api/all-articles-data', this);
     },
     data: function data() {
         return {
@@ -1920,7 +1918,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
 
         getData: function getData(request) {
 
-            gridData.getQueryData(request, 'api/all-article-data', this);
+            gridData.getQueryData(request, 'api/all-articles-data', this);
         },
 
         setPageNumbers: function setPageNumbers() {
@@ -43126,80 +43124,74 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "div",
-      { staticClass: "col-lg-12" },
-      [
-        _c("search-box"),
-        _vm._v(" "),
-        _c("div", { staticClass: "pull-right" }, [_c("grid-count")], 1),
-        _vm._v(" "),
-        _c(
-          "section",
-          { staticClass: "panel mt-25" },
-          [
-            _c("div", { staticClass: "panel-title" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _c(
-                "table",
-                {
-                  staticClass:
-                    "table table-bordered table-striped table-responsive"
-                },
-                [
-                  _c("video-table-head"),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.gridData, function(row) {
-                      return _c("tr", [
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href: "/all-articles/" + row.Id + "-" + row.Slug
-                              }
-                            },
-                            [_vm._v(_vm._s(row.Title))]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n\n                            " +
-                              _vm._s(row.Category) +
-                              "\n\n                        "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n\n                            " +
-                              _vm._s(row.Created) +
-                              "\n\n                        "
-                          )
-                        ])
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+        _vm._v("All Articles")
+      ]),
+      _vm._v(" "),
+      _c("search-box"),
+      _vm._v(" "),
+      _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "mt-20" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "table",
+              [
+                _c("video-table-head"),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.gridData, function(row) {
+                    return _c("tr", [
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "/post/" + row.Id + "-" + row.Slug }
+                          },
+                          [_vm._v(_vm._s(row.Title))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(row.Category) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(row.Created) +
+                            "\n\n                        "
+                        )
                       ])
-                    })
-                  )
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("page-number")
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("pagination")
-      ],
-      1
-    )
-  ])
+                    ])
+                  })
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("page-number")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("pagination")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

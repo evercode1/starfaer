@@ -13,6 +13,7 @@ class AllArticlesQuery implements DataQuery
         $rows = DB::table('posts')
                     ->select('posts.id as Id',
                              'posts.title as Title',
+                             'posts.slug as Slug',
                              'categories.name as Category',
                               DB::raw('DATE_FORMAT(posts.created_at,
                              "%m-%d-%Y") as Created'))
@@ -40,6 +41,7 @@ class AllArticlesQuery implements DataQuery
         $rows = DB::table('posts')
                 ->select('posts.id as Id',
                          'posts.title as Title',
+                         'posts.slug as Slug',
                          'categories.name as Category',
                           DB::raw('DATE_FORMAT(posts.created_at,
                                   "%m-%d-%Y") as Created'))

@@ -16,14 +16,20 @@
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
+// All Articles Route
+
+Route::get('all-articles', 'AllArticlesController@index');
+
+// All Books Route
+
+Route::get('all-books', 'AllBooksController@index');
+
 // All Video Route
 
 Route::get('all-videos', 'AllVideosController@index');
 Route::get('all-videos/{id}-{slug?}', 'AllVideosController@show')->name('all-videos.show');
 
-// All Books Route
 
-Route::get('all-books', 'AllBooksController@index');
 
 
 
@@ -31,6 +37,7 @@ Route::get('all-books', 'AllBooksController@index');
 
 Route::get('api/alarm-data', 'ApiController@alarmData');
 Route::get('api/alarm-data-admin', 'ApiController@alarmDataAdmin');
+Route::get('/api/all-articles-data', 'ApiController@allArticlesData');
 Route::get('/api/all-books-data', 'ApiController@allBooksData');
 Route::get('api/all-video-data', 'ApiController@allVideoData');
 Route::get('api/archives', 'ApiController@archives');

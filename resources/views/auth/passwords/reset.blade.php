@@ -1,4 +1,4 @@
-@extends('layouts.masters.master-register-login')
+@extends('layouts.masters.master-guest')
 
 @section('content')
     <div class="container">

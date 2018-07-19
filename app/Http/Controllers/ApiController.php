@@ -33,6 +33,7 @@ use App\Queries\ArchivesQuery;
 use App\Queries\ArticleListQuery;
 use App\Queries\GridQueries\PostQuery;
 use App\Queries\AlarmAdminQuery;
+use App\Queries\GridQueries\AllArticlesQuery;
 
 class ApiController extends Controller
 {
@@ -60,6 +61,13 @@ class ApiController extends Controller
 
         return json_encode($data);
 
+
+    }
+
+    public function allArticlesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, new AllArticlesQuery);
 
     }
 
