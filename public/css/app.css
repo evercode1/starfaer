@@ -126,7 +126,16 @@ body {
   border-radius: 3px;
   width: 50px;
   height: 15px;
-  background: #3a8dfa;
+  background: #3786ed;
+  padding: 5px;
+  color: white;
+}
+
+.square-badge-teal {
+  border-radius: 3px;
+  width: 50px;
+  height: 15px;
+  background: #14a69a;
   padding: 5px;
   color: white;
 }
@@ -138,6 +147,15 @@ body {
   background: #e3e8eb;
   padding: 5px;
   color: #343434;
+}
+
+.square-badge-orange {
+  border-radius: 3px;
+  width: 50px;
+  height: 15px;
+  background: #a67736;
+  padding: 5px;
+  color: white;
 }
 
 .make-bold {

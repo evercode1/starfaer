@@ -33,12 +33,12 @@
 
                         <!-- List group -->
 
-                        <ul>
+                        <ul class="collection">
 
 
                             @foreach($messages as $message)
 
-                            <li class="mt-10 {{ $message->read ? '' :  ' make-bold'}}">
+                            <li class="collection-item mt-10 {{ $message->read ? '' :  ' make-bold'}}">
 
                                 <a href="/support-messages-show/{{ $message->id }}">
 
@@ -66,6 +66,10 @@
 
 
                                     @endif
+
+                                @else
+
+                                        <span class="square-badge-orange">pending</span>
 
                                 @endif
 

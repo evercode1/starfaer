@@ -14,19 +14,17 @@
 
                 <h1 class="flow-text grey-text text-darken-1">{{ $contact->contactTopic->name }}</h1>
 
+            <div class="mt-20">
 
-                <p>{{ $contact->created_at }} by <a href="#">{{ $contact->user->name }}</a></p>
-
-                <span class="grey-text lighten-5">{{ $contact->user->name }} said:</span>
-
-                <p class="grey-text text-darken-3">{{ $contact->message }}</p>
-
-                <div class="mt-20">
-
-                    @include('contact.reply-form', ['user_id' => $contact->user_id, 'contact_id' => $contact->id])
+                @include('contact.reply-form', ['user_id' => $contact->user_id, 'contact_id' => $contact->id])
 
 
-                </div>
+            </div>
+
+
+
+
+
 
                 <div class="row mt-20">
 
@@ -36,7 +34,7 @@
                         <div><h5 class="flow-text grey-text text-darken-1">Message History:</h5></div>
                         <div>
                             <!-- List group -->
-                            <ul>
+                            <ul class="collection">
 
                                 @foreach($messages as $message)
 
@@ -44,9 +42,9 @@
 
                                         <span class="grey-text">{{ $message->created }} {{ $contact->user->name }} requested:</span>
 
-                                <li>
+                                <li class="collection-item">
 
-                                  <p>"{{ $message->message }}"</p>
+                                  <p class="grey-text text-darken-3">"{{ $message->message }}"</p>
 
                                 </li>
 
@@ -54,7 +52,7 @@
 
                                          <span class="grey-text mt-10">{{ $message->created }} {{ $contact->user->name }} requested:</span>
 
-                                    <li><p>"{{ $message->message}}"</p></li>
+                                        <li class="collection-item"><p class="grey-text text-darken-3">"{{ $message->message}}"</p></li>
 
                                     @endif
 
@@ -63,13 +61,13 @@
 
                                 @if($message->reply)
 
-                                    <li class="grey-text mt-10">Support replied on {{ $message->replied }}:</li>
+                                    <li class="collection-item blue-text lighten-5">Support replied on {{ $message->replied }}:
 
-                                        <li><p>"{{ $message->reply }}"</p></li>
+                                        <p class="grey-text text-darken-1">"{{ $message->reply }}"</p></li>
 
                                     @else
 
-                                        <li class="mt-10 mb-10">
+                                        <li class="collection item mt-10 mb-10">
                                             <a href="/contact/{{ $message->id }}">No Reply From Support yet.</a>
                                         </li>
 
