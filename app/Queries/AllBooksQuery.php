@@ -17,6 +17,7 @@ class AllBooksQuery
         $rows = DB::table('books')
             ->select('id',
                 'title',
+                'subtitle',
                 'author',
                 'weight',
                 'url',
