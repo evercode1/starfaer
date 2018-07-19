@@ -25,23 +25,27 @@
                         </a>
                     </div>
 
-                    <div class="row mt-50">
+                    <ul class="collection mt-50">
 
                         @if($reply)
 
-                        <div class="grey-text lighten-4">Support replied on {{ $reply->created_at->format('m-d-Y') }}:</div>
+                        <li class="collection-item grey-text lighten-4">Support replied on {{ $reply->created_at->format('m-d-Y') }}:
 
 
 
                         <p class="">{{ $reply->reply }}</p>
 
-                        <div class="grey-text lighten-4"> In reply to your {{ $message->created_at->format('m-d-Y') }} message: </div>
+                        </li>
+
+                        <li class="collection-item grey-text lighten-4"> In reply to your {{ $message->created_at->format('m-d-Y') }} message:
 
                         @endif
 
                             <p> {{ $message->message }}  </p>
 
-                    </div>
+                        </li>
+
+                    </ul>
 
 
                 </div>
