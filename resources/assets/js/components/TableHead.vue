@@ -8,7 +8,7 @@
 
             {{ key }}
 
-            <span class="arrow"
+            <span
 
                   v-bind:class="$parent.sortOrder > 0 ? 'asc' : 'dsc'">
 

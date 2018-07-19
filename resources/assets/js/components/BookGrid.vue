@@ -28,7 +28,7 @@
                         <tr v-for="row in gridData">
 
                             <td> <a v-bind:href="'/book/' + row.Id ">
-                                <img v-bind:src="'/imgs/books/thumbnails/thumb-' + row.Name + '.' + row.Ext "></a>
+                                <img v-bind:src="'/imgs/books/thumbnails/thumb-' + formatImageName(row.Title) + '.' + row.Ext "></a>
                             </td>
 
                             <td>
@@ -39,7 +39,15 @@
 
                             <td>
 
-                                 {{ row.Author }}
+                                {{ row.Weight }}
+
+                            </td>
+
+                            <td>
+
+                                {{ row.Author }}
+
+
 
                             </td>
 
@@ -123,7 +131,7 @@
 <script>
 
     var gridData = require('../utilities/gridData');
-
+    var kebabCase = require('kebab-case');
 
     export default {
 
@@ -141,7 +149,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Thumbnail', 'Title', 'Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
+                gridColumns: ['Thumbnail', 'Title', 'Weight','Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -218,6 +226,15 @@
             showActive: function(active){
 
                 return active == 1 ? 'Yes'  : 'No';
+
+            },
+
+            formatImageName:  function(imageName){
+
+
+                return imageName.split(" ").join("-").toLowerCase();
+
+
 
             },
 

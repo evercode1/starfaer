@@ -1,3 +1,4 @@
+Vue.component('all-books', require('./components/AllBooks.vue'));
 Vue.component('all-videos', require('./components/AllVideos.vue'));
 Vue.component('book-grid', require('./components/BookGrid.vue'));
 Vue.component('category-grid', require('./components/CategoryGrid.vue'));

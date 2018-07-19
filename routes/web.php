@@ -21,10 +21,15 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('all-videos', 'AllVideosController@index');
 Route::get('all-videos/{id}-{slug?}', 'AllVideosController@show')->name('all-videos.show');
 
+// All Books Route
+
+Route::get('all-books', 'AllBooksController@index');
+
 
 
 // API Routes
 
+Route::get('/api/all-books-data', 'ApiController@allBooksData');
 Route::get('api/all-video-data', 'ApiController@allVideoData');
 Route::get('api/book-data', 'ApiController@bookData');
 Route::get('api/category-data', 'ApiController@categoryData');

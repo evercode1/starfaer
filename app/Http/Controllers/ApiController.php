@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Queries\AllBooksQuery;
 use Illuminate\Http\Request;
 
 
@@ -26,8 +27,17 @@ use App\Queries\GridQueries\CategoryQuery;
 use App\Queries\CategoryListQuery;
 use App\Queries\GridQueries\LevelQuery;
 use App\Queries\GridQueries\BookQuery;
+
+
 class ApiController extends Controller
 {
+
+    public function allBooksData()
+    {
+
+        return AllBooksQuery::sendData();
+
+    }
 
     public function allVideoData(Request $request)
     {

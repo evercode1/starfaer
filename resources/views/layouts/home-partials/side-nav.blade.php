@@ -5,7 +5,7 @@
             <li class="bold waves-effect active"><a class="collapsible-header">Pages<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="dashboard.html" class="waves-effect active">Dashboard<i class="material-icons">web</i></a></li>
+                        <li><a href="/home" class="waves-effect active">Dashboard<i class="material-icons">web</i></a></li>
                         <li><a href="pages-fixed-chart.html" class="waves-effect">Fixed Chart<i class="material-icons">list</i></a></li>
                         <li><a href="pages-grid.html" class="waves-effect">Grid<i class="material-icons">dashboard</i></a></li>
                         <li><a href="pages-chat.html" class="waves-effect">Chat<i class="material-icons">chat</i></a></li>
@@ -16,6 +16,13 @@
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="/all-videos" class="waves-effect">All Videos<i class="material-icons">videocam</i></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Books<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/all-books" class="waves-effect">All Books<i class="material-icons">book</i></a></li>
                     </ul>
                 </div>
             </li>

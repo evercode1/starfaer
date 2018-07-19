@@ -1,54 +1,24 @@
-@extends('layouts.master-admin')
+@extends('layouts.masters.master-admin-dash')
 
 
 @section('content')
 
     <div class="container ">
 
+            <div class="row">
+
+                <h1 class="flow-text grey-text text-darken-1">Edit Book</h1>
+
+                    <section class="mt-20">
 
 
-
-        <section class="pull-right mt-25">
-
-            <ol class="breadcrumb">
-
-                <li><a href="/"></i> Home</a></li>
-                <li><a href="/book">Books</a></li>
-                <li class="active">Edit {{ $book->title }}</li>
-
-            </ol>
-
-        </section>
+                        @include('book.edit-form')
 
 
+                    </section>
 
-            <div class="col-md-8 col-md-offset-2">
-
-        <h1 class="section-title">Edit Book</h1>
-
-
-
-        <section class="white-background rounded-corners-10 pad-20">
-
-
-            @include('book.edit-form')
-
-
-        </section>
-
-        </div>
-
-
-
-
-
-
-
-
+            </div>
 
     </div>
-
-
-
 
 @endsection

@@ -1,18 +1,18 @@
-<form class="form form-border mt-25"
+<form class="mt-20"
       role="form"
       method="POST"
-      action="{{ url('/book') }}">
+      action="{{ url('/book') }}"
+      enctype="multipart/form-data">
 
 {{ csrf_field() }}
 
-<!-- book title input -->
+    <!-- title input -->
 
-    <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('title') ? 'has-error' : '' }}">
 
-        <label class="control-label">Book Title</label>
+        <label>Book Title</label>
 
         <input type="text"
-               class="form-control"
                name="title"
                value="{{ old('title') }}" />
 
@@ -24,17 +24,56 @@
 
         @endif
 
-    </div>  <!-- end book title input -->
+    </div>  <!-- end title input -->
+
+    <!-- subtitle input -->
+
+    <div class="{{ $errors->has('subtitle') ? 'has-error' : '' }}">
+
+        <label>Book Subtitle</label>
+
+        <input type="text"
+               name="subtitle"
+               value="{{ old('subtitle') }}" />
+
+        @if ($errors->has('subtitle'))
+
+            <span class="help-block">
+                <strong>{{ $errors->first('subtitle') }}</strong>
+            </span>
+
+        @endif
+
+    </div>  <!-- end subtitle input -->
+
+    <!-- weight input -->
+
+    <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
+
+        <label>Weight</label>
+
+        <input type="text"
+               name="weight"
+               value="{{ old('weight') }}" />
+
+        @if ($errors->has('weight'))
+
+            <span class="help-block">
+                <strong>{{ $errors->first('weight') }}</strong>
+            </span>
+
+        @endif
+
+    </div>  <!-- end weight input -->
 
 
     <!-- author input -->
 
-    <div class="form-group{{ $errors->has('author') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('author') ? 'has-error' : '' }}">
 
-        <label class="control-label">Author</label>
+        <label>Author</label>
 
         <input type="text"
-               class="form-control"
                name="author"
                value="{{ old('author') }}" />
 
@@ -51,12 +90,11 @@
 
     <!-- url input -->
 
-    <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('url') ? 'has-error' : '' }}">
 
-        <label class="control-label">Url</label>
+        <label>Url</label>
 
         <input type="text"
-               class="form-control"
                name="url"
                value="{{ old('url') }}" />
 
@@ -70,14 +108,39 @@
 
     </div>  <!-- url author input -->
 
+    <!-- is_active select -->
+
+    <div class="{{ $errors->has('is_active') ? 'has-error' : '' }}">
+
+        <label>Is Active?</label>
+
+        <select id="is_active" name="is_active">
+
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+
+        </select>
+
+        @if ($errors->has('is_active'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('is_active') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>  <!-- end is_active select -->
+
 
     <!-- is_featured select -->
 
-    <div class="form-group{{ $errors->has('is_featured') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('is_featured') ? 'has-error' : '' }}">
 
-        <label class="control-label">Is Featured?</label>
+        <label>Is Featured?</label>
 
-        <select class="form-control" id="is_featured" name="is_featured">
+        <select id="is_featured" name="is_featured">
 
             <option value="0">No</option>
             <option value="1">Yes</option>
@@ -94,15 +157,75 @@
 
         @endif
 
-    </div>  <!-- end is featured select -->
+    </div>  <!-- end is_featured select -->
+
+
+    <!-- datepicker -->
+
+    <div class="{{ $errors->has('published_at') ? 'has-error' : '' }}">
+
+    <div class="row">
+
+        <label>Date Published</label>
+
+    </div>
+
+        <div class="row">
+
+            <input type="text"  class="datepicker" id="published_at" name="published_at">
+
+            @if ($errors->has('published_at'))
+
+                <span class="help-block">
+
+                <strong>{{ $errors->first('published_at') }}</strong>
+
+            </span>
+
+            @endif
+
+        </div>
+
+    </div>
+
+    <!-- end datepicker -->
+
+    <!-- image file Form Input -->
+
+    <div class="row mt-20">
+
+    <div class="{{ $errors->has('image') ? 'has-error' : '' }}">
+
+        <div class="row">
+            <label>Book Image</label>
+
+            </div>
+
+        <div class="row">
+
+            <input type="file" name="image" id="image">
+        </div>
+
+        @if ($errors->has('image'))
+
+            <span class="help-block">
+                <strong>{{ $errors->first('image') }}</strong>
+                </span>
+
+        @endif
+
+    </div>
+
+    </div>
+    <!-- end file input -->
 
 
     <!-- submit button -->
 
-    <div class="form-group">
+    <div class="row">
 
         <button type="submit"
-                class="btn btn-primary btn-lg">
+                class="waves-effect waves-light btn">
 
             Create
 

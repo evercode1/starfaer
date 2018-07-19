@@ -74,6 +74,11 @@ class GridQuery
 
         switch ($query){
 
+            case $query instanceof BookQuery :
+                $column = 'weight';
+                $direction = 'asc';
+                break;
+
             case $query instanceof PostQuery :
                 $column = 'posts.created_at';
                 $direction = 'desc';

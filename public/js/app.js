@@ -1633,6 +1633,74 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllBooks.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    mounted: function mounted() {
+
+        this.loadData();
+    },
+
+    data: function data() {
+        return {
+
+            books: []
+
+        };
+    },
+
+    methods: {
+        loadData: function loadData() {
+            var _this = this;
+
+            axios.get('/api/all-books-data').then(function (response) {
+
+                _this.books = response.data;
+            });
+        },
+
+
+        formatImageName: function formatImageName(imageName) {
+
+            return imageName.split(" ").join("-").toLowerCase();
+        }
+
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllVideos.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1949,9 +2017,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+var kebabCase = __webpack_require__("./node_modules/kebab-case/index.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -1968,7 +2045,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Thumbnail', 'Title', 'Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
+            gridColumns: ['Thumbnail', 'Title', 'Weight', 'Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -2041,6 +2118,11 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
         showActive: function showActive(active) {
 
             return active == 1 ? 'Yes' : 'No';
+        },
+
+        formatImageName: function formatImageName(imageName) {
+
+            return imageName.split(" ").join("-").toLowerCase();
         },
 
         confirmDelete: function confirmDelete(id) {
@@ -19610,6 +19692,29 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
+
+
+/***/ }),
+
+/***/ "./node_modules/kebab-case/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var KEBAB_REGEX = /[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g;
+var REVERSE_REGEX = /-[a-z\u00E0-\u00F6\u00F8-\u00FE]/g;
+
+module.exports = exports = function kebabCase(str) {
+	return str.replace(KEBAB_REGEX, function (match) {
+		return '-' + match.toLowerCase();
+	});
+};
+
+exports.reverse = function (str) {
+	return str.replace(REVERSE_REGEX, function (match) {
+		return match.slice(1).toUpperCase();
+	});
+};
 
 
 /***/ }),
@@ -41836,7 +41941,7 @@ var render = function() {
                             attrs: {
                               src:
                                 "/imgs/books/thumbnails/thumb-" +
-                                row.Name +
+                                _vm.formatImageName(row.Title) +
                                 "." +
                                 row.Ext
                             }
@@ -41854,9 +41959,17 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
-                          "\n\n                             " +
-                            _vm._s(row.Author) +
+                          "\n\n                            " +
+                            _vm._s(row.Weight) +
                             "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(row.Author) +
+                            "\n\n\n\n                        "
                         )
                       ]),
                       _vm._v(" "),
@@ -42048,6 +42161,62 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-830a37b4", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-b70dbb80\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AllBooks.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "ul",
+      { staticClass: "collection" },
+      _vm._l(_vm.books, function(book) {
+        return _c("li", { staticClass: "collection-item avatar" }, [
+          _c("a", { attrs: { href: book.url, target: "_blank" } }, [
+            _c("img", {
+              attrs: {
+                src:
+                  "/imgs/books/thumbnails/thumb-" +
+                  _vm.formatImageName(book.title) +
+                  "." +
+                  book.image_extension
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _c("a", { attrs: { href: book.url, target: "_blank" } }, [
+              _c("span", { staticClass: "title" }, [_vm._v(_vm._s(book.title))])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "secondary-content blue-text mt-20",
+              attrs: { href: book.url }
+            },
+            [_vm._v(_vm._s(book.subtitle))]
+          )
+        ])
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b70dbb80", module.exports)
   }
 }
 
@@ -42289,10 +42458,7 @@ var render = function() {
             },
             [
               _vm._v("\n\n        " + _vm._s(key) + "\n\n        "),
-              _c("span", {
-                staticClass: "arrow",
-                class: _vm.$parent.sortOrder > 0 ? "asc" : "dsc"
-              })
+              _c("span", { class: _vm.$parent.sortOrder > 0 ? "asc" : "dsc" })
             ]
           )
         }),
@@ -53615,6 +53781,7 @@ if (token) {
 /***/ "./resources/assets/js/components.js":
 /***/ (function(module, exports, __webpack_require__) {
 
+Vue.component('all-books', __webpack_require__("./resources/assets/js/components/AllBooks.vue"));
 Vue.component('all-videos', __webpack_require__("./resources/assets/js/components/AllVideos.vue"));
 Vue.component('book-grid', __webpack_require__("./resources/assets/js/components/BookGrid.vue"));
 Vue.component('category-grid', __webpack_require__("./resources/assets/js/components/CategoryGrid.vue"));
@@ -53635,6 +53802,54 @@ Vue.component('video-chart', __webpack_require__("./resources/assets/js/componen
 Vue.component('video-pie-chart', __webpack_require__("./resources/assets/js/components/VideoPieChart.vue"));
 Vue.component('video-list', __webpack_require__("./resources/assets/js/components/VideoList.vue"));
 Vue.component('video-grid', __webpack_require__("./resources/assets/js/components/VideoGrid.vue"));
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/AllBooks.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllBooks.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-b70dbb80\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AllBooks.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/AllBooks.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b70dbb80", Component.options)
+  } else {
+    hotAPI.reload("data-v-b70dbb80", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 

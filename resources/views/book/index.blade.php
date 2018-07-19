@@ -1,4 +1,4 @@
-@extends('layouts.master-admin')
+@extends('layouts.masters.master-admin-dash')
 
 @section('title')
 
@@ -10,11 +10,11 @@
 
     <div class="container">
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="row">
 
-        <book-grid></book-grid>
+             <book-grid></book-grid>
 
-    </div>
+        </div>
 
 
     </div>

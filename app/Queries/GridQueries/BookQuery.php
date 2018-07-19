@@ -14,13 +14,16 @@ class BookQuery implements DataQuery
                     ->select('id as Id',
                              'title as Title',
                              'author as Author',
+                             'weight as Weight',
                              'url as Url',
                              'is_featured as Featured',
                              'is_active as Active',
                              'image_extension as Ext',
-                        DB::raw('DATE_FORMAT(published_at,
-                             "%m-%d-%Y") as Published', 'DATE_FORMAT(created_at,
-                             "%m-%d-%Y") as Created'))
+                             DB::raw('DATE_FORMAT(published_at,
+                             "%m-%d-%Y") as Published'),
+                             DB::raw('DATE_FORMAT(created_at,
+                             "%m-%d-%Y") as Created')
+                    )
                     ->orderBy($column, $direction)
                     ->paginate(5);
 
@@ -36,13 +39,17 @@ class BookQuery implements DataQuery
                 ->select('id as Id',
                     'title as Title',
                     'author as Author',
+                    'weight as Weight',
                     'url as Url',
                     'is_featured as Featured',
                     'is_active as Active',
                     'image_extension as Ext',
                     DB::raw('DATE_FORMAT(published_at,
-                             "%m-%d-%Y") as Published', 'DATE_FORMAT(created_at,
-                             "%m-%d-%Y") as Created'))
+                             "%m-%d-%Y") as Published'),
+                    DB::raw('DATE_FORMAT(created_at,
+                             "%m-%d-%Y") as Created')
+
+                    )
                 ->where('title', 'like', '%' . $keyword . '%')
                 ->orderBy($column, $direction)
                 ->paginate(5);

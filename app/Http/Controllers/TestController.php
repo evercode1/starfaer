@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
 
 class TestController extends Controller
 {
@@ -19,6 +21,11 @@ class TestController extends Controller
     public function index()
     {
 
+       $test = 'Tal Faer';
+
+        $test = strtolower(str_replace(" ","-", $test));
+
+        dd($test);
 
         return view('test.index');
 

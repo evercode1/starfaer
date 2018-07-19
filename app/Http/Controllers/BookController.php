@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\UtilityTraits\KebabHelper;
 use Illuminate\Http\Request;
 use App\Book;
 use Illuminate\Support\Facades\Redirect;
 use App\UtilityTraits\ManagesImages;
 
+use Carbon\Carbon;
+
 class BookController extends Controller
 {
 
-    use ManagesImages;
+    use ManagesImages, KebabHelper;
 
 
     public function __construct()
@@ -65,22 +68,30 @@ class BookController extends Controller
             'subtitle' => 'required|unique:books|string|max:150',
             'url' => 'required|unique:books|string|max:150',
             'author' => 'required|string|max:100',
+            'weight' => 'required|integer|between:1,100',
             'is_featured' => 'required|boolean',
             'is_active' => 'required|boolean',
             'published_at' => 'date',
-            'image_name' => 'alpha_num|required|unique:books',
-            'image' => 'required|mimes:jpeg,jpg,bmp,png|max:1000',
 
         ]);
+
+
+
+        $date = new Carbon('Jul 31, 2018');
+
+        $publishedAt = $date->toDateString();
+
+
 
         $book = Book::create(['title' => $request->title,
                               'subtitle' => $request->subtitle,
                               'url'   => $request->url,
+                              'weight'   => $request->weight,
                               'author' => $request->author,
                               'is_featured' => $request->is_featured,
                               'is_active' => $request->is_active,
-                              'published_at' => $request->published_at,
-                              'image_name'        => $request->get('image_name'),
+                              'published_at' => $publishedAt,
+                              'image_name'        => $this->formatString($request->get('title')),
                               'image_extension'   => $request->file('image')->getClientOriginalExtension()
 
         ]);
@@ -134,11 +145,11 @@ class BookController extends Controller
             'subtitle' => 'required|string|max:150|unique:books,subtitle,' .$book->id,
             'url' => 'required|string|max:150|unique:books,url,' .$book->id,
             'author' => 'required|string|max:100',
+            'weight' => 'required|integer|between:1,100',
             'is_featured' => 'required|boolean',
             'is_active' => 'required|boolean',
-            'published_at' => 'date',
-            'image_name' => 'alpha_num|required|unique:books,image_name' .$book->id,
-            'image' => 'required|mimes:jpeg,jpg,bmp,png|max:1000',
+            'published_at' => 'date'
+
 
         ]);
 
@@ -159,6 +170,7 @@ class BookController extends Controller
         $book->save();
 
         // check for file, if new file, overwrite existing file
+
         if ($this->newFileIsUploaded()){
 
             $file = $this->getUploadedFile();
@@ -216,9 +228,11 @@ class BookController extends Controller
         $book->subtitle = $request->get('subtitle');
         $book->url = $request->get('url');
         $book->author = $request->get('author');
+        $book->weight = $request->get('weight');
         $book->is_featured = $request->get('is_featured');
         $book->is_active = $request->get('is_active');
         $book->published_at = $request->get('published_at');
+        $book->image_name = $this->formatString($request->get('title'));
 
     }
 

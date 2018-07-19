@@ -144,6 +144,14 @@ body {
   font-weight: bold;
 }
 
+.help-block {
+  color: red;
+}
+
+.has-error {
+  color: red;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
