@@ -27,10 +27,41 @@ use App\Queries\GridQueries\CategoryQuery;
 use App\Queries\CategoryListQuery;
 use App\Queries\GridQueries\LevelQuery;
 use App\Queries\GridQueries\BookQuery;
-
+use App\Queries\AlarmQuery;
+use App\Contact;
+use App\Queries\ArchivesQuery;
+use App\Queries\ArticleListQuery;
+use App\Queries\GridQueries\PostQuery;
+use App\Queries\AlarmAdminQuery;
 
 class ApiController extends Controller
 {
+
+    public function alarmData()
+    {
+
+        return AlarmQuery::sendData();
+
+
+    }
+
+    public function alarmDataAdmin()
+    {
+
+        return AlarmAdminQuery::sendData();
+
+
+    }
+
+    public function alarmSupportData()
+    {
+
+        $data = Contact::where('status_id', 1)->count();
+
+        return json_encode($data);
+
+
+    }
 
     public function allBooksData()
     {
@@ -43,6 +74,20 @@ class ApiController extends Controller
     {
 
         return GridQuery::sendData($request, new VideoQuery);
+
+    }
+
+    public function archives()
+    {
+
+        return ArchivesQuery::sendData();
+
+    }
+
+    public function articleListData()
+    {
+
+        return ArticleListQuery::sendData();
 
     }
 
@@ -107,6 +152,13 @@ class ApiController extends Controller
     {
 
         return GridQuery::sendData($request, new OpenContactQuery);
+
+    }
+
+    public function postData(Request $request)
+    {
+
+        return GridQuery::sendData($request, new PostQuery);
 
     }
 

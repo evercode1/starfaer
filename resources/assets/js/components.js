@@ -1,5 +1,9 @@
+Vue.component('alarm-bell', require('./components/AlarmBell.vue'));
+Vue.component('alarm-bell-admin', require('./components/AlarmBellAdmin.vue'));
+Vue.component('all-articles', require('./components/AllArticles.vue'));
 Vue.component('all-books', require('./components/AllBooks.vue'));
 Vue.component('all-videos', require('./components/AllVideos.vue'));
+Vue.component('archives', require('./components/Archives.vue'));
 Vue.component('book-grid', require('./components/BookGrid.vue'));
 Vue.component('category-grid', require('./components/CategoryGrid.vue'));
 Vue.component('category-list', require('./components/CategoryList.vue'));
@@ -9,6 +13,7 @@ Vue.component('contact-topic-grid', require('./components/ContactTopicGrid.vue')
 Vue.component('content-grid', require('./components/ContentGrid.vue'));
 Vue.component('level-grid', require('./components/LevelGrid.vue'));
 Vue.component('open-contact-grid', require('./components/OpenContactGrid.vue'));
+Vue.component('post-grid', require('./components/PostGrid.vue'));
 Vue.component('total-videos', require('./components/TotalVideos.vue'));
 Vue.component('user-grid', require('./components/UserGrid.vue'));
 Vue.component('videos-by-category-list', require('./components/VideosByCategoryList.vue'));

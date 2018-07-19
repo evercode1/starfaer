@@ -29,8 +29,12 @@ Route::get('all-books', 'AllBooksController@index');
 
 // API Routes
 
+Route::get('api/alarm-data', 'ApiController@alarmData');
+Route::get('api/alarm-data-admin', 'ApiController@alarmDataAdmin');
 Route::get('/api/all-books-data', 'ApiController@allBooksData');
 Route::get('api/all-video-data', 'ApiController@allVideoData');
+Route::get('api/archives', 'ApiController@archives');
+Route::get('api/article-list-data', 'ApiController@articleListData');
 Route::get('api/book-data', 'ApiController@bookData');
 Route::get('api/category-data', 'ApiController@categoryData');
 Route::get('api/category-list', 'ApiController@categoryList');
@@ -40,6 +44,7 @@ Route::get('api/contact-topic-data', 'ApiController@ContactTopicData');
 Route::get('api/content-data', 'ApiController@contentData');
 Route::get('api/level-data', 'ApiController@levelData');
 Route::get('api/open-contact-data', 'ApiController@openContactData');
+Route::get('api/post-data', 'ApiController@postData');
 Route::get('api/total-videos', 'ApiController@totalVideos');
 Route::get('api/user-data', 'ApiController@userData');
 Route::get('api/videos-by-category-data', 'ApiController@videosByCategoryData');
@@ -121,6 +126,20 @@ Route::get('/terms-of-service', 'PagesController@terms')->name('pages.terms');
 // Password Reset Request
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+
+// Post Routes
+
+Route::get('post-by-category/{id}', 'PostsByCategoryController@index')->name('post.by-category');
+
+Route::get('post-by-date/{date}', 'PostsByDateController@index')->name('post.by-date');
+
+Route::post('post-delete/{post}', 'PostController@destroy')->name('post.destroy');
+
+Route::get('post/create',  'PostController@create')->name('post.create');
+
+Route::get('post/{post}-{slug?}', 'PostController@show')->name('post.show');
+
+Route::resource('post', 'PostController', ['except' => ['show', 'create', 'destroy']]);
 
 // Reply Routes
 
