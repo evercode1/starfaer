@@ -37,6 +37,7 @@ class UniverseController extends Controller
 
     public function create()
     {
+        dd('here');
 
         return view('universe.create');
 
