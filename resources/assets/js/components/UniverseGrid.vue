@@ -4,7 +4,7 @@
 
 
 
-        <h1 class="flow-text grey-text text-darken-1">Levels</h1>
+        <h1 class="flow-text grey-text text-darken-1">Universes</h1>
 
             <search-box></search-box>
 
@@ -37,7 +37,13 @@
 
                             <td>
 
-                                <a v-bind:href="'/level/' + row.Id"> {{ row.Name }}</a>
+                                <a v-bind:href="'/universe/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+
+                            </td>
+
+                            <td>
+
+                                {{ row.Author }}
 
                             </td>
 
@@ -51,7 +57,7 @@
 
                             <td >
 
-                                <a v-bind:href="'/level/' + row.Id + '/edit'">
+                                <a v-bind:href="'/universe/' + row.Id + '/edit'">
 
                                 <button type="button" class="waves-effect waves-light btn mt-5">
 
@@ -108,13 +114,13 @@
 
         mounted: function () {
 
-            gridData.loadData('/api/level-data', this);
+            gridData.loadData('/api/universe-data', this);
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Created'],
+                gridColumns: ['Id', 'Name', 'Author', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -127,7 +133,7 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/level/create',
+                createUrl: '/universe/create',
                 showCreateButton: true
             }
         },
@@ -147,7 +153,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, '/api/level-data', this);
+                gridData.getQueryData(request, '/api/universe-data', this);
 
             },
 
@@ -185,10 +191,10 @@
 
                 if(confirm("Are you sure you want to delete?")){
 
-                    axios.post('/level-delete/' + id)
+                    axios.post('/universe-delete/' + id)
                             .then(response => {
 
-                                gridData.loadData('/api/level-data', this);
+                                gridData.loadData('/api/universe-data', this);
 
                             });
 

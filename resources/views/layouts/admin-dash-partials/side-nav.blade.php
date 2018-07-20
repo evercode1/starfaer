@@ -22,6 +22,16 @@
                     </ul>
                 </div>
             </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Worlds<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/universe" class="waves-effect">All Universes<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/galaxy" class="waves-effect">All Galaxies<i class="fa fa-star"></i></a></li>
+                        <li><a href="/system" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
+                        <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="bold waves-effect"><a class="collapsible-header">Videos<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>

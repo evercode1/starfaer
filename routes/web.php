@@ -24,13 +24,14 @@ Route::get('all-articles', 'AllArticlesController@index');
 
 Route::get('all-books', 'AllBooksController@index');
 
+// All Universes Route
+
+Route::get('all-universes', 'AllUniversesController@index');
+
 // All Video Route
 
 Route::get('all-videos', 'AllVideosController@index');
 Route::get('all-videos/{id}-{slug?}', 'AllVideosController@show')->name('all-videos.show');
-
-
-
 
 
 // API Routes
@@ -39,6 +40,7 @@ Route::get('api/alarm-data', 'ApiController@alarmData');
 Route::get('api/alarm-data-admin', 'ApiController@alarmDataAdmin');
 Route::get('/api/all-articles-data', 'ApiController@allArticlesData');
 Route::get('/api/all-books-data', 'ApiController@allBooksData');
+Route::get('/api/all-universes-data', 'ApiController@allUniversesData');
 Route::get('api/all-video-data', 'ApiController@allVideoData');
 Route::get('api/archives', 'ApiController@archives');
 Route::get('api/article-list-data', 'ApiController@articleListData');
@@ -53,6 +55,7 @@ Route::get('api/level-data', 'ApiController@levelData');
 Route::get('api/open-contact-data', 'ApiController@openContactData');
 Route::get('api/post-data', 'ApiController@postData');
 Route::get('api/total-videos', 'ApiController@totalVideos');
+Route::get('api/universe-data', 'ApiController@universeData');
 Route::get('api/user-data', 'ApiController@userData');
 Route::get('api/videos-by-category-data', 'ApiController@videosByCategoryData');
 Route::get('api/videos-by-level-data', 'ApiController@videosByLevelData');
@@ -168,6 +171,14 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 // Test Routes
 
 Route::get('test', 'TestController@index');
+
+// Universe Routes
+
+Route::post('universe-delete/{universe}', 'UniverseController@destroy');
+
+Route::get('universe/{universe}-{slug?}', 'UniverseController@show')->name('universe.show');
+
+Route::resource('universe', 'UniverseController', ['except' => ['show', 'destroy']]);
 
 // Unsubscribe Routes
 

@@ -2,7 +2,7 @@
 
 @section('title')
 
-    <title>Levels</title>
+    <title>Universe</title>
 
 @endsection
 
@@ -12,7 +12,7 @@
 
         <div class="row">
 
-        <level-grid></level-grid>
+        <universe-grid></universe-grid>
 
         </div>
 
