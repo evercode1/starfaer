@@ -2,13 +2,13 @@
 
     <div class="row">
 
-        <div class="col-lg-12">
 
-            <h1>Posts</h1>
+
+            <h1 class="flow-text grey-text text-darken-1">Posts</h1>
 
             <search-box></search-box>
 
-            <div class="pull-right">
+            <div class="right">
 
                 <grid-count></grid-count>
 
@@ -16,12 +16,11 @@
 
 
 
-            <section class="panel mt-25">
-                <div class="panel-title"></div>
+            <section class="mt-20">
 
-                <div class="panel-body">
+                <div class="row">
 
-                    <table class="table table-bordered table-striped table-responsive">
+                    <table>
 
                         <table-head></table-head>
 
@@ -76,7 +75,7 @@
 
                                 <a v-bind:href="'/post/' + row.Id + '/edit'">
 
-                                    <button type="button" class="btn btn-default ml-10">
+                                    <button type="button" class="btn waves-effect waves-light mt-5">
 
                                         Edit
 
@@ -84,8 +83,7 @@
 
                                 </a>
 
-
-                                <button class="btn btn-danger pull-right margin-10"
+                                <button class="btn waves-effect waves-light mt-5"
                                         @click="confirmDelete(row.Id)">
 
                                     Delete
@@ -107,8 +105,6 @@
             </section>
 
             <pagination></pagination>
-
-        </div>
 
     </div>
 
