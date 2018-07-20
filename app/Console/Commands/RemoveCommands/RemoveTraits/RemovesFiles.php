@@ -33,8 +33,10 @@ trait RemovesFiles
         );
 
         foreach ($files as $fileInfo) {
-            $todo = ($fileInfo->isDir() ? 'rmdir' : 'unlink');
-            $todo($fileInfo->getRealPath());
+
+                $todo = ($fileInfo->isDir() ? 'rmdir' : 'unlink');
+                $todo($fileInfo->getRealPath());
+
         }
 
         return rmdir($path);
@@ -65,10 +67,20 @@ trait RemovesFiles
         $this->unlinkFiles['model'] = base_path('app/' . $this->modelName .'.php');
         $this->unlinkFiles['modelQuery'] = base_path('app/Queries/GridQueries/' . $this->modelName .'Query.php');
         $this->unlinkFiles['controller'] = base_path('app/Http/Controllers/' . $this->modelName) . 'Controller.php';
+        $this->unlinkFiles['allController'] = base_path('app/Http/Controllers/' . $this->formatAllControllerName($this->modelName));
         $this->unlinkFiles['migration'] = $this->getMigrationFilePath($this->modelName);
         $this->unlinkFiles['Factory'] = base_path('database/factories/'.$this->modelName.'Factory.php');
         $this->extractFromFiles['Routes'] = base_path('routes/web.php');
         $this->extractFromFiles['Api Data Grid Method'] = base_path('app/Http/Controllers/ApiController.php');
+        $this->extractFromFiles['Api All Models Method'] = base_path('app/Http/Controllers/FrontApiController.php');
+    }
+
+    private function formatAllControllerName($modelName)
+    {
+
+
+        return 'All' . str_plural($this->modelName). 'Controller.php';
+
     }
 
     private function setRelationshipPath()
@@ -116,7 +128,12 @@ trait RemovesFiles
 
         foreach ($this->unlinkFiles as $file){
 
-            unlink($file);
+            if( file_exists($file) ){
+
+                unlink($file);
+
+            }
+
         }
 
         $this->extractMethodsFromFiles();

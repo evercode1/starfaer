@@ -72,6 +72,39 @@ class CrudFileWriter
 
                     break;
 
+                case 'frontApiController' :
+
+                    if(file_exists($this->fileWritePaths['frontApiController'])){
+
+                        $fileExists = true;
+
+                        $txt = $content->getContentFromTemplate('frontApiController', $this->tokens, $fileExists);
+
+                        $contents = file_get_contents($this->fileWritePaths['frontApiController']);
+
+                        $classParts = explode('{', $contents, 2);
+
+                        $txt = $classParts[0]. "{\n\n" . $txt . "\n\n"  . $classParts[1];
+
+                        $handle = fopen($filePath, "w");
+
+                        fwrite($handle, $txt);
+
+                        fclose($handle);
+
+                        break;
+                    }
+
+                    $txt = $content->getContentFromTemplate('frontApiController', $this->tokens);
+
+                    $handle = fopen($filePath, "w");
+
+                    fwrite($handle, $txt);
+
+                    fclose($handle);
+
+                    break;
+
                 case 'dataQuery' :
 
                     if(file_exists($this->fileWritePaths['dataQuery'])){

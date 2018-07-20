@@ -15,7 +15,8 @@ class MakeCrud extends Command
      */
     protected $signature = 'make:crud
                            {ModelName}
-                           {Slug=false}';
+                           {Front=false}
+                           {Namespace=false}';
 
     /**
      * The console command description.

@@ -3,7 +3,7 @@
     public function :::apiControllerMethod:::(Request $request)
     {
 
-        return GridQuery::sendData($request, new :::model:::Query);
+        return GridQuery::sendData($request, ':::model:::Query');
 
     }
 

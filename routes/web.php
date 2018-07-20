@@ -207,3 +207,10 @@ Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
 
 
 
+
+
+
+
+
+
+

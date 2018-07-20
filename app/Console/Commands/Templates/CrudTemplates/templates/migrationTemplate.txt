@@ -18,6 +18,7 @@ class Create:::migrationModel:::Table extends Migration
         Schema::create(':::tableName:::', function (Blueprint $table) {
             $table->increments('id');
             $table->string(':::field_name:::', 100)->unique();
+            $table->string('slug', 100);
             $table->timestamps();
         });
 

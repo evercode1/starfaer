@@ -13,6 +13,14 @@ trait HasParentAndChildAndSlug
 
     }
 
+    private function hasFront(array $tokens)
+    {
+
+        return $tokens['front'] == 'front';
+
+
+    }
+
     /**
      * @param array $tokens
      * @return bool

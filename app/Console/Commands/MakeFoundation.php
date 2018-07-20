@@ -17,7 +17,9 @@ class MakeFoundation extends Command
     protected $signature = 'make:foundation
                            {ModelName}
                            {MasterPage}
-                           {Slug=false}';
+                           {Slug=false}
+                           {Front=false}
+                           {Namespace=false}';
 
     /**
      * The console command description.
@@ -46,6 +48,7 @@ class MakeFoundation extends Command
      */
     public function handle(CrudBuilder $crud, ViewBuilder $view)
     {
+
 
 
         if ( $crud->makeCrudFiles($this->argument()) ) {

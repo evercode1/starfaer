@@ -8,12 +8,13 @@ class Tokens
 {
     use FormatsModel;
 
+    public $front;
     public $model;
     public $masterPageName;
     public $appName;
     public $parent;
     public $child;
-    public $slug;
+    public $namespace;
     public $tokens = [];
 
     public function __construct(array $tokens)
@@ -29,6 +30,23 @@ class Tokens
 
     public function formatTokens()
     {
+
+        $allControllerName = $this->formatAllControllerName($this->tableName());
+
+        $allViewFolder = 'all-' . str_plural($this->formatModelPath($this->model));
+
+        $allGetRoute = 'all-' . str_plural($this->formatModelPath($this->model));
+
+        $allGridComponentName = $this->formatAllGridComponentName($this->tableName());
+
+        $allEndGridName = '/all-' . str_plural($this->formatModelPath($this->model)) . '-grid';
+
+        $allGridName = 'all-' . str_plural($this->formatModelPath($this->model)) . '-grid';
+
+        $allApiControllerMethod = $this->formatAllApiControllerMethod($this->tableName());
+
+        $allApiDataPath = 'api/' . 'all-' . str_plural($this->formatModelPath($this->model)) . '-data';
+
         $appName = $this->appName;
 
         $apiControllerMethod = $this->formatApiControllerMethod();
@@ -57,6 +75,8 @@ class Tokens
 
         $folderName = $this->formatFolderName();
 
+        $front = $this->front;
+
         $gridApiRoute = 'api/' . $this->formatFolderName() . '-data';
 
         $gridComponentName = $this->model . 'Grid';
@@ -64,6 +84,8 @@ class Tokens
         $gridName = $this->formatVueGridName() . '-grid';
 
         $masterPageName = $this->masterPageName;
+
+        $masterAuthName = 'masters.master-auth';
 
         $migrationModel = $this->formatMigrationModel($this->model);
 
@@ -83,6 +105,8 @@ class Tokens
 
         $modelsUpperCase = ucwords(str_plural($this->model));
 
+        $namespace = ucwords($this->namespace);
+
         $parent = $this->parent;
 
         $parentFieldName = 'name';
@@ -99,8 +123,6 @@ class Tokens
 
         $parentsTableName = $this->formatParentsTableName($this->parent);
 
-        $slug = $this->slug;
-
         $tableName = $this->tableName();
 
         $upperCaseModelName = ucfirst($this->model);
@@ -113,7 +135,15 @@ class Tokens
 
         //create token array using compact
 
-        $tokens = compact('apiControllerMethod',
+        $tokens = compact('allControllerName',
+                          'allViewFolder',
+                          'allGetRoute',
+                          'allGridComponentName',
+                          'allEndGridName',
+                          'allGridName',
+                          'allApiControllerMethod',
+                          'allApiDataPath',
+                          'apiControllerMethod',
                           'apiDataPath',
                           'appName',
                           'chartApiRoute',
@@ -127,9 +157,11 @@ class Tokens
                           'endGridName',
                           'field_name',
                           'folderName',
+                          'front',
                           'gridApiRoute',
                           'gridComponentName',
                           'gridName',
+                          'masterAuthName',
                           'masterPageName',
                           'migrationModel',
                           'model',
@@ -140,6 +172,7 @@ class Tokens
                           'modelResults',
                           'modelRoute',
                           'modelsUpperCase',
+                          'namespace',
                           'parent',
                           'parentFieldName',
                           'parentId',
@@ -171,6 +204,42 @@ class Tokens
 
 
         }
+    }
+
+    private function formatAllGridComponentName($string)
+    {
+
+        $string = str_replace('_', ' ', $string);
+
+        $allGridComponentName = 'All' . ucwords($string);
+
+        return str_replace(' ', '', $allGridComponentName);
+
+
+    }
+
+    private function formatAllControllerName($string)
+    {
+
+        $string = str_replace('_', ' ', $string);
+
+        $allControllerName = 'All' . ucwords($string) . 'Controller';
+
+        return str_replace(' ', '', $allControllerName);
+
+
+    }
+
+    private function formatAllApiControllerMethod($string)
+    {
+
+        $string = str_replace('_', ' ', $string);
+
+        $allControllerName = 'all' . ucwords($string) . 'Data';
+
+        return str_replace(' ', '', $allControllerName);
+
+
     }
 
     private function setAndFormatModel()

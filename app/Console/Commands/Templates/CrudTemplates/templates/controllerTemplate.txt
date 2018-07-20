@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 :::useModel:::;
 use Illuminate\Support\Facades\Redirect;
 
@@ -50,8 +51,10 @@ class :::upperCaseModelName:::Controller extends Controller
 
         ]);
 
-        $:::modelInstance::: = :::upperCaseModelName:::::create([':::field_name:::' => $request->:::field_name:::]);
+        $slug = str_slug($request->:::field_name:::, "-");
 
+        $:::modelInstance::: = :::upperCaseModelName:::::create([':::field_name:::' => $request->:::field_name:::,
+                                                                  'slug' => $slug,]);
         $:::modelInstance:::->save();
 
         return Redirect::route(':::modelPath:::.index');
@@ -65,12 +68,17 @@ class :::upperCaseModelName:::Controller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show($id)
+    public function show($id, $slug='')
     {
         $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
 
-        return view(':::modelPath:::.show', compact(':::modelInstance:::'));
+        if ($:::modelInstance:::->slug !== $slug) {
 
+            return Redirect::route(':::modelPath:::.show', ['id' => $:::modelInstance:::->id,
+                                                   'slug' => $:::modelInstance:::->slug], 301);
+        }
+
+        return view(':::modelPath:::.show', compact(':::modelInstance:::'));
     }
 
     /**
@@ -91,7 +99,7 @@ class :::upperCaseModelName:::Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  \$request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -106,10 +114,12 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
 
-        $:::modelInstance:::->update([':::field_name:::' => $request->:::field_name:::]);
+        $slug = str_slug($request->:::field_name:::, "-");
 
+        $:::modelInstance:::->update([':::field_name:::' => $request->:::field_name:::,
+                                       'slug' => $slug,]);
 
-        return Redirect::route(':::modelPath:::.show', [':::modelInstance:::' => $:::modelInstance:::]);
+        return Redirect::route(':::modelPath:::.show', [':::modelInstance:::' => $:::modelInstance:::, 'slug' => $slug]);
 
     }
 

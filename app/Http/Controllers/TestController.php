@@ -21,11 +21,15 @@ class TestController extends Controller
     public function index()
     {
 
-       $test = 'Tal Faer';
+        $string = 'super_species';
 
-        $test = strtolower(str_replace(" ","-", $test));
+        $string = str_replace('_', ' ', $string);
 
-        dd($test);
+        $allControllerName = 'All' . ucwords($string) . 'Controller';
+
+        $allControllerName = str_replace(' ', '', $allControllerName);
+
+        dd($allControllerName);
 
         return view('test.index');
 

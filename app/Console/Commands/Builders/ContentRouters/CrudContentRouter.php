@@ -32,16 +32,32 @@ class CrudContentRouter
 
                 }
 
-            case 'controller' :
+            case 'frontApiController' :
 
-                if ($this->hasSlug($tokens)){
+                if ($fileExists){
 
-                    return $this->routeTemplate($tokens, 'controllerSlugTemplate');
+
+                    return $this->routeTemplate($tokens, 'appendFrontApiControllerTemplate');
+                    break;
+
+                } else {
+
+
+                    return $this->routeTemplate($tokens, 'frontApiControllerTemplate');
                     break;
 
                 }
 
+            case 'controller' :
+
+
                 return $this->routeTemplate($tokens, 'controllerTemplate');
+                break;
+
+            case 'allController' :
+
+
+                return $this->routeTemplate($tokens, 'frontControllerTemplate');
                 break;
 
             case 'dataQuery' :
@@ -61,12 +77,6 @@ class CrudContentRouter
 
             case 'factory' :
 
-
-                if ($this->hasSlug($tokens)){
-
-                    return $this->routeTemplate($tokens, 'factorySlugTemplate');
-                    break;
-                }
 
                 return $this->routeTemplate($tokens, 'factoryTemplate');
                 break;
@@ -89,24 +99,11 @@ class CrudContentRouter
             case 'migration' :
 
 
-                if ($this->hasSlug($tokens)){
-
-                    return $this->routeTemplate($tokens, 'migrationSlugTemplate');
-                    break;
-
-                }
-
                 return $this->routeTemplate($tokens, 'migrationTemplate');
                 break;
 
             case 'model' :
 
-                if ($this->hasSlug($tokens)){
-
-                    return $this->routeTemplate($tokens, 'modelSlugTemplate');
-                    break;
-
-                }
 
                 return $this->routeTemplate($tokens, 'modelTemplate');
                 break;
@@ -114,22 +111,15 @@ class CrudContentRouter
             case 'modelQuery':
 
 
-                if ($this->hasSlug($tokens)){
-
-                    return $this->routeTemplate($tokens, 'modelQuerySlugTemplate');
-                    break;
-
-                }
-
                     return $this->routeTemplate($tokens, 'modelQueryTemplate');
                     break;
 
 
             case 'routes' :
 
-                if ($this->hasSlug($tokens)){
+                if ($this->hasFront($tokens)){
 
-                    return $this->routeTemplate($tokens, 'routeSlugTemplate');
+                    return $this->routeTemplate($tokens, 'routeFrontTemplate');
                     break;
                 }
 
@@ -137,12 +127,6 @@ class CrudContentRouter
                 break;
 
 
-            case 'test' :
-
-
-
-                return $this->routeTemplate($tokens, 'testTemplate');
-                break;
 
 
             default :
