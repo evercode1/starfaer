@@ -176,9 +176,11 @@ Route::get('test', 'TestController@index');
 
 Route::post('universe-delete/{universe}', 'UniverseController@destroy');
 
+Route::get('/universe/create', 'UniverseController@create')->name('universe.create');
+
 Route::get('universe/{universe}-{slug?}', 'UniverseController@show')->name('universe.show');
 
-Route::resource('universe', 'UniverseController', ['except' => ['show', 'destroy']]);
+Route::resource('universe', 'UniverseController', ['except' => ['show', 'create','destroy']]);
 
 // Unsubscribe Routes
 
