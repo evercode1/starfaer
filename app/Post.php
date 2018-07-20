@@ -2,11 +2,13 @@
 
 namespace App;
 
+use App\Events\NewPost;
 use App\UtilityTraits\PostScopes;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class Post extends Model
 {
@@ -43,9 +45,11 @@ class Post extends Model
                                 'published_at' => date('Y-m-d H:i:s')
         ]);
 
+
         $post->save();
 
         return $post;
+
     }
 
     public static function createDraft(Request $request, $body, $slug)

@@ -25,6 +25,7 @@ class NewPost
     {
         $this->post = $post;
 
+
     }
 
     /**

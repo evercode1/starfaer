@@ -20,6 +20,12 @@ class EventServiceProvider extends ServiceProvider
 
         ],
 
+        'App\Events\NewPost' => [
+
+            'App\Listeners\SendNewPostAlert',
+
+        ],
+
     ];
 
     /**
