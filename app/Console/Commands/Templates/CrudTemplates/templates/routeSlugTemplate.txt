@@ -1,0 +1,14 @@
+
+// Begin :::upperCaseModelName::: Routes
+
+Route::any(':::gridApiRoute:::', 'ApiController@:::apiControllerMethod:::');
+
+Route::post(':::modelPath:::-delete/{:::modelPath:::}', ':::upperCaseModelName:::Controller@destroy');
+
+Route::get('/:::modelPath:::/create', ':::upperCaseModelName:::Controller@create')->name(':::modelPath:::.create');
+
+Route::get(':::modelPath:::/{:::modelPath:::}-{slug?}', ':::upperCaseModelName:::Controller@show')->name(':::modelPath:::.show');
+
+Route::resource(':::modelPath:::', ':::upperCaseModelName:::Controller', ['except' => ['show', 'create','destroy']]);
+
+// End :::upperCaseModelName::: Routes

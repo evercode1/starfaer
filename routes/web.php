@@ -202,3 +202,8 @@ Route::get('videos-by-level/{id}', 'VideosByLevelController@index');
 Route::post('video-delete/{video}', 'VideoController@destroy');
 
 Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
+
+
+
+
+

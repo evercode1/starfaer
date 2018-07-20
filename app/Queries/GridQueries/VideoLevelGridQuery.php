@@ -8,8 +8,12 @@ use App\Level;
 
 class VideoLevelGridQuery
 {
-    public static function sendData(Request $request, VideoByLevelQuery $query)
+    public static function sendData(Request $request, $query)
     {
+
+        $class = '\\App\Queries\GridQueries\\' . $query;
+
+        $query =  new $class();
         // set sort by column and direction
 
         list($column, $direction) = static::setSort($request, $query);

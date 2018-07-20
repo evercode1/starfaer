@@ -4,37 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Queries\AllBooksQuery;
 use Illuminate\Http\Request;
-
-
-use App\Queries\GridQueries\ClosedContactQuery;
-use App\Queries\GridQueries\ContactQuery;
-use App\Queries\GridQueries\ContactTopicQuery;
-use App\Queries\GridQueries\ContentQuery;
 use App\Queries\GridQueries\GridQuery;
-use App\Queries\GridQueries\OpenContactQuery;
-use App\Queries\GridQueries\UserQuery;
 use App\Video;
-use App\Queries\GridQueries\VideoByCategoryQuery;
-use App\Queries\GridQueries\VideoByLevelQuery;
-use App\Queries\VideoCountQuery;
 use App\Queries\GridQueries\VideoLevelGridQuery;
 use App\Queries\VideoListQuery;
 use App\Queries\VideosByCategoryListQuery;
 use App\Queries\VideosByLevelListQuery;
 use App\Queries\GridQueries\VideoCategoryGridQuery;
-use App\Queries\GridQueries\VideoQuery;
-use App\Queries\GridQueries\CategoryQuery;
 use App\Queries\CategoryListQuery;
-use App\Queries\GridQueries\LevelQuery;
-use App\Queries\GridQueries\BookQuery;
 use App\Queries\AlarmQuery;
 use App\Contact;
 use App\Queries\ArchivesQuery;
 use App\Queries\ArticleListQuery;
-use App\Queries\GridQueries\PostQuery;
 use App\Queries\AlarmAdminQuery;
-use App\Queries\GridQueries\AllArticlesQuery;
-use App\Queries\GridQueries\UniverseQuery;
+
 
 class ApiController extends Controller
 {
@@ -44,7 +27,6 @@ class ApiController extends Controller
 
         return AlarmQuery::sendData();
 
-
     }
 
     public function alarmDataAdmin()
@@ -52,23 +34,20 @@ class ApiController extends Controller
 
         return AlarmAdminQuery::sendData();
 
-
     }
 
     public function alarmSupportData()
     {
 
         $data = Contact::where('status_id', 1)->count();
-
         return json_encode($data);
-
 
     }
 
     public function allArticlesData(Request $request)
     {
 
-        return GridQuery::sendData($request, new AllArticlesQuery);
+        return GridQuery::sendData($request, 'AllArticlesQuery');
 
     }
 
@@ -82,14 +61,14 @@ class ApiController extends Controller
     public function allUniversesData(Request $request)
     {
 
-        return GridQuery::sendData($request, new UniverseQuery);
+        return GridQuery::sendData($request, 'UniverseQuery');
 
     }
 
     public function allVideoData(Request $request)
     {
 
-        return GridQuery::sendData($request, new VideoQuery);
+        return GridQuery::sendData($request, 'VideoQuery');
 
     }
 
@@ -110,14 +89,14 @@ class ApiController extends Controller
     public function bookData(Request $request)
     {
 
-        return GridQuery::sendData($request, new BookQuery);
+        return GridQuery::sendData($request, 'BookQuery');
 
     }
 
     public function categoryData(Request $request)
     {
 
-        return GridQuery::sendData($request, new CategoryQuery);
+        return GridQuery::sendData($request, 'CategoryQuery');
 
     }
 
@@ -131,87 +110,82 @@ class ApiController extends Controller
     public function closedContactData(Request $request)
     {
 
-        return GridQuery::sendData($request, new ClosedContactQuery);
+        return GridQuery::sendData($request, 'ClosedContactQuery');
 
     }
 
     public function contactData(Request $request)
     {
 
-        return GridQuery::sendData($request, new ContactQuery);
-
+        return GridQuery::sendData($request, 'ContactQuery');
 
     }
 
     public function contactTopicData(Request $request)
     {
 
-        return GridQuery::sendData($request, new ContactTopicQuery);
+        return GridQuery::sendData($request, 'ContactTopicQuery');
 
     }
 
     public function contentData(Request $request)
     {
 
-        return GridQuery::sendData($request, new ContentQuery);
+        return GridQuery::sendData($request, 'ContentQuery');
 
     }
 
     public function levelData(Request $request)
     {
 
-        return GridQuery::sendData($request, new LevelQuery);
+        return GridQuery::sendData($request, 'LevelQuery');
 
     }
 
     public function openContactData(Request $request)
     {
 
-        return GridQuery::sendData($request, new OpenContactQuery);
+        return GridQuery::sendData($request, 'OpenContactQuery');
 
     }
 
     public function postData(Request $request)
     {
 
-        return GridQuery::sendData($request, new PostQuery);
+        return GridQuery::sendData($request, 'PostQuery');
 
     }
 
     public function totalVideos()
     {
 
-
         return Video::all()->count();
-
 
     }
 
     public function universeData(Request $request)
     {
 
-        return GridQuery::sendData($request, new UniverseQuery);
+        return GridQuery::sendData($request, 'UniverseQuery');
 
     }
 
     public function userData(Request $request)
     {
 
-        return GridQuery::sendData($request, new UserQuery);
+        return GridQuery::sendData($request, 'UserQuery');
 
     }
 
     public function videosByCategoryData(Request $request)
     {
 
-
-        return VideoCategoryGridQuery::sendData($request,  new VideoByCategoryQuery);
+        return VideoCategoryGridQuery::sendData($request,  'VideoByCategoryQuery');
 
     }
 
     public function videosByCategoryListData()
     {
-
 
         return VideosByCategoryListQuery::sendData();
 
@@ -220,33 +194,28 @@ class ApiController extends Controller
     public function videosByLevelData(Request $request)
     {
 
-
-        return VideoLevelGridQuery::sendData($request,  new VideoByLevelQuery);
+        return VideoLevelGridQuery::sendData($request,  'VideoByLevelQuery');
 
     }
 
     public function videosByLevelListData(Request $request)
     {
 
-
         return VideosByLevelListQuery::sendData();
 
     }
-
 
     public function videoListData()
     {
 
         return VideoListQuery::sendData();
 
-
     }
 
     public function videoData(Request $request)
     {
 
-        return GridQuery::sendData($request, new VideoQuery);
-
+        return GridQuery::sendData($request, 'VideoQuery');
 
     }
 }

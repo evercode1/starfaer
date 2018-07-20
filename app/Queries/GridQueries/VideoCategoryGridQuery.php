@@ -7,8 +7,12 @@ use App\Queries\GridQueries\VideoByCategoryQuery;
 
 class VideoCategoryGridQuery
 {
-    public static function sendData(Request $request, VideoByCategoryQuery $query)
+    public static function sendData(Request $request, $query)
     {
+
+        $class = '\\App\Queries\GridQueries\\' . $query;
+
+        $query =  new $class();
         // set sort by column and direction
 
         list($column, $direction) = static::setSort($request, $query);

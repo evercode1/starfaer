@@ -1,0 +1,10 @@
+
+// Begin :::upperCaseModelName::: Routes
+
+Route::get(':::gridApiRoute:::', 'ApiController@:::apiControllerMethod:::');
+
+Route::post(':::modelPath:::-delete/{level}', ':::upperCaseModelName:::Controller@destroy');
+
+Route::resource(':::modelPath:::', ':::upperCaseModelName:::Controller', ['except' => ['destroy']]);
+
+// End :::upperCaseModelName::: Routes
