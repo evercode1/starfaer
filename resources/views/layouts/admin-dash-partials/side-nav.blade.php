@@ -29,6 +29,13 @@
                     </ul>
                 </div>
             </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Posts<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/post" class="waves-effect">All Posts<i class="material-icons">collections</i></a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="bold waves-effect"><a class="collapsible-header">Books<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
