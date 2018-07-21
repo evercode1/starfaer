@@ -29,3 +29,14 @@ Vue.component('video-grid', require('./components/VideoGrid.vue'));
 
 
 
+
+/** Begin Galaxy Grid Component Call */
+
+Vue.component('galaxy-grid', require('./components/GalaxyGrid.vue'));
+
+/** End Galaxy Grid Component Call */
+/** Begin Galaxy All Models Call */
+
+Vue.component('all-galaxies:', require('./components/AllGalaxies.vue'));
+
+/** End Galaxy All Models Call */

@@ -4,7 +4,7 @@
 
 
 
-        <h1 class="flow-text grey-text text-darken-1">:::upperCaseModelName:::</h1>
+        <h1 class="flow-text grey-text text-darken-1">Galaxy</h1>
 
             <search-box></search-box>
 
@@ -37,7 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/:::modelPath:::/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/galaxy/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
 
                             </td>
 
@@ -47,6 +47,8 @@
 
                             </td>
 
+
+
                             <td>
 
                                    {{ row.Created }}
@@ -55,7 +57,7 @@
 
                             <td >
 
-                                <a v-bind:href="'/:::modelPath:::/' + row.Id + '/edit'">
+                                <a v-bind:href="'/galaxy/' + row.Id + '/edit'">
 
                                 <button type="button" class="waves-effect waves-light btn mt-5">
 
@@ -112,7 +114,7 @@
 
         mounted: function () {
 
-            gridData.loadData('/api/:::modelPath:::-data', this);
+            gridData.loadData('/api/galaxy-data', this);
 
         },
         data: function () {
@@ -131,7 +133,7 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/:::modelPath:::/create',
+                createUrl: '/galaxy/create',
                 showCreateButton: true
             }
         },
@@ -151,7 +153,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, '/api/:::modelPath:::-data', this);
+                gridData.getQueryData(request, '/api/galaxy-data', this);
 
             },
 
@@ -174,26 +176,20 @@
             },
 
             checkUrlNotNull: function(url){
-
                 return url != null;
-
             },
 
             clearPageNumberInputBox: function(){
-
                 return this.go_to_page = '';
-
             },
 
             pageInRange: function(){
-
                 return this.go_to_page <= parseInt(this.last_page);
-
             },
 
-                formatActive: function(active){
+            formatActive: function(active){
 
-                    return  active === 1 ? 'Active' : 'Inactive';
+              return  active === 1 ? 'Active' : 'Inactive';
 
             },
 
@@ -201,10 +197,10 @@
 
                 if(confirm("Are you sure you want to delete?")){
 
-                    axios.post('/:::modelPath:::-delete/' + id)
+                    axios.post('/galaxy-delete/' + id)
                             .then(response => {
 
-                                gridData.loadData('/api/:::modelPath:::-data', this);
+                                gridData.loadData('/api/galaxy-data', this);
 
                             });
 

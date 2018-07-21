@@ -53,39 +53,6 @@ class CrudBuilder
 
     private function setFilePaths()
     {
-        if ($this->initialValues['namespace'] !== 'default') {
-
-
-            $this->fileWritePaths['model'] = base_path() . '/app/' . $this->tokens['namespace'] . '/' . $this->tokens['upperCaseModelName'] . '.php';
-            $this->fileWritePaths['controller'] = base_path() . '/app/Http/Controllers/'
-                . $this->tokens['namespace'] . '/' . $this->tokens['controllerName'] . '.php';
-            $this->fileWritePaths['apiController'] = base_path() . '/app/Http/Controllers/'
-                . $this->tokens['namespace'] . '/' . 'ApiController.php';
-
-            $this->tokens['front'] == 'front' ?
-                $this->fileWritePaths['allController'] = base_path() . '/app/Http/Controllers/'
-                    . $this->tokens['namespace'] . '/' . $this->tokens['allControllerName'] . '.php'
-                : false;
-
-            $this->tokens['front'] == 'front' ?
-                $this->fileWritePaths['frontApiController'] = base_path() . '/app/Http/Controllers/' . $this->tokens['namespace'] . '/' .'FrontApiController.php'
-                : false;
-
-            $this->fileAppendPaths['routes'] = base_path() . '/routes/web.php';
-            $this->fileWritePaths['migration'] = base_path() . '/database/migrations/' . date('Y_m_d_His') . '_create_' .$this->tokens['tableName'] . '_table'. '.php';
-            $this->fileAppendPaths['factory'] = base_path() . '/database/factories/'. $this->tokens['upperCaseModelName'] . 'Factory.php';
-            $this->fileWritePaths['dataQuery'] = base_path() . '/app/Queries/GridQueries/Contracts/' . 'DataQuery.php';
-            $this->fileWritePaths['gridQuery'] = base_path() . '/app/Queries/GridQueries/' . 'GridQuery.php';
-            $this->fileWritePaths['modelQuery'] = base_path() . '/app/Queries/GridQueries/'
-                . $this->tokens['namespace'] . '/' . $this->tokens['upperCaseModelName'] . 'Query.php';
-
-
-
-
-
-        } else {
-
-
 
             $this->fileWritePaths['model'] = base_path() . '/app/' . $this->tokens['upperCaseModelName'] . '.php';
             $this->fileWritePaths['controller'] = base_path() . '/app/Http/Controllers/' . $this->tokens['controllerName'] . '.php';
@@ -105,13 +72,6 @@ class CrudBuilder
             $this->fileWritePaths['dataQuery'] = base_path() . '/app/Queries/GridQueries/Contracts/' . 'DataQuery.php';
             $this->fileWritePaths['gridQuery'] = base_path() . '/app/Queries/GridQueries/' . 'GridQuery.php';
             $this->fileWritePaths['modelQuery'] = base_path() . '/app/Queries/GridQueries/' . $this->tokens['upperCaseModelName'] . 'Query.php';
-
-
-
-
-
-        }
-
 
 
 
@@ -136,7 +96,6 @@ class CrudBuilder
 
         $this->initialValues['front'] = strtolower($input['Front']);
 
-        $this->initialValues['namespace'] = strtolower($input['Namespace']);
 
         $this->initialValues['parent'] = isset($input['ParentName']) ? $input['ParentName'] : false;
 

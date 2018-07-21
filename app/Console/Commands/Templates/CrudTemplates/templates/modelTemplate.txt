@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class :::upperCaseModelName::: extends Model
 {
 
-    protected $fillable = [':::field_name:::', 'slug'];
+    protected $fillable = [':::field_name:::', 'slug', 'is_active', 'universe_id'];
+
+    public function universe()
+    {
+
+       return $this->belongsTo('App\Universe');
+
+    }
 
 }

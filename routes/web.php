@@ -204,18 +204,23 @@ Route::post('video-delete/{video}', 'VideoController@destroy');
 Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
 
 
+// Begin Galaxy Routes
 
+Route::get('all-galaxies', 'AllGalaxiesController@index');
 
+Route::get('/api/all-galaxies-data', 'FrontApiController@allGalaxiesData');
 
+Route::any('api/galaxy-data', 'ApiController@galaxyData');
 
+Route::post('galaxy-delete/{galaxy}', 'GalaxyController@destroy');
 
+Route::get('/galaxy/create', 'GalaxyController@create')->name('galaxy.create');
 
+Route::get('galaxy/{galaxy}-{slug?}', 'GalaxyController@show')->name('galaxy.show');
 
+Route::resource('galaxy', 'GalaxyController', ['except' => ['show', 'create','destroy']]);
 
-
-
-
-
+// End Galaxy Routes
 
 
 

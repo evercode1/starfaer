@@ -14,11 +14,36 @@ class CrudContentRouter
     public function getContentFromTemplate($fileName,  array $tokens, $fileExists=false)
     {
 
-        switch($fileName){
+        return $this->defaultHandler($fileName, $tokens, $fileExists);
+
+
+
+    }
+
+    private function routeTemplate($tokens, $templateName)
+    {
+
+
+        $crudTemplate = new CrudTemplateAssembler($tokens);
+
+        return $crudTemplate->assembleTemplate($templateName);
+
+
+    }
+
+    /**
+     * @param $fileName
+     * @param array $tokens
+     * @param $fileExists
+     * @return mixed|string
+     */
+    private function defaultHandler($fileName, array $tokens, $fileExists)
+    {
+        switch ($fileName) {
 
             case 'apiController' :
 
-                if ($fileExists){
+                if ($fileExists) {
 
 
                     return $this->routeTemplate($tokens, 'appendApiControllerTemplate');
@@ -34,7 +59,7 @@ class CrudContentRouter
 
             case 'frontApiController' :
 
-                if ($fileExists){
+                if ($fileExists) {
 
 
                     return $this->routeTemplate($tokens, 'appendFrontApiControllerTemplate');
@@ -62,7 +87,7 @@ class CrudContentRouter
 
             case 'dataQuery' :
 
-                if ( ! $fileExists) {
+                if (!$fileExists) {
 
 
                     return $this->routeTemplate($tokens, 'dataQueryTemplate');
@@ -71,8 +96,7 @@ class CrudContentRouter
                 }
 
 
-                    break;
-
+                break;
 
 
             case 'factory' :
@@ -83,7 +107,7 @@ class CrudContentRouter
 
             case 'gridQuery' :
 
-                if ( ! $fileExists){
+                if (!$fileExists) {
 
 
                     return $this->routeTemplate($tokens, 'gridQueryTemplate');
@@ -111,13 +135,13 @@ class CrudContentRouter
             case 'modelQuery':
 
 
-                    return $this->routeTemplate($tokens, 'modelQueryTemplate');
-                    break;
+                return $this->routeTemplate($tokens, 'modelQueryTemplate');
+                break;
 
 
             case 'routes' :
 
-                if ($this->hasFront($tokens)){
+                if ($this->hasFront($tokens)) {
 
                     return $this->routeTemplate($tokens, 'routeFrontTemplate');
                     break;
@@ -127,28 +151,16 @@ class CrudContentRouter
                 break;
 
 
-
-
             default :
 
                 return 'Something went wrong';
 
 
-
         }
-
     }
 
-    private function routeTemplate($tokens, $templateName)
-    {
 
 
-        $crudTemplate = new CrudTemplateAssembler($tokens);
-
-        return $crudTemplate->assembleTemplate($templateName);
-
-
-    }
 
 
 }

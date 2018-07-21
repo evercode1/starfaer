@@ -39,7 +39,7 @@ class Tokens
 
         $allGridComponentName = $this->formatAllGridComponentName($this->tableName());
 
-        $allEndGridName = '/all-' . str_plural($this->formatModelPath($this->model)) . '-grid';
+        $allEndGridName = '/all-' . str_plural($this->formatModelPath($this->model));
 
         $allGridName = 'all-' . str_plural($this->formatModelPath($this->model));
 

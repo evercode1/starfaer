@@ -4,7 +4,7 @@
 
 
 
-        <h1 class="flow-text grey-text text-darken-1">:::upperCaseModelName:::</h1>
+        <h1 class="flow-text grey-text text-darken-1">All Galaxies</h1>
 
             <search-box></search-box>
 
@@ -37,15 +37,11 @@
 
                             <td>
 
-                                <a v-bind:href="'/:::modelPath:::/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/galaxy/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
 
                             </td>
 
-                            <td>
 
-                                {{ formatActive(row.Active) }}
-
-                            </td>
 
                             <td>
 
@@ -53,29 +49,7 @@
 
                             </td>
 
-                            <td >
 
-                                <a v-bind:href="'/:::modelPath:::/' + row.Id + '/edit'">
-
-                                <button type="button" class="waves-effect waves-light btn mt-5">
-
-                                        Edit
-
-                                </button>
-
-                                </a>
-
-
-                                <button class="waves-effect waves-light btn mt-5"
-                                        @click="confirmDelete(row.Id)">
-
-                                        Delete
-
-                                </button>
-
-
-
-                            </td>
 
                         </tr>
 
@@ -112,13 +86,13 @@
 
         mounted: function () {
 
-            gridData.loadData('/api/:::modelPath:::-data', this);
+            gridData.loadData('/api/all-galaxies-data', this);
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Active', 'Created'],
+                gridColumns: ['Id', 'Name', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -131,8 +105,8 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/:::modelPath:::/create',
-                showCreateButton: true
+                createUrl: '/galaxy/create',
+                showCreateButton: false
             }
         },
 
@@ -151,7 +125,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, '/api/:::modelPath:::-data', this);
+                gridData.getQueryData(request, '/api/all-galaxies-data', this);
 
             },
 
@@ -174,45 +148,15 @@
             },
 
             checkUrlNotNull: function(url){
-
                 return url != null;
-
             },
 
             clearPageNumberInputBox: function(){
-
                 return this.go_to_page = '';
-
             },
 
             pageInRange: function(){
-
                 return this.go_to_page <= parseInt(this.last_page);
-
-            },
-
-                formatActive: function(active){
-
-                    return  active === 1 ? 'Active' : 'Inactive';
-
-            },
-
-            confirmDelete: function(id){
-
-                if(confirm("Are you sure you want to delete?")){
-
-                    axios.post('/:::modelPath:::-delete/' + id)
-                            .then(response => {
-
-                                gridData.loadData('/api/:::modelPath:::-data', this);
-
-                            });
-
-
-                }
-
-
-
             }
 
 
