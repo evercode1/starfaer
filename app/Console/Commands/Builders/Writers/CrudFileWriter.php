@@ -34,6 +34,15 @@ class CrudFileWriter
 
     private function writeEachFile(array $fileWritePaths, CrudContentRouter $content)
     {
+        switch($this->tokens['namespace']){
+
+            case 'Default' :
+
+
+
+
+
+        }
 
         foreach ($fileWritePaths as $fileName => $filePath) {
 
