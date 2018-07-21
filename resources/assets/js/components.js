@@ -27,4 +27,3 @@ Vue.component('video-pie-chart', require('./components/VideoPieChart.vue'));
 Vue.component('video-list', require('./components/VideoList.vue'));
 Vue.component('video-grid', require('./components/VideoGrid.vue'));
 
-

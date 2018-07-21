@@ -1,6 +1,6 @@
 <?php
 
-namespace Evercode1\FoundationMaker\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Console\Commands\Builders\Views\ViewBuilder;
@@ -16,7 +16,7 @@ class MakeViews extends Command
     protected $signature = 'make:views
                            {ModelName}
                            {MasterPage}
-                           {Slug=false}';
+                           {Front=false}';
 
     /**
      * The console command description.

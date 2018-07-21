@@ -127,6 +127,23 @@ class ViewsFileWriter
 
                     break;
 
+
+
+                case 'all-component':
+
+
+                    $txt = $content->getContentFromTemplate('all-component', $this->tokens);
+
+
+                    $handle = fopen($filePath, "w");
+
+                    fwrite($handle, $txt);
+
+                    fclose($handle);
+
+
+                    break;
+
                 case 'components':
 
                     $txt = $content->getContentFromTemplate('components', $this->tokens);
@@ -137,6 +154,40 @@ class ViewsFileWriter
 
                     fclose($handle);
 
+
+                    break;
+
+                case 'all-components':
+
+                    $txt = $content->getContentFromTemplate('all-components', $this->tokens);
+
+                    $handle = fopen($filePath, "a");
+
+                    fwrite($handle, $txt);
+
+                    fclose($handle);
+
+
+                    break;
+
+                case 'all-index' :
+
+                    $directory = '/resources/views/' . $this->tokens['allViewFolder'];
+
+                    if (! file_exists(base_path($directory))) {
+
+                        mkdir(base_path($directory));
+
+                    }
+
+
+                    $txt = $content->getContentFromTemplate('all-index', $this->tokens);
+
+                    $handle = fopen($filePath, "w");
+
+                    fwrite($handle, $txt);
+
+                    fclose($handle);
 
                     break;
 

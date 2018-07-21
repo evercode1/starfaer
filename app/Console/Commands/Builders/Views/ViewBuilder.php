@@ -78,6 +78,9 @@ class ViewBuilder
 
         $this->setFilePaths();
 
+
+
+
     }
 
     private function setFilePaths()
@@ -108,10 +111,29 @@ class ViewBuilder
                                                     . '/show.blade.php';
 
         $this->fileWritePaths['component'] = base_path() . '/resources/assets/js/components/'
-                                                          . $this->tokens['gridComponentName']
-                                                          . '.vue';
+            . $this->tokens['gridComponentName']
+            . '.vue';
 
         $this->fileWritePaths['components'] = base_path() . '/resources/assets/js/components.js';
+
+        if( $this->initialValues['front'] == 'front'){
+
+
+            $this->fileWritePaths['all-component'] = base_path() . '/resources/assets/js/components/'
+                . $this->tokens['allGridComponentName']
+                . '.vue';
+
+            $this->fileWritePaths['all-components'] = base_path() . '/resources/assets/js/components.js';
+
+            $this->fileWritePaths['all-index'] = base_path() . '/resources/views/'
+                . $this->tokens['allViewFolder']
+                . '/index.blade.php';
+
+
+        }
+
+
+
 
 
     }
@@ -135,7 +157,7 @@ class ViewBuilder
 
         $this->initialValues['masterPageName'] = $input['MasterPage'];
 
-        $this->initialValues['slug'] = strtolower($input['Slug']);
+        $this->initialValues['front'] = strtolower($input['Front']);
 
     }
 

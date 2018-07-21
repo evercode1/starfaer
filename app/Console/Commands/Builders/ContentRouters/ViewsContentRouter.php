@@ -53,13 +53,6 @@ class ViewsContentRouter
 
             case 'component' :
 
-                if ( $this->hasSlug($tokens)){
-
-                    return $this->routeTemplate($tokens, 'componentSlugTemplate');
-
-                    break;
-
-                }
 
                 return $this->routeTemplate($tokens, 'componentTemplate');
 
@@ -69,6 +62,26 @@ class ViewsContentRouter
             case 'components' :
 
                 return $this->routeTemplate($tokens, 'componentsTemplate');
+
+                break;
+
+
+            case 'all-component' :
+
+
+                return $this->routeTemplate($tokens, 'allComponentTemplate');
+
+                break;
+
+            case 'all-components' :
+
+                return $this->routeTemplate($tokens, 'allComponentsTemplate');
+
+                break;
+
+            case 'all-index' :
+
+                return $this->routeTemplate($tokens, 'allIndexTemplate');
 
                 break;
 

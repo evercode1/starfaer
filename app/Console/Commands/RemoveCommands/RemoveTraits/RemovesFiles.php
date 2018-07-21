@@ -6,6 +6,7 @@ namespace App\Console\Commands\RemoveCommands\RemoveTraits;
 trait RemovesFiles
 {
 
+
     private $commandType;
 
     private $unlinkFiles = [];
@@ -92,9 +93,46 @@ trait RemovesFiles
 
     private function setViewPaths(){
 
+
+        $allModel ='All' . str_plural($this->formatTheModel($this->modelName));
+
+        // I can't get the file to unlink, it can't find it for some reason
+
+       // $folder = $this->formatAllModelPath($this->modelName);
+
+        // $path = base_path() . '/resources/views/' . $folder .'/index.php';
+
+       //  unlink($path);
+
         $this->unlinkFiles['component'] = base_path('resources/assets/js/components/' . $this->modelName .'Grid.vue');
+        $this->unlinkFiles['all-component'] = base_path('resources/assets/js/components/' . $allModel .'.vue');
         $this->extractFromFiles['Grid Component Call'] = base_path('resources/assets/js/components.js');
+        $this->extractFromFiles['All Models Call'] = base_path('resources/assets/js/components.js');
+
+
     }
+
+    private function formatTheModel($model)
+    {
+        $model = camel_case($model);
+        $model = str_singular($model);
+        return $model = ucwords($model);
+
+    }
+
+    private function formatAllModelPath($model)
+    {
+        $model = preg_split('/(?=[A-Z])/',$model);
+
+        $model = implode('-', $model);
+
+        $model = ltrim($model, '-');
+
+        return $model = 'all-' . str_plural(strtolower($model));
+
+    }
+
+
 
 
     private function getMigrationFilePath($model)

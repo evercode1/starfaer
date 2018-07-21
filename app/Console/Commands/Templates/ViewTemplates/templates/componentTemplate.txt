@@ -37,7 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/:::modelPath:::/' + row.Id"> {{ row.Name }}</a>
+                                <a v-bind:href="'/:::modelPath:::/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
 
                             </td>
 
@@ -127,7 +127,7 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/level/create',
+                createUrl: '/:::modelPath:::/create',
                 showCreateButton: true
             }
         },
@@ -190,7 +190,7 @@
 
                                 gridData.loadData('/api/:::modelPath:::-data', this);
 
-                            })
+                            });
 
 
                 }

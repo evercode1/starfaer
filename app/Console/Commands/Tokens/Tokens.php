@@ -41,7 +41,9 @@ class Tokens
 
         $allEndGridName = '/all-' . str_plural($this->formatModelPath($this->model)) . '-grid';
 
-        $allGridName = 'all-' . str_plural($this->formatModelPath($this->model)) . '-grid';
+        $allGridName = 'all-' . str_plural($this->formatModelPath($this->model));
+
+        $allGridTitle = 'All ' . str_plural(ucwords($this->model));
 
         $allApiControllerMethod = $this->formatAllApiControllerMethod($this->tableName());
 
@@ -125,7 +127,7 @@ class Tokens
 
         $tableName = $this->tableName();
 
-        $upperCaseModelName = ucfirst($this->model);
+        $upperCaseModelName = ucwords($this->model);
 
         $useModel = 'use App\\' . $upperCaseModelName;
 
@@ -141,6 +143,7 @@ class Tokens
                           'allGridComponentName',
                           'allEndGridName',
                           'allGridName',
+                          'allGridTitle',
                           'allApiControllerMethod',
                           'allApiDataPath',
                           'apiControllerMethod',
