@@ -69,7 +69,7 @@ trait RemovesFiles
 
         $this->unlinkFiles['model'] = base_path('app/' . $this->modelName .'.php');
         $this->unlinkFiles['modelQuery'] = base_path('app/Queries/GridQueries/' . $this->modelName .'Query.php');
-        $this->unlinkFiles['modelQuery'] = base_path('app/Queries/GridQueries/' . $allQueryName .'Query.php');
+        $this->unlinkFiles['allQuery'] = base_path('app/Queries/GridQueries/' . $allQueryName .'Query.php');
         $this->unlinkFiles['controller'] = base_path('app/Http/Controllers/' . $this->modelName) . 'Controller.php';
         $this->unlinkFiles['allController'] = base_path('app/Http/Controllers/' . $this->formatAllControllerName($this->modelName));
         $this->unlinkFiles['migration'] = $this->getMigrationFilePath($this->modelName);
@@ -77,6 +77,7 @@ trait RemovesFiles
         $this->extractFromFiles['Routes'] = base_path('routes/web.php');
         $this->extractFromFiles['Api Data Grid Method'] = base_path('app/Http/Controllers/ApiController.php');
         $this->extractFromFiles['Api All Models Method'] = base_path('app/Http/Controllers/FrontApiController.php');
+        $this->extractFromFiles['Image Config Array Method'] = base_path('config/image-defaults.php');
     }
 
     private function formatAllControllerName($modelName)
@@ -84,6 +85,19 @@ trait RemovesFiles
 
 
         return 'All' . str_plural($this->modelName). 'Controller.php';
+
+    }
+
+    private function formatImageFolderName($model)
+    {
+
+        $model = preg_split('/(?=[A-Z])/',$model);
+
+        $model = implode('', $model);
+
+        $model = ltrim($model, '');
+
+        return $model = strtolower($model);
 
     }
 
@@ -179,9 +193,32 @@ trait RemovesFiles
 
         $this->extractMethodsFromFiles();
 
+        $this->removeImageFolders($this->modelName);
+
         //call delete each crud from trait
 
         return $this;
+
+
+    }
+
+    private function removeImageFolders($model)
+    {
+
+        $folderName = $this->formatImageFolderName($this->modelName);
+
+        $folder = public_path() . '/imgs/' . $folderName;
+
+        $thumbFolder = public_path() . '/imgs/' . $folderName . '/thumbnails';
+
+        if( file_exists($folder) ){
+
+            rmdir($thumbFolder);
+
+            rmdir($folder);
+
+
+        }
 
 
     }

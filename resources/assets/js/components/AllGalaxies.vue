@@ -23,7 +23,7 @@
 
                     <table>
 
-                        <table-head></table-head>
+                        <all-table-head></all-table-head>
 
                         <tbody>
 
@@ -82,7 +82,7 @@
                      'search-box' : require('./SearchBox'),
                      'grid-count' : require('./GridCount'),
                      'page-number' : require('./PageNumber'),
-                     'table-head' : require('./TableHead')},
+                     'all-table-head' : require('./AllTableHead')},
 
         mounted: function () {
 

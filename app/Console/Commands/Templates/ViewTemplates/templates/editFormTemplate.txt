@@ -1,7 +1,8 @@
 <form class="mt-20"
       role="form"
       method="POST"
-      action="{{ url('/:::modelPath:::/'. $:::modelInstance:::->id) }}">
+      action="{{ url('/:::modelPath:::/'. $:::modelInstance:::->id) }}"
+      enctype="multipart/form-data">
 
 {{ method_field('PATCH') }}
 {{ csrf_field() }}
@@ -19,7 +20,9 @@
         @if ($errors->has('name'))
 
             <span class="help-block">
+
                 <strong>{{ $errors->first('name') }}</strong>
+
             </span>
 
         @endif
@@ -56,49 +59,184 @@
 
             @endif
 
-        </div> <!-- end universe select -->
+        </div>
+
+    <!-- end universe select -->
 
     <!-- is_active select -->
 
-        <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">
+            <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">
 
-            <label>Is Active?</label>
+                <label>Is Active?</label>
 
-            <select id="is_active" name="is_active">
+                <select id="is_active" name="is_active">
 
-                <option value="{{ $:::modelInstance:::->is_active }}">{{ $:::modelInstance:::->is_active == 1 ? 'Yes' : 'No' }}</option>
+                    <option value="{{ $:::modelInstance:::->is_active }}">{{ $:::modelInstance:::->is_active == 1 ? 'Yes' : 'No' }}</option>
+
+                    @if($:::modelInstance:::->is_active == 1)
+
+                        <option value="0">No</option>
+
+                    @else
+
+                        <option value="1">Yes</option>
+
+                    @endif
+
+                </select>
+
+                @if ($errors->has('is_active'))
+
+                    <span class="help-block">
+
+                        <strong>{{ $errors->first('is_active') }}</strong>
+
+                    </span>
+
+                @endif
+
+            </div>
+
+    <!-- end is_active select -->
+
+    <!-- is_featured select -->
+
+        <div class="{{ $errors->has('is_featured') ? 'has-error' : '' }}">
+
+            <label>Is Featured?</label>
+
+            <select id="is_featured" name="is_featured">
+
+                <option value="{{ :::modelInstance:::->is_featured }}">{{ $:::modelInstance:::->is_featured == 1 ? 'Yes' : 'No' }}</option>
+
+                @if($:::modelInstance:::->is_featured == 1)
+
                 <option value="0">No</option>
+
+                @else
+
                 <option value="1">Yes</option>
+
+                @endif
+
 
             </select>
 
-            @if ($errors->has('is_active'))
+            @if ($errors->has('is_featured'))
 
                 <span class="help-block">
 
-                    <strong>{{ $errors->first('is_active') }}</strong>
+                    <strong>{{ $errors->first('is_featured') }}</strong>
 
                 </span>
 
             @endif
 
-        </div>  <!-- end is_active select -->
+        </div>
+
+    <!-- end is_featured select -->
+
+    <!-- weight input -->
+
+        <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
+
+            <label>Weight</label>
+
+            <input type="text"
+                   name="weight"
+                   value="{{ old('weight') ?  old('weight') : $:::modelInstance:::->weight }}" />
+
+            @if ($errors->has('weight'))
+
+                <span class="help-block">
+                    <strong>{{ $errors->first('weight') }}</strong>
+                </span>
+
+            @endif
+
+        </div>
+
+    <!-- end weight input -->
+
+    <!-- description input -->
+
+        <div class="{{ $errors->has('description') ? ' has-error' : '' }}">
+
+            <label>Description</label>
+
+            <textarea id="description" name="body">{!! $:::modelInstance:::->description !!}</textarea>
+
+            @if ($errors->has('description'))
+
+                <span class="help-block">
+                    <strong>{{ $errors->first('description') }}</strong>
+                </span>
+
+            @endif
+
+        </div>
+
+    <!-- end description input -->
+
+    <!-- image file Form Input -->
+
+        <div class="row mt-20">
+
+            <div class="{{ $errors->has('image') ? 'has-error' : '' }}">
+
+                <div class="row">
+
+                    <label>Image Upload</label>
+
+                </div>
+
+                <div class="row">
+
+                    <input type="file" name="image" id="image">
+                </div>
+
+                @if ($errors->has('image'))
+
+                    <span class="help-block">
+
+                    <strong>{{ $errors->first('image') }}</strong>
+
+                    </span>
+
+                @endif
+
+            </div>
+
+        </div>
+
+    <!-- end file input -->
 
 
     <!-- submit button -->
 
-    <div class="row">
+        <div class="row">
 
-        <button type="submit"
-                class="waves-effect waves-light btn">
+            <button type="submit"
+                    class="waves-effect waves-light btn">
 
-            Update
+                Update
 
-        </button>
+            </button>
 
-    </div>
+        </div>
 
     <!-- end submit button -->
 
-</form>
+    </form>
+
+
+    @section('scripts')
+
+        <script>
+            CKEDITOR.replace( 'body' );
+        </script>
+
+    @endsection
+
+
 

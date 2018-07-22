@@ -19,8 +19,9 @@
                         <li class="collection-item">From Universe:
                         <b><a href="/universe/{{ $:::modelInstance:::->universe->id }} - {{ $:::modelInstance:::->universe->slug }}">
                         {{ $:::modelInstance:::->universe->name }}</a></b></li>
+                        <li class="collection-item">{!! $:::modelInstance:::->description !!}</li>
 
-                </ul>
+        </ul>
 
 
 

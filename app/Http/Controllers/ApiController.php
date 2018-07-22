@@ -21,6 +21,11 @@ use App\Queries\AlarmAdminQuery;
 
 class ApiController extends Controller
 {
+
+    
+
+
+
     // Begin GalaxyType Api Data Grid Method
 
     public function galaxyTypeData(Request $request)

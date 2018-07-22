@@ -19,8 +19,9 @@
                         <li class="collection-item">From Universe:
                         <b><a href="/universe/{{ $galaxyType->universe->id }} - {{ $galaxyType->universe->slug }}">
                         {{ $galaxyType->universe->name }}</a></b></li>
+                        <li class="collection-item">{!! $galaxyType->description !!}</li>
 
-                </ul>
+        </ul>
 
 
 

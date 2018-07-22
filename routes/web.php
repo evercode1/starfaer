@@ -222,8 +222,6 @@ Route::resource('galaxy', 'GalaxyController', ['except' => ['show', 'create','de
 
 // End Galaxy Routes
 
-
-
 // Begin GalaxyType Routes
 
 Route::get('all-galaxy-types', 'AllGalaxyTypesController@index');
@@ -241,6 +239,62 @@ Route::get('galaxy-type/{id}', 'GalaxyTypeController@show')->name('galaxy-type.s
 Route::resource('galaxy-type', 'GalaxyTypeController', ['except' => ['show', 'create','destroy']]);
 
 // End GalaxyType Routes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,6 +6,12 @@
 
 @endsection
 
+@section('meta')
+
+    <script src="/ckeditor/ckeditor.js"></script>
+
+@endsection
+
 
 @section('content')
 

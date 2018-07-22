@@ -13,6 +13,19 @@ class FrontApiController extends Controller
 
 
 
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
     // Begin GalaxyType Api All Models Method
 
     public function allGalaxyTypesData(Request $request)

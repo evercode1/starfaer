@@ -95,21 +95,17 @@ class CrudFileWriter
 
                     $fileExists = true;
 
-                    $bracket = '[';
-
                     $txt = $content->getContentFromTemplate('imageConfig', $this->tokens, $fileExists);
 
-                    $contents = file_get_contents($this->fileWritePaths['apiController']);
+                    $filename = base_path() . '/config/image-defaults.php';
 
-                    $classParts = explode($bracket, $contents, 2);
+                    $contents = file($filename);
+                    $contents[16] = $contents[16] . "\n\n"; // Gives a new line
+                    file_put_contents($filename, implode('',$contents));
 
-                    $txt = $classParts[0] . "$bracket . \n\n" . $txt . "\n\n" . $classParts[1];
-
-                    $handle = fopen($filePath, "w");
-
-                    fwrite($handle, $txt);
-
-                    fclose($handle);
+                    $contents = file($filename);
+                    $contents[17] = $txt;
+                    file_put_contents($filename, implode('',$contents));
 
                     break;
 
