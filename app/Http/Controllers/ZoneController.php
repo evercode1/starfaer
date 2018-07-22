@@ -7,10 +7,11 @@ use App\UtilityTraits\ManagesImages;
 use Illuminate\Http\Request;
 use App\Universe;
 use Illuminate\Support\Facades\Redirect;
-:::useModel:::;
+use App\Zone;
+use App\ZoneType;
 
 
-class :::upperCaseModelName:::Controller extends Controller
+class ZoneController extends Controller
 {
     use ManagesImages, KebabHelper;
 
@@ -21,7 +22,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $this->middleware(['admin'], ['except' => 'show']);
 
-        $this->setImageDefaultsFromConfig(':::imageFolderName:::');
+        $this->setImageDefaultsFromConfig('zone');
 
 
     }
@@ -35,7 +36,7 @@ class :::upperCaseModelName:::Controller extends Controller
     public function index()
     {
 
-        return view(':::modelPath:::.index');
+        return view('zone.index');
 
     }
 
@@ -48,10 +49,12 @@ class :::upperCaseModelName:::Controller extends Controller
     public function create()
     {
 
-           $universes = Universe::all();
+        $universes = Universe::all();
+
+        $zoneTypes = ZoneType::all();
 
 
-           return view(':::modelPath:::.create', compact('universes'));
+        return view('zone.create', compact('universes', 'zoneTypes'));
 
     }
 
@@ -69,13 +72,14 @@ class :::upperCaseModelName:::Controller extends Controller
 
                 $this->validate($request, [
 
-                    'name' => 'required|unique::::tableName:::|string|max:100',
+                    'name' => 'required|unique:zones|string|max:100',
                     'is_active' => 'required|boolean',
                     'is_featured' => 'required|boolean',
-                    'weight' => 'required|integer|between:1,100',
+                    'coordinates' => 'required|integer|between:1,10000',
                     'body' => 'required|string|max:1000',
                     'image' => 'max:1000',
                     'universe_id' => 'required',
+                    'zone_type_id' => 'required'
 
                 ]);
 
@@ -85,17 +89,18 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $image = $request->file('image') == null ? null : $request->file('image')->getClientOriginalExtension();
 
-        $:::modelInstance::: = :::upperCaseModelName:::::create([ 'name' => $request->name,
+        $zone = Zone::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
                                                                   'is_active' => $request->is_active,
                                                                   'is_featured' => $request->is_featured,
-                                                                  'weight' => $request->weight,
+                                                                  'coordinates' => $request->coordinates,
                                                                   'universe_id' => $request->universe_id,
+                                                                  'zone_type_id' => $request->zone_type_id,
                                                                   'description' => $request->body,
                                                                   'image_name' => $imageName,
                                                                   'image_extension' => $image]);
 
-        $:::modelInstance:::->save();
+        $zone->save();
 
         if ($request->has('image')){
 
@@ -105,11 +110,11 @@ class :::upperCaseModelName:::Controller extends Controller
 
             // pass in the file and the model
 
-            $this->saveImageFiles($file, $:::modelInstance:::);
+            $this->saveImageFiles($file, $zone);
 
         }
 
-        return Redirect::route(':::modelPath:::.index');
+        return Redirect::route('zone.index');
 
     }
 
@@ -120,16 +125,16 @@ class :::upperCaseModelName:::Controller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(:::upperCaseModelName::: $:::modelInstance:::, $slug='')
+    public function show(Zone $zone, $slug='')
     {
 
-        if ($:::modelInstance:::->slug !== $slug) {
+        if ($zone->slug !== $slug) {
 
-            return Redirect::route(':::modelPath:::.show', ['id' => $:::modelInstance:::->id,
-                                                   'slug' => $:::modelInstance:::->slug], 301);
+            return Redirect::route('zone.show', ['id' => $zone->id,
+                                                   'slug' => $zone->slug], 301);
         }
 
-        return view(':::modelPath:::.show', compact(':::modelInstance:::'));
+        return view('zone.show', compact('zone'));
     }
 
     /**
@@ -142,16 +147,29 @@ class :::upperCaseModelName:::Controller extends Controller
     public function edit($id)
     {
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+        $zone = Zone::findOrFail($id);
 
-        $universeId = $:::modelInstance:::->universe_id;
+        $universeId = $zone->universe_id;
 
-        $universeName = Universe::getUniverseName($:::modelInstance:::->universe_id);
+        $universeName = $zone->universe->name;
 
         $universes = Universe::all();
 
+        $zoneTypeId = $zone->zone_type_id;
 
-        return view(':::modelPath:::.edit', compact(':::modelInstance:::' , 'universeId', 'universeName', 'universes'));
+        $zoneTypeName = $zone->zoneType->name;
+
+        $zoneTypes = ZoneType::all();
+
+
+
+        return view('zone.edit', compact('zone' ,
+                                         'universeId',
+                                         'universeName',
+                                         'universes',
+                                         'zoneTypeId',
+                                         'zoneTypeName',
+                                         'zoneTypes'));
 
     }
 
@@ -169,48 +187,49 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required|string|max:100|unique::::tableName:::,name,' .$id,
+            'name' => 'required|string|max:100|unique:zones,name,' .$id,
             'is_active' => 'required|boolean',
             'is_featured' => 'required|boolean',
-            'weight' => 'required|integer|between:1,100',
+            'coordinates' => 'required|integer|between:1,10000',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000',
-            'universe_id' => 'required'
+            'universe_id' => 'required',
+            'zone_type_id' => 'required'
 
             ]);
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+        $zone = Zone::findOrFail($id);
 
         $slug = str_slug($request->name, "-");
 
-        $this->setUpdatedModelValues($request, $:::modelInstance:::);
+        $this->setUpdatedModelValues($request, $zone);
 
         // if file, we have additional requirements before saving
 
                 if ($this->newFileIsUploaded()) {
 
-                    $this->deleteExistingImages($:::modelInstance:::);
+                    $this->deleteExistingImages($zone);
 
-                    $this->setNewFileExtension($request, $:::modelInstance:::);
+                    $this->setNewFileExtension($request, $zone);
 
                 }
 
-        $:::modelInstance:::->save();
+        $zone->save();
 
 
-            // check for file, if new file, overwrite existing file
+                // check for file, if new file, overwrite existing file
 
-            if ($this->newFileIsUploaded()){
+                if ($this->newFileIsUploaded()){
 
-                $file = $this->getUploadedFile();
+                    $file = $this->getUploadedFile();
 
-                $this->saveImageFiles($file, $:::modelInstance:::);
+                    $this->saveImageFiles($file, $zone);
 
-            }
+                }
 
 
 
-        return Redirect::route(':::modelPath:::.show', [':::modelInstance:::' => $:::modelInstance:::, $slug]);
+        return Redirect::route('zone.show', ['zone' => $zone, $slug]);
 
     }
 
@@ -224,13 +243,13 @@ class :::upperCaseModelName:::Controller extends Controller
     public function destroy($id)
     {
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+        $zone = Zone::findOrFail($id);
 
-        $this->deleteExistingImages($:::modelInstance:::);
+        $this->deleteExistingImages($zone);
 
-        :::upperCaseModelName:::::destroy($id);
+        Zone::destroy($id);
 
-        return Redirect::route(':::modelPath:::.index');
+        return Redirect::route('zone.index');
 
     }
 
@@ -246,17 +265,18 @@ class :::upperCaseModelName:::Controller extends Controller
          * @param $marketingImage
          */
 
-    private function setUpdatedModelValues(Request $request, $modelInstance)
-    {
+        private function setUpdatedModelValues(Request $request, $modelInstance)
+        {
 
-        $modelInstance->name= $request->get('name');
-        $modelInstance->weight = $request->get('weight');
-        $modelInstance->is_featured = $request->get('is_featured');
-        $modelInstance->is_active = $request->get('is_active');
-        $modelInstance->description = $request->get('body');
-        $modelInstance->universe_id = $request->get('universe_id');
-        $modelInstance->image_name = $this->formatString($request->get('name'));
+            $modelInstance->name= $request->get('name');
+            $modelInstance->coordinates = $request->get('coordinates');
+            $modelInstance->is_featured = $request->get('is_featured');
+            $modelInstance->is_active = $request->get('is_active');
+            $modelInstance->description = $request->get('body');
+            $modelInstance->universe_id = $request->get('universe_id');
+            $modelInstance->zone_type_id = $request->get('zone_type_id');
+            $modelInstance->image_name = $this->formatString($request->get('name'));
 
-    }
+        }
 
 }

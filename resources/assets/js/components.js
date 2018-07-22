@@ -50,3 +50,23 @@ Vue.component('galaxy-type-grid', require('./components/GalaxyTypeGrid.vue'));
 Vue.component('all-galaxy-types', require('./components/AllGalaxyTypes.vue'));
 
 /** End GalaxyType All Models Call */
+
+
+
+/** Begin ZoneType Grid Component Call */
+
+Vue.component('zone-type-grid', require('./components/ZoneTypeGrid.vue'));
+
+/** End ZoneType Grid Component Call */
+
+
+/** Begin Zone Grid Component Call */
+
+Vue.component('zone-grid', require('./components/ZoneGrid.vue'));
+
+/** End Zone Grid Component Call */
+/** Begin Zone All Models Call */
+
+Vue.component('all-zones', require('./components/AllZones.vue'));
+
+/** End Zone All Models Call */

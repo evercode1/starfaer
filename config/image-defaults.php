@@ -15,6 +15,44 @@ return [
 
 
 
+    // Begin Zone Image Config Array Method
+
+
+        'zone' => [
+                'destinationFolder'     => '/imgs/zone/',
+                'createFolder'          => '/imgs/zone',
+                'destinationThumbnail'  => '/imgs/zone/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/zone/',
+                'thumbnailPath'         => '/imgs/zone/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End Zone Image Config Array Method
+    
+    // Begin ZoneType Image Config Array Method
+
+
+        'zonetype' => [
+                'destinationFolder'     => '/imgs/zonetype/',
+                'createFolder'          => '/imgs/zonetype',
+                'destinationThumbnail'  => '/imgs/zonetype/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/zonetype/',
+                'thumbnailPath'         => '/imgs/zonetype/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End ZoneType Image Config Array Method
+    
+    
+    
     
     
     

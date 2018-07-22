@@ -79,20 +79,21 @@ class CrudBuilder
                 . $this->tokens['allQueryName'] . 'Query.php'
                 : false;
 
+            $this->fileWritePaths['dataQuery'] = base_path() . '/app/Queries/GridQueries/Contracts/' . 'DataQuery.php';
+
             $this->fileAppendPaths['routes'] = base_path() . '/routes/web.php';
 
             $this->fileWritePaths['migration'] = base_path() . '/database/migrations/' . date('Y_m_d_His') . '_create_'
                 .$this->tokens['tableName'] . '_table'. '.php';
 
-            $this->fileAppendPaths['factory'] = base_path() . '/database/factories/'
+            $this->fileWritePaths['factory'] = base_path() . '/database/factories/'
                 . $this->tokens['upperCaseModelName'] . 'Factory.php';
-
-            $this->fileWritePaths['dataQuery'] = base_path() . '/app/Queries/GridQueries/Contracts/' . 'DataQuery.php';
 
             $this->fileWritePaths['gridQuery'] = base_path() . '/app/Queries/GridQueries/' . 'GridQuery.php';
 
             $this->fileWritePaths['modelQuery'] = base_path() . '/app/Queries/GridQueries/'
                 . $this->tokens['upperCaseModelName'] . 'Query.php';
+
 
 
 
@@ -105,6 +106,7 @@ class CrudBuilder
 
         $this->tokens = $tokenBuilder->tokens;
 
+
     }
 
     /**
@@ -116,7 +118,6 @@ class CrudBuilder
         $this->initialValues['model'] = $input['ModelName'];
 
         $this->initialValues['front'] = strtolower($input['Front']);
-
 
         $this->initialValues['parent'] = isset($input['ParentName']) ? $input['ParentName'] : false;
 

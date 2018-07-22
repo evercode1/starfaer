@@ -27,6 +27,9 @@
                     <ul>
                         <li><a href="/universe" class="waves-effect">All Universes<i class="fa fa-globe"></i></a></li>
                         <li><a href="/galaxy" class="waves-effect">All Galaxies<i class="fa fa-star"></i></a></li>
+                        <li><a href="/galaxy-type" class="waves-effect">Galaxy Types<i class="fa fa-star"></i></a></li>
+                        <li><a href="/zone" class="waves-effect">Zones<i class="fa fa-star"></i></a></li>
+                        <li><a href="/zone-type" class="waves-effect">Zone Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/system" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                     </ul>

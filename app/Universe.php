@@ -15,14 +15,6 @@ class Universe extends Model
 
     ];
 
-    public static function getUniverseName($id)
-    {
-
-        $universe = static::where('id', $id)->first();
-
-        return $universe->name;
-
-    }
 
     public function galaxies()
     {

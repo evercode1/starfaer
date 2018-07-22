@@ -49,7 +49,7 @@ class Tokens
 
         $allApiDataPath = 'api/' . 'all-' . str_plural($this->formatModelPath($this->model)) . '-data';
 
-        $allQueryName = 'All ' . str_plural(ucwords($this->model));
+        $allQueryName = 'All' . str_plural(ucwords($this->model));
 
         $appName = $this->appName;
 

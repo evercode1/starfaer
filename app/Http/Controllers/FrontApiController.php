@@ -9,6 +9,23 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+    // Begin Zone Api All Models Method
+
+    public function allZonesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'ZoneQuery');
+
+    }
+
+    // End Zone Api All Models Method
+
+
+
+    
+
+
+
     
 
 

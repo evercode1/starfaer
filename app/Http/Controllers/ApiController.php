@@ -22,8 +22,41 @@ use App\Queries\AlarmAdminQuery;
 class ApiController extends Controller
 {
 
+    // Begin Zone Api Data Grid Method
+
+    public function zoneData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'ZoneQuery');
+
+    }
+
+    // End Zone Api Data Grid Method
+
+
+
     
 
+
+
+    // Begin ZoneType Api Data Grid Method
+
+    public function zoneTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'ZoneTypeQuery');
+
+    }
+
+    // End ZoneType Api Data Grid Method
+
+
+
+    
+
+
+
+    
 
 
     // Begin GalaxyType Api Data Grid Method

@@ -159,7 +159,7 @@ class CrudContentRouter
             case 'imageConfig' :
 
                 return $this->routeTemplate($tokens, 'imageConfigTemplate');
-
+                break;
 
             default :
 

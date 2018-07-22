@@ -240,61 +240,38 @@ Route::resource('galaxy-type', 'GalaxyTypeController', ['except' => ['show', 'cr
 
 // End GalaxyType Routes
 
+// Begin ZoneType Routes
+
+Route::any('api/zone-type-data', 'ApiController@ZoneTypeData');
+
+Route::post('zone-type-delete/{id}', 'ZoneTypeController@destroy');
+
+Route::get('/zone-type/create', 'ZoneTypeController@create')->name('zone-type.create');
+
+Route::get('zone-type/{id}', 'ZoneTypeController@show')->name('zone-type.show');
+
+Route::resource('zone-type', 'ZoneTypeController', ['except' => ['show', 'create','destroy']]);
+
+// End ZoneType Routes
 
 
+// Begin Zone Routes
 
+Route::get('all-zones', 'AllZonesController@index');
 
+Route::get('/api/all-zones-data', 'FrontApiController@allZonesData');
 
+Route::any('api/zone-data', 'ApiController@zoneData');
 
+Route::post('zone-delete/{id}', 'ZoneController@destroy');
 
+Route::get('/zone/create', 'ZoneController@create')->name('zone.create');
 
+Route::get('zone/{zone}-{slug?}', 'ZoneController@show')->name('zone.show');
 
+Route::resource('zone', 'ZoneController', ['except' => ['show', 'create','destroy']]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// End Zone Routes
 
 
 

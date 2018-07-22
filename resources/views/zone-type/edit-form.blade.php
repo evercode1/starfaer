@@ -1,7 +1,7 @@
 <form class="mt-20"
       role="form"
       method="POST"
-      action="{{ url('/:::modelPath:::/'. $:::modelInstance:::->id) }}"
+      action="{{ url('/zone-type/'. $zoneType->id) }}"
       enctype="multipart/form-data">
 
 {{ method_field('PATCH') }}
@@ -15,7 +15,7 @@
 
         <input type="text"
                name="name"
-               value="{{ $:::modelInstance:::->name }}" />
+               value="{{ $zoneType->name }}" />
 
         @if ($errors->has('name'))
 
@@ -71,9 +71,9 @@
 
                 <select id="is_active" name="is_active">
 
-                    <option value="{{ $:::modelInstance:::->is_active }}">{{ $:::modelInstance:::->is_active == 1 ? 'Yes' : 'No' }}</option>
+                    <option value="{{ $zoneType->is_active }}">{{ $zoneType->is_active == 1 ? 'Yes' : 'No' }}</option>
 
-                    @if($:::modelInstance:::->is_active == 1)
+                    @if($zoneType->is_active == 1)
 
                         <option value="0">No</option>
 
@@ -107,9 +107,9 @@
 
             <select id="is_featured" name="is_featured">
 
-                <option value="{{ $:::modelInstance:::->is_featured }}">{{ $:::modelInstance:::->is_featured == 1 ? 'Yes' : 'No' }}</option>
+                <option value="{{ $zoneType->is_featured }}">{{ $zoneType->is_featured == 1 ? 'Yes' : 'No' }}</option>
 
-                @if($:::modelInstance:::->is_featured == 1)
+                @if($zoneType->is_featured == 1)
 
                 <option value="0">No</option>
 
@@ -144,7 +144,7 @@
 
             <input type="text"
                    name="weight"
-                   value="{{ old('weight') ?  old('weight') : $:::modelInstance:::->weight }}" />
+                   value="{{ old('weight') ?  old('weight') : $zoneType->weight }}" />
 
             @if ($errors->has('weight'))
 
@@ -164,7 +164,7 @@
 
             <label>Description</label>
 
-            <textarea id="description" name="body">{!! $:::modelInstance:::->description !!}</textarea>
+            <textarea id="description" name="body">{!! $zoneType->description !!}</textarea>
 
             @if ($errors->has('description'))
 

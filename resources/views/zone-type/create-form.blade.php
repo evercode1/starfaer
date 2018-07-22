@@ -1,33 +1,32 @@
 <form class="mt-20"
       role="form"
       method="POST"
-      action="{{ url('/:::modelPath:::/'. $:::modelInstance:::->id) }}"
+      action="{{ url('/zone-type') }}"
       enctype="multipart/form-data">
 
-{{ method_field('PATCH') }}
 {{ csrf_field() }}
 
-<!-- name input -->
+    <!-- name input -->
 
-    <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
+        <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
 
-        <label>Name</label>
+            <label>ZoneType Name</label>
 
-        <input type="text"
-               name="name"
-               value="{{ $:::modelInstance:::->name }}" />
+            <input type="text"
+                   name="name"
+                   value="{{ old('name') }}" />
 
-        @if ($errors->has('name'))
+            @if ($errors->has('name'))
 
-            <span class="help-block">
+                <span class="help-block">
 
-                <strong>{{ $errors->first('name') }}</strong>
+                    <strong>{{ $errors->first('name') }}</strong>
 
-            </span>
+                </span>
 
-        @endif
+            @endif
 
-    </div>
+        </div>
 
     <!-- end name input -->
 
@@ -39,7 +38,7 @@
 
             <select id="universe_id" name="universe_id">
 
-                <option value="{{ $universeId }}">{{ $universeName }}</option>
+                <option value="">Please Choose One</option>
 
                 @foreach($universes as $universe)
 
@@ -65,37 +64,28 @@
 
     <!-- is_active select -->
 
-            <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">
+        <div class="{{ $errors->has('is_published') ? ' has-error' : '' }}">
 
-                <label>Is Active?</label>
+            <label>Status</label>
 
-                <select id="is_active" name="is_active">
+            <select id="is_active" name="is_active">
 
-                    <option value="{{ $:::modelInstance:::->is_active }}">{{ $:::modelInstance:::->is_active == 1 ? 'Yes' : 'No' }}</option>
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
 
-                    @if($:::modelInstance:::->is_active == 1)
+            </select>
 
-                        <option value="0">No</option>
+            @if ($errors->has('is_active'))
 
-                    @else
+                <span class="help-block">
 
-                        <option value="1">Yes</option>
+                    <strong>{{ $errors->first('is_active') }}</strong>
 
-                    @endif
+                </span>
 
-                </select>
+            @endif
 
-                @if ($errors->has('is_active'))
-
-                    <span class="help-block">
-
-                        <strong>{{ $errors->first('is_active') }}</strong>
-
-                    </span>
-
-                @endif
-
-            </div>
+        </div>
 
     <!-- end is_active select -->
 
@@ -107,18 +97,8 @@
 
             <select id="is_featured" name="is_featured">
 
-                <option value="{{ $:::modelInstance:::->is_featured }}">{{ $:::modelInstance:::->is_featured == 1 ? 'Yes' : 'No' }}</option>
-
-                @if($:::modelInstance:::->is_featured == 1)
-
                 <option value="0">No</option>
-
-                @else
-
                 <option value="1">Yes</option>
-
-                @endif
-
 
             </select>
 
@@ -144,12 +124,14 @@
 
             <input type="text"
                    name="weight"
-                   value="{{ old('weight') ?  old('weight') : $:::modelInstance:::->weight }}" />
+                   value="{{ old('weight') ? old('weight') : 100 }}" />
 
             @if ($errors->has('weight'))
 
                 <span class="help-block">
+
                     <strong>{{ $errors->first('weight') }}</strong>
+
                 </span>
 
             @endif
@@ -164,12 +146,14 @@
 
             <label>Description</label>
 
-            <textarea id="description" name="body">{!! $:::modelInstance:::->description !!}</textarea>
+            <textarea id="description" name="body"></textarea>
 
             @if ($errors->has('description'))
 
                 <span class="help-block">
+
                     <strong>{{ $errors->first('description') }}</strong>
+
                 </span>
 
             @endif
@@ -185,7 +169,6 @@
             <div class="{{ $errors->has('image') ? 'has-error' : '' }}">
 
                 <div class="row">
-
                     <label>Image Upload</label>
 
                 </div>
@@ -209,34 +192,31 @@
 
         </div>
 
-    <!-- end file input -->
+     <!-- end file input -->
 
 
     <!-- submit button -->
 
-        <div class="row">
+    <div class="row">
 
-            <button type="submit"
-                    class="waves-effect waves-light btn">
+        <button type="submit"
+                class="waves-effect waves-light btn">
 
-                Update
+            Create
 
-            </button>
+        </button>
 
-        </div>
+    </div>
 
     <!-- end submit button -->
 
-    </form>
+</form>
 
+@section('scripts')
 
-    @section('scripts')
+    <script>
+        CKEDITOR.replace( 'body' );
+    </script>
 
-        <script>
-            CKEDITOR.replace( 'body' );
-        </script>
-
-    @endsection
-
-
+@endsection
 

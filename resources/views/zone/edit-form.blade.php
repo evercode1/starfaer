@@ -1,7 +1,7 @@
 <form class="mt-20"
       role="form"
       method="POST"
-      action="{{ url('/:::modelPath:::/'. $:::modelInstance:::->id) }}"
+      action="{{ url('/zone/'. $zone->id) }}"
       enctype="multipart/form-data">
 
 {{ method_field('PATCH') }}
@@ -15,7 +15,7 @@
 
         <input type="text"
                name="name"
-               value="{{ $:::modelInstance:::->name }}" />
+               value="{{ $zone->name }}" />
 
         @if ($errors->has('name'))
 
@@ -30,6 +30,38 @@
     </div>
 
     <!-- end name input -->
+
+    <!-- zone_type_id select -->
+
+    <div class="{{ $errors->has('zone_type_id') ? ' has-error' : '' }}">
+
+        <label>Type</label>
+
+        <select id="zone_type_id" name="zone_type_id">
+
+            <option value="{{ $zoneTypeId }}">{{ $zoneTypeName }}</option>
+
+            @foreach($zoneTypes as $type)
+
+                <option value={{ $type->id }}>{{ $type->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('zone_type_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('zone_type_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end zone_type_id select -->
 
     <!-- universe select -->
 
@@ -71,9 +103,9 @@
 
                 <select id="is_active" name="is_active">
 
-                    <option value="{{ $:::modelInstance:::->is_active }}">{{ $:::modelInstance:::->is_active == 1 ? 'Yes' : 'No' }}</option>
+                    <option value="{{ $zone->is_active }}">{{ $zone->is_active == 1 ? 'Yes' : 'No' }}</option>
 
-                    @if($:::modelInstance:::->is_active == 1)
+                    @if($zone->is_active == 1)
 
                         <option value="0">No</option>
 
@@ -107,9 +139,9 @@
 
             <select id="is_featured" name="is_featured">
 
-                <option value="{{ $:::modelInstance:::->is_featured }}">{{ $:::modelInstance:::->is_featured == 1 ? 'Yes' : 'No' }}</option>
+                <option value="{{ $zone->is_featured }}">{{ $zone->is_featured == 1 ? 'Yes' : 'No' }}</option>
 
-                @if($:::modelInstance:::->is_featured == 1)
+                @if($zone->is_featured == 1)
 
                 <option value="0">No</option>
 
@@ -136,27 +168,27 @@
 
     <!-- end is_featured select -->
 
-    <!-- weight input -->
+    <!-- coordinates input -->
 
-        <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
+        <div class="{{ $errors->has('coordinates') ? 'has-error' : '' }}">
 
-            <label>Weight</label>
+            <label>Coordinates</label>
 
             <input type="text"
-                   name="weight"
-                   value="{{ old('weight') ?  old('weight') : $:::modelInstance:::->weight }}" />
+                   name="coordinates"
+                   value="{{ old('coordinates') ?  old('coordinates') : $zone->coordinates }}" />
 
-            @if ($errors->has('weight'))
+            @if ($errors->has('coordinates'))
 
                 <span class="help-block">
-                    <strong>{{ $errors->first('weight') }}</strong>
+                    <strong>{{ $errors->first('coordinates') }}</strong>
                 </span>
 
             @endif
 
         </div>
 
-    <!-- end weight input -->
+    <!-- end coordinates input -->
 
     <!-- description input -->
 
@@ -164,7 +196,7 @@
 
             <label>Description</label>
 
-            <textarea id="description" name="body">{!! $:::modelInstance:::->description !!}</textarea>
+            <textarea id="description" name="body">{!! $zone->description !!}</textarea>
 
             @if ($errors->has('description'))
 

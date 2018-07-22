@@ -7,10 +7,10 @@ use App\UtilityTraits\ManagesImages;
 use Illuminate\Http\Request;
 use App\Universe;
 use Illuminate\Support\Facades\Redirect;
-:::useModel:::;
+use App\ZoneType;
 
 
-class :::upperCaseModelName:::Controller extends Controller
+class ZoneTypeController extends Controller
 {
     use ManagesImages, KebabHelper;
 
@@ -21,7 +21,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $this->middleware(['admin'], ['except' => 'show']);
 
-        $this->setImageDefaultsFromConfig(':::imageFolderName:::');
+        $this->setImageDefaultsFromConfig('zonetype');
 
 
     }
@@ -35,7 +35,7 @@ class :::upperCaseModelName:::Controller extends Controller
     public function index()
     {
 
-        return view(':::modelPath:::.index');
+        return view('zone-type.index');
 
     }
 
@@ -48,10 +48,10 @@ class :::upperCaseModelName:::Controller extends Controller
     public function create()
     {
 
-           $universes = Universe::all();
+        $universes = Universe::all();
 
 
-           return view(':::modelPath:::.create', compact('universes'));
+        return view('zone-type.create', compact('universes'));
 
     }
 
@@ -69,7 +69,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
                 $this->validate($request, [
 
-                    'name' => 'required|unique::::tableName:::|string|max:100',
+                    'name' => 'required|unique:zone_types|string|max:100',
                     'is_active' => 'required|boolean',
                     'is_featured' => 'required|boolean',
                     'weight' => 'required|integer|between:1,100',
@@ -85,7 +85,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $image = $request->file('image') == null ? null : $request->file('image')->getClientOriginalExtension();
 
-        $:::modelInstance::: = :::upperCaseModelName:::::create([ 'name' => $request->name,
+        $zoneType = ZoneType::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
                                                                   'is_active' => $request->is_active,
                                                                   'is_featured' => $request->is_featured,
@@ -95,7 +95,7 @@ class :::upperCaseModelName:::Controller extends Controller
                                                                   'image_name' => $imageName,
                                                                   'image_extension' => $image]);
 
-        $:::modelInstance:::->save();
+        $zoneType->save();
 
         if ($request->has('image')){
 
@@ -105,11 +105,11 @@ class :::upperCaseModelName:::Controller extends Controller
 
             // pass in the file and the model
 
-            $this->saveImageFiles($file, $:::modelInstance:::);
+            $this->saveImageFiles($file, $zoneType);
 
         }
 
-        return Redirect::route(':::modelPath:::.index');
+        return Redirect::route('zone-type.index');
 
     }
 
@@ -120,16 +120,12 @@ class :::upperCaseModelName:::Controller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(:::upperCaseModelName::: $:::modelInstance:::, $slug='')
+    public function show($id)
     {
 
-        if ($:::modelInstance:::->slug !== $slug) {
+        $zoneType = ZoneType::findOrFail($id);
 
-            return Redirect::route(':::modelPath:::.show', ['id' => $:::modelInstance:::->id,
-                                                   'slug' => $:::modelInstance:::->slug], 301);
-        }
-
-        return view(':::modelPath:::.show', compact(':::modelInstance:::'));
+        return view('zone-type.show', compact('zoneType'));
     }
 
     /**
@@ -142,16 +138,18 @@ class :::upperCaseModelName:::Controller extends Controller
     public function edit($id)
     {
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+            $zoneType = ZoneType::findOrFail($id);
 
-        $universeId = $:::modelInstance:::->universe_id;
+            $universeId = $zoneType->universe_id;
 
-        $universeName = Universe::getUniverseName($:::modelInstance:::->universe_id);
+            $universeName = $zoneType->universe->name;
 
-        $universes = Universe::all();
+            $universes = Universe::all();
 
 
-        return view(':::modelPath:::.edit', compact(':::modelInstance:::' , 'universeId', 'universeName', 'universes'));
+
+
+        return view('zone-type.edit', compact('zoneType' , 'universeId', 'universeName', 'universes'));
 
     }
 
@@ -169,7 +167,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required|string|max:100|unique::::tableName:::,name,' .$id,
+            'name' => 'required|string|max:100|unique:zone_types,name,' .$id,
             'is_active' => 'required|boolean',
             'is_featured' => 'required|boolean',
             'weight' => 'required|integer|between:1,100',
@@ -179,38 +177,38 @@ class :::upperCaseModelName:::Controller extends Controller
 
             ]);
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+        $zoneType = ZoneType::findOrFail($id);
 
         $slug = str_slug($request->name, "-");
 
-        $this->setUpdatedModelValues($request, $:::modelInstance:::);
+        $this->setUpdatedModelValues($request, $zoneType);
 
         // if file, we have additional requirements before saving
 
                 if ($this->newFileIsUploaded()) {
 
-                    $this->deleteExistingImages($:::modelInstance:::);
+                    $this->deleteExistingImages($zoneType);
 
-                    $this->setNewFileExtension($request, $:::modelInstance:::);
+                    $this->setNewFileExtension($request, $zoneType);
 
                 }
 
-        $:::modelInstance:::->save();
+        $zoneType->save();
 
 
-            // check for file, if new file, overwrite existing file
+                // check for file, if new file, overwrite existing file
 
-            if ($this->newFileIsUploaded()){
+                if ($this->newFileIsUploaded()){
 
-                $file = $this->getUploadedFile();
+                    $file = $this->getUploadedFile();
 
-                $this->saveImageFiles($file, $:::modelInstance:::);
+                    $this->saveImageFiles($file, $zoneType);
 
-            }
+                }
 
 
 
-        return Redirect::route(':::modelPath:::.show', [':::modelInstance:::' => $:::modelInstance:::, $slug]);
+        return Redirect::route('zone-type.show', ['zoneType' => $zoneType, $slug]);
 
     }
 
@@ -224,13 +222,13 @@ class :::upperCaseModelName:::Controller extends Controller
     public function destroy($id)
     {
 
-        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+        $zoneType = ZoneType::findOrFail($id);
 
-        $this->deleteExistingImages($:::modelInstance:::);
+        $this->deleteExistingImages($zoneType);
 
-        :::upperCaseModelName:::::destroy($id);
+        ZoneType::destroy($id);
 
-        return Redirect::route(':::modelPath:::.index');
+        return Redirect::route('zone-type.index');
 
     }
 
@@ -246,17 +244,17 @@ class :::upperCaseModelName:::Controller extends Controller
          * @param $marketingImage
          */
 
-    private function setUpdatedModelValues(Request $request, $modelInstance)
-    {
+        private function setUpdatedModelValues(Request $request, $modelInstance)
+        {
 
-        $modelInstance->name= $request->get('name');
-        $modelInstance->weight = $request->get('weight');
-        $modelInstance->is_featured = $request->get('is_featured');
-        $modelInstance->is_active = $request->get('is_active');
-        $modelInstance->description = $request->get('body');
-        $modelInstance->universe_id = $request->get('universe_id');
-        $modelInstance->image_name = $this->formatString($request->get('name'));
+            $modelInstance->name= $request->get('name');
+            $modelInstance->weight = $request->get('weight');
+            $modelInstance->is_featured = $request->get('is_featured');
+            $modelInstance->is_active = $request->get('is_active');
+            $modelInstance->description = $request->get('body');
+            $modelInstance->universe_id = $request->get('universe_id');
+            $modelInstance->image_name = $this->formatString($request->get('name'));
 
-    }
+        }
 
 }

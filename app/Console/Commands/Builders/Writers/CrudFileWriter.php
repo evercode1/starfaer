@@ -33,7 +33,6 @@ class CrudFileWriter
         $this->appendEachFile($this->fileAppendPaths, $this->content);
 
 
-
     }
 
     private function makeImageFolders()
@@ -72,11 +71,8 @@ class CrudFileWriter
 
                 $txt = $content->getContentFromTemplate($fileName, $this->tokens);
 
-                $handle = fopen($filePath, "a");
+                file_put_contents($filePath, $txt, FILE_APPEND);
 
-                fwrite($handle, $txt);
-
-                fclose($handle);
             }
 
         }
