@@ -2,7 +2,7 @@
 
 @section('title')
 
-    <title>:::allGridTitle</title>
+    <title>All GalaxyTypes</title>
 
     @endsection
 

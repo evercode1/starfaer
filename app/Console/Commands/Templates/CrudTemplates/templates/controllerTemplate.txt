@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\UtilityTraits\KebabHelper;
+use App\UtilityTraits\ManagesImages;
 use Illuminate\Http\Request;
 use App\Universe;
-
-:::useModel:::;
 use Illuminate\Support\Facades\Redirect;
+:::useModel:::;
+
 
 class :::upperCaseModelName:::Controller extends Controller
 {
+    use ManagesImages, KebabHelper;
 
     public function __construct()
     {
@@ -17,6 +20,8 @@ class :::upperCaseModelName:::Controller extends Controller
         $this->middleware(['auth']);
 
         $this->middleware(['admin'], ['except' => 'show']);
+
+        $this->setImageDefaultsFromConfig(':::imageFolderName:::');
 
 
     }
@@ -60,19 +65,47 @@ class :::upperCaseModelName:::Controller extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
+        // request value is 'body', not 'description' to accommodate ckeditor
 
-            ':::field_name:::' => 'required|unique::::tableName:::|string|max:100',
-            'universe_id' => 'required'
+                $this->validate($request, [
 
-        ]);
+                    'name' => 'required|unique:::tableName:::|string|max:100',
+                    'is_active' => 'required|boolean',
+                    'is_featured' => 'required|boolean',
+                    'weight' => 'required|integer|between:1,100',
+                    'body' => 'required|string|max:1000',
+                    'image' => 'max:1000',
+                    'universe_id' => 'required',
 
-        $slug = str_slug($request->:::field_name:::, "-");
+                ]);
 
-        $:::modelInstance::: = :::upperCaseModelName:::::create([':::field_name:::' => $request->:::field_name:::,
+        $slug = str_slug($request->name, "-");
+
+        $imageName = $this->formatString($request->get('name'));
+
+        $:::modelInstance::: = :::upperCaseModelName:::::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
-                                                                  'universe_id' => $request->universe_id]);
+                                                                  'is_active' => $request->is_active,
+                                                                  'is_featured' => $request->is_featured,
+                                                                  'weight' => $request->weight,
+                                                                  'universe_id' => $request->universe_id,
+                                                                  'description' => $request->body,
+                                                                  'image_name' => $imageName,
+                                                                  'image_extension' => $image]);
+
         $:::modelInstance:::->save();
+
+        if ($request->has('image')){
+
+            // get instance of file
+
+            $file = $this->getUploadedFile();
+
+            // pass in the file and the model
+
+            $this->saveImageFiles($file, $galaxyType);
+
+        }
 
         return Redirect::route(':::modelPath:::.index');
 
@@ -131,22 +164,50 @@ class :::upperCaseModelName:::Controller extends Controller
 
     public function update(Request $request, $id)
     {
+        // request value is 'body', not 'description' to accommodate ckeditor
+
         $this->validate($request, [
 
-            ':::field_name:::' => 'required|string|max:100|unique::::tableName:::,:::field_name:::,' .$id,
+            'name' => 'required|string|max:100|unique:galaxy_types,name,' .$galaxyType->id,
             'is_active' => 'required|boolean',
+            'is_featured' => 'required|boolean',
+            'weight' => 'required|integer|between:1,100',
+            'body' => 'required|string|max:1000',
+            'image' => 'max:1000',
             'universe_id' => 'required'
 
-        ]);
+            ]);
 
         $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
 
-        $slug = str_slug($request->:::field_name:::, "-");
+        $slug = str_slug($request->name, "-");
 
-        $:::modelInstance:::->update([':::field_name:::' => $request->:::field_name:::,
-                                       'slug' => $slug,
-                                       'is_active' => $request->is_active,
-                                       'universe_id' => $request->universe_id]);]);
+        $this->setUpdatedModelValues($request, $:::modelInstance:::);
+
+        // if file, we have additional requirements before saving
+
+                if ($this->newFileIsUploaded()) {
+
+                    $this->deleteExistingImages($:::modelInstance:::);
+
+                    $this->setNewFileExtension($request, $:::modelInstance:::);
+
+                }
+
+        $:::modelInstance:::->save();
+
+
+                // check for file, if new file, overwrite existing file
+
+                if ($this->newFileIsUploaded()){
+
+                    $file = $this->getUploadedFile();
+
+                    $this->saveImageFiles($file, $:::modelInstance:::);
+
+                }
+
+
 
         return Redirect::route(':::modelPath:::.show', [':::modelInstance:::' => $:::modelInstance:::, $slug]);
 
@@ -161,9 +222,39 @@ class :::upperCaseModelName:::Controller extends Controller
 
     public function destroy($id)
     {
+
+        $:::modelInstance::: = :::upperCaseModelName:::::findOrFail($id);
+
+        $this->deleteExistingImages($:::modelInstance:::);
+
         :::upperCaseModelName:::::destroy($id);
 
         return Redirect::route(':::modelPath:::.index');
 
     }
+
+    private function setNewFileExtension(Request $request, $book)
+        {
+
+            $book->image_extension = $request->file('image')->getClientOriginalExtension();
+
+        }
+
+        /**
+         * @param EditImageRequest $request
+         * @param $marketingImage
+         */
+
+        private function setUpdatedModelValues(Request $request, $modelInstance)
+        {
+
+            $modelInstance->name= $request->get('name');
+            $modelInstance->weight = $request->get('weight');
+            $modelInstance->is_featured = $request->get('is_featured');
+            $modelInstance->is_active = $request->get('is_active');
+            $modelInstance->description = $request->get('body');
+            $modelInstance->image_name = $this->formatString($request->get('name'));
+
+        }
+
 }

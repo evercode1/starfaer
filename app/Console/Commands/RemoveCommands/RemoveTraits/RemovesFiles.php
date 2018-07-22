@@ -65,8 +65,11 @@ trait RemovesFiles
     private function setCrudPaths()
     {
 
+        $allQueryName = 'All ' . str_plural(ucwords($this->modelName));
+
         $this->unlinkFiles['model'] = base_path('app/' . $this->modelName .'.php');
         $this->unlinkFiles['modelQuery'] = base_path('app/Queries/GridQueries/' . $this->modelName .'Query.php');
+        $this->unlinkFiles['modelQuery'] = base_path('app/Queries/GridQueries/' . $allQueryName .'Query.php');
         $this->unlinkFiles['controller'] = base_path('app/Http/Controllers/' . $this->modelName) . 'Controller.php';
         $this->unlinkFiles['allController'] = base_path('app/Http/Controllers/' . $this->formatAllControllerName($this->modelName));
         $this->unlinkFiles['migration'] = $this->getMigrationFilePath($this->modelName);

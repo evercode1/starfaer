@@ -26,9 +26,28 @@ class CrudFileWriter
     public function writeAllCrudFiles()
     {
 
+        $this->makeImageFolders();
+
         $this->writeEachFile($this->fileWritePaths, $this->content);
 
         $this->appendEachFile($this->fileAppendPaths, $this->content);
+
+
+
+    }
+
+    private function makeImageFolders()
+    {
+
+        $imagePath = public_path(). '/imgs/' . $this->tokens['imageFolderName'];
+
+        $thumbPath =  public_path(). '/imgs/' . $this->tokens['imageFolderName'] . '/thumbnails';
+
+        mkdir($imagePath);
+
+        mkdir($thumbPath);
+
+
 
     }
 
@@ -71,6 +90,29 @@ class CrudFileWriter
     private function defaultHandler(CrudContentRouter $content, $fileName, $filePath)
     {
         switch ($fileName) {
+
+            case 'imageConfig' :
+
+                    $fileExists = true;
+
+                    $bracket = '[';
+
+                    $txt = $content->getContentFromTemplate('imageConfig', $this->tokens, $fileExists);
+
+                    $contents = file_get_contents($this->fileWritePaths['apiController']);
+
+                    $classParts = explode($bracket, $contents, 2);
+
+                    $txt = $classParts[0] . "$bracket . \n\n" . $txt . "\n\n" . $classParts[1];
+
+                    $handle = fopen($filePath, "w");
+
+                    fwrite($handle, $txt);
+
+                    fclose($handle);
+
+                    break;
+
 
             case 'apiController' :
 
@@ -201,6 +243,18 @@ class CrudFileWriter
             case 'modelQuery':
 
                 $txt = $content->getContentFromTemplate('modelQuery', $this->tokens);
+
+                $handle = fopen($filePath, "w");
+
+                fwrite($handle, $txt);
+
+                fclose($handle);
+
+                break;
+
+            case 'allQuery':
+
+                $txt = $content->getContentFromTemplate('allQuery', $this->tokens);
 
                 $handle = fopen($filePath, "w");
 

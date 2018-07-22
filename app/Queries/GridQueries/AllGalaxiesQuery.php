@@ -4,7 +4,7 @@ namespace App\Queries\GridQueries;
 use DB;
 use App\Queries\GridQueries\Contracts\DataQuery;
 
-class GalaxyQuery implements DataQuery
+class AllGalaxiesQuery implements DataQuery
 {
 
     public function data($column, $direction)

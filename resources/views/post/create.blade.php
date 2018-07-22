@@ -4,7 +4,7 @@
 
     <script src="/ckeditor/ckeditor.js"></script>
 
-    @endsection
+@endsection
 
 @section('content')
 

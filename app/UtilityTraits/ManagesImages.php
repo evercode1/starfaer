@@ -7,12 +7,14 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
+use App\Utilities\FindOrCreateFolders;
 
 trait ManagesImages
 {
 
     public $destinationFolder;
     public $destinationThumbnail;
+    public $createFolder;
     public $extension;
     public $file;
     public $imageDefaults;
@@ -63,6 +65,9 @@ trait ManagesImages
 
     private function makeImageAndThumbnail()
     {
+
+        $this->findOrCreateFolders();
+
         //create instance of image from temp upload
 
         $image = Image::make($this->file->getRealPath());
@@ -83,6 +88,18 @@ trait ManagesImages
 
     }
 
+    private function findOrCreateFolders()
+    {
+
+        $folderNames = [$this->createFolder, $this->createFolder. '/thumbnails'];
+
+        $basePath = 'public_path';
+
+        FindOrCreateFolders::make($folderNames, $basePath);
+
+
+    }
+
     /**
      * @return bool
      */
@@ -96,6 +113,8 @@ trait ManagesImages
 
     private function saveImageFiles(UploadedFile $file, $model)
     {
+
+
 
         $this->setImageFile($file);
         $this->setFileAttributes($model);
@@ -117,6 +136,8 @@ trait ManagesImages
 
         $this->imageName = $model->image_name;
         $this->extension = $model->image_extension;
+
+
 
     }
 

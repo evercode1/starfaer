@@ -7,7 +7,7 @@ Route::get('/:::allApiDataPath:::', 'FrontApiController@:::allApiControllerMetho
 
 Route::any(':::gridApiRoute:::', 'ApiController@:::apiControllerMethod:::');
 
-Route::post(':::modelPath:::-delete/{:::modelPath:::}', ':::upperCaseModelName:::Controller@destroy');
+Route::post(':::modelPath:::-delete/{id}', ':::upperCaseModelName:::Controller@destroy');
 
 Route::get('/:::modelPath:::/create', ':::upperCaseModelName:::Controller@create')->name(':::modelPath:::.create');
 

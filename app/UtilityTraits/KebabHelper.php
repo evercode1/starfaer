@@ -9,7 +9,11 @@ trait KebabHelper
     public static function formatString($string)
     {
 
-        return strtolower(str_replace(" ","-", $string));
+        $string = strtolower(str_replace(" ","-", $string));
+
+        return $string;
+
+
 
     }
 

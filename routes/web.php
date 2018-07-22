@@ -224,5 +224,25 @@ Route::resource('galaxy', 'GalaxyController', ['except' => ['show', 'create','de
 
 
 
+// Begin GalaxyType Routes
+
+Route::get('all-galaxy-types', 'AllGalaxyTypesController@index');
+
+Route::get('/api/all-galaxy-types-data', 'FrontApiController@allGalaxyTypesData');
+
+Route::any('api/galaxy-type-data', 'ApiController@galaxyTypeData');
+
+Route::post('galaxy-type-delete/{id}', 'GalaxyTypeController@destroy');
+
+Route::get('/galaxy-type/create', 'GalaxyTypeController@create')->name('galaxy-type.create');
+
+Route::get('galaxy-type/{id}', 'GalaxyTypeController@show')->name('galaxy-type.show');
+
+Route::resource('galaxy-type', 'GalaxyTypeController', ['except' => ['show', 'create','destroy']]);
+
+// End GalaxyType Routes
+
+
+
 
 

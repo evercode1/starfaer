@@ -49,6 +49,8 @@ class Tokens
 
         $allApiDataPath = 'api/' . 'all-' . str_plural($this->formatModelPath($this->model)) . '-data';
 
+        $allQueryName = 'All ' . str_plural(ucwords($this->model));
+
         $appName = $this->appName;
 
         $apiControllerMethod = $this->formatApiControllerMethod();
@@ -84,6 +86,8 @@ class Tokens
         $gridComponentName = $this->model . 'Grid';
 
         $gridName = $this->formatVueGridName() . '-grid';
+
+        $imageFolderName = $this->formatImageFolderName($this->model);
 
         $masterPageName = $this->masterPageName;
 
@@ -146,6 +150,7 @@ class Tokens
                           'allGridTitle',
                           'allApiControllerMethod',
                           'allApiDataPath',
+                          'allQueryName',
                           'apiControllerMethod',
                           'apiDataPath',
                           'appName',
@@ -164,6 +169,7 @@ class Tokens
                           'gridApiRoute',
                           'gridComponentName',
                           'gridName',
+                          'imageFolderName',
                           'masterAuthName',
                           'masterPageName',
                           'migrationModel',
@@ -218,6 +224,19 @@ class Tokens
 
         return str_replace(' ', '', $allGridComponentName);
 
+
+    }
+
+    private function formatImageFolderName($model)
+    {
+
+        $model = preg_split('/(?=[A-Z])/',$model);
+
+        $model = implode('', $model);
+
+        $model = ltrim($model, '');
+
+        return $model = strtolower($model);
 
     }
 

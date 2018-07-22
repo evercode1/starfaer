@@ -49,29 +49,50 @@ class CrudBuilder
 
         $this->setFilePaths();
 
+
     }
 
     private function setFilePaths()
     {
 
             $this->fileWritePaths['model'] = base_path() . '/app/' . $this->tokens['upperCaseModelName'] . '.php';
-            $this->fileWritePaths['controller'] = base_path() . '/app/Http/Controllers/' . $this->tokens['controllerName'] . '.php';
+
+            $this->fileWritePaths['controller'] = base_path() . '/app/Http/Controllers/'
+                . $this->tokens['controllerName'] . '.php';
+
             $this->fileWritePaths['apiController'] = base_path() . '/app/Http/Controllers/ApiController.php';
 
             $this->tokens['front'] == 'front' ?
-                $this->fileWritePaths['allController'] = base_path() . '/app/Http/Controllers/' . $this->tokens['allControllerName'] . '.php'
+                $this->fileWritePaths['allController'] = base_path() . '/app/Http/Controllers/'
+                . $this->tokens['allControllerName'] . '.php'
                 : false;
 
             $this->tokens['front'] == 'front' ?
-                $this->fileWritePaths['frontApiController'] = base_path() . '/app/Http/Controllers/FrontApiController.php'
+                $this->fileWritePaths['frontApiController'] = base_path()
+                . '/app/Http/Controllers/FrontApiController.php'
+                : false;
+
+            $this->fileWritePaths['imageConfig'] = base_path() . '/config/image-defaults.php';
+
+            $this->tokens['front'] == 'front' ?
+                $this->fileWritePaths['allQuery'] = base_path() . '/app/Queries/GridQueries/'
+                . $this->tokens['allQueryName'] . 'Query.php'
                 : false;
 
             $this->fileAppendPaths['routes'] = base_path() . '/routes/web.php';
-            $this->fileWritePaths['migration'] = base_path() . '/database/migrations/' . date('Y_m_d_His') . '_create_' .$this->tokens['tableName'] . '_table'. '.php';
-            $this->fileAppendPaths['factory'] = base_path() . '/database/factories/'. $this->tokens['upperCaseModelName'] . 'Factory.php';
+
+            $this->fileWritePaths['migration'] = base_path() . '/database/migrations/' . date('Y_m_d_His') . '_create_'
+                .$this->tokens['tableName'] . '_table'. '.php';
+
+            $this->fileAppendPaths['factory'] = base_path() . '/database/factories/'
+                . $this->tokens['upperCaseModelName'] . 'Factory.php';
+
             $this->fileWritePaths['dataQuery'] = base_path() . '/app/Queries/GridQueries/Contracts/' . 'DataQuery.php';
+
             $this->fileWritePaths['gridQuery'] = base_path() . '/app/Queries/GridQueries/' . 'GridQuery.php';
-            $this->fileWritePaths['modelQuery'] = base_path() . '/app/Queries/GridQueries/' . $this->tokens['upperCaseModelName'] . 'Query.php';
+
+            $this->fileWritePaths['modelQuery'] = base_path() . '/app/Queries/GridQueries/'
+                . $this->tokens['upperCaseModelName'] . 'Query.php';
 
 
 

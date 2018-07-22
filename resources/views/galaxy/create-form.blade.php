@@ -27,6 +27,36 @@
 
     <!-- end name input -->
 
+    <!-- galaxy type select -->
+
+    <div class="{{ $errors->has('galaxy_type_id') ? ' has-error' : '' }}">
+
+        <label>Galaxy Type</label>
+
+        <select id="galaxy_type_id" name="galaxy_type_id">
+
+            <option value="">Please Choose One</option>
+
+
+                <option value=1>Spiral</option>
+                <option value=2>Elliptical</option>
+
+
+
+        </select>
+
+        @if ($errors->has('galaxy_type_id'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('galaxy_type_id') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div> <!-- end galaxy type select -->
+
     <!-- universe select -->
 
     <div class="{{ $errors->has('universe_id') ? ' has-error' : '' }}">

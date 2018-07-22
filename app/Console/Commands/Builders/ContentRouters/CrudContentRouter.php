@@ -82,7 +82,7 @@ class CrudContentRouter
             case 'allController' :
 
 
-                return $this->routeTemplate($tokens, 'frontControllerTemplate');
+                return $this->routeTemplate($tokens, 'allControllerTemplate');
                 break;
 
             case 'dataQuery' :
@@ -138,6 +138,12 @@ class CrudContentRouter
                 return $this->routeTemplate($tokens, 'modelQueryTemplate');
                 break;
 
+            case 'allQuery':
+
+
+                return $this->routeTemplate($tokens, 'allQueryTemplate');
+                break;
+
 
             case 'routes' :
 
@@ -149,6 +155,10 @@ class CrudContentRouter
 
                 return $this->routeTemplate($tokens, 'routeTemplate');
                 break;
+
+            case 'imageConfig' :
+
+                return $this->routeTemplate($tokens, 'imageConfigTemplate');
 
 
             default :

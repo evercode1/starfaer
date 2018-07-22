@@ -4,23 +4,19 @@ namespace App\Queries\GridQueries;
 use DB;
 use App\Queries\GridQueries\Contracts\DataQuery;
 
-class :::model:::Query implements DataQuery
+class All GalaxyTypesQuery implements DataQuery
 {
 
     public function data($column, $direction)
     {
 
-        $rows = DB::table(':::tableName:::')
+        $rows = DB::table('galaxy_types')
                     ->select('id as Id',
                              'name as Name',
                              'slug as Slug',
-                             'weight as Weight',
-                             'is_active as Active',
-                             'is_featured as Featured',
-                             'image_name as Image',
-                             'image_extension as Extension',
                              DB::raw('DATE_FORMAT(created_at,
                              "%m-%d-%Y") as Created'))
+                    ->where('is_active', 1)
                     ->orderBy($column, $direction)
                     ->paginate(10);
 
@@ -32,18 +28,13 @@ class :::model:::Query implements DataQuery
     public function filteredData($column, $direction, $keyword)
     {
 
-        $rows = DB::table(':::tableName:::')
+        $rows = DB::table('galaxy_types')
                 ->select('id as Id',
                          'name as Name',
                          'slug as Slug',
-                         'weight as Weight',
-                         'is_active as Active',
-                         'is_featured as Featured',
-                         'image_name as Image',
-                         'image_extension as Extension',
                          DB::raw('DATE_FORMAT(created_at,
                                  "%m-%d-%Y") as Created'))
-                ->where('name', 'like', '%' . $keyword . '%')
+                ->where([['name', 'like', '%' . $keyword . '%'], ['is_active', 1]])
                 ->orderBy($column, $direction)
                 ->paginate(10);
 

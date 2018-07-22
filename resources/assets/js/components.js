@@ -37,6 +37,16 @@ Vue.component('galaxy-grid', require('./components/GalaxyGrid.vue'));
 /** End Galaxy Grid Component Call */
 /** Begin Galaxy All Models Call */
 
-Vue.component('all-galaxies:', require('./components/AllGalaxies.vue'));
+Vue.component('all-galaxies', require('./components/AllGalaxies.vue'));
 
 /** End Galaxy All Models Call */
+/** Begin GalaxyType Grid Component Call */
+
+Vue.component('galaxy-type-grid', require('./components/GalaxyTypeGrid.vue'));
+
+/** End GalaxyType Grid Component Call */
+/** Begin GalaxyType All Models Call */
+
+Vue.component('all-galaxy-types', require('./components/AllGalaxyTypes.vue'));
+
+/** End GalaxyType All Models Call */

@@ -16,7 +16,7 @@
 
                 <section class="mt-20">
 
-                @include(':::model:::.edit-form')
+                @include(':::modelPath:::.edit-form')
 
                 </section>
 

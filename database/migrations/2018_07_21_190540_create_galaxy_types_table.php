@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Create:::migrationModel:::Table extends Migration
+class CreateGalaxyTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class Create:::migrationModel:::Table extends Migration
     public function up()
     {
 
-        Schema::create(':::tableName:::', function (Blueprint $table) {
+        Schema::create('galaxy_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100)->unique();
             $table->string('slug', 100);
@@ -40,7 +40,7 @@ class Create:::migrationModel:::Table extends Migration
     public function down()
     {
 
-        Schema::dropIfExists(':::tableName:::');
+        Schema::dropIfExists('galaxy_types');
 
     }
 

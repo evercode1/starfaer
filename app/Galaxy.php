@@ -20,4 +20,12 @@ class Galaxy extends Model
 
     }
 
+    public function galaxyType()
+    {
+
+        return $this->belongsTo('App\GalaxyType');
+
+
+    }
+
 }

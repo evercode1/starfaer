@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class :::upperCaseModelName::: extends Model
+class GalaxyType extends Model
 {
 
     protected $fillable = ['name',
@@ -21,6 +21,13 @@ class :::upperCaseModelName::: extends Model
     {
 
        return $this->belongsTo('App\Universe');
+
+    }
+
+    public function galaxies()
+    {
+
+        return $this->hasMany('App\Galaxy');
 
     }
 

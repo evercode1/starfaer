@@ -44,7 +44,7 @@ class GalaxyController extends Controller
 
         $universes = Universe::all();
 
-        return view('galaxy.create', compact('universes'));
+        return view('galaxy.create', compact('universes', 'galaxyTypes'));
 
     }
 
@@ -146,7 +146,8 @@ class GalaxyController extends Controller
         $galaxy->update(['name' => $request->name,
                          'slug' => $slug,
                          'is_active' => $request->is_active,
-                         'universe_id' => $request->universe_id]);
+                         'universe_id' => $request->universe_id,
+                         'galaxy_type_id' => $request->galaxy_type_id]);
 
 
         return redirect()->route('galaxy.show', [$galaxy, $slug]);

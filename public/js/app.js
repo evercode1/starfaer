@@ -2198,6 +2198,174 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllGalaxyTypes.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('/api/all-galaxy-types-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'Name', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: 1,
+            sortKey: 'id',
+            createUrl: '/galaxy-type/create',
+            showCreateButton: false
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(1);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, '/api/all-galaxy-types-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        }
+
+    }
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllUniverses.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4318,6 +4486,233 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
                 axios.post('/galaxy-delete/' + id).then(function (response) {
 
                     gridData.loadData('/api/galaxy-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/GalaxyTypeGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('/api/galaxy-type-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'Name', 'Active', 'Featured', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: 1,
+            sortKey: 'id',
+            createUrl: '/galaxy-type/create',
+            showCreateButton: true
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(1);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, '/api/galaxy-type-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        showFeatured: function showFeatured(featured) {
+
+            return featured == 1 ? 'Yes' : 'No';
+        },
+
+        showActive: function showActive(active) {
+
+            return active == 1 ? 'Yes' : 'No';
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/galaxy-type-delete/' + id).then(function (response) {
+
+                    gridData.loadData('/api/galaxy-type-data', _this);
                 });
             }
         }
@@ -41926,6 +42321,90 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-22e7d0df\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AllGalaxyTypes.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+        _vm._v("All GalaxyTypes")
+      ]),
+      _vm._v(" "),
+      _c("search-box"),
+      _vm._v(" "),
+      _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "mt-20" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "table",
+              [
+                _c("table-head"),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.gridData, function(row) {
+                    return _c("tr", [
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Id) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: "/galaxy-type/" + row.Id } }, [
+                          _vm._v(" " + _vm._s(row.Name))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Created) +
+                            "\n\n                        "
+                        )
+                      ])
+                    ])
+                  })
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("page-number")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("pagination")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-22e7d0df", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2c2e2053\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/ClosedContactGrid.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44134,6 +44613,147 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-65f19786", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-678b36c7\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/GalaxyTypeGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+        _vm._v("GalaxyType")
+      ]),
+      _vm._v(" "),
+      _c("search-box"),
+      _vm._v(" "),
+      _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "mt-20" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "table",
+              [
+                _c("table-head"),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.gridData, function(row) {
+                    return _c("tr", [
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Id) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: "/galaxy-type/" + row.Id } }, [
+                          _vm._v(" " + _vm._s(row.Name))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(_vm.showActive(row.Active)) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(_vm.showFeatured(row.Featured)) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Created) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "/galaxy-type/" + row.Id + "/edit" }
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn mt-5",
+                                attrs: { type: "button" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n\n                                    Edit\n\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "waves-effect waves-light btn mt-5",
+                            on: {
+                              click: function($event) {
+                                _vm.confirmDelete(row.Id)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n\n                                    Delete\n\n                            "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  })
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("page-number")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("pagination")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-678b36c7", module.exports)
   }
 }
 
@@ -56610,9 +57230,19 @@ Vue.component('galaxy-grid', __webpack_require__("./resources/assets/js/componen
 /** End Galaxy Grid Component Call */
 /** Begin Galaxy All Models Call */
 
-Vue.component('all-galaxies:', __webpack_require__("./resources/assets/js/components/AllGalaxies.vue"));
+Vue.component('all-galaxies', __webpack_require__("./resources/assets/js/components/AllGalaxies.vue"));
 
 /** End Galaxy All Models Call */
+/** Begin GalaxyType Grid Component Call */
+
+Vue.component('galaxy-type-grid', __webpack_require__("./resources/assets/js/components/GalaxyTypeGrid.vue"));
+
+/** End GalaxyType Grid Component Call */
+/** Begin GalaxyType All Models Call */
+
+Vue.component('all-galaxy-types', __webpack_require__("./resources/assets/js/components/AllGalaxyTypes.vue"));
+
+/** End GalaxyType All Models Call */
 
 /***/ }),
 
@@ -56853,6 +57483,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-62264088", Component.options)
   } else {
     hotAPI.reload("data-v-62264088", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/AllGalaxyTypes.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/AllGalaxyTypes.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-22e7d0df\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AllGalaxyTypes.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/AllGalaxyTypes.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-22e7d0df", Component.options)
+  } else {
+    hotAPI.reload("data-v-22e7d0df", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -57381,6 +58059,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-723dbced", Component.options)
   } else {
     hotAPI.reload("data-v-723dbced", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/GalaxyTypeGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/GalaxyTypeGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-678b36c7\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/GalaxyTypeGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/GalaxyTypeGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-678b36c7", Component.options)
+  } else {
+    hotAPI.reload("data-v-678b36c7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

@@ -1,8 +1,8 @@
-@extends('layouts.masters.master-auth')
+@extends('layouts.masters.master-admin-dash')
 
 @section('title')
 
-    <title>:::allGridTitle</title>
+    <title>GalaxyType</title>
 
     @endsection
 
@@ -13,7 +13,7 @@
 
             <div class="row">
 
-            <all-galaxy-types></all-galaxy-types>
+            <galaxy-type-grid></galaxy-type-grid>
 
             </div>
 
