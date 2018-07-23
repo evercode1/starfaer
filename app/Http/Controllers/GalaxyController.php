@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Galaxy;
 use Illuminate\Support\Facades\Redirect;
 use App\Universe;
+use App\GalaxyType;
 
 class GalaxyController extends Controller
 {
@@ -96,6 +97,7 @@ class GalaxyController extends Controller
             return Redirect::route('galaxy.show', ['id' => $galaxy->id,
                                                    'slug' => $galaxy->slug], 301);
         }
+
 
         return view('galaxy.show', compact('galaxy'));
     }

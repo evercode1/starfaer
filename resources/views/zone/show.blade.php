@@ -1,4 +1,4 @@
-@extends('layouts.masters.master-admin-dash')
+@extends('layouts.masters.master-auth')
 
 @section('title')
 
@@ -23,7 +23,7 @@
                         {{ $zone->universe->name }}</a></b>
                         </li>
 
-                        <li class="collection-item">Type:
+                        <li class="collection-item">Zone Type:
                         <b><a href="/zone-type/{{ $zone->zoneType->id }} - {{ $zone->zoneType->slug }}">
                         {{ $zone->zoneType->name }}</a></b>
                         </li>

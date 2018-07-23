@@ -1,4 +1,4 @@
-@extends('layouts.masters.master-admin-dash')
+@extends('layouts.masters.master-auth')
 
 @section('title')
 
@@ -19,6 +19,9 @@
                 <li class="collection-item">From Universe:
                 <b><a href="/universe/{{ $galaxy->universe->id }} - {{ $galaxy->universe->slug }}">
                 {{ $galaxy->universe->name }}</a></b></li>
+                <li class="collection-item">Type:
+                        <b><a href="/galaxy-type/{{ $galaxy->galaxyType->id }}">
+                                        {{ $galaxy->galaxyType->name }}</a></b></li>
 
         </ul>
 
