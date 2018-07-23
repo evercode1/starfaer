@@ -23,11 +23,6 @@
                         {{ $zone->universe->name }}</a></b>
                         </li>
 
-                        <li class="collection-item">Zone Type:
-                        <b><a href="/zone-type/{{ $zone->zoneType->id }} - {{ $zone->zoneType->slug }}">
-                        {{ $zone->zoneType->name }}</a></b>
-                        </li>
-
                         <li class="collection-item">Coordinates:  <b>{{ $zone->coordinates }}</b></li>
 
                         <li class="collection-item">{!! $zone->description !!}</li>

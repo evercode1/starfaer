@@ -156,7 +156,7 @@
 
             <input type="text"
                    name="coordinates"
-                   value="{{ old('coordinates') ? old('coordinates') : 100 }}" />
+                   value="{{ old('coordinates') ? old('coordinates') : '' }}" />
 
             @if ($errors->has('coordinates'))
 
