@@ -23,7 +23,13 @@ class TestController extends Controller
     {
 
 
-        return view('test.index');
+
+
+
+
+
+
+        //return view('test.index');
 
     }
 

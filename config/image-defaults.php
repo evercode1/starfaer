@@ -15,6 +15,23 @@ return [
 
 
 
+    // Begin StarType Image Config Array Method
+
+
+        'startype' => [
+                'destinationFolder'     => '/imgs/startype/',
+                'createFolder'          => '/imgs/startype',
+                'destinationThumbnail'  => '/imgs/startype/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/startype/',
+                'thumbnailPath'         => '/imgs/startype/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End StarType Image Config Array Method
     // Begin Zone Image Config Array Method
 
 

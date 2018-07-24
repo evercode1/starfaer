@@ -168,6 +168,11 @@ Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
+// Star Seed Routes
+
+Route::get('star-type-seeder', 'StarTypeSeederController@create');
+Route::post('star-type-seeder', 'StarTypeSeederController@store');
+
 // Test Routes
 
 Route::get('test', 'TestController@index');
@@ -272,6 +277,26 @@ Route::get('zone/{zone}-{slug?}', 'ZoneController@show')->name('zone.show');
 Route::resource('zone', 'ZoneController', ['except' => ['show', 'create','destroy']]);
 
 // End Zone Routes
+
+
+
+// Begin StarType Routes
+
+Route::get('all-star-types', 'AllStarTypesController@index');
+
+Route::get('/api/all-star-types-data', 'FrontApiController@allStarTypesData');
+
+Route::any('api/star-type-data', 'ApiController@starTypeData');
+
+Route::post('star-type-delete/{id}', 'StarTypeController@destroy');
+
+Route::get('/star-type/create', 'StarTypeController@create')->name('star-type.create');
+
+Route::get('star-type/{id}', 'StarTypeController@show')->name('star-type.show');
+
+Route::resource('star-type', 'StarTypeController', ['except' => ['show', 'create','destroy']]);
+
+// End StarType Routes
 
 
 

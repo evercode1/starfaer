@@ -70,3 +70,13 @@ Vue.component('zone-grid', require('./components/ZoneGrid.vue'));
 Vue.component('all-zones', require('./components/AllZones.vue'));
 
 /** End Zone All Models Call */
+/** Begin StarType Grid Component Call */
+
+Vue.component('star-type-grid', require('./components/StarTypeGrid.vue'));
+
+/** End StarType Grid Component Call */
+/** Begin StarType All Models Call */
+
+Vue.component('all-star-types', require('./components/AllStarTypes.vue'));
+
+/** End StarType All Models Call */
