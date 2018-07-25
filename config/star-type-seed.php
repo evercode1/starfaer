@@ -11,7 +11,13 @@ return [
     'startypes' =>
 
     [
-        'A-type main-sequence star' => 'An A-type main-sequence star 
+        [
+            'name' =>'A-type main-sequence star',
+
+            'description' => 'Stars with masses of 1.4 to 2.1 times the mass of our sun.  
+            Hydrogen burning star.  Stellar winds are weak, they do not generate X-ray emissions.',
+
+            'rough' => 'An A-type main-sequence star 
                                         or A dwarf star is a main-sequence 
                                         hydrogen-burning star of spectral 
                                         type A and luminosity class V. These 
@@ -26,11 +32,25 @@ return [
                                         expected to harbor a magnetic dynamo. 
                                         As a consequence, because they do not 
                                         have strong stellar winds they lack a 
-                                        means to generate X-ray emission.
+                                        means to generate X-ray emission.',
 
-',
+            'wiki' => 'https://en.wikipedia.org/wiki/A-type_main-sequence_star'
 
-        'Am star' => 'An Am star or metallic-line star is a type of chemically 
+        ],
+
+        [
+
+        'name' => 'Am star',
+
+        'description' => 'A chemically peculiar star, with heavy metals like Zinc, 
+        strontium, barium, and others.  The chemical abnormalities are due to some elements which absorb 
+        more light being pushed towards the surface, while others sink 
+        under the force of gravity. This effect takes place only if the 
+        star has low rotational velocity. Normally, A-type stars rotate 
+        quickly. Most Am stars form part of a binary system in which the 
+        rotation of the stars has been slowed by tidal braking.',
+
+        'rough' => 'An Am star or metallic-line star is a type of chemically 
         peculiar star of spectral type A whose spectrum has strong and often 
         variable absorption lines of metals such as zinc, strontium, zirconium, 
         and barium, and deficiencies of others, such as calcium and scandium. 
@@ -59,7 +79,19 @@ return [
         following table lists some metallic-line stars in order of descending 
         apparent visual magnitude.',
 
-        'Ap and Bp stars' => 'Ap and Bp stars are chemically peculiar stars hence 
+        'wiki' => 'https://en.wikipedia.org/wiki/Am_star'
+
+        ],
+
+        [
+
+        'name' => 'Ap and Bp stars',
+
+        'description' => 'chemically peculiar stars, which is why it has 
+        the p of types A and B, which show overabundances of some metals, such 
+        as strontium, chromium and europium.  Slower rotation, stronger magnetic fields.',
+
+        'rough' => 'Ap and Bp stars are chemically peculiar stars hence 
         the p of types A and B which show overabundances of some metals, such 
         as strontium, chromium and europium. In addition, larger overabundances 
         are often seen in praseodymium and neodymium. These stars have a much 
@@ -79,8 +111,19 @@ return [
         axis is offset to the rotation axis, is known as the 
         oblique rotator model.',
 
+        'wiki' => 'https://en.wikipedia.org/wiki/Ap_and_Bp_stars'
 
-        'B-type main-sequence star' => 'A B-type main-sequence star B V is a main-sequence 
+        ],
+
+
+        [
+
+        'name' => 'B-type main-sequence star',
+
+        'description' => 'These stars range in size from 2 to 16 times the mass of our sun.  
+        B-type stars are extremely luminous and blue.',
+
+        'rough' => 'A B-type main-sequence star B V is a main-sequence 
         hydrogen-burning star of spectral type B and luminosity class V. These stars have 
         from 2 to 16 times the mass of the Sun and surface temperatures between 10,000 
         and 30,000 K. B-type stars are extremely luminous and blue. Their spectra have 
@@ -95,7 +138,19 @@ return [
         that indicated the degree to which they approached the next classification. Thus 
         B2 is two tenths of the way from type B or B0 to type A.',
 
-        'Barium star' => 'Barium stars are spectral class G to K giants, whose spectra indicate 
+        'wiki' => 'https://en.wikipedia.org/wiki/B-type_main-sequence_star'
+
+        ],
+
+        [
+
+        'name' => 'Barium star',
+
+        'description' => 'Braium stars range from class G to K giants, with ionized barium in 
+        overabundance.  Observational studies of their radial velocity suggested that all barium stars 
+        are binary stars, with white dwarfs in some systems.',
+
+        'rough' => 'Barium stars are spectral class G to K giants, whose spectra indicate 
         an overabundance of s-process elements by the presence of singly ionized barium, 
         Ba II, at λ 455.4 nm. Barium stars also show enhanced spectral features of carbon, 
         the bands of the molecules CH, CN and C2. The class was originally recognized and 
@@ -138,7 +193,19 @@ return [
         spectral peculiarities, and orbital statistics, and are believed to be 
         the older, metal-poor analogs of the barium stars.',
 
-        'B e star' => 'Nebulosity around the Be star HD 87643.  A B e star, frequently 
+        'wiki' => 'https://en.wikipedia.org/wiki/Barium_star'
+
+        ],
+
+        [
+
+
+        'name' => 'B e star',
+
+        'description' => 'Observational characteristics include optical linear polarization and often 
+        infrared radiation that is much stronger than in ordinary B-class stars, called infrared excess.',
+
+        'rough' => 'Nebulosity around the Be star HD 87643.  A B e star, frequently 
         called a B e-type star, is a B-type star with distinctive forbidden neutral 
         or low ionisation emission lines in its spectrum. The designation results 
         from combining the spectral class B, the lowercase e denoting emission 
@@ -152,7 +219,17 @@ return [
         might exhibit a normal B-type spectrum at times, and hitherto normal 
         B-type stars may become B e-type stars.',
 
-        'Be star' => 'Be Stars are a heterogeneous set of stars with B spectral types 
+        'wiki' => 'https://en.wikipedia.org/wiki/B(e)_star'
+
+        ],
+
+        [
+
+        'name' => 'Be star',
+
+        'description' => 'A non-supergiant B star whose spectrum has, or had at some time, one or more Balmer emission lines.',
+
+        'rough' => 'Be Stars are a heterogeneous set of stars with B spectral types 
         and emission lines. A narrower definition, sometimes referred to as Classical 
         Be Stars, is a non-supergiant B star whose spectrum has, or had at some time, 
         one or more Balmer emission lines.
@@ -168,7 +245,17 @@ return [
        the Be star banner. Be stars are primarily considered to be main sequence stars, 
        but a number of subgiants and giant stars are also included.',
 
-        'Binary pulsar' => 'A binary pulsar is a pulsar with a binary companion, often a 
+        'wiki' => 'https://en.wikipedia.org/wiki/Be_star'
+
+       ],
+
+        [
+
+        'name' => 'Binary pulsar',
+
+        'description' => 'A binary pulsar is a pulsar with a binary companion, often a white dwarf or neutron star.',
+
+        'rough' => 'A binary pulsar is a pulsar with a binary companion, often a 
         white dwarf or neutron star. In at least one case, the double pulsar PSR J0737-3039, 
         the companion neutron star is another pulsar as well. Binary pulsars are one of 
         the few objects which allow physicists to test general relativity because of the 
@@ -177,7 +264,21 @@ return [
         can be deduced from the timing of the pulses from the pulsar itself, which can 
         be measured with extraordinary accuracy by radio telescopes.',
 
-        'Binary star' => 'A binary star is a star system consisting of two stars orbiting around their 
+        'wiki' => 'https://en.wikipedia.org/wiki/Binary_pulsar',
+
+        ],
+
+        [
+
+        'name' =>'Binary star',
+
+        'description' => 'A binary star is a star system consisting of two stars orbiting around their 
+        common barycenter. Systems of two or more stars are called multiple star systems. These 
+        systems, especially when more distant, often appear to the unaided eye as a single point 
+        of light, and are then revealed as multiple by other means. Research over the last two 
+        centuries suggests that half or more of visible stars are part of multiple star systems.',
+
+        'rough' => 'A binary star is a star system consisting of two stars orbiting around their 
         common barycenter. Systems of two or more stars are called multiple star systems. These 
         systems, especially when more distant, often appear to the unaided eye as a single point 
         of light, and are then revealed as multiple by other means. Research over the last two 
@@ -215,7 +316,18 @@ return [
         are also common as the nuclei of many planetary nebulae, and are the 
         progenitors of both novae and type Ia supernovae.',
 
-        'Black dwarf' => 'A black dwarf is a theoretical stellar remnant, specifically a white 
+        'wiki' => 'https://en.wikipedia.org/wiki/Binary_star',
+
+        ],
+
+        [
+
+        'name' => 'Black dwarf',
+
+        'description' => 'A black dwarf is a theoretical stellar remnant, specifically a white 
+        dwarf that has cooled sufficiently that it no longer emits significant heat or light.',
+
+        'rough' => 'A black dwarf is a theoretical stellar remnant, specifically a white 
         dwarf that has cooled sufficiently that it no longer emits significant heat or light. 
         Because the time required for a white dwarf to reach this state is calculated to be 
         longer than the current age of the universe 13.8 billion years, no black dwarfs are 
@@ -227,7 +339,19 @@ return [
         These objects are now generally called brown dwarfs, a term coined in the 1970s.
         Black dwarfs should not be confused with black holes, black stars, or neutron stars.',
 
-        'Black star semiclassical gravity' => 'A black star is a gravitational object composed 
+        'wiki' => 'https://en.wikipedia.org/wiki/Black_dwarf',
+
+        ],
+
+        [
+
+        'name' => 'Black star semiclassical gravity',
+
+        'description' => 'A black star is a gravitational object composed 
+        of matter. It is a theoretical alternative to the black hole concept from general 
+        relativity.',
+
+        'rough' => 'A black star is a gravitational object composed 
         of matter. It is a theoretical alternative to the black hole concept from general 
         relativity. The theoretical construct was created through the use of semiclassical 
         gravity theory. A similar structure should also exist for the Einstein–Maxwell–Dirac equations 
@@ -254,7 +378,18 @@ return [
          Additionally, it will create thermal Planckian radiation that will closely 
          resemble the expected Hawking radiation of an equivalent black hole.',
 
-        'Blue dwarf red-dwarf stage' => 'A blue dwarf is a predicted class of star 
+        'wiki' => 'https://en.wikipedia.org/wiki/Black_star_(semiclassical_gravity)',
+
+        ],
+
+        [
+
+        'name' =>'Blue dwarf red-dwarf stage',
+
+        'description' => 'Blue dwarfs do not exist yet, but are predicted based on theoretical models. 
+        Red dwarfs do not expand, so they increase their radiative rate by becoming bluer and hotter. ',
+
+        'rough' => 'A blue dwarf is a predicted class of star 
         that develops from a red dwarf after it has exhausted much of its hydrogen 
         fuel supply. Because red dwarfs fuse their hydrogen slowly and are fully 
         convective allowing their entire hydrogen supply to be fused, instead of 
@@ -274,7 +409,20 @@ return [
         Blue dwarfs eventually evolve into white dwarfs once their hydrogen fuel is 
         completely exhausted, which in turn will eventually cool to become a black dwarf.',
 
-        'Blue giant' => 'In astronomy, a blue giant is a hot star with a luminosity class 
+        'wiki' => 'https://en.wikipedia.org/wiki/Blue_dwarf_(red-dwarf_stage)',
+
+        ],
+
+        [
+
+        'name' => 'Blue giant',
+
+        'description' => 'A blue giant is a hot star with a luminosity class 
+        of III giant or II bright giant.  They are much rarer than red giants, 
+        because they only develop from more massive and less common stars, 
+        and because they have short lives in the blue giant stage.',
+
+        'rough' => 'In astronomy, a blue giant is a hot star with a luminosity class 
         of III giant or II bright giant. In the standard Hertzsprung–Russell diagram, 
         these stars lie above and to the right of the main sequence.
 
@@ -288,7 +436,21 @@ return [
         The name blue giant is sometimes misapplied to other high-mass luminous stars, 
         such as main-sequence stars, simply because they are large and hot.',
 
-        'Blue hypergiant' => 'Luminous blue variables are a class of highly luminous 
+        'wiki' => 'https://en.wikipedia.org/wiki/Blue_giant',
+
+        ],
+
+        [
+
+        'name' =>'Blue hypergiant',
+
+        'description' => 'Luminous blue variables are a class of highly luminous 
+        hot stars that display characteristic spectral variation. They often lie in a 
+        quiescent zone with hotter stars generally being more luminous, but periodically 
+        undergo large surface eruptions and move to a narrow zone where stars of all 
+        luminosities have approximately the same temperature, around 8,000K.',
+
+        'rough' => 'Luminous blue variables are a class of highly luminous 
         hot stars that display characteristic spectral variation. They often lie in a 
         quiescent zone with hotter stars generally being more luminous, but periodically 
         undergo large surface eruptions and move to a narrow zone where stars of all 
@@ -305,7 +467,19 @@ return [
         Lower mass LBVs may be a transitional stage to or from cool hypergiants or are 
         different type of object.',
 
-        'Blue straggler' => 'A blue straggler is a main-sequence star in an open or globular 
+        'wiki' => 'https://en.wikipedia.org/wiki/Hypergiant#Blue_hypergiants',
+
+        ],
+
+        [
+
+        'name' => 'Blue straggler',
+
+        'description' => 'A blue straggler is a main-sequence star in an open or globular 
+        cluster that is more luminous and bluer than stars at the main-sequence turn-off 
+        point for the cluster.',
+
+        'rough' => 'A blue straggler is a main-sequence star in an open or globular 
         cluster that is more luminous and bluer than stars at the main-sequence turn-off 
         point for the cluster. Blue stragglers were first discovered by Allan Sandage in 
         1953 while performing photometry of the stars in the globular cluster M3. 
@@ -320,7 +494,18 @@ return [
         The resolution of this problem is likely related to interactions between 
         two or more stars in the dense confines of the clusters in which blue stragglers are found.',
 
-        'Blue supergiant star' => 'Blue supergiant stars are hot luminous stars, 
+        'wiki' => 'https://en.wikipedia.org/wiki/Blue_straggler',
+
+        ],
+
+        [
+
+        'name' => 'Blue supergiant star',
+
+        'description' => 'Blue supergiant stars are hot luminous stars, 
+        referred to scientifically as OB supergiants.',
+
+        'rough' => 'Blue supergiant stars are hot luminous stars, 
         referred to scientifically as OB supergiants. They have luminosity class I 
         and spectral class B9 or earlier.
 
@@ -329,11 +514,35 @@ return [
         than a red supergiant, with surface temperatures of 10,000–50,000 K and luminosities 
         from about 10,000 to a million times the Sun.',
 
-        'Bright giant' => 'The luminosity class II in the Yerkes spectral classification is 
-        given to bright giants. These are stars which straddle the boundary between ordinary 
-        giants and supergiants, based on the appearance of their spectra.',
+        'wiki' => 'https://en.wikipedia.org/wiki/Blue_supergiant_star',
 
-        'Brown dwarf' => 'Brown dwarfs are substellar objects that occupy the mass range between 
+        ],
+
+        [
+
+        'name' => 'Bright giant',
+
+        'description' => 'These are stars which straddle the boundary 
+        between ordinary giants and supergiants, based on the appearance of their spectra.',
+
+        'rough' => 'The luminosity class II in the Yerkes spectral classification 
+        is given to bright giants. These are stars which straddle the boundary 
+        between ordinary giants and supergiants, based on the appearance of their spectra.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Bright_giant',
+
+        ],
+
+        [
+
+        'name' =>'Brown dwarf',
+
+        'description' => 'Brown dwarfs are substellar objects that occupy the mass range between 
+        the heaviest gas giant planets and the lightest stars, having masses between 
+        approximately 13 to 75–80 times that of Jupiter MJ, or approximately 2.5×1028 kg to 
+        about 1.5×1029 kg.',
+
+        'rough' => 'Brown dwarfs are substellar objects that occupy the mass range between 
         the heaviest gas giant planets and the lightest stars, having masses between 
         approximately 13 to 75–80 times that of Jupiter MJ, or approximately 2.5×1028 kg to 
         about 1.5×1029 kg. Below this range are the sub-brown dwarfs, and above it are 
@@ -354,7 +563,24 @@ return [
 
         There are planets known to orbit brown dwarfs: 2M1207b, MOA-2007-BLG-192Lb, and 2MASS J044144b.',
 
-        'Carbon detonation' => 'Carbon detonation or Carbon deflagration is the violent 
+        'wiki' => 'https://en.wikipedia.org/wiki/Brown_dwarf',
+
+        ],
+
+        [
+
+        'name' => 'Carbon detonation',
+
+        'description' => 'Carbon detonation or Carbon deflagration is the violent 
+        reignition of thermonuclear fusion in a white dwarf star that was previously slowly 
+        cooling. It involves a runaway thermonuclear process which spreads through the 
+        white dwarf in a matter of seconds, producing a Type Ia supernova which releases an 
+        immense amount of energy as the star is blown apart. The carbon detonation/deflagration 
+        process leads to a supernova by a different route from the better known Type II core-collapse 
+        supernova the type II is caused by the cataclysmic explosion of the outer layers of a 
+        massive star as its core implodes.',
+
+        'rough' => 'Carbon detonation or Carbon deflagration is the violent 
         reignition of thermonuclear fusion in a white dwarf star that was previously slowly 
         cooling. It involves a runaway thermonuclear process which spreads through the 
         white dwarf in a matter of seconds, producing a Type Ia supernova which releases an 
@@ -384,7 +610,24 @@ return [
         two white dwarfs merge and the mass of the body formed is below the Chandrasekhar l
         imit; if two white dwarves merge and the result is over the limit, a Type 1a supernova will occur.',
 
-        'Carbon star' => 'A carbon star is typically an asymptotic giant branch star, a 
+       'wiki' => 'https://en.wikipedia.org/wiki/Carbon_detonation',
+
+       ],
+
+
+
+       [
+
+       'name' =>'Carbon star',
+
+       'description' => 'A carbon star is typically an asymptotic giant branch star, a 
+        luminous red giant, whose atmosphere contains more carbon than oxygen; the two 
+        elements combine in the upper layers of the star, forming carbon monoxide,
+         which consumes all the oxygen in the atmosphere, leaving carbon atoms free 
+         to form other carbon compounds, giving the star a sooty atmosphere and a 
+         strikingly ruby red appearance.',
+
+       'rough' => 'A carbon star is typically an asymptotic giant branch star, a 
         luminous red giant, whose atmosphere contains more carbon than oxygen; the two 
         elements combine in the upper layers of the star, forming carbon monoxide,
          which consumes all the oxygen in the atmosphere, leaving carbon atoms free 
@@ -399,7 +642,20 @@ return [
         Carbon stars have quite distinctive spectral characteristics, and they were first 
         recognized by their spectra by Angelo Secchi in the 1860s, a pioneering time in astronomical spectroscopy.',
 
-        'CEMP star' => 'Carbon enhanced metal poor stars, usually referred to as CEMP stars, are a 
+        'wiki' => 'https://en.wikipedia.org/wiki/Carbon_star',
+
+        ],
+
+
+
+        [
+
+        'name' => 'CEMP star',
+
+        'description' => 'Carbon enhanced metal poor stars, usually referred to as CEMP stars, are a 
+        class of chemically peculiar star.',
+
+        'rough' => 'Carbon enhanced metal poor stars, usually referred to as CEMP stars, are a 
         class of chemically peculiar star. CEMP stars have C/Fe > +1, which means 
         compared to the Sun these stars have carbon enhanced at least ten times more than iron, 
         and Fe/H < -1, meaning that iron is less than a tenth that in the Sun.
@@ -409,8 +665,20 @@ return [
         The others are termed CEMP-r, CEMP-s, or CEMP-r/s.  Metal poor stars are more likely to 
         be CEMP stars, and once Fe/H < -5.0, then all the stars are CEMP stars.',
 
-        'CH star' => 'CH stars are particular type of carbon stars which are characterized 
-        by the presence of exceedingly strong absorption bands due to CH methylidyn) 
+        'wiki' => 'https://en.wikipedia.org/wiki/CEMP_star',
+
+        ],
+
+        [
+
+        'name' => 'CH star',
+
+        'description' => 'CH stars are particular type of carbon stars which are characterized 
+        by the presence of exceedingly strong absorption bands due to CH methylidyn 
+        in their spectra.',
+
+        'rough' => 'CH stars are particular type of carbon stars which are characterized 
+        by the presence of exceedingly strong absorption bands due to CH methylidyn 
         in their spectra. They belong to the stellar population II, meaning they are 
         metal poor and generally pretty middle-aged stars, and are under-luminous 
         compared to the classical C–N carbon stars. The term CH star was coined 
@@ -428,7 +696,19 @@ return [
         of a mass transfer from a former classical carbon star companion, now 
         a degenerate white dwarf, to the current CH-classed star.',
 
-        'Circumpolar star' => 'A circumpolar star is a star, as viewed from a 
+        'wiki' => 'https://en.wikipedia.org/wiki/CH_star',
+
+        ],
+
+        [
+
+        'name' => 'Circumpolar star',
+
+        'description' => 'A circumpolar star is a star, as viewed from a 
+        given latitude on Earth, that never sets below the horizon due to its 
+        apparent proximity to one of the celestial poles.',
+
+        'rough' => 'A circumpolar star is a star, as viewed from a 
         given latitude on Earth, that never sets below the horizon due to its 
         apparent proximity to one of the celestial poles. Circumpolar stars are 
         therefore visible from said location toward the nearest pole for the 
@@ -442,11 +722,42 @@ return [
         Minor, the Little Bear, from Greek αρκτικός arktikos, near the Bear, 
         from the word άρκτος arktos bear.',
 
-        'Class II star' => 'The luminosity class II in the Yerkes spectral classification 
+        'wiki' => 'https://en.wikipedia.org/wiki/Circumpolar_star',
+
+        ],
+
+
+        [
+
+        'name' => 'Class II star',
+
+        'description' => 'The luminosity class II in the Yerkes spectral classification 
         is given to bright giants. These are stars which straddle the boundary between 
         ordinary giants and supergiants, based on the appearance of their spectra.',
 
-        'Class K star' => 'A K-type main-sequence star K V, also referred to as an 
+        'rough' => 'The luminosity class II in the Yerkes spectral classification 
+        is given to bright giants. These are stars which straddle the boundary between 
+        ordinary giants and supergiants, based on the appearance of their spectra.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Bright_giant',
+
+        ],
+
+        [
+
+        'name' => 'Class K star',
+
+        'description' => 'K-type main-sequence stars are about three to 
+        four times as abundant as G-type main-sequence stars, making planet searches easier.
+        While M-type stars are also very abundant, they are more likely to have tidally 
+        locked planets in orbit and are more prone to produce solar flares that would more 
+        easily strike nearby rocky planets, making it much harder for life to develop. 
+        Due to their greater heat, the habitable zones of K-type stars are also much 
+        wider than those of M-type stars. For all of these reasons, they may be the most 
+        favorable stars to focus on in the search for exoplanets and extraterrestrial life 
+        in the universe.',
+
+        'rough' => 'A K-type main-sequence star K V, also referred to as an 
         orange dwarf or K dwarf, is a main-sequence hydrogen-burning star of spectral 
         type K and luminosity class V. These stars are intermediate in size between red 
         M-type main-sequence stars red dwarfs and yellow G-type main-sequence stars. 
@@ -472,7 +783,19 @@ return [
         in the universe, especially if they are cooler K6V–K9V, specifically those of the 
         stellar class K7.5V temperate.',
 
-        'Class W' => 'Wolf–Rayet stars, often abbreviated as WR stars, are a rare heterogeneous 
+        'wiki' => 'https://en.wikipedia.org/wiki/K-type_main-sequence_star',
+
+        ],
+
+        [
+
+        'name' => 'Class W',
+
+        'description' => 'a rare heterogeneous 
+        set of stars with unusual spectra showing prominent broad emission lines of 
+        highly ionised helium and nitrogen or carbon.',
+
+        'rough' => 'Wolf–Rayet stars, often abbreviated as WR stars, are a rare heterogeneous 
         set of stars with unusual spectra showing prominent broad emission lines of 
         highly ionised helium and nitrogen or carbon. The spectra indicate very high 
         surface enhancement of heavy elements, depletion of hydrogen, and strong stellar 
@@ -497,12 +820,35 @@ return [
         The naked-eye stars Gamma Velorum and Theta Muscae, as well as the most massive known star, 
         R136a1 in 30 Doradus, are all Wolf–Rayet stars.',
 
-        'CN star' => 'A CN star is a star with strong cyanogen bands in its spectrum. Cyanogen 
+        'wiki' => 'https://en.wikipedia.org/wiki/Wolf%E2%80%93Rayet_star',
+
+        ],
+
+        [
+
+        'name' => 'CN star',
+
+        'description' => 'A CN star is a star with strong cyanogen bands in its spectrum. Cyanogen 
+        is a simple molecule of one carbon atom and one nitrogen atom, with absorption bands 
+        around 388.9 and 421.6 nm.',
+
+        'rough' => 'A CN star is a star with strong cyanogen bands in its spectrum. Cyanogen 
         is a simple molecule of one carbon atom and one nitrogen atom, with absorption bands 
         around 388.9 and 421.6 nm. This group of stars was first noticed by Nancy G. 
         Roman who called them 4150 stars.',
 
-        'Compact star' => 'In astronomy, the term compact star or compact object refers 
+        'wiki' => 'https://en.wikipedia.org/wiki/CN_star',
+
+        ],
+
+        [
+
+        'name' => 'Compact star',
+
+        'description' => 'The term compact star or compact object refers 
+        collectively to white dwarfs, neutron stars, and black holes.',
+
+        'rough' => 'In astronomy, the term compact star or compact object refers 
         collectively to white dwarfs, neutron stars, and black holes. It would grow to 
         include exotic stars if such hypothetical dense bodies are confirmed.
 
@@ -515,7 +861,19 @@ return [
         of the above-mentioned categories. A compact star that is not a black 
         hole may be called a degenerate star.',
 
-        'Dark-energy star' => 'A dark-energy star is a hypothetical compact 
+        'wiki' => 'https://en.wikipedia.org/wiki/Compact_star'
+
+        ],
+
+        [
+
+        'name' => 'Dark-energy star',
+
+        'description' => 'A dark-energy star is a hypothetical compact 
+        astrophysical object, which a minority of physicists think might constitute 
+        an alternative explanation for observations of astronomical black hole candidates.',
+
+        'rough' => 'A dark-energy star is a hypothetical compact 
         astrophysical object, which a minority of physicists think might constitute 
         an alternative explanation for observations of astronomical black hole candidates.
 
@@ -526,7 +884,24 @@ return [
         negative pressure to exert against gravity. There would be no 
         information-destroying singularity.',
 
-        'Dark star dark matter' => 'A dark star is a type of star that may have 
+        'wiki' => 'https://en.wikipedia.org/wiki/Dark-energy_star',
+
+        ],
+
+        [
+
+        'name' => 'Dark star dark matter',
+
+        'description' => 'A dark star is a type of star that may have 
+        existed early in the universe before conventional stars were able to form. 
+        The stars would be composed mostly of normal matter, like modern stars, 
+        but a high concentration of neutralino dark matter within them would 
+        generate heat via annihilation reactions between the dark-matter particles. 
+        This heat would prevent such stars from collapsing into the relatively 
+        compact sizes of modern stars and therefore prevent nuclear fusion among 
+        the normal matter atoms from being initiated.',
+
+        'rough' => 'A dark star is a type of star that may have 
         existed early in the universe before conventional stars were able to form. 
         The stars would be composed mostly of normal matter, like modern stars, 
         but a high concentration of neutralino dark matter within them would 
@@ -545,7 +920,19 @@ return [
         and would be associated with clouds of cold molecular hydrogen gas that 
         normally would not harbor such energetic particles.',
 
-        'Dark star Newtonian mechanics' => 'A dark star is a theoretical object compatible 
+        'wiki' => 'https://en.wikipedia.org/wiki/Dark_star_(dark_matter)'
+
+        ],
+
+        [
+
+        'name' => 'Dark star Newtonian mechanics',
+
+        'description' => 'A dark star is a theoretical object compatible 
+        with Newtonian mechanics that, due to its large mass, has a surface escape 
+        velocity that equals or exceeds the speed of light.',
+
+        'rough' => 'A dark star is a theoretical object compatible 
         with Newtonian mechanics that, due to its large mass, has a surface escape 
         velocity that equals or exceeds the speed of light. Whether light is affected 
         by gravity under Newtonian mechanics is unclear but if it were accelerated 
@@ -553,7 +940,19 @@ return [
         would be trapped by the stars gravity, rendering it dark, hence the name. 
         Dark stars are analogous to black holes in general relativity.',
 
-        'Double star' => 'In observational astronomy, a double star or visual double 
+        'wiki' => 'https://en.wikipedia.org/wiki/Dark_star_(Newtonian_mechanics)',
+
+        ],
+
+        [
+
+        'name' => 'Double star',
+
+        'description' => 'A double star or visual double 
+        is a pair of stars that appear close to each other in the sky as seen from 
+        Earth when viewed through an optical telescope.',
+
+        'rough' => 'In observational astronomy, a double star or visual double 
         is a pair of stars that appear close to each other in the sky as seen from 
         Earth when viewed through an optical telescope.
 
@@ -583,7 +982,18 @@ return [
         as happened with Polaris A in 2006. It is only the inability to telescopically 
         observe two separate stars that distinguish non-visual and visual binaries.',
 
-        'Dwarf star' => 'A dwarf star is a star of relatively small size and low luminosity. 
+        'wiki' => 'https://en.wikipedia.org/wiki/Double_star',
+
+        ],
+
+        [
+
+        'name' => 'Dwarf star',
+
+        'description' => 'A dwarf star is a star of relatively small size and low luminosity. 
+        Most main sequence stars are dwarf stars.',
+
+        'rough' => 'A dwarf star is a star of relatively small size and low luminosity. 
         Most main sequence stars are dwarf stars. The term was originally coined in 1906 
         when the Danish astronomer Ejnar Hertzsprung noticed that the reddest stars—classified 
         as K and M in the Harvard scheme could be divided into two distinct groups. 
@@ -609,7 +1019,21 @@ return [
         but still massive enough to fuse deuterium—less than about 0.08 solar masses 
         and more than about 13 Jupiter masses.',
 
-        'Electroweak star' => 'An electroweak star is a theoretical type of exotic star, 
+       'wiki' => 'https://en.wikipedia.org/wiki/Dwarf_star',
+
+       ],
+
+        [
+
+        'name' => 'Electroweak star',
+
+        'description' => 'An electroweak star is a theoretical type of exotic star, 
+        whereby the gravitational collapse of the star is prevented by radiation pressure 
+        resulting from electroweak burning, that is, the energy released by conversion of 
+        quarks to leptons through the electroweak force. This process occurs in a volume 
+        at the stars core approximately the size of an apple, containing about two Earth masses.',
+
+        'rough' => 'An electroweak star is a theoretical type of exotic star, 
         whereby the gravitational collapse of the star is prevented by radiation pressure 
         resulting from electroweak burning, that is, the energy released by conversion of 
         quarks to leptons through the electroweak force. This process occurs in a volume 
@@ -621,7 +1045,19 @@ return [
         attraction, but may still be withstood by electroweak burning radiation pressure. 
         This phase of a stars life may last upwards of 10 million years.',
 
-        'Exotic star' => 'An exotic star is a hypothetical compact star composed of 
+        'wiki' => 'https://en.wikipedia.org/wiki/Electroweak_star',
+
+        ],
+
+        [
+
+        'name' => 'Exotic star',
+
+        'description' => 'An exotic star is a hypothetical compact star composed of 
+        something other than electrons, protons, neutrons, or muons, and balanced against 
+        gravitational collapse by degeneracy pressure or other quantum properties.',
+
+        'rough' => 'An exotic star is a hypothetical compact star composed of 
         something other than electrons, protons, neutrons, or muons, and balanced against 
         gravitational collapse by degeneracy pressure or other quantum properties. 
         Exotic stars include quark stars composed of quarks and perhaps strange stars
@@ -640,13 +1076,40 @@ return [
         objects are occasionally identified based on indirect evidence gained from 
         properties we can observe.',
 
-        'Extreme helium star' => 'An extreme helium star abbreviated EHe is a low-mass 
+        'wiki' => 'https://en.wikipedia.org/wiki/Exotic_star',
+
+        ],
+
+        [
+
+        'name' => 'Extreme helium star',
+
+        'description' => 'An extreme helium star abbreviated EHe is a low-mass 
         supergiant that is almost devoid of hydrogen, the most common chemical element 
         of the Universe. Since there are no conditions where stars devoid of hydrogen 
         can be formed from molecular clouds, it is theorized that they are the product 
         of the mergers of helium-core and carbon-oxygen core white dwarfs.',
 
-        'F-type main-sequence star' => 'An F-type main-sequence star F V is a main-sequence, 
+        'rough' => 'An extreme helium star abbreviated EHe is a low-mass 
+        supergiant that is almost devoid of hydrogen, the most common chemical element 
+        of the Universe. Since there are no conditions where stars devoid of hydrogen 
+        can be formed from molecular clouds, it is theorized that they are the product 
+        of the mergers of helium-core and carbon-oxygen core white dwarfs.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Extreme_helium_star',
+
+        ],
+
+        [
+
+        'name' => 'F-type main-sequence star',
+
+        'description' => 'An F-type main-sequence star F V is a main-sequence, 
+        hydrogen-fusing star of spectral type F and luminosity class V. These stars 
+        have from 1.0 to 1.4 times the mass of the Sun and surface temperatures between 
+        6,000 and 7,600 K.',
+
+        'rough' => 'An F-type main-sequence star F V is a main-sequence, 
         hydrogen-fusing star of spectral type F and luminosity class V. These stars 
         have from 1.0 to 1.4 times the mass of the Sun and surface temperatures between 
         6,000 and 7,600 K. Tables VII and VIII. This temperature range gives the F-type 
@@ -654,7 +1117,21 @@ return [
         dwarf star, this class of star may also be termed a yellow-white dwarf. Famous 
         examples include Procyon A, Gamma Virginis A and B, and KIC 8462852.',
 
-        'Flare star' => 'A flare star is a variable star that can undergo unpredictable 
+        'wiki' => 'https://en.wikipedia.org/wiki/F-type_main-sequence_star',
+
+        ],
+
+        [
+
+        'name' => 'Flare star',
+
+        'description' => 'A flare star is a variable star that can undergo unpredictable 
+        dramatic increases in brightness for a few minutes. It is believed that the flares 
+        on flare stars are analogous to solar flares in that they are due to the magnetic 
+        energy stored in the stars atmospheres. The brightness increase is across the 
+        spectrum, from X rays to radio waves.',
+
+        'rough' => 'A flare star is a variable star that can undergo unpredictable 
         dramatic increases in brightness for a few minutes. It is believed that the flares 
         on flare stars are analogous to solar flares in that they are due to the magnetic 
         energy stored in the stars atmospheres. The brightness increase is across the 
@@ -675,17 +1152,59 @@ return [
         that the mechanism for this is similar to that of the RS CVn variables in that 
         the flares are being induced by a companion, namely an unseen Jupiter-like planet in a close orbit.',
 
-        'Frozen star - hypothetical star' => 'In astronomy, a frozen star, besides a disused 
+        'wiki' => 'https://en.wikipedia.org/wiki/Flare_star',
+
+        ],
+
+        [
+
+        'name' => 'Frozen star - hypothetical star',
+
+        'description' => 'A frozen star, besides a disused 
         term for a black hole, is a type of hypothetical star that, according to the 
         astronomers Fred Adams and Gregory P. Laughlin, may appear in the future of 
         the Universe when the metallicity of the interstellar medium is several times the solar value.',
 
-        'FU Orionis star' => 'In stellar evolution, an FU Orionis star also FU Orionis object, 
+        'rough' => 'In astronomy, a frozen star, besides a disused 
+        term for a black hole, is a type of hypothetical star that, according to the 
+        astronomers Fred Adams and Gregory P. Laughlin, may appear in the future of 
+        the Universe when the metallicity of the interstellar medium is several times the solar value.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Frozen_star_(hypothetical_star)',
+
+        ],
+
+        [
+
+        'name' => 'FU Orionis star',
+
+        'description' => 'In stellar evolution, an FU Orionis star also FU Orionis object, 
+        or FUor is a pre–main-sequence star which displays an extreme change in magnitude and 
+        spectral type.',
+
+        'rough' => 'In stellar evolution, an FU Orionis star also FU Orionis object, 
         or FUor is a pre–main-sequence star which displays an extreme change in magnitude and 
         spectral type. One example is the star V1057 Cyg, which became 6 magnitudes brighter 
         and went from spectral type dKe to F-type supergiant. These stars are named after their type-star, FU Orionis.',
 
-        'Fusor (astronomy)' => 'A fusor, according to a proposal to the IAU by Gibor Basri, Professor of 
+        'wiki' => 'https://en.wikipedia.org/wiki/FU_Orionis_star',
+
+        ],
+
+        [
+
+        'name' => 'Fusor (astronomy)',
+
+        'description' => 'an object that achieves core fusion during its lifetime. This definition 
+        included any form of nuclear fusion, so the lowest possible mass of a fusor was set 
+        at roughly 13 times that of Jupiter, at which point deuterium fusion becomes possible. 
+        This is significantly smaller than the point at which sustained hydrogen fusion becomes possible, 
+        around 60 times the mass of Jupiter. Objects are considered stellar when they are about 75 
+        times the mass of Jupiter, when gravitational contraction, i.e. contraction of the object 
+        due to gravity, is halted by heat generated by the nuclear reaction in their interiors. 
+        Fusors would include active stars, dead stars, and brown dwarfs.',
+
+        'rough' => 'A fusor, according to a proposal to the IAU by Gibor Basri, Professor of 
         Astronomy at the University of California, Berkeley to help clarify the nomenclature of c
         elestial bodies, is an object that achieves core fusion during its lifetime. This definition 
         included any form of nuclear fusion, so the lowest possible mass of a fusor was set 
@@ -705,7 +1224,20 @@ return [
         orbits means whose primary orbit is now, or was in the past around, and capable 
         implies fusion is possible sometime during the existence of the object by itself.',
 
-        'G-type main-sequence star' => 'A G-type main-sequence star Spectral type: G-V, often 
+        'wiki' =>  'https://en.wikipedia.org/wiki/Fusor_(astronomy)',
+
+        ],
+
+        [
+
+        'name' => 'G-type main-sequence star',
+
+        'description' => 'The Sun, the 
+        star to which the Earth is gravitationally bound in the Solar System and the 
+        object with the largest apparent magnitude, is an example of a G-type 
+        main-sequence star G2V type.',
+
+        'rough' => 'A G-type main-sequence star Spectral type: G-V, often 
         and imprecisely called a yellow dwarf, or G dwarf star, is a main-sequence star 
         luminosity class V of spectral type G. Such a star has about 0.84 to 1.15 solar 
         masses and surface temperature of between 5,300 and 6,000 K., Tables VII, VIII. 
@@ -727,7 +1259,7 @@ return [
         although the term "dwarf" is used to contrast yellow main-sequence stars from 
         giant stars, yellow dwarfs like the Sun outshine 90% of the stars in the 
         Milky Way which are largely much dimmer orange dwarfs, red dwarfs, 
-        nd white dwarfs, the last being a stellar remnant.
+        and white dwarfs, the last being a stellar remnant.
 
         A G-type main-sequence star will fuse hydrogen for approximately 10 billion years, 
         until it is exhausted at the center of the star. When this happens, 
@@ -736,7 +1268,18 @@ return [
         layers of gas, which become a planetary nebula, while the core rapidly cools 
         and contracts into a compact, dense white dwarf',
 
-        'Gamma-ray burst progenitors' => 'Gamma-ray burst progenitors are the types 
+        'wiki' => 'https://en.wikipedia.org/wiki/G-type_main-sequence_star',
+
+        ],
+
+        [
+
+        'name' => 'Gamma-ray burst progenitors',
+
+        'description' => 'Gamma-ray burst progenitors are the types 
+        of celestial objects that can emit gamma-ray bursts GRBs.',
+
+        'rough' => 'Gamma-ray burst progenitors are the types 
         of celestial objects that can emit gamma-ray bursts GRBs. GRBs show an 
         extraordinary degree of diversity. They can last anywhere from a fraction of 
         a second to many minutes. Bursts could have a single profile or oscillate 
@@ -756,7 +1299,19 @@ return [
         compact binary systems like neutron stars, which was confirmed by 
         the GW170817 observation of a neutron star merger and a kilonova.',
 
-        'Giant star' => 'A giant star is a star with substantially larger radius 
+        'wiki' => 'https://en.wikipedia.org/wiki/Gamma-ray_burst_progenitors'
+
+         ],
+
+        [
+
+        'name' => 'Giant star',
+
+        'description' => 'A giant star is a star with substantially larger radius 
+        and luminosity than a main-sequence or dwarf star of the same surface 
+        temperature.',
+
+        'rough' => 'A giant star is a star with substantially larger radius 
         and luminosity than a main-sequence or dwarf star of the same surface 
         temperature. They lie above the main sequence luminosity class V in 
         the Yerkes spectral classification on the Hertzsprung–Russell diagram 
@@ -771,7 +1326,18 @@ return [
         A hot, luminous main-sequence star may also be referred to as a giant, 
         but any main-sequence star is properly called a dwarf no matter how large and luminous it is',
 
-        'Gravastar' => 'A gravastar is an object hypothesized in astrophysics as an 
+        'wiki' => 'https://en.wikipedia.org/wiki/Giant_star'
+
+        ],
+
+        [
+
+        'name' => 'Gravastar',
+
+        'description' => 'A gravastar is an object hypothesized in astrophysics as an 
+        alternative to the black hole theory by Pawel O. Mazur and Emil Mottola.',
+
+        'rough' => 'A gravastar is an object hypothesized in astrophysics as an 
         alternative to the black hole theory by Pawel O. Mazur and Emil Mottola. 
         It results from assuming physical limitations on the formation of black 
         holes. These limits, such as discrete length and time quanta chronon, 
@@ -779,7 +1345,20 @@ return [
         mechanics. The term gravastar is a portmanteau of the words 
         Gravitational Vacuum Star.',
 
-        'Helium star' => 'A helium star or helium strong star is a class O or B star blue, 
+        'wiki' => 'https://en.wikipedia.org/wiki/Gravastar'
+
+        ],
+
+        [
+
+        'name' => 'Helium star',
+
+        'description' => 'A helium star or helium strong star is a class O or B star blue, 
+        which has extraordinarily strong helium lines and weaker than normal hydrogen 
+        lines, indicating strong stellar winds and a mass loss of the outer envelope. 
+        Extreme helium stars EHe entirely lack hydrogen in their spectra.',
+
+        'rough' => 'A helium star or helium strong star is a class O or B star blue, 
         which has extraordinarily strong helium lines and weaker than normal hydrogen 
         lines, indicating strong stellar winds and a mass loss of the outer envelope. 
         Extreme helium stars EHe entirely lack hydrogen in their spectra.
@@ -800,7 +1379,20 @@ return [
         growing helium star that has the potential to transform into a red giant 
         after losing its hydrogen envelope in the future',
 
-        'Herbig Ae/Be star' => 'A Herbig Ae/Be star HAeBe is a pre-main-sequence 
+        'wiki' => 'https://en.wikipedia.org/wiki/Helium_star'
+
+        ],
+
+        [
+
+        'name'  => 'Herbig Ae/Be star',
+
+        'description' => 'A Herbig Ae/Be star HAeBe is a pre-main-sequence 
+        star – a young <10Myr star of spectral types A or B. These stars are still 
+        embedded in gas-dust envelopes and are sometimes accompanied by 
+        circumstellar disks.',
+
+        'rough' => 'A Herbig Ae/Be star HAeBe is a pre-main-sequence 
         star – a young <10Myr star of spectral types A or B. These stars are still 
         embedded in gas-dust envelopes and are sometimes accompanied by 
         circumstellar disks. Hydrogen and calcium emission lines are observed in 
@@ -826,7 +1418,18 @@ return [
         circumstellar dust in order to distinguish from classical Be stars, 
         which have infrared excess due to free-free emission.',
 
-        'Hydrogen-deficient star' => 'Born-again star region in an H-R diagram.
+        'wiki' => 'https://en.wikipedia.org/wiki/Herbig_Ae/Be_star'
+
+        ],
+
+        [
+
+        'name' => 'Hydrogen-deficient star',
+
+        'description' => 'A hydrogen-deficient star is a type of star that has little or no hydrogen in 
+        its atmosphere.',
+
+        'rough' => 'Born-again star region in an H-R diagram.
         About 25% of post-AGB hydrogen-deficient stars experience a born-again phase, 
         where they migrate over time between post-AGB and AGB regions in a Hertzsprung-Russell diagram.
         A hydrogen-deficient star is a type of star that has little or no hydrogen in 
@@ -834,7 +1437,19 @@ return [
         most common element in a stellar atmosphere. Despite being rare, there are a variety of 
         star types that display a hydrogen deficiency.',
 
-        'Hypergiant' => 'A hypergiant luminosity class 0 or Ia+ is among the very rare kinds of 
+        'wiki' => 'https://en.wikipedia.org/wiki/Hydrogen-deficient_star'
+
+        ],
+
+        [
+
+        'name' => 'Hypergiant',
+
+        'description' => 'A hypergiant luminosity class 0 or Ia+ is among the very rare kinds of 
+        stars that typically show tremendous luminosities and very high rates of mass loss by 
+        stellar winds.',
+
+        'rough' => 'A hypergiant luminosity class 0 or Ia+ is among the very rare kinds of 
         stars that typically show tremendous luminosities and very high rates of mass loss by 
         stellar winds. The term hypergiant is defined as luminosity class 0 zero in the MKK 
         system. However, this is rarely seen in the literature or in published spectral 
@@ -845,7 +1460,18 @@ return [
         interested in these stars because they relate to understanding stellar evolution, 
         especially with star formation, stability, and their expected demise as supernovae.',
 
-        'Intergalactic star' => 'An intergalactic star, also known as an intracluster star 
+        'wiki' => 'https://en.wikipedia.org/wiki/Hypergiant'
+
+        ],
+
+        [
+
+        'name' => 'Intergalactic star',
+
+        'description' => 'An intergalactic star, also known as an intracluster star 
+        or a rogue star, is a star not gravitationally bound to any galaxy.',
+
+        'rough' => 'An intergalactic star, also known as an intracluster star 
         or a rogue star, is a star not gravitationally bound to any galaxy. Although a 
         source of much discussion in the scientific community during the late 1990s, 
         intergalactic stars are now generally thought to have originated in galaxies 
@@ -856,7 +1482,18 @@ return [
         Collectively, intergalactic stars are referred to as the intracluster stellar population, 
         or IC population for short, in the scientific literature.',
 
-        'Iron star' => 'In astronomy, an iron star is a hypothetical type of compact star 
+        'wiki' => 'https://en.wikipedia.org/wiki/Intergalactic_star'
+
+        ],
+
+        [
+
+        'name' => 'Iron star',
+
+        'description' => 'An iron star is a hypothetical type of compact star 
+        that could occur in the universe in the extremely far future, after perhaps 101500 years',
+
+        'rough' => 'In astronomy, an iron star is a hypothetical type of compact star 
         that could occur in the universe in the extremely far future, after perhaps 101500 years.
 
         The premise behind iron stars states that cold fusion occurring via quantum tunnelling 
@@ -870,7 +1507,22 @@ return [
         lines in their spectra. They are potentially quiescent hot luminous blue variables. Eta 
         Carinae has been described as a prototypical example.',
 
-        'K-type main-sequence star' => 'A K-type main-sequence star K V, also referred to as an orange 
+        'wiki' => 'https://en.wikipedia.org/wiki/Iron_star'
+
+        ],
+
+        [
+
+        'name' =>'K-type main-sequence star',
+
+        'description' => 'A K-type main-sequence star K V, also referred to as an orange 
+        dwarf or K dwarf, is a main-sequence hydrogen-burning star of spectral type K and 
+        luminosity class V. These stars are intermediate in size between red M-type 
+        main-sequence stars red dwarfs and yellow G-type main-sequence stars. 
+        They have masses between 0.45 and 0.8 times the mass of the Sun and surface temperatures 
+        between 3,900 and 5,200 K.',
+
+        'rough' => 'A K-type main-sequence star K V, also referred to as an orange 
         dwarf or K dwarf, is a main-sequence hydrogen-burning star of spectral type K and 
         luminosity class V. These stars are intermediate in size between red M-type 
         main-sequence stars red dwarfs and yellow G-type main-sequence stars. 
@@ -895,7 +1547,19 @@ return [
         to focus on in the search for exoplanets and extraterrestrial life in the universe, 
         especially if they are cooler K6V–K9V, specifically those of the stellar class K7.5V temperate.',
 
-        'Kilonova' => 'A kilonova macronova or r-process supernova is a transient 
+        'wiki' => 'https://en.wikipedia.org/wiki/K-type_main-sequence_star'
+
+        ],
+
+        [
+
+        'name' => 'Kilonova',
+
+        'description' => 'A kilonova macronova or r-process supernova is a transient 
+        astronomical event that occurs in a compact binary system when two neutron 
+        stars or a neutron star and a black hole merge into each other.',
+
+        'rough' => 'A kilonova macronova or r-process supernova is a transient 
         astronomical event that occurs in a compact binary system when two neutron 
         stars or a neutron star and a black hole merge into each other. Kilonovae 
         are thought to emit short gamma-ray bursts and strong electromagnetic radiation 
@@ -911,13 +1575,35 @@ return [
         by instruments on board the Swift Gamma-Ray Burst Explorer and KONUS/WIND spacecrafts 
         and then observed using the Hubble Space Telescope',
 
-        'Lambda Boötis star' => 'A Lambda Boötis star is a type of peculiar star which has an 
+        'wiki' => 'https://en.wikipedia.org/wiki/Kilonova'
+
+        ],
+
+        [
+
+        'name' => 'Lambda Boötis star',
+
+        'description' => 'A Lambda Boötis star is a type of peculiar star which has an 
+        unusually low abundance of iron peak elements in its surface layers.',
+
+        'rough' => 'A Lambda Boötis star is a type of peculiar star which has an 
         unusually low abundance of iron peak elements in its surface layers. One possible 
         explanation for this is that it is the result of accretion of metal-poor gas 
         from a circumstellar disc, a second possibility is the accretion of material 
         from a hot Jupiter suffering from mass loss. The prototype is Lambda Boötis',
 
-        'Lambda Eridani variable' => 'A Lambda Eridani Variable is a class of Be stars 
+        'wiki' => 'https://en.wikipedia.org/wiki/Lambda_Bo%C3%B6tis_star'
+
+        ],
+
+        [
+
+        'name' => 'Lambda Eridani variable',
+
+        'description' => 'A Lambda Eridani Variable is a class of Be stars 
+        that show small amplitude variations of a few hundredths of a magnitude.',
+
+        'rough' => 'A Lambda Eridani Variable is a class of Be stars 
         that show small amplitude variations of a few hundredths of a magnitude. The 
         variations are highly regular with periods between 0.5 and 2.0 days, and they 
         were initially described as periodic Be stars. Lambda Eridani is an example 
@@ -932,17 +1618,51 @@ return [
         stars included as λ Eri variables, five of them only suspected, and 13 
         combined with other types of variation',
 
-        'Lead star' => 'A lead star is a low-metallicity star with an overabundance of lead 
+        'wiki' => 'https://en.wikipedia.org/wiki/Lambda_Eridani_variable'
+
+        ],
+
+        [
+
+        'name' => 'Lead star',
+
+        'description' => 'A lead star is a low-metallicity star with an overabundance of lead 
         and bismuth as compared to other products of the S-process',
 
-        'Luminous blue variable' => 'Luminous blue variables LBVs are massive evolved stars 
+        'rough' => 'A lead star is a low-metallicity star with an overabundance of lead 
+        and bismuth as compared to other products of the S-process.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Lead_star'
+
+        ],
+
+        [
+
+        'name' => 'Luminous blue variable',
+
+        'description' => 'Luminous blue variables LBVs are massive evolved stars 
+        that show unpredictable and sometimes dramatic variations in both their spectra and 
+        brightness.',
+
+        'rough' => 'Luminous blue variables LBVs are massive evolved stars 
         that show unpredictable and sometimes dramatic variations in both their spectra and 
         brightness. They are also known as S Doradus variables after S Doradus, one of the 
         brightest stars of the Large Magellanic Cloud. They are extraordinarily rare with 
         just 20 objects listed in the General Catalogue of Variable Stars as SDor, and a number 
         of these are no longer considered to be LBVs.',
 
-        'Magnetar' => 'A magnetar is a type of neutron star believed to have an extremely 
+        'wiki' => 'https://en.wikipedia.org/wiki/Luminous_blue_variable'
+
+        ],
+
+        [
+
+        'name' =>'Magnetar',
+
+        'description' => 'A magnetar is a type of neutron star believed to have an extremely 
+        powerful magnetic field.',
+
+        'rough' => 'A magnetar is a type of neutron star believed to have an extremely 
         powerful magnetic field.  The magnetic field decay powers the emission of high-energy 
         electromagnetic radiation, particularly X-rays and gamma rays. The theory 
         regarding these objects was proposed by Robert Duncan and Christopher 
@@ -951,7 +1671,20 @@ return [
         following decade, the magnetar hypothesis became widely accepted as a 
         likely explanation for soft gamma repeaters SGRs and anomalous X-ray pulsars AXPs.',
 
-        'Magnetospheric eternally collapsing object' => 'The Magnetospheric eternally collapsing 
+        'wiki' => 'https://en.wikipedia.org/wiki/Magnetar'
+
+        ],
+
+        [
+
+        'name' => 'Magnetospheric eternally collapsing object',
+
+        'description' => 'The Magnetospheric eternally collapsing 
+        object MECO is an alternative model for black holes proposed initially by Indian scientist 
+        Abhas Mitra in 1998, later on proposed by Darryl Leiter and Stanley Robertson a 
+        generalization of the eternally collapsing object ECO proposed by Abhas Mitra in 1998.',
+
+        'rough' => 'The Magnetospheric eternally collapsing 
         object MECO is an alternative model for black holes proposed initially by Indian scientist 
         Abhas Mitra in 1998, later on proposed by Darryl Leiter and Stanley Robertson a 
         generalization of the eternally collapsing object ECO proposed by Abhas Mitra in 1998. 
@@ -959,7 +1692,19 @@ return [
         an produce its own intrinsic magnetic field. An uncharged black hole cannot 
         produce its own magnetic field, though its accretion disc can.',
 
-        'Main sequence' => 'In astronomy, the main sequence is a continuous and distinctive 
+        'wiki' => 'https://en.wikipedia.org/wiki/Magnetospheric_eternally_collapsing_object'
+
+        ],
+
+
+        [
+
+        'name' => 'Main sequence',
+
+        'description' => 'These are the most numerous true stars in the 
+        universe, and include the Earths Sun.',
+
+        'rough' => 'In astronomy, the main sequence is a continuous and distinctive 
         band of stars that appear on plots of stellar color versus brightness. These color-magnitude 
         plots are known as Hertzsprung–Russell diagrams after their co-developers, 
         Ejnar Hertzsprung and Henry Norris Russell. Stars on this band are known as 
@@ -1005,8 +1750,19 @@ return [
         In April, 2018, astronomers reported the detection of the most distant ordinary 
         i.e., main sequence star, named Icarus formally, MACS J1149 Lensed Star 1, at 9 billion light-years away from Earth.',
 
+        'wiki' => 'https://en.wikipedia.org/wiki/Main_sequence'
 
-        'Mercury-manganese star' => 'A mercury-manganese star is a type of chemically peculiar 
+        ],
+
+
+        [
+
+        'name' => 'Mercury-manganese star',
+
+        'description' => 'A mercury-manganese star is a type of chemically peculiar 
+        star with a prominent spectral line at 398.4 nm, due to absorption from ionized mercury. ',
+
+        'rough' => 'A mercury-manganese star is a type of chemically peculiar 
         star with a prominent spectral line at 398.4 nm, due to absorption from ionized mercury. 
         These stars are of spectral type B8, B9, or A0, corresponding to surface temperatures 
         between about 10,000 and 15,000 K, with two distinctive characteristics:
@@ -1019,7 +1775,19 @@ return [
         the force of gravity, while others are lifted towards the exterior of the s
         tar by radiation pressure, making a heterogeneous atmosphere.',
 
-        'Neutron star' => 'A neutron star is the collapsed core of a large star which 
+        'wiki' => 'https://en.wikipedia.org/wiki/Mercury-manganese_star'
+
+        ],
+
+        [
+
+        'name' => 'Neutron star',
+
+        'description' => 'A neutron star is the collapsed core of a large star which 
+        before collapse had a total of between 10 and 29 solar masses. Neutron stars are 
+        the smallest and densest stars, not counting hypothetical quark stars and strange stars.',
+
+        'rough' => 'A neutron star is the collapsed core of a large star which 
         before collapse had a total of between 10 and 29 solar masses. Neutron stars are 
         the smallest and densest stars, not counting hypothetical quark stars and strange stars. 
         Typically, neutron stars have a radius on the order of 10 kilometres 6.2 mi and 
@@ -1084,12 +1852,37 @@ return [
         waves from such an event was made, and gravitational waves have also been 
         indirectly detected in a system where two neutron stars orbit each other.',
 
-        'O-type main-sequence star' => 'An O-type main-sequence star O V is a main-sequence 
+        'wiki' => 'https://en.wikipedia.org/wiki/Neutron_star'
+
+        ],
+
+        [
+
+        'name' => 'O-type main-sequence star',
+
+        'description' => 'An O-type main-sequence star O V is a main-sequence 
         core hydrogen-burning star of spectral type O and luminosity class V. These stars 
         have between 15 and 90 times the mass of the Sun and surface temperatures between 
         30,000 and 50,000 K. They are between 40,000 and 1,000,000 times as luminous as the Sun.',
 
-        'O-type star' => 'An O-type star is a hot, blue-white star of spectral type O in the 
+        'rough' => 'An O-type main-sequence star O V is a main-sequence 
+        core hydrogen-burning star of spectral type O and luminosity class V. These stars 
+        have between 15 and 90 times the mass of the Sun and surface temperatures between 
+        30,000 and 50,000 K. They are between 40,000 and 1,000,000 times as luminous as the Sun.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/O-type_main-sequence_star',
+
+        ],
+
+        [
+
+        'name' => 'O-type star',
+
+        'description' => 'Stars of this type are particularly rare. An O-type star is a hot, 
+        blue-white star of spectral type O in the 
+        Yerkes classification system employed by astronomers.',
+
+        'rough'  => 'An O-type star is a hot, blue-white star of spectral type O in the 
         Yerkes classification system employed by astronomers. They have temperatures in 
         excess of 30,000 kelvins K and so appear to the left on the Hertzsprung–Russell 
         diagram. Stars of this type are identified by their dominant Helium II absorption 
@@ -1113,19 +1906,54 @@ return [
         their evolution is more difficult to predict due to mass transfer and the possibility 
         of component stars going supernova at different times.',
 
-        'OB star' => 'OB stars are hot, massive stars of spectral types O or early-type B that 
+        'wiki' => 'https://en.wikipedia.org/wiki/O-type_star'
+
+        ],
+
+        [
+
+        'name' => 'OB star',
+
+        'description' => 'OB stars are hot, massive stars of spectral types O or early-type B that 
         form in loosely organized groups called OB associations. They are short lived, and thus 
         do not move very far from where they formed within their life. During their lifetime, 
         they will emit much ultraviolet radiation. This radiation rapidly ionizes the surrounding 
         interstellar gas of the giant molecular cloud, forming an H II region or Strömgren sphere.',
 
-        'Optical pulsar' => 'An optical pulsar is a pulsar which can be detected in the visible spectrum. 
+        'rough' => 'OB stars are hot, massive stars of spectral types O or early-type B that 
+        form in loosely organized groups called OB associations. They are short lived, and thus 
+        do not move very far from where they formed within their life. During their lifetime, 
+        they will emit much ultraviolet radiation. This radiation rapidly ionizes the surrounding 
+        interstellar gas of the giant molecular cloud, forming an H II region or Strömgren sphere.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/OB_star'
+
+        ],
+
+        [
+
+        'name' => 'Optical pulsar',
+
+        'description' => 'An optical pulsar is a pulsar which can be detected in the visible spectrum.',
+
+        'rough' => 'An optical pulsar is a pulsar which can be detected in the visible spectrum. 
         There are very few of these known: the Crab pulsar was detected by stroboscopic techniques 
         in 1969, shortly after its discovery in radio waves, at the Steward Observatory. The Vela 
         pulsar was detected in 1977 at the Anglo-Australian Observatory, and was the faintest star
          ever imaged at that time.',
 
-        'Chemically peculiar star' => 'In astrophysics, chemically peculiar stars CP stars are stars 
+         'wiki' => 'https://en.wikipedia.org/wiki/Optical_pulsar',
+
+         ],
+
+        [
+
+        'name' => 'Chemically peculiar star',
+
+        'description' => 'Chemically peculiar stars,  known as CP stars, are stars 
+        with distinctly unusual metal abundances, at least in their surface layers.',
+
+        'rough' => 'In astrophysics, chemically peculiar stars CP stars are stars 
         with distinctly unusual metal abundances, at least in their surface layers.
 
         Chemically peculiar stars are common among hot main sequence hydrogen-burning stars. 
@@ -1184,7 +2012,19 @@ return [
         in a binary star system; examples of these include the barium stars 
         and some S stars.',
 
-        'PG 1159 star' => 'A PG 1159 star, often also called a pre-degenerate, is a 
+        'wiki' => 'https://en.wikipedia.org/wiki/Chemically_peculiar_star'
+
+        ],
+
+        [
+
+        'name' => 'PG 1159 star',
+
+        'description' => 'A PG 1159 star, often also called a pre-degenerate, is a 
+        star with a hydrogen-deficient atmosphere that is in transition between 
+        being the central star of a planetary nebula and being a hot white dwarf.',
+
+        'rough' => 'A PG 1159 star, often also called a pre-degenerate, is a 
         star with a hydrogen-deficient atmosphere that is in transition between 
         being the central star of a planetary nebula and being a hot white dwarf. 
         These stars are hot, with surface temperatures between 75,000 K and 200,000 K, 
@@ -1209,7 +2049,19 @@ return [
         designation GW Vir in 1985. These stars are called GW Vir stars, after 
         their prototype, or the class may be split into DOV and PNNV stars',
 
-        'Photometric-standard star' => 'Photometric-standard stars are a series of stars that 
+        'wiki' => 'https://en.wikipedia.org/wiki/PG_1159_star'
+
+        ],
+
+        [
+
+        'name' => 'Photometric-standard star',
+
+        'description' => 'Photometric-standard stars are a series of stars that 
+        have had their light output in various passbands of photometric system measured 
+        very carefully.',
+
+        'rough' => 'Photometric-standard stars are a series of stars that 
         have had their light output in various passbands of photometric system measured 
         very carefully. Other objects can be observed using CCD cameras or photoelectric 
         photometers connected to a telescope, and the flux, or amount of light received, 
@@ -1219,7 +2071,22 @@ return [
         A current set of photometric-standard stars for UBVRI photometry is that published 
         by Arlo U. Landolt in 1992 in the Astronomical Journal, vol. 104, no. 1, p. 340-371.',
 
-        'Planck star' => 'A Planck star is a hypothetical astronomical object that is created 
+        'wiki' => 'https://en.wikipedia.org/wiki/Photometric-standard_star'
+
+        ],
+
+        [
+
+        'name' => 'Planck star',
+
+        'description' => 'A Planck star is a hypothetical astronomical object that is created 
+        when the energy density of a collapsing star reaches the Planck energy density. 
+        Under these conditions, assuming gravity and spacetime are quantized, there arises 
+        a repulsive force derived from Heisenbergs uncertainty principle. Namely, if gravity 
+        and spacetime are quantized, the accumulation of mass-energy inside the Planck star 
+        cannot collapse beyond this limit because it violates the uncertainty principle for spacetime itself.',
+
+        'rough' => 'A Planck star is a hypothetical astronomical object that is created 
         when the energy density of a collapsing star reaches the Planck energy density. 
         Under these conditions, assuming gravity and spacetime are quantized, there arises 
         a repulsive force derived from Heisenbergs uncertainty principle. Namely, if gravity 
@@ -1249,7 +2116,19 @@ return [
         This theory, if correct, would resolve the black hole firewall and black hole information paradox. 
         This idea is based on loop quantum gravity',
 
-        'Pole star' => 'Pole star or polar star refers to a star, preferably bright, closely aligned 
+        'wiki' => 'https://en.wikipedia.org/wiki/Planck_star'
+
+        ],
+
+        [
+
+        'name' => 'Pole star',
+
+        'description' => 'Pole star or polar star refers to a star, preferably bright, closely aligned 
+        to the axis of rotation of an astronomical object. This is most commonly used for stars 
+        close to the north and south celestial poles of the Earth.',
+
+        'rough' => 'Pole star or polar star refers to a star, preferably bright, closely aligned 
         to the axis of rotation of an astronomical object. This is most commonly used for stars 
         close to the north and south celestial poles of the Earth. The name is frequently applied 
         to Polaris in the constellation Ursa Minor, acknowledging its property extant since the 10th century 
@@ -1270,7 +2149,19 @@ return [
         sphere approximately once every 26,000 years, passing close to different naked-eye 
         stars at different times with an additional slight shift due to the proper motion of the stars.',
 
-        'Population I star' => 'Population I, or metal-rich, stars are young stars with the highest 
+        'wiki' => 'https://en.wikipedia.org/wiki/Pole_star'
+
+        ],
+
+        [
+
+        'name' => 'Population I star',
+
+        'description' => 'Population I, or metal-rich, stars are young stars with the highest 
+        metallicity out of all three populations, and are more commonly found in the spiral arms 
+        of the Milky Way galaxy. ',
+
+        'rough' => 'Population I, or metal-rich, stars are young stars with the highest 
         metallicity out of all three populations, and are more commonly found in the spiral arms 
         of the Milky Way galaxy. The Earth\'s Sun is an example of a metal-rich star and is 
         considered as an intermediate Population I star, while the solar-like Mu Arae 
@@ -1287,7 +2178,18 @@ return [
         for theories of gas giant formation. Between the intermediate Population I 
         and the Population II stars comes the intermediary disc population.',
 
-        'Population II star' => 'Population II, or metal-poor, stars are those with relatively 
+        'wiki' => 'https://en.wikipedia.org/wiki/Stellar_population#Population_I_stars'
+
+        ],
+
+        [
+
+        'name' => 'Population II star',
+
+        'description' => 'Population II, or metal-poor, stars are those with relatively 
+        little metal.',
+
+        'rough' => 'Population II, or metal-poor, stars are those with relatively 
         little metal. The idea of a relatively small amount must be kept in perspective as 
         even metal-rich astronomical objects contain low percentages of any element other 
         than hydrogen or helium; metals constitute only a tiny percentage of the overall 
@@ -1320,7 +2222,19 @@ return [
           Less extreme in their metal deficiency, but nearer and brighter and hence longer 
           known, are HD 122563 a red giant and HD 140283 a subgiant.',
 
-        'Population III star' => 'Population III stars` are a hypothetical population 
+        'wiki' => 'https://en.wikipedia.org/wiki/Stellar_population#Population_II_stars',
+
+        ],
+
+        [
+
+        'name' =>'Population III star',
+
+        'description' => 'Population III stars` are a hypothetical population 
+        of extremely massive and hot stars with virtually no metals, except possibly 
+        for intermixing ejecta from other nearby Population III supernovas.',
+
+        'rough' => 'Population III stars` are a hypothetical population 
         of extremely massive and hot stars with virtually no metals, except possibly 
         for intermixing ejecta from other nearby Population III supernovas. Their 
         existence is inferred from physical cosmology, but they have not yet been 
@@ -1338,7 +2252,18 @@ return [
          after the Big Bang. The rest of the galaxy has some later redder population II stars. 
          Some theories hold that there were two generations of Population III stars.',
 
-        'Preon star' => 'A preon star is a theoretical type of compact star made of preons, 
+         'wiki' => 'https://en.wikipedia.org/wiki/Stellar_population#Population_III_stars'
+
+         ],
+
+        [
+
+        'name' => 'Preon star',
+
+        'description' => 'A preon star is a theoretical type of compact star made of preons, 
+        which are point-like particles conceived to be subcomponents of quarks and leptons.',
+
+        'rough' => 'A preon star is a theoretical type of compact star made of preons, 
         which are point-like particles conceived to be subcomponents of quarks and leptons.  
         Their existence was first theorized in 2005 by Fredrik Sandin and Johan Hansson, 
         both from the Luleå University of Technology, Sweden. The theory behind them was 
@@ -1350,14 +2275,69 @@ return [
         they may also form out of massive stars that collapse too unstably to become neutron stars, 
         but not enough to become black holes',
 
-        'Protostar' => 'A protostar is a very young star that is still gathering mass from its 
+        'wiki' => ''
+
+        ],
+
+    [
+
+    'name' => 'Pre-main sequence star',
+
+    'description' => 'A pre-main-sequence star also known as a PMS star and PMS object is 
+    a star in the stage when it has not yet reached the main sequence. Earlier in its 
+    life, the object is a protostar that grows by acquiring mass from its surrounding 
+    envelope of interstellar dust and gas.',
+
+    'rough' => 'A pre-main-sequence star also known as a PMS star and PMS object is 
+    a star in the stage when it has not yet reached the main sequence. Earlier in its 
+    life, the object is a protostar that grows by acquiring mass from its surrounding 
+    envelope of interstellar dust and gas. After the protostar blows away this envelope, 
+    it is optically visible, and appears on the stellar birthline in the 
+    Hertzsprung-Russell diagram. At this point, the star has acquired nearly all 
+    of its mass but has not yet started hydrogen burning i.e. nuclear fusion of hydrogen. 
+    The star then contracts, its internal temperature rising until it begins hydrogen 
+    burning on the zero age main sequence. This period of contraction is the pre-main 
+    sequence stage.  An observed PMS object can either be a T Tauri star, if it has 
+    fewer than 2 solar masses M☉, or else a Herbig Ae/Be star, if it has 2 to 8 M☉. 
+    Yet more massive stars have no pre-main-sequence stage because they contract too 
+    quickly as protostars. By the time they become visible, the hydrogen in their centers 
+    is already fusing and they are main-sequence objects.',
+
+    'wiki' => 'https://en.wikipedia.org/wiki/Pre-main-sequence_star'
+
+       ],
+
+        [
+
+        'name' => 'Protostar',
+
+        'description' => 'A protostar is a very young star that is still gathering mass from its 
         parent molecular cloud. The protostellar phase is the earliest one in the process of 
         stellar evolution.  For a one solar-mass star it lasts about 1,000,000 years. The 
         phase begins when a molecular cloud first collapses under the force of self-gravity. 
         It ends when the protostar blows back the infalling gas and is revealed as an 
         optically visible pre-main-sequence star, which later contracts to become a main sequence star.',
 
-        'Pulsar' => 'A pulsar from pulse and -ar as in quasar is a highly magnetized 
+        'rough' => 'A protostar is a very young star that is still gathering mass from its 
+        parent molecular cloud. The protostellar phase is the earliest one in the process of 
+        stellar evolution.  For a one solar-mass star it lasts about 1,000,000 years. The 
+        phase begins when a molecular cloud first collapses under the force of self-gravity. 
+        It ends when the protostar blows back the infalling gas and is revealed as an 
+        optically visible pre-main-sequence star, which later contracts to become a main sequence star.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Protostar'
+
+        ],
+
+        [
+
+        'name' => 'Pulsar',
+
+        'description' => 'A pulsar from pulse and -ar as in quasar is a highly magnetized 
+        rotating neutron star or white dwarf that emits a beam of electromagnetic 
+        radiation.',
+
+        'rough' => 'A pulsar from pulse and -ar as in quasar is a highly magnetized 
         rotating neutron star or white dwarf that emits a beam of electromagnetic 
         radiation. This radiation can be observed only when the beam of emission is 
         pointing toward Earth, much like the way a lighthouse can be seen only 
@@ -1374,7 +2354,18 @@ return [
         around a pulsar, PSR B1257+12. Certain types of pulsars rival atomic clocks 
         in their accuracy in keeping time',
 
-        'Pulsating white dwarf' => 'A pulsating white dwarf is a white dwarf star whose 
+        'wiki' => 'https://en.wikipedia.org/wiki/Pulsar'
+
+        ],
+
+        [
+
+        'name' => 'Pulsating white dwarf',
+
+        'description' => 'A pulsating white dwarf is a white dwarf star whose 
+        luminosity varies due to non-radial gravity wave pulsations within itself. ',
+
+        'rough'  => 'A pulsating white dwarf is a white dwarf star whose 
         luminosity varies due to non-radial gravity wave pulsations within itself. 
         Known types of pulsating white dwarfs include DAV, or ZZ Ceti, stars, with 
         hydrogen-dominated atmospheres and the spectral type DA; DBV, or V777 Her, 
@@ -1393,37 +2384,132 @@ return [
         to thousands of seconds. Observation of these variations gives 
         asteroseismological evidence about the interiors of white dwarfs',
 
-        'Q star' => 'A Q-Star, also known as a grey hole, is a hypothetical type of a 
+        'wiki' => 'https://en.wikipedia.org/wiki/Pulsating_white_dwarf'
+
+        ],
+
+        [
+
+        'name' => 'Q star',
+
+        'description' => 'A Q-Star, also known as a grey hole, is a hypothetical type of a 
         compact, heavy neutron star with an exotic state of matter. The Q stands 
         for a conserved particle number. A Q-Star may be mistaken for a stellar black hole.',
 
-        'Quark star' => 'A quark star is a hypothetical type of compact exotic star, 
+        'rough' => 'A Q-Star, also known as a grey hole, is a hypothetical type of a 
+        compact, heavy neutron star with an exotic state of matter. The Q stands 
+        for a conserved particle number. A Q-Star may be mistaken for a stellar black hole.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Q_star'
+
+        ],
+
+        [
+
+        'name' => 'Quark star',
+
+        'description' => 'A quark star is a hypothetical type of compact exotic star, 
         where extremely high temperature and pressure has forced nuclear particles 
         to form a continuous state of matter that consists primarily of free quarks, 
         which can be modeled using the Calabi–Yau manifold.',
 
-        'Quasi-star' => 'A quasi-star also called black hole star is a hypothetical type 
+        'rough' => 'A quark star is a hypothetical type of compact exotic star, 
+        where extremely high temperature and pressure has forced nuclear particles 
+        to form a continuous state of matter that consists primarily of free quarks, 
+        which can be modeled using the Calabi–Yau manifold.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Quark_star'
+
+        ],
+
+        [
+
+        'name' => 'Quasi-star',
+
+        'description' => 'A quasi-star also called black hole star is a hypothetical type 
         of extremely massive star that may have existed very early in the history 
         of the Universe. Unlike modern stars, which are powered by nuclear 
         fusion in their cores, a quasi-stars energy would come from material falling 
         into a central black hole.',
 
-        'Radio star' => 'Stellar radio sources, radio source stars or radio stars are 
+        'rough' => 'A quasi-star also called black hole star is a hypothetical type 
+        of extremely massive star that may have existed very early in the history 
+        of the Universe. Unlike modern stars, which are powered by nuclear 
+        fusion in their cores, a quasi-stars energy would come from material falling 
+        into a central black hole.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Quark_star'
+
+        ],
+
+        [
+
+        'name' => 'Radio star',
+
+        'description' => 'Stellar radio sources, radio source stars or radio stars are 
         stellar objects that produce copious emissions of various radio frequencies, 
         whether constant or pulsed. Radio emissions from stars can be produced in 
         many varied ways.',
 
-        'Radio-quiet neutron star' => 'A radio-quiet neutron star is a neutron star that 
+        'rough' => 'Stellar radio sources, radio source stars or radio stars are 
+        stellar objects that produce copious emissions of various radio frequencies, 
+        whether constant or pulsed. Radio emissions from stars can be produced in 
+        many varied ways.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Radio_star'
+
+        ],
+
+        [
+
+        'name' => 'Radio-quiet neutron star',
+
+        'description' => 'A radio-quiet neutron star is a neutron star that 
         does not seem to emit radio emissions. But they are visible from the Earth 
         through electromagnetic radiation at other parts of the spectrum, particularly 
         x-rays and gamma rays.',
 
-        'Rapidly oscillating Ap star' => 'Rapidly oscillating Ap stars roAp stars are a 
+        'rough' => 'A radio-quiet neutron star is a neutron star that 
+        does not seem to emit radio emissions. But they are visible from the Earth 
+        through electromagnetic radiation at other parts of the spectrum, particularly 
+        x-rays and gamma rays.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Radio-quiet_neutron_star'
+
+        ],
+
+        [
+
+        'name' => 'Rapidly oscillating Ap star',
+
+        'description' => 'Rapidly oscillating Ap stars roAp stars are a 
+        subtype of the Ap star class that exhibit short-timescale rapid photometric or 
+        radial velocity variations. The known periods range between 5 and 23 minutes. ',
+
+        'rough' => 'Rapidly oscillating Ap stars roAp stars are a 
         subtype of the Ap star class that exhibit short-timescale rapid photometric or 
         radial velocity variations. The known periods range between 5 and 23 minutes. 
         They lie in the δ Scuti instability strip on the main sequence.',
 
-        'Red dwarf' => 'A red dwarf or M dwarf is a small and relatively cool star on the 
+        'wiki' => 'https://en.wikipedia.org/wiki/Rapidly_oscillating_Ap_star'
+
+        ],
+
+        [
+
+        'name' => 'Red dwarf',
+
+        'description' => 'A red dwarf or M dwarf is a small and relatively cool star on the 
+        main sequence, of M spectral type. Red dwarfs range in mass from a low of 0.075 
+        to about 0.50 solar mass and have a surface temperature of less than 4,000 K. 
+        Sometimes K-type main-sequence stars, with masses between 0.50-0.8 solar 
+        mass, are also included.
+        
+        Red dwarfs are by far the most common type of star in the Milky Way, at least in 
+        the neighborhood of the Sun, but because of their low luminosity, individual red dwarfs 
+        cannot be easily observed. From Earth, not one is visible to the naked eye. ',
+
+        'rough' => 'A red dwarf or M dwarf is a small and relatively cool star on the 
         main sequence, of M spectral type. Red dwarfs range in mass from a low of 0.075 
         to about 0.50 solar mass and have a surface temperature of less than 4,000 K. 
         Sometimes K-type main-sequence stars, with masses between 0.50-0.8 solar 
@@ -1444,7 +2530,21 @@ return [
         Because of the comparatively short age of the universe, no red dwarfs exist at 
         advanced stages of evolution.',
 
-        'Red giant' => 'A red giant is a luminous giant star of low or intermediate mass roughly 0.3–8 solar 
+        'wiki' => 'https://en.wikipedia.org/wiki/Red_dwarf'
+
+        ],
+
+        [
+
+        'name' => 'Red giant',
+
+        'description' => 'A red giant is a luminous giant star of low or intermediate mass roughly 0.3–8 solar 
+        masses M☉ in a late phase of stellar evolution. The outer atmosphere is inflated and tenuous,
+         making the radius large and the surface temperature around 5,000 K 4,700 °C; 8,500 °F 
+         or lower. The appearance of the red giant is from yellow-orange to red, including the 
+         spectral types K and M, but also class S stars and most carbon stars.',
+
+        'rough' => 'A red giant is a luminous giant star of low or intermediate mass roughly 0.3–8 solar 
         masses M☉ in a late phase of stellar evolution. The outer atmosphere is inflated and tenuous,
          making the radius large and the surface temperature around 5,000 K 4,700 °C; 8,500 °F 
          or lower. The appearance of the red giant is from yellow-orange to red, including the 
@@ -1457,20 +2557,57 @@ return [
         asymptotic-giant-branch AGB stars with a helium burning shell outside a degenerate 
         carbon–oxygen core, and a hydrogen burning shell just beyond that.',
 
-        'Red supergiant star' => 'Red supergiants are stars with a supergiant luminosity 
+        'wiki' => 'https://en.wikipedia.org/wiki/Red_giant'
+
+        ],
+
+        [
+
+        'name' => 'Red supergiant star',
+
+        'description' => 'Red supergiants are stars with a supergiant luminosity 
+        class Yerkes class I of spectral type K or M.1 They are the largest stars in 
+        the universe in terms of volume, although they are not the most massive or luminous.',
+
+        'rough' => 'Red supergiants are stars with a supergiant luminosity 
         class Yerkes class I of spectral type K or M.1 They are the largest stars in 
         the universe in terms of volume, although they are not the most massive or luminous. 
         Betelgeuse and Antares are the brightest and best known red supergiants RSGs, 
         indeed the only first magnitude red supergiant stars.',
 
-        'Red-giant branch' => 'The red-giant branch RGB, sometimes called the first giant branch, 
+        'wiki' => 'https://en.wikipedia.org/wiki/Red_supergiant_star'
+
+        ],
+
+        [
+
+        'name' => 'Red-giant branch',
+
+        'description' => 'The red-giant branch RGB, sometimes called the first giant branch, 
+        is the portion of the giant branch before helium ignition occurs in the course of 
+        stellar evolution. It is a stage that follows the main sequence for low- to 
+        intermediate-mass stars.',
+
+        'rough' => 'The red-giant branch RGB, sometimes called the first giant branch, 
         is the portion of the giant branch before helium ignition occurs in the course of 
         stellar evolution. It is a stage that follows the main sequence for low- to 
         intermediate-mass stars. Red-giant-branch stars have an inert helium core surrounded 
         by a shell of hydrogen fusing via the CNO cycle. They are K- and M-class stars much 
         larger and more luminous than main-sequence stars of the same temperature.',
 
-        'Relativistic star' => 'A relativistic star is a rotating neutron star whose behavior 
+        'wiki' => 'https://en.wikipedia.org/wiki/Red-giant_branch'
+
+        ],
+
+        [
+
+        'name' => 'Relativistic star',
+
+        'description' => 'A relativistic star is a rotating neutron star whose behavior 
+        is well described by general relativity, but not by classical mechanics. Relativistic 
+        stars are one possible source to allow gravitational waves to be studied.',
+
+        'rough' => 'A relativistic star is a rotating neutron star whose behavior 
         is well described by general relativity, but not by classical mechanics. Relativistic 
         stars are one possible source to allow gravitational waves to be studied.
 
@@ -1483,7 +2620,18 @@ return [
         this size and larger are able to directly collapse into a black hole of 
         either intermediate or supermassive size',
 
-        'S-type star' => 'An S-type star or just S star is a cool giant with approximately 
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Relativistic_star'
+
+        ],
+
+        [
+            'name' => 'S-type star',
+
+            'description' => 'An S-type star or just S star is a cool giant with approximately 
+        equal quantities of carbon and oxygen in its atmosphere.',
+
+            'rough' => 'An S-type star or just S star is a cool giant with approximately 
         equal quantities of carbon and oxygen in its atmosphere. The class was 
         originally defined in 1922 by Paul Merrill for stars with unusual 
         absorption lines and molecular bands now known to be due to s-process elements. 
@@ -1506,7 +2654,21 @@ return [
         S stars forming less than 10% of asymptotic giant branch stars of 
         comparable luminosity, while extrinsic S stars form an even smaller proportion of all red giants.',
 
-        'Shell star' => 'A shell star is a star having a spectrum that exhibits features 
+          'wiki' => 'https://en.wikipedia.org/wiki/S-type_star'
+
+        ],
+
+        [
+
+        'name' => 'Shell star',
+
+        'description' => 'A shell star is a star having a spectrum that exhibits features 
+        indicating a circumstellar disc of gas surrounding the star at the equator. 
+        They may exhibit irregular variations in their luminosity due to the outflow of 
+        matter. The shell stars are fast rotators, giving a partial explanation on the 
+        mechanism, but shell stars are still considered enigmatic.',
+
+        'rough' => 'A shell star is a star having a spectrum that exhibits features 
         indicating a circumstellar disc of gas surrounding the star at the equator. 
         They may exhibit irregular variations in their luminosity due to the outflow of 
         matter. The shell stars are fast rotators, giving a partial explanation on the 
@@ -1517,12 +2679,36 @@ return [
         Rotation velocities are about 200–250 km/s, not far from the 
         point when the rotational acceleration would disrupt the star.',
 
-        'Soft gamma repeater' => 'A soft gamma repeater SGR is an astronomical 
+        'wiki' => 'https://en.wikipedia.org/wiki/Shell_star'
+
+        ],
+
+        [
+
+        'name' => 'Soft gamma repeater',
+
+        'description' => 'A soft gamma repeater SGR is an astronomical 
         object which emits large bursts of gamma-rays and X-rays at irregular 
         intervals. It is conjectured that they are a type of magnetar or, alternatively, 
         neutron stars with fossil disks around them.',
 
-        'Strange star' => 'A strange star is a quark star made of strange quark 
+        'rough' => 'A soft gamma repeater SGR is an astronomical 
+        object which emits large bursts of gamma-rays and X-rays at irregular 
+        intervals. It is conjectured that they are a type of magnetar or, alternatively, 
+        neutron stars with fossil disks around them.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Soft_gamma_repeater'
+
+        ],
+
+        [
+
+        'name' => 'Strange star',
+
+        'description' => 'A strange star is a quark star made of strange quark 
+        matter. They form a subgroup under the quark star category.',
+
+        'rough' => 'A strange star is a quark star made of strange quark 
         matter. They form a subgroup under the quark star category.
 
         Strange stars might exist without regard of the Bodmer–Witten assumption 
@@ -1535,20 +2721,58 @@ return [
         Stars partially made up of quark matter including strange quark 
         matter are also referred to as hybrid stars',
 
-        'Sub-brown dwarf' => 'A sub-brown dwarf or planetary-mass brown dwarf is an 
+        'wiki' => 'https://en.wikipedia.org/wiki/Strange_star'
+
+        ],
+
+        [
+
+        'name' => 'Sub-brown dwarf',
+
+        'description' => 'A sub-brown dwarf or planetary-mass brown dwarf is an 
         astronomical object that formed in the same manner as stars and brown 
         dwarfs i.e. through the collapse of a gas cloud but that has a mass 
         below the limiting mass for thermonuclear fusion of deuterium about 13 MJ. 
         Some researchers call them free-floating planets whereas others 
         call them planetary-mass brown dwarfs.',
 
-        'Subdwarf' => 'A subdwarf, sometimes denoted by sd, is a star with 
+        'rough' => 'A sub-brown dwarf or planetary-mass brown dwarf is an 
+        astronomical object that formed in the same manner as stars and brown 
+        dwarfs i.e. through the collapse of a gas cloud but that has a mass 
+        below the limiting mass for thermonuclear fusion of deuterium about 13 MJ. 
+        Some researchers call them free-floating planets whereas others 
+        call them planetary-mass brown dwarfs.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Sub-brown_dwarf'
+
+        ],
+
+        [
+
+        'name' => 'Subdwarf',
+
+        'description' => 'A subdwarf, sometimes denoted by sd, is a star with 
+        luminosity class VI under the Yerkes spectral classification system.',
+
+        'rough' => 'A subdwarf, sometimes denoted by sd, is a star with 
         luminosity class VI under the Yerkes spectral classification system. 
         They are defined as stars with luminosity 1.5 to 2 magnitudes lower 
         than that of main-sequence stars of the same spectral type. On an 
         Hertzsprung–Russell diagram subdwarfs appear to lie below the main sequence.',
 
-        'Subdwarf B star' => 'A B-type subdwarf (sdB) is a kind of subdwarf star 
+        'wiki' => 'https://en.wikipedia.org/wiki/Subdwarf'
+
+        ],
+
+        [
+
+        'name' => 'Subdwarf B star',
+
+        'description' => 'A B-type subdwarf (sdB) is a kind of subdwarf star 
+        with spectral type B. They differ from the typical subdwarf by being 
+        much hotter and brighter.',
+
+        'rough' => 'A B-type subdwarf (sdB) is a kind of subdwarf star 
         with spectral type B. They differ from the typical subdwarf by being 
         much hotter and brighter. They are situated at the extreme horizontal 
         branch of the Hertzsprung–Russell diagram. Masses of these stars are 
@@ -1556,7 +2780,20 @@ return [
         with the rest being helium. 
         Their radius is from 0.15 to 0.25 solar radii, and their temperature is from 20,000 to 40,000K.',
 
-        'Subdwarf O star' => 'A subdwarf O star sdO is a type of hot, but low-mass star. 
+        'wiki' => 'https://en.wikipedia.org/wiki/Subdwarf_B_star'
+
+        ],
+
+        [
+
+        'name' => 'Subdwarf O star',
+
+        'description' => 'A subdwarf O star sdO is a type of hot, but low-mass star. 
+        O-type subdwarfs are much dimmer than regular O-type main-sequence stars, but 
+        with a brightness about 10 to 100 times that of the Sun, and have a 
+        mass approximately half that of the Sun.',
+
+        'rough' => 'A subdwarf O star sdO is a type of hot, but low-mass star. 
         O-type subdwarfs are much dimmer than regular O-type main-sequence stars, but 
         with a brightness about 10 to 100 times that of the Sun, and have a 
         mass approximately half that of the Sun. Their temperature ranges from 40,000 to 100,000 K. 
@@ -1564,16 +2801,50 @@ return [
         by log g between 4.0 and 6.5. Many sdO stars are moving at high velocity through 
         the Milky Way and are found at high galactic latitudes',
 
-        'Subgiant' => 'A subgiant is a star that is brighter than a normal main-sequence star 
+        'wiki' => 'https://en.wikipedia.org/wiki/Subdwarf_O_star'
+
+        ],
+
+        [
+
+        'name' => 'Subgiant',
+
+        'description' => 'A subgiant is a star that is brighter than a normal main-sequence star 
+        of the same spectral class, but not as bright as true giant stars.',
+
+        'rough' => 'A subgiant is a star that is brighter than a normal main-sequence star 
         of the same spectral class, but not as bright as true giant stars. The term subgiant 
         is applied both to a particular spectral luminosity class and to a stage in the evolution of a star.',
 
-        'Supergiant star' => 'Supergiants are among the most massive and most luminous stars. 
+        'wiki' => 'https://en.wikipedia.org/wiki/Subgiant'
+
+        ],
+
+        [
+
+
+        'name' => 'Supergiant star',
+
+        'description' => 'Supergiants are among the most massive and most luminous stars.',
+
+        'rough' => 'Supergiants are among the most massive and most luminous stars. 
         Supergiant stars occupy the top region of the Hertzsprung–Russell diagram 
         with absolute visual magnitudes between about −3 and −8. The temperature 
         range of supergiant stars spans from about 3,500 K to over 20,000 K.',
 
-        'Superluminous supernova' => 'A superluminous supernova SLSN, plural superluminous 
+        'wiki' => 'https://en.wikipedia.org/wiki/Supergiant_star'
+
+        ],
+
+        [
+
+        'name' => 'Superluminous supernova',
+
+        'description' => 'A superluminous supernova SLSN, plural superluminous 
+        supernovae or SLSNe, also known as hypernova is a type of stellar explosion with 
+        a luminosity 10 or more times higher than that of standard supernovae.',
+
+        'rough' => 'A superluminous supernova SLSN, plural superluminous 
         supernovae or SLSNe, also known as hypernova is a type of stellar explosion with 
         a luminosity 10 or more times higher than that of standard supernovae. 
         Like supernovae, SLSNe seem to be produced by several mechanisms, which 
@@ -1582,7 +2853,21 @@ return [
         in particularly massive stars, millisecond magnetars, interaction with 
         circumstellar material CSM model, or pair-instability supernovae.',
 
-        'T Tauri star' => 'T Tauri stars TTS are a class of variable stars associated with 
+        'wiki' => 'https://en.wikipedia.org/wiki/Superluminous_supernova'
+
+        ],
+
+        [
+
+        'name' => 'T Tauri star',
+
+        'description' => 'T Tauri stars TTS are a class of variable stars associated with 
+        youth. They are less than about ten million years old. This class is named 
+        after the prototype, T Tauri, a young star in the Taurus star-forming region. 
+        They are found near molecular clouds and identified by their optical variability 
+        and strong chromospheric lines.',
+
+        'rough' => 'T Tauri stars TTS are a class of variable stars associated with 
         youth. They are less than about ten million years old. This class is named 
         after the prototype, T Tauri, a young star in the Taurus star-forming region. 
         They are found near molecular clouds and identified by their optical variability 
@@ -1593,7 +2878,19 @@ return [
         It ends when a star of 0.5 M☉ develops a radiative zone, or 
         when a larger star commences nuclear fusion on the main sequence.',
 
-        'Technetium star' => 'A technetium star, or more properly a Tc-rich star, is a 
+        'wiki' => 'https://en.wikipedia.org/wiki/T_Tauri_star'
+
+        ],
+
+        [
+
+        'name' => 'Technetium star',
+
+        'description' => 'A technetium star, or more properly a Tc-rich star, is a 
+        star whose stellar spectrum contains absorption lines of the light radioactive 
+        metal technetium.',
+
+        'rough' => 'A technetium star, or more properly a Tc-rich star, is a 
         star whose stellar spectrum contains absorption lines of the light radioactive 
         metal technetium. The most stable isotope of technetium is 98Tc with a
          half-life of 4.2 million years, which is too short a time to allow 
@@ -1610,14 +2907,37 @@ return [
         belong to the classes M, MS, S, SC and C-N. They are most often 
         variable stars of the long period variable types.',
 
-        'Thorne–Żytkow object' => 'A Thorne–Żytkow object TŻO or TZO is a conjectured type 
+        'wiki' => 'https://en.wikipedia.org/wiki/Technetium_star'
+
+        ],
+
+        [
+
+        'name' => 'Thorne–Żytkow object',
+
+        'description' => 'A Thorne–Żytkow object TŻO or TZO is a conjectured type 
+        of star wherein a red giant or supergiant contains a neutron star at its 
+        core, formed from the collision of the giant with the neutron star.',
+
+        'rough' => 'A Thorne–Żytkow object TŻO or TZO is a conjectured type 
         of star wherein a red giant or supergiant contains a neutron star at its 
         core, formed from the collision of the giant with the neutron star. 
         Such objects were hypothesized by Kip Thorne and Anna Żytkow in 1977. 
         In 2014, it was discovered that the star HV 2112 was a strong candidate 
         but this has recently been called into question',
 
-        'Variable star' => 'A variable star is a star whose brightness as seen from 
+        'wiki' => 'https://en.wikipedia.org/wiki/Thorne%E2%80%93%C5%BBytkow_object'
+
+        ],
+
+        [
+
+        'name' => 'Variable star',
+
+        'description' => 'A variable star is a star whose brightness as seen from 
+        Earth, its apparent magnitude, fluctuates.',
+
+        'rough' => 'A variable star is a star whose brightness as seen from 
         Earth, its apparent magnitude, fluctuates.
 
         This variation may be caused by a change in emitted light or by something partly 
@@ -1629,7 +2949,22 @@ return [
         changes in the amount of their light that can reach Earth; for example, 
         because the star has an orbiting companion that sometimes eclipses it.',
 
-        'White dwarf' => 'A white dwarf, also called a degenerate dwarf, 
+        'wiki' => 'https://en.wikipedia.org/wiki/Variable_star'
+
+        ],
+
+        [
+
+        'name' => 'White dwarf',
+
+        'description' => 'A white dwarf, also called a degenerate dwarf, 
+        is a stellar core remnant composed mostly of electron-degenerate matter. 
+        A white dwarf is very dense: its mass is comparable to that of the Sun, 
+        while its volume is comparable to that of Earth. A white dwarfs faint 
+        luminosity comes from the emission of stored thermal energy; no fusion takes 
+        place in a white dwarf wherein mass is converted to energy.',
+
+        'rough' => 'A white dwarf, also called a degenerate dwarf, 
         is a stellar core remnant composed mostly of electron-degenerate matter. 
         A white dwarf is very dense: its mass is comparable to that of the Sun, 
         while its volume is comparable to that of Earth. A white dwarfs faint 
@@ -1680,7 +3015,19 @@ return [
         
         The oldest white dwarfs still radiate at temperatures of a few thousand kelvins.',
 
-        'Wolf–Rayet star' => 'Wolf–Rayet stars, often abbreviated as WR stars, are a rare 
+        'wiki' => 'https://en.wikipedia.org/wiki/White_dwarf'
+
+        ],
+
+        [
+
+        'name' => 'Wolf–Rayet star',
+
+        'description' => 'Wolf–Rayet stars, often abbreviated as WR stars, are a rare 
+        heterogeneous set of stars with unusual spectra showing prominent broad emission 
+        lines of highly ionised helium and nitrogen or carbon.',
+
+        'rough' => 'Wolf–Rayet stars, often abbreviated as WR stars, are a rare 
         heterogeneous set of stars with unusual spectra showing prominent broad emission 
         lines of highly ionised helium and nitrogen or carbon. The spectra indicate very 
         high surface enhancement of heavy elements, depletion of hydrogen, and strong 
@@ -1706,19 +3053,62 @@ return [
         The naked-eye stars Gamma Velorum and Theta Muscae, as well as the most massive known star, 
         R136a1 in 30 Doradus, are all Wolf–Rayet stars.',
 
-        'X-ray pulsar' => 'X-ray pulsars or accretion-powered pulsars are a class of 
+        'wiki' => 'https://en.wikipedia.org/wiki/Wolf%E2%80%93Rayet_star'
+
+        ],
+
+        [
+
+        'name' => 'X-ray pulsar',
+
+        'description' => 'X-ray pulsars or accretion-powered pulsars are a class of 
         astronomical objects that are X-ray sources displaying strict periodic 
         variations in X-ray intensity. The X-ray periods range from as little as a 
         fraction of a second to as much as several minutes.',
 
-        'Yellow giant' => 'A yellow giant is a luminous giant star of low or 
+        'rough' => 'X-ray pulsars or accretion-powered pulsars are a class of 
+        astronomical objects that are X-ray sources displaying strict periodic 
+        variations in X-ray intensity. The X-ray periods range from as little as a 
+        fraction of a second to as much as several minutes.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/X-ray_pulsar'
+
+        ],
+
+        [
+
+        'name' => 'Yellow giant',
+
+        'description' => 'A yellow giant is a luminous giant star of low or 
         intermediate mass roughly 0.5–11 solar masses M in a late phase of its stellar 
         evolution. The outer atmosphere is inflated and tenuous, making the 
         radius large and the surface temperature as low as 5,200-7500 K. The 
         appearance of the yellow giant is from white to yellow, including the 
         spectral types F and G. About 10.6 percent of all giant stars are yellow giants.',
 
-        'Yellow hypergiant' => 'A yellow hypergiant is a massive star with an 
+        'rough' => 'A yellow giant is a luminous giant star of low or 
+        intermediate mass roughly 0.5–11 solar masses M in a late phase of its stellar 
+        evolution. The outer atmosphere is inflated and tenuous, making the 
+        radius large and the surface temperature as low as 5,200-7500 K. The 
+        appearance of the yellow giant is from white to yellow, including the 
+        spectral types F and G. About 10.6 percent of all giant stars are yellow giants.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Yellow_giant'
+
+        ],
+
+        [
+
+        'name' => 'Yellow hypergiant',
+
+        'description' => 'A yellow hypergiant is a massive star with an 
+        extended atmosphere, a spectral class from A to K, and an initial mass 
+        of about 20–60 solar masses but having lost as much as half that mass. 
+        They are amongst the most visually luminous stars, with absolute magnitude MV 
+        around −9, but also one of the rarest with just 15 known in the Milky Way 
+        and six of those in just a single cluster.',
+
+        'rough' => 'A yellow hypergiant is a massive star with an 
         extended atmosphere, a spectral class from A to K, and an initial mass 
         of about 20–60 solar masses but having lost as much as half that mass. 
         They are amongst the most visually luminous stars, with absolute magnitude MV 
@@ -1727,21 +3117,46 @@ return [
         hypergiants in comparison to O- and B-type stars, and sometimes as warm 
         hypergiants in comparison to red supergiants.',
 
-        'Yellow supergiant star' => 'A yellow supergiant star is a star, generally of 
+        'wiki' => ''
+
+        ],
+
+        [
+
+        'name' => 'Yellow supergiant star',
+
+        'description' => 'A yellow supergiant star is a star, generally of 
+        spectral type F or G, having a supergiant luminosity class e.g. Ia or Ib. 
+        They are stars that have evolved away from the main sequence, expanding and becoming more luminous.',
+
+        'rough'  => 'A yellow supergiant star is a star, generally of 
         spectral type F or G, having a supergiant luminosity class e.g. Ia or Ib. 
         They are stars that have evolved away from the main sequence, expanding and becoming more luminous.
 
         Yellow supergiants are smaller than red supergiants; naked eye examples include Canopus and Polaris. 
         Many of them are variable stars, mostly pulsating Cepheids such as δ Cephei itself.',
 
-        'Young stellar object' => 'Young stellar object YSO denotes a star in its early stage 
+        'wiki' => 'https://en.wikipedia.org/wiki/Yellow_hypergiant'
+
+        ],
+
+        [
+
+        'name' => 'Young stellar object',
+
+        'description' => 'Young stellar object YSO denotes a star in its early stage 
         of evolution. This class consists of two groups of objects: protostars and pre-main-sequence stars.',
+
+        'rough' => 'Young stellar object YSO denotes a star in its early stage 
+        of evolution. This class consists of two groups of objects: protostars and pre-main-sequence stars.',
+
+        'wiki' => 'https://en.wikipedia.org/wiki/Young_stellar_object'
+
+        ]
+
 
 
     ]
-
-
-
 
 
 ];

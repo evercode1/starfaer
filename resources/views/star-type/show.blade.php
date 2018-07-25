@@ -20,6 +20,10 @@
                         <b><a href="/universe/{{ $starType->universe->id }} - {{ $starType->universe->slug }}">
                         {{ $starType->universe->name }}</a></b></li>
                         <li class="collection-item">{!! $starType->description !!}</li>
+                        <li class="collection-item">Wikipedia:
+                        <b><a href="{{ $starType->wiki_url }}">
+                        {{ $starType->name }}</a></b></li>
+
 
         </ul>
 

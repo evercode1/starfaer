@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class StarTypeSeeder extends Seeder
+class OldStarTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,16 +17,14 @@ class StarTypeSeeder extends Seeder
 
         $values = config('star-type-seed.startypes');
 
-
         foreach($values as $key => $value){
 
             DB::table('star_types')->insert([
-                'name' => $value['name'],
-                'slug' => $slug = str_slug($value['name'], "-"),
+                'name' => $key,
+                'slug' => $slug = str_slug($key, "-"),
                 'universe_id' => 1,
                 'is_active' => 1,
-                'description' => $value['description'],
-                'wiki_url' => $value['wiki'],
+                'description' => $value,
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

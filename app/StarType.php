@@ -11,6 +11,7 @@ class StarType extends Model
                            'slug',
                            'is_active',
                            'description',
+                            'wiki_url',
                            'universe_id',
                            'image_name',
                            'image_extension'];

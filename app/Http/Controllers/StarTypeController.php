@@ -71,9 +71,8 @@ class StarTypeController extends Controller
 
                     'name' => 'required|unique:star_types|string|max:100',
                     'is_active' => 'required|boolean',
-                    'is_featured' => 'required|boolean',
-                    'weight' => 'required|integer|between:1,100',
                     'body' => 'required|string|max:1000',
+                    'wiki_url' => 'required|url',
                     'image' => 'max:1000',
                     'universe_id' => 'required',
 
@@ -88,10 +87,9 @@ class StarTypeController extends Controller
         $starType = StarType::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
                                                                   'is_active' => $request->is_active,
-                                                                  'is_featured' => $request->is_featured,
-                                                                  'weight' => $request->weight,
                                                                   'universe_id' => $request->universe_id,
                                                                   'description' => $request->body,
+                                                                  'wiki_url' => $request->wiki_url,
                                                                   'image_name' => $imageName,
                                                                   'image_extension' => $image]);
 
@@ -142,7 +140,7 @@ class StarTypeController extends Controller
 
         $universeId = $starType->universe_id;
 
-        $universeName = Universe::getUniverseName($starType->universe_id);
+        $universeName = $starType->universe->name;
 
         $universes = Universe::all();
 
@@ -161,15 +159,15 @@ class StarTypeController extends Controller
 
     public function update(Request $request, $id)
     {
+
         // request value is 'body', not 'description' to accommodate ckeditor
 
         $this->validate($request, [
 
             'name' => 'required|string|max:100|unique:star_types,name,' .$id,
             'is_active' => 'required|boolean',
-            'is_featured' => 'required|boolean',
-            'weight' => 'required|integer|between:1,100',
             'body' => 'required|string|max:1000',
+            'wiki_url' => 'required|url',
             'image' => 'max:1000',
             'universe_id' => 'required'
 
@@ -246,10 +244,9 @@ class StarTypeController extends Controller
     {
 
         $modelInstance->name= $request->get('name');
-        $modelInstance->weight = $request->get('weight');
-        $modelInstance->is_featured = $request->get('is_featured');
         $modelInstance->is_active = $request->get('is_active');
         $modelInstance->description = $request->get('body');
+        $modelInstance->wiki_url = $request->get('wiki_url');
         $modelInstance->universe_id = $request->get('universe_id');
         $modelInstance->image_name = $this->formatString($request->get('name'));
 

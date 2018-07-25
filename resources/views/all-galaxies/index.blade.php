@@ -13,7 +13,7 @@
 
             <div class="row">
 
-            <all-galaxy-types></all-galaxy-types>
+            <all-galaxies></all-galaxies>
 
             </div>
 

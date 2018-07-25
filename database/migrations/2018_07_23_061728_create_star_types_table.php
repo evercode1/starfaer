@@ -22,6 +22,7 @@ class CreateStarTypesTable extends Migration
             $table->boolean('is_active')->default(1);
             $table->unsignedInteger('universe_id');
             $table->longText('description',20,000);
+            $table->string('wiki_url');
             $table->string('image_name')->unique()->nullable();
             $table->string('image_extension', 10)->nullable();
             $table->timestamps();

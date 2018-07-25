@@ -115,7 +115,7 @@ class GalaxyController extends Controller
 
         $universeId = $galaxy->universe_id;
 
-        $universeName = Universe::getUniverseName($galaxy->universe_id);
+        $universeName = $galaxy->universe->name;
 
         $universes = Universe::all();
 

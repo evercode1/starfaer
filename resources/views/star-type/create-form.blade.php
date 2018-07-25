@@ -89,56 +89,6 @@
 
     <!-- end is_active select -->
 
-    <!-- is_featured select -->
-
-        <div class="{{ $errors->has('is_featured') ? 'has-error' : '' }}">
-
-            <label>Is Featured?</label>
-
-            <select id="is_featured" name="is_featured">
-
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-
-            </select>
-
-            @if ($errors->has('is_featured'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('is_featured') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-    <!-- end is_featured select -->
-
-    <!-- weight input -->
-
-        <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
-
-            <label>Weight</label>
-
-            <input type="text"
-                   name="weight"
-                   value="{{ old('weight') ? old('weight') : 100 }}" />
-
-            @if ($errors->has('weight'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('weight') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-    <!-- end weight input -->
 
     <!-- description input -->
 
@@ -161,6 +111,30 @@
         </div>
 
     <!-- end description input -->
+
+    <!-- wiki_url input -->
+
+    <div class="{{ $errors->has('wiki_url') ? ' has-error' : '' }}">
+
+        <label>Wiki Url</label>
+
+        <input type="text"
+               name="wiki_url"
+               value="{{ old('wiki_url') }}" />
+
+        @if ($errors->has('wiki_url'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('wiki_url') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end name input -->
 
     <!-- image file Form Input -->
 

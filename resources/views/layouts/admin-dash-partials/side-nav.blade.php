@@ -30,8 +30,17 @@
                         <li><a href="/galaxy-type" class="waves-effect">Galaxy Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/zone" class="waves-effect">Zones<i class="fa fa-star"></i></a></li>
                         <li><a href="/zone-type" class="waves-effect">Zone Types<i class="fa fa-star"></i></a></li>
+                        <li><a href="/star-type" class="waves-effect">Star Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/system" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Seeders<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/star-type-seeder" class="waves-effect">Star Type Seeder<i class="fa fa-star"></i></a></li>
+
                     </ul>
                 </div>
             </li>
