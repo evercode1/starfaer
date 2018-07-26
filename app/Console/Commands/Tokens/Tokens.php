@@ -14,6 +14,7 @@ class Tokens
     public $appName;
     public $parent;
     public $child;
+    public $configName;
     public $namespace;
     public $tokens = [];
 
@@ -68,6 +69,8 @@ class Tokens
         $childMigrationModel = $this->formatMigrationModel($this->child);
 
         $childRelation = $this->formatChildRelation($this->child);
+
+        $configName = $this->configName;
 
         $controllerName = $this->model . 'Controller';
 
@@ -161,6 +164,7 @@ class Tokens
                           'childRelation',
                           'childsTableName',
                           'createdAt',
+                          'configName',
                           'controllerName',
                           'endGridName',
                           'field_name',

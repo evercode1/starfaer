@@ -16,7 +16,7 @@
 
         <button type="submit" class="waves-effect waves-light btn">
 
-            Create
+            Create Seeds
 
         </button>
 
