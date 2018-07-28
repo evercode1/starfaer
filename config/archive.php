@@ -7,6 +7,29 @@
 */
 return [
 
+'fun'=> [
+
+
+'righty',
+'lefty',
+
+
+
+
+
+
+],
+
+
+
+
+
+
+
+
+
+
+
 
     'standard' =>
 

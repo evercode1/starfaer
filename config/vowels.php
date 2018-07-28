@@ -9,6 +9,9 @@
 
 return [
 
+
+
+
     'standard' =>
 
         ['a','e','i','o','u', 'ae', 'ou'],

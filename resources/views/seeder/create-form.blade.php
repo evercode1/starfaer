@@ -119,7 +119,9 @@
                 <option value="">Please Choose One</option>
 
 
-                    <option value="standard">standard</option>
+                <option value="standard">standard</option>
+
+
                 <option value="eo">eo</option>
                 <option value="lor">lor</option>
                 <option value="us">us</option>

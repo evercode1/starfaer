@@ -14,7 +14,7 @@ class RandomStarGenerator{
 
         $word    = '';
 
-        $baseVowels     = array("a","e","i","o","u");
+        $baseVowels     = array('a','e','i','o','u');
         $baseConsonants = array(
             'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
             'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
