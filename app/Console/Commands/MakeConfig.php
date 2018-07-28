@@ -46,6 +46,31 @@ class MakeConfig extends Command
     public function handle(ConfigBuilder $config)
     {
 
+        $fail = ['app',
+            'auth',
+            'broadcasting',
+            'cache',
+            'consonants',
+            'database',
+            'filesystems',
+            'hashing',
+            'image-defaults',
+            'logging',
+            'mail',
+            'queue',
+            'services',
+            'session',
+            'view',
+            'vowels'];
+
+        if (in_array($this->argument('Name'), $fail)){
+
+            $this->error('That name is not allowed!');
+
+            return;
+
+        }
+
 
         if ( $config->makeConfigFiles($this->argument()) ) {
 

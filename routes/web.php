@@ -155,6 +155,11 @@ Route::resource('post', 'PostController', ['except' => ['show', 'create', 'destr
 
 Route::resource('reply', 'ReplyController');
 
+// Seeder Routes
+
+Route::get('seeder', 'SeederController@create');
+route::post('seeder', 'SeederController@store');
+
 // Settings routes
 
 Route::get('settings', 'SettingsController@edit');

@@ -134,7 +134,7 @@
 
     </div>
 
-    <!-- end name input -->
+    <!-- end wiki_url input -->
 
     <!-- image file Form Input -->
 

@@ -59,6 +59,7 @@ class Handler extends ExceptionHandler
                 return response()->view('errors.already-confirmed-exception', compact('exception'), 500);
                 break;
 
+
             case $exception instanceof AlreadySyncedException :
 
                 if ($request->ajax()) {
@@ -102,6 +103,24 @@ class Handler extends ExceptionHandler
                 }
 
                 return response()->view('errors.email-not-provided-exception', compact('exception'), 500);
+                break;
+
+            case $exception instanceof FileAlreadyExistsException :
+
+                if ($request->ajax()) {
+                    return response()->json(['error' => 'FileAlready Exists'], 500);
+                }
+
+                return response()->view('errors.file-already-exists-exception', compact('exception'), 500);
+                break;
+
+            case $exception instanceof NameException:
+
+                if ($request->ajax()) {
+                    return response()->json(['error' => 'Name Exception'], 500);
+                }
+
+                return response()->view('errors.name-exception', compact('exception'), 500);
                 break;
 
             case $exception instanceof NoActiveAccountException:

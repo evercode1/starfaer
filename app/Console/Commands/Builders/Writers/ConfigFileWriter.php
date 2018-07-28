@@ -3,6 +3,8 @@
 namespace App\Console\Commands\Builders\Writers;
 
 use App\Console\Commands\Builders\ContentRouters\ConfigContentRouter;
+use App\Exceptions\FileAlreadyExistsException;
+
 
 class ConfigFileWriter
 {
@@ -60,16 +62,20 @@ class ConfigFileWriter
     {
 
 
-                if (!is_array($fileName)) {
+                if (file_exists($filePath)) {
 
-                    $txt = $content->getContentFromTemplate($fileName, $this->tokens);
 
-                    $handle = fopen($filePath, "w");
+                    throw new FileAlreadyExistsException();
 
-                    fwrite($handle, $txt);
-
-                    fclose($handle);
                 }
+
+                $txt = $content->getContentFromTemplate($fileName, $this->tokens);
+
+                $handle = fopen($filePath, "w");
+
+                fwrite($handle, $txt);
+
+                fclose($handle);
 
 
     }

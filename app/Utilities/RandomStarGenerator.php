@@ -2,7 +2,7 @@
 
 namespace App\Utilities;
 
-class RandomWordGenerator{
+class RandomStarGenerator{
 
 
 
@@ -14,6 +14,12 @@ class RandomWordGenerator{
 
         $word    = '';
 
+        $baseVowels     = array("a","e","i","o","u");
+        $baseConsonants = array(
+            'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+            'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
+            'dr', 'tr', 'br', 'st', 'k', 'cr', 'kl', 'pr', 'th'
+        );
 
         // Seed it
 
@@ -24,6 +30,9 @@ class RandomWordGenerator{
 
         $countConsonants = count($consonants) -1 ;
 
+        $countBaseVowels = count($baseVowels) - 1;
+
+        $countBaseConsonants = count($baseConsonants) -1 ;
 
         $max = $length/2;
 
