@@ -28,9 +28,9 @@ class TestController extends Controller
     public function index()
     {
 
-        $array = config('bak-planets-one');
+        $array = config('archive');
 
-        $destination = base_path('config/planets-one.php');
+        $destination = base_path('seeds/planets-one.php');
 
 
          UniqueNames::filter($array, $destination);

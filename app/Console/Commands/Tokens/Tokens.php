@@ -15,6 +15,7 @@ class Tokens
     public $parent;
     public $child;
     public $configName;
+    public $seedsName;
     public $namespace;
     public $tokens = [];
 
@@ -132,6 +133,8 @@ class Tokens
 
         $parentsTableName = $this->formatParentsTableName($this->parent);
 
+        $seedsName = $this->seedsName;
+
         $tableName = $this->tableName();
 
         $upperCaseModelName = ucwords($this->model);
@@ -194,6 +197,7 @@ class Tokens
                           'parentInstances',
                           'parentModelPath',
                           'parentsTableName',
+                          'seedsName',
                           'slug',
                           'tableName',
                           'upperCaseModelName',

@@ -85,10 +85,11 @@
             <label>Vowel Group</label>
 
             <select id="vowels" name="vowels">
+            <option value="">Please Choose One</option>
 
 
 
-                <option value="">Please Choose One</option>
+
                 <option value="astro">astro</option>
                 <option value="star-words">star-words</option>
 
@@ -120,7 +121,7 @@
 
 
 
-<option value="wonder-words">wonder-words</option>
+
             <option value="sentimental">sentimental</option>
             <option value="astro">astro</option>
             <option value="star">star</option>
@@ -150,7 +151,7 @@
 
         <label>Direction of Seeds</label>
 
-        <select id="direction" name="direction">
+            <select id="direction" name="direction">
 
             <option value="">Please Choose One</option>
             <option value="seed_last">Seed Group Last</option>

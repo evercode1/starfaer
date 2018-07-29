@@ -10,12 +10,12 @@ class CreateSeeds
     {
 
 
-        MakeConfigFile::make($name);
+        MakeSeedsFile::make($name);
 
 
         $words = MakeWords::generate($type, $direction, $wordLength, $count, $vowels, $consonants);
 
-        $filename = base_path('/config/' . $name . '.php');
+        $filename = base_path('/seeds/' . $name . '.php');
 
 
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Utilities\AppendConfigFile;
+use App\Utilities\AppendSeedsFile;
 
 class SeedGroupController extends Controller
 {
@@ -20,7 +20,7 @@ class SeedGroupController extends Controller
 
         $this->validate($request, [
 
-            'config_name' => ['required', 'string'],
+            'seeds_name' => ['required', 'string'],
             'group_title' => 'required|string',
             'trim' => 'required|string',
             'syllables' => 'required|string',
@@ -28,7 +28,7 @@ class SeedGroupController extends Controller
 
         ]);
 
-        $configName = $request->config_name;
+        $seedsName = $request->seeds_name;
         $groupTitle = $request->group_title;
         $syllables = $request->syllables;
 
@@ -55,10 +55,10 @@ class SeedGroupController extends Controller
 
 
 
-        AppendConfigFile::make($configName, $groupTitle, $newSyllables);
+        AppendSeedsFile::make($seedsName, $groupTitle, $newSyllables);
 
 
-        return view('seed-group.confirmation', compact('configName'));
+        return view('seed-group.confirmation', compact('seedsName'));
 
 
     }

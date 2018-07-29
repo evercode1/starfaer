@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Console\Commands\Builders\Config;
+namespace App\Console\Commands\Builders\Seeds;
 
 use App\Console\Commands\Tokens\Tokens;
-use App\Console\Commands\Builders\Writers\ConfigFileWriter;
+use App\Console\Commands\Builders\Writers\SeedsFileWriter;
 
-class ConfigBuilder
+class SeedsBuilder
 {
 
     public $initialValues = [];
@@ -17,25 +17,25 @@ class ConfigBuilder
     public $tokens = [];
 
 
-    public function makeConfigFiles($input)
+    public function makeSeedsFiles($input)
     {
         $this->setConfig($input);
 
-        $this->writeConfigFiles();
+        $this->writeSeedsFiles();
 
         return true;
 
 
     }
 
-    private function writeConfigFiles()
+    private function writeSeedsFiles()
     {
 
-        $writer = new configFileWriter($this->fileWritePaths,
+        $writer = new SeedsFileWriter($this->fileWritePaths,
                                      $this->fileAppendPaths,
                                      $this->tokens);
 
-        $writer->writeAllConfigFiles();
+        $writer->writeAllSeedsFiles();
 
 
     }
@@ -55,7 +55,11 @@ class ConfigBuilder
     private function setFilePaths()
     {
 
-            $this->fileWritePaths['config'] = base_path() . '/config/' . $this->tokens['configName'] . '.php';
+            $this->fileWritePaths['seed'] = base_path() . '/seeds/' . $this->tokens['seedsName'] . '.php';
+
+
+
+
 
 
     }
@@ -76,7 +80,7 @@ class ConfigBuilder
 
     private function setInput($input)
     {
-        $this->initialValues['configName'] = $input['Name'];
+        $this->initialValues['seedsName'] = $input['Name'];
 
 
     }

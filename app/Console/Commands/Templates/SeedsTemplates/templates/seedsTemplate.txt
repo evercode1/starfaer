@@ -1,6 +1,6 @@
 <?php
 
-   /* all-stars
+   /* :::seedsName:::
    | We hold the data here for easy reuse
    |
    | the empty space is intentional for the code generator.
@@ -8,9 +8,6 @@
    */
 
 return [
-
-
-
 
 
 

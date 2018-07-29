@@ -3,9 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Console\Commands\Builders\Config\ConfigBuilder;
+use App\Console\Commands\Builders\Seeds\AppendSeedsBuilder;
 
-class MakeConfig extends Command
+class AppendSeeds extends Command
 {
 
     /**
@@ -13,15 +13,15 @@ class MakeConfig extends Command
      *
      * @var string
      */
-    protected $signature = 'make:config
-                           {Name}';
+    protected $signature = 'append:seeds
+                           {SeedsName}{GroupTitle}{syllables*}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'create a config file';
+    protected $description = 'append to a seeds file';
 
 
 
@@ -43,12 +43,12 @@ class MakeConfig extends Command
      *
      * @return mixed
      */
-    public function handle(ConfigBuilder $config)
+    public function handle(AppendSeedsBuilder $seeds)
     {
 
 
 
-        if ( $config->makeConfigFiles($this->argument()) ) {
+        if ( $seeds->appendSeedsFiles($this->argument()) ) {
 
             $this->sendSuccessMessage();
 
@@ -70,7 +70,7 @@ class MakeConfig extends Command
     private function sendSuccessMessage()
     {
 
-        $this->info('Seeds file successfully created');
+        $this->info($this->argument('SeedsName') . ' Seeds file successfully appended');
 
     }
 

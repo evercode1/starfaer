@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Console\Commands\Builders\Config;
+namespace App\Console\Commands\Builders\Seeds;
 
 
-class AppendConfigBuilder
+class AppendSeedsBuilder
 {
 
     public $initialValues = [];
@@ -15,7 +15,7 @@ class AppendConfigBuilder
 
 
 
-    public function appendConfigFiles($input)
+    public function appendSeedsFiles($input)
     {
         $this->setConfig($input);
 
@@ -36,43 +36,6 @@ class AppendConfigBuilder
 
     }
 
-    private function mergeInput()
-    {
-
-        $baseVowels     = array('a','e','i','o','u');
-        $baseConsonants = array(
-            'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'k', 'cr', 'kl', 'pr', 'th'
-        );
-
-
-
-       switch($this->initialValues['configName']){
-
-           case 'consonants' :
-
-             $this->syllables =  array_merge($baseConsonants, $this->syllables);
-
-               break;
-
-           case 'vowels' :
-
-               $this->syllables =  array_merge($baseVowels, $this->syllables);
-               break;
-
-           default :
-
-               return;
-
-
-
-
-       }
-
-
-    }
-
 
     /**
      * @param $input
@@ -80,7 +43,7 @@ class AppendConfigBuilder
 
     private function setInput($input)
     {
-        $this->initialValues['configName'] = $input['ConfigName'];
+        $this->initialValues['seedsName'] = $input['SeedsName'];
         $this->initialValues['groupTitle'] = $input['GroupTitle'];
         $this->syllables = $input['syllables'];
 
@@ -91,7 +54,7 @@ class AppendConfigBuilder
     private function writeFiles()
     {
 
-        $this->writeConfig();
+        $this->writeSeeds();
 
 
         $this->writeForm();
@@ -101,23 +64,23 @@ class AppendConfigBuilder
     }
 
 
-    private function writeConfig()
+    private function writeSeeds()
     {
 
 
         $groupTitle =$this->initialValues['groupTitle'];
 
-        $configName = $this->initialValues['configName'];
+        $configName = $this->initialValues['seedsName'];
 
         $words = $this->syllables;
 
         // set filename to the temporary flat file
 
-        $tempFile = base_path('config/array-format-values.txt');
+        $tempFile = base_path('seeds/array-format-values.txt');
 
         // select template and insert to $filename, the temporary file
 
-        $template = base_path('app/Console/Commands/Templates/ConfigTemplates/templates/appendConfigTemplate.txt');
+        $template = base_path('app/Console/Commands/Templates/SeedsTemplates/templates/appendSeedsTemplate.txt');
         $textContents = file($template);
         file_put_contents($tempFile, implode('', $textContents));
 
@@ -138,7 +101,7 @@ class AppendConfigBuilder
 
         // get array from temp
 
-        $txt =  file_get_contents(base_path('config/array-format-values.txt'));
+        $txt =  file_get_contents(base_path('seeds/array-format-values.txt'));
 
         // open destination file
 
@@ -165,7 +128,7 @@ class AppendConfigBuilder
 
         // eliminate temp file
 
-        unlink(base_path('config/array-format-values.txt'));
+        unlink(base_path('seeds/array-format-values.txt'));
 
 
 
@@ -182,16 +145,16 @@ class AppendConfigBuilder
 
         // dtermine vowel or consonants
 
-        switch($this->initialValues['configName']){
+        switch($this->initialValues['seedsName']){
 
             case 'vowels' :
 
                 $contents = file($form);
-                $contents[150] = $contents[150] . "\n\n"; // Gives a new line
+                $contents[90] = $contents[90] . "\n\n"; // Gives a new line
                 file_put_contents($form, implode('',$contents));
 
                 $contents = file($form);
-                $contents[151] = '<option value="'.
+                $contents[91] = '<option value="'.
                     $this->initialValues['groupTitle'] .'">'
                     . $this->initialValues['groupTitle'] . '</option>';
                 file_put_contents($form, implode('',$contents));
@@ -200,11 +163,11 @@ class AppendConfigBuilder
             case 'consonants' :
 
                 $contents = file($form);
-                $contents[182] = $contents[182] . "\n\n"; // Gives a new line
+                $contents[122] = $contents[122] . "\n\n"; // Gives a new line
                 file_put_contents($form, implode('',$contents));
 
                 $contents = file($form);
-                $contents[183] = '<option value="'.
+                $contents[123] = '<option value="'.
                     $this->initialValues['groupTitle'] .'">'
                     . $this->initialValues['groupTitle'] . '</option>';
                 file_put_contents($form, implode('',$contents));

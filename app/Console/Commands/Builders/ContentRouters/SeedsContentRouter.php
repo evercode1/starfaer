@@ -3,9 +3,9 @@
 namespace App\Console\Commands\Builders\ContentRouters;
 
 use App\Console\Commands\Builders\ContentRouters\ContentTraits\HasParentAndChildAndSlug;
-use App\Console\Commands\Templates\ConfigTemplates\ConfigTemplateAssembler;
+use App\Console\Commands\Templates\SeedsTemplates\SeedsTemplateAssembler;
 
-class ConfigContentRouter
+class SeedsContentRouter
 {
 
     use HasParentAndChildAndSlug;
@@ -24,9 +24,9 @@ class ConfigContentRouter
     {
 
 
-        $configTemplate = new ConfigTemplateAssembler($tokens);
+        $crudTemplate = new SeedsTemplateAssembler($tokens);
 
-        return $configTemplate->assembleTemplate($templateName);
+        return $crudTemplate->assembleTemplate($templateName);
 
 
     }
@@ -40,7 +40,7 @@ class ConfigContentRouter
     private function defaultHandler($fileName, array $tokens, $fileExists)
     {
 
-        return $this->routeTemplate($tokens, 'configTemplate');
+        return $this->routeTemplate($tokens, 'seedsTemplate');
 
     }
 

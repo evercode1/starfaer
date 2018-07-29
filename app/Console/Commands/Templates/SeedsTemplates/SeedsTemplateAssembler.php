@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Console\Commands\Templates\ConfigTemplates;
+namespace App\Console\Commands\Templates\SeedsTemplates;
 
 
 
-class ConfigTemplateAssembler
+class SeedsTemplateAssembler
 {
 
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Utilities\CreateSeeds;
 use App\Rules\NameIsAllowed;
 use App\Exceptions\NameException;
+use App\Utilities\FetchSeeds;
 
 class SeederController extends Controller
 {
@@ -41,7 +42,7 @@ class SeederController extends Controller
         $consonants = config('consonants.' . $request->consonants);
 
 
-        CreateSeeds::generate($name, $type, $direction, $wordLength, $totalCount, $vowels, $consonants );
+        CreateSeeds::generate($name, $type, $direction, $wordLength, $totalCount, $vowels, $consonants);
 
 
 

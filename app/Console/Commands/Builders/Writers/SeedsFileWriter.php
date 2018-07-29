@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands\Builders\Writers;
 
-use App\Console\Commands\Builders\ContentRouters\ConfigContentRouter;
+use App\Console\Commands\Builders\ContentRouters\SeedsContentRouter;
 use App\Exceptions\FileAlreadyExistsException;
 
 
-class ConfigFileWriter
+class SeedsFileWriter
 {
 
     public $fileWritePaths;
@@ -20,12 +20,12 @@ class ConfigFileWriter
         $this->fileWritePaths = $fileWritePaths;
         $this->fileAppendPaths = $fileAppendPaths;
         $this->tokens = $tokens;
-        $this->content = new ConfigContentRouter();
+        $this->content = new SeedsContentRouter();
 
 
     }
 
-    public function writeAllConfigFiles()
+    public function writeAllSeedsFiles()
     {
 
 
@@ -39,7 +39,7 @@ class ConfigFileWriter
 
 
 
-    private function writeEachFile(array $fileWritePaths, configContentRouter $content)
+    private function writeEachFile(array $fileWritePaths, SeedsContentRouter $content)
     {
 
                 foreach ($fileWritePaths as $fileName => $filePath) {
@@ -58,7 +58,7 @@ class ConfigFileWriter
      * @param $fileName
      * @param $filePath
      */
-    private function defaultHandler(ConfigContentRouter $content, $fileName, $filePath)
+    private function defaultHandler(SeedsContentRouter $content, $fileName, $filePath)
     {
 
 

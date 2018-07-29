@@ -29,13 +29,13 @@
 
     <!-- end group_title input -->
 
-<!-- config_name -->
+<!-- seeds_name -->
 
-    <div class="{{ $errors->has('config_name') ? ' has-error' : '' }}">
+    <div class="{{ $errors->has('seeds_name') ? ' has-error' : '' }}">
 
-        <label>Config Name</label>
+        <label>seeds Name</label>
 
-        <select id="config_name" name="config_name">
+        <select id="seeds_name" name="seeds_name">
 
             <option value="">Please Choose One</option>
             <option value="consonants">consonants</option>
@@ -46,11 +46,11 @@
 
         </select>
 
-        @if ($errors->has('config_name'))
+        @if ($errors->has('seeds_name'))
 
             <span class="help-block">
 
-                    <strong>{{ $errors->first('config_name') }}</strong>
+                    <strong>{{ $errors->first('seeds_name') }}</strong>
 
                 </span>
 
@@ -58,7 +58,7 @@
 
     </div>
 
-    <!-- end config_name select -->
+    <!-- end seeds_name select -->
 
     <!-- trim -->
 

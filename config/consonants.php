@@ -7,24 +7,6 @@
 */
 return [
 
-'wonder-words'=> [
-
-
-'fantastic',
-'gosh',
-'awesome',
-'cool',
-'wow',
-
-
-
-
-],
-
-
-
-
-
 
 'sentimental'=> [
 
