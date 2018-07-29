@@ -2,15 +2,10 @@
 
 @section('title')
 
-    <title>Create StarType Data</title>
+    <title>Create StarType Populator</title>
 
 @endsection
 
-@section('meta')
-
-    <script src="/ckeditor/ckeditor.js"></script>
-
-@endsection
 
 
 @section('content')
@@ -19,11 +14,11 @@
 
             <div class="row">
 
-                <h1 class="flow-text grey-text text-darken-1">StarType Data</h1>
+                <h1 class="flow-text grey-text text-darken-1">Star Type Generator</h1>
 
                 <section class="mt-20">
 
-                    @include('star-type-seeder.create-form')
+                    @include('star-type-generator.create-form')
 
                 </section>
 

@@ -23,7 +23,6 @@ class SeederController extends Controller
         $this->validate($request, [
 
             'name' => ['required', 'string', 'max:200', new NameIsAllowed()],
-            'type' => 'required|string',
             'direction' => 'required|string',
             'word_length' => 'required|integer',
             'total_count' => 'required|integer',
@@ -34,7 +33,7 @@ class SeederController extends Controller
 
 
         $name = $request->name;
-        $type = $request->type;
+        $type = 'advanced';
         $direction = $request->direction;
         $wordLength = $request->word_length;
         $totalCount = $request->total_count;

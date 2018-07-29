@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use StarTypeSeeder;
 use Illuminate\Support\Facades\Redirect;
 
-class StarTypeSeederController extends Controller
+class StarTypeGeneratorController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class StarTypeSeederController extends Controller
     public function create()
     {
 
-        return view('star-type-seeder.create');
+        return view('star-type-generator.create');
 
     }
 

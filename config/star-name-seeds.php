@@ -1021,6 +1021,7 @@ return [
 'daxiri',
 'staxseum',
 'solax',
+'furey',
 
 
 

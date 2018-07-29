@@ -178,10 +178,10 @@ Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-// Star Seed Routes
+// Star Type Populator Routes
 
-Route::get('star-type-seeder', 'StarTypeSeederController@create');
-Route::post('star-type-seeder', 'StarTypeSeederController@store');
+Route::get('star-type-generator', 'StarTypeGeneratorController@create');
+Route::post('star-type-generator', 'StarTypeGeneratorController@store');
 
 // Test Routes
 

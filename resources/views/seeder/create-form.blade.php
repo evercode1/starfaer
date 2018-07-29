@@ -9,7 +9,7 @@
 
     <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
 
-        <label>Name</label>
+        <label>Name (i.e. planets, moons)</label>
 
         <input type="text"
                name="name"
@@ -29,67 +29,6 @@
 
     <!-- end name input -->
 
-    <!-- type select -->
-
-    <div class="{{ $errors->has('type') ? ' has-error' : '' }}">
-
-        <label>Type</label>
-
-        <select id="type" name="type">
-
-            <option value="">Please Choose One</option>
-            <option value="advanced">advanced</option>
-            <option value="standard">standard</option>
-
-
-
-
-        </select>
-
-        @if ($errors->has('type'))
-
-            <span class="help-block">
-
-                    <strong>{{ $errors->first('type') }}</strong>
-
-                </span>
-
-        @endif
-
-    </div>
-
-    <!-- end type select -->
-
-    <!-- direction select -->
-
-    <div class="{{ $errors->has('direction') ? ' has-error' : '' }}">
-
-        <label>Direction</label>
-
-        <select id="direction" name="direction">
-
-            <option value="">Please Choose One</option>
-            <option value="seed_last">Seed Group Last</option>
-            <option value="seed_first">Seed Group First</option>
-
-
-
-
-        </select>
-
-        @if ($errors->has('direction'))
-
-            <span class="help-block">
-
-                    <strong>{{ $errors->first('direction') }}</strong>
-
-                </span>
-
-        @endif
-
-    </div>
-
-    <!-- end type select -->
 
     <!-- word_length input -->
 
@@ -119,7 +58,7 @@
 
     <div class="{{ $errors->has('total_count') ? ' has-error' : '' }}">
 
-        <label>Total Word Count</label>
+        <label>Total Names To Generate</label>
 
         <input type="number"
                name="total_count"
@@ -143,7 +82,7 @@
 
         <div class="{{ $errors->has('vowels') ? ' has-error' : '' }}">
 
-            <label>Vowels</label>
+            <label>Vowel Group</label>
 
             <select id="vowels" name="vowels">
 
@@ -173,7 +112,7 @@
 
     <div class="{{ $errors->has('consonants') ? ' has-error' : '' }}">
 
-        <label>Consonants</label>
+        <label>Consonant Group</label>
 
         <select id="consonants" name="consonants">
 
@@ -204,6 +143,37 @@
     </div>
 
     <!-- end consonants select -->
+
+    <!-- direction select -->
+
+    <div class="{{ $errors->has('direction') ? ' has-error' : '' }}">
+
+        <label>Direction of Seeds</label>
+
+        <select id="direction" name="direction">
+
+            <option value="">Please Choose One</option>
+            <option value="seed_last">Seed Group Last</option>
+            <option value="seed_first">Seed Group First</option>
+
+
+
+
+        </select>
+
+        @if ($errors->has('direction'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('direction') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end direction select -->
 
 
     <!-- submit button -->

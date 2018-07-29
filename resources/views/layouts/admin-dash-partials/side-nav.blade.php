@@ -12,16 +12,25 @@
                     </ul>
                 </div>
             </li>
-            <li class="bold waves-effect"><a class="collapsible-header">Support<i class="material-icons chevron">chevron_left</i></a>
+            <li class="bold waves-effect"><a class="collapsible-header">Seeders<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/open-contacts" class="waves-effect">Open Support Requests<i class="material-icons">record_voice_over</i></a></li>
-                        <li><a href="/closed-contacts" class="waves-effect">Closed Support Requests<i class="material-icons">done</i></a></li>
-                        <li><a href="/contact" class="waves-effect">All Support Requests<i class="material-icons">clear_all</i></a></li>
-                        <li><a href="/contact-topic" class="waves-effect">Support Topics<i class="material-icons">list_alt</i></a></li>
+                        <li><a href="/seeder" class="waves-effect">Create Seeds<i class="fa fa-star"></i></a></li>
+                        <li><a href="/seed-group" class="waves-effect">Create Seed Group<i class="fa fa-star"></i></a></li>
+
                     </ul>
                 </div>
             </li>
+
+            <li class="bold waves-effect"><a class="collapsible-header">Generators<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/star-type-generator" class="waves-effect">Star Type Generator<i class="fa fa-star"></i></a></li>
+
+                    </ul>
+                </div>
+            </li>
+
             <li class="bold waves-effect"><a class="collapsible-header">Worlds<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
@@ -36,14 +45,17 @@
                     </ul>
                 </div>
             </li>
-            <li class="bold waves-effect"><a class="collapsible-header">Seeders<i class="material-icons chevron">chevron_left</i></a>
+            <li class="bold waves-effect"><a class="collapsible-header">Support<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/star-type-seeder" class="waves-effect">Star Type Seeder<i class="fa fa-star"></i></a></li>
-
+                        <li><a href="/open-contacts" class="waves-effect">Open Support Requests<i class="material-icons">record_voice_over</i></a></li>
+                        <li><a href="/closed-contacts" class="waves-effect">Closed Support Requests<i class="material-icons">done</i></a></li>
+                        <li><a href="/contact" class="waves-effect">All Support Requests<i class="material-icons">clear_all</i></a></li>
+                        <li><a href="/contact-topic" class="waves-effect">Support Topics<i class="material-icons">list_alt</i></a></li>
                     </ul>
                 </div>
             </li>
+
             <li class="bold waves-effect"><a class="collapsible-header">Videos<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
