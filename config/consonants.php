@@ -7,29 +7,30 @@
 */
 return [
 
+'sentimental'=> [
 
-    'standard' =>
 
-        [
-            'b', 'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'sh', 'k', 'cr', 'kl', 'pr'
-        ],
+'ven',
+'jup',
+'sat',
+'sun',
+'val',
+'la',
 
-    'th' =>
 
-        [
-            'b', 'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'sh', 'k', 'cr', 'kl', 'pr', 'th'
-        ],
+
+
+],
+
+
+
+
+
+
 
     'astro' =>
 
         [
-            'b', 'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'sh', 'k', 'cr', 'kl', 'pr', 'th',
             'cyon', 'taires', 'quarius', 'rius', 'pus', 'rus', 'gel',
             'cyon', 'nar'
         ],
@@ -37,9 +38,6 @@ return [
     'star' =>
 
         [
-            'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'k', 'cr', 'kl', 'pr', 'th',
             'lor', 'than',  'reum', 'pus', 'rus', 'gel',
             'thor', 'nar', 'siri', 'taur'
         ],
@@ -48,9 +46,6 @@ return [
     'star-words' =>
 
         [
-            'c', 'd', 'f', 'g', 'h', 'k', 'l', 'm',
-            'n', 'p', 'r', 's', 't', 'v', 'x', 'y', 'z',
-            'dr', 'tr', 'br', 'st', 'k', 'cr', 'kl', 'pr', 'th',
             'lacri', 'bacchus',  'flamma', 'komor', 'ebas', 'voor',
             'lagom', 'ubuntu', 'magna', 'aris',  'pax', 'dax',
             'pol', 'cron', 'sol', 'ignis', 'alba', 'galile', 'ein'

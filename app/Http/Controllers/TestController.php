@@ -27,53 +27,10 @@ class TestController extends Controller
     public function index()
     {
 
-        $groupTitle = 'fun';
 
-        $arr = ['lefty', 'righty'];
+        $arr = ['some', 'things', 'are', 'hard'];
 
-
-
-         $words = array_unique($arr);
-
-
-        $filename = base_path('config/array-format-values.txt');
-
-
-
-              foreach( $words as $key => $value){
-
-            $contents = file($filename);
-            $contents[2] = $contents[2] . "\n\n"; // Gives a new line
-            file_put_contents($filename, implode('',$contents));
-
-            $contents = file($filename);
-            $contents[3] = "'" . $value . "',";
-           file_put_contents($filename, implode('',$contents));
-
-        }
-
-
-        $txt =  file_get_contents(base_path('config/array-format-values.txt'));
-
-        $config = base_path('config/archive.php');
-
-        $contents = file_get_contents($config);
-
-        $classParts = explode('[', $contents, 2);
-
-        $txt = $classParts[0] . "[\n\n" . "'" . $groupTitle . "'" .  $txt . "\n\n" . $classParts[1];
-
-
-        $handle = fopen($config, "w");
-
-        fwrite($handle, $txt);
-
-        fclose($handle);
-
-
-
-
-        //AppendConfigFile::make('consonants', 'new words', $arr);
+        AppendConfigFile::make('consonants', 'thingy', $arr);
 
 
 //       $words = array_unique($words);

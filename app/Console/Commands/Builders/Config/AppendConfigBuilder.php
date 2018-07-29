@@ -19,8 +19,6 @@ class AppendConfigBuilder
     {
         $this->setConfig($input);
 
-        // dd($this->initialValues['groupTitle']);
-
         $this->writeFiles();
 
         return true;
@@ -34,12 +32,6 @@ class AppendConfigBuilder
     {
 
         $this->setInput($input);
-
-
-        $this->setFilePaths();
-
-        $this->mergeInput();
-
 
 
     }
@@ -81,21 +73,6 @@ class AppendConfigBuilder
 
     }
 
-    private function setFilePaths()
-    {
-
-            $this->fileAppendPaths['configFile'] = base_path() . '/config/'
-                   . $this->initialValues['configName'] . '.php';
-
-
-
-            $this->fileAppendPaths['form'] = base_path() .
-                    '/resources/views/seeder/create-form.blade.php';
-
-
-
-    }
-
 
     /**
      * @param $input
@@ -127,45 +104,68 @@ class AppendConfigBuilder
     private function writeConfig()
     {
 
-            $filename = $this->fileAppendPaths['configFile'];
 
-            $closing = count($this->syllables) + 18;
+        $groupTitle =$this->initialValues['groupTitle'];
 
-            $groupTitle =$this->initialValues['groupTitle'];
+        $configName = $this->initialValues['configName'];
 
+        $words = $this->syllables;
 
+        // set filename to the temporary flat file
 
+        $tempFile = base_path('config/array-format-values.txt');
 
+        // select template and insert to $filename, the temporary file
 
+        $template = base_path('app/Console/Commands/Templates/ConfigTemplates/templates/appendConfigTemplate.txt');
+        $textContents = file($template);
+        file_put_contents($tempFile, implode('', $textContents));
 
+        //  iterate through each word in array and copy to tempfile
 
+        foreach( $words as $key => $value){
 
+            $contents = file($tempFile);
+            $contents[2] = $contents[2] . "\n\n"; // Gives a new line
+            file_put_contents($tempFile, implode('',$contents));
 
-            //$openString = "'" . $groupTitle . "' => "   .  "\n\[";
+            $contents = file($tempFile);
+            $contents[3] = "'" . $value . "',";
+            file_put_contents($tempFile, implode('',$contents));
 
-//            $contents = file($filename);
-//            $contents[12] = $contents[12] . "\n\n\n\n"; // Gives a new line
-//            $contents[14] = $openString;
-//            file_put_contents($filename, implode('',$contents));
-//
-//
-//            foreach($this->syllables as $value){
-//
-//            $contents = file($filename);
-//            $contents[16] = "'" . $value . "',";
-//            file_put_contents($filename, implode('',$contents));
-//
-//
-//            }
-//
-//            $contents = file($filename);
-//            $contents[$closing] = "\n\n\\]";
-//            file_put_contents($filename, implode('',$contents));
+        }
 
 
+        // get array from temp
+
+        $txt =  file_get_contents(base_path('config/array-format-values.txt'));
+
+        // open destination file
+
+        $config = base_path('config/' . $configName . '.php');
+
+        $contents = file_get_contents($config);
+
+        // divide into parts
+
+        $classParts = explode('[', $contents, 2);
+
+        // inside destination file, insert array
+
+        $txt = $classParts[0] . "[\n\n" . "'" . $groupTitle . "'" .  $txt . "\n\n" . $classParts[1];
+
+        // write file
+
+        $handle = fopen($config, "w");
+
+        fwrite($handle, $txt);
+
+        fclose($handle);
 
 
+        // eliminate temp file
 
+        unlink(base_path('config/array-format-values.txt'));
 
 
 
@@ -174,6 +174,50 @@ class AppendConfigBuilder
 
     private function writeForm()
     {
+
+        // open destination file
+
+        $form = base_path('resources/views/seeder/create-form.blade.php');
+
+
+        // dtermine vowel or consonants
+
+        switch($this->initialValues['configName']){
+
+            case 'vowels' :
+
+                $contents = file($form);
+                $contents[123] = $contents[123] . "\n\n"; // Gives a new line
+                file_put_contents($form, implode('',$contents));
+
+                $contents = file($form);
+                $contents[124] = '<option value="'.
+                    $this->initialValues['groupTitle'] .'">'
+                    . $this->initialValues['groupTitle'] . '</option>';
+                file_put_contents($form, implode('',$contents));
+                break;
+
+            case 'consonants' :
+
+                $contents = file($form);
+                $contents[159] = $contents[159] . "\n\n"; // Gives a new line
+                file_put_contents($form, implode('',$contents));
+
+                $contents = file($form);
+                $contents[160] = '<option value="'.
+                    $this->initialValues['groupTitle'] .'">'
+                    . $this->initialValues['groupTitle'] . '</option>';
+                file_put_contents($form, implode('',$contents));
+                break;
+
+            default:
+
+                return;
+
+
+        }
+
+
 
 
 

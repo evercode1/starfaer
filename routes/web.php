@@ -155,6 +155,11 @@ Route::resource('post', 'PostController', ['except' => ['show', 'create', 'destr
 
 Route::resource('reply', 'ReplyController');
 
+// Seed Group Routes
+
+Route::get('seed-group', 'SeedGroupController@create');
+route::post('seed-group', 'SeedGroupController@store');
+
 // Seeder Routes
 
 Route::get('seeder', 'SeederController@create');

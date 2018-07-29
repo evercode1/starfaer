@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Utilities;
-use App\Utilities\RandomStarGenerator;
+use App\Utilities\AdvancedRandomWordGenerator;
 use App\Utilities\RandomWordGenerator;
 
 class MakeWords
 {
 
-    public static function generate($type, $length, $count, $vowels=[], $consonants=[])
+    public static function generate($type, $direction, $length, $count, $vowels=[], $consonants=[])
     {
 
         $words = [];
 
         switch ($type){
 
-            case 'star' :
+            case 'advanced' :
 
-                $generator = '\\App\Utilities\RandomStarGenerator::makeWord';
+                $generator = '\\App\Utilities\AdvancedRandomWordGenerator::makeWord';
                 break;
 
             default:
@@ -29,7 +29,7 @@ class MakeWords
 
         for( $i = 0; $i < $count; $i++){
 
-            $word = $generator($length, $vowels, $consonants);
+            $word = $generator($direction, $length, $vowels, $consonants);
 
             array_push($words, $word);
 

@@ -38,8 +38,8 @@
         <select id="type" name="type">
 
             <option value="">Please Choose One</option>
-            <option value="word">word</option>
-            <option value="star">star</option>
+            <option value="advanced">advanced</option>
+            <option value="standard">standard</option>
 
 
 
@@ -51,6 +51,37 @@
             <span class="help-block">
 
                     <strong>{{ $errors->first('type') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end type select -->
+
+    <!-- direction select -->
+
+    <div class="{{ $errors->has('direction') ? ' has-error' : '' }}">
+
+        <label>Direction</label>
+
+        <select id="direction" name="direction">
+
+            <option value="">Please Choose One</option>
+            <option value="seed_last">Seed Group Last</option>
+            <option value="seed_first">Seed Group First</option>
+
+
+
+
+        </select>
+
+        @if ($errors->has('direction'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('direction') }}</strong>
 
                 </span>
 
@@ -119,12 +150,10 @@
                 <option value="">Please Choose One</option>
 
 
-                <option value="standard">standard</option>
 
 
-                <option value="eo">eo</option>
-                <option value="lor">lor</option>
-                <option value="us">us</option>
+
+
                 <option value="astro">astro</option>
                 <option value="star-words">star-words</option>
 
@@ -157,8 +186,12 @@
             <option value="">Please Choose One</option>
 
 
-            <option value="standard">standard</option>
-            <option value="th">th</option>
+
+
+
+<option value="sentimental">sentimental</option>
+
+
             <option value="astro">astro</option>
             <option value="star">star</option>
             <option value="star-words">star-words</option>
@@ -179,7 +212,7 @@
 
     </div>
 
-    <!-- end vowels select -->
+    <!-- end consonants select -->
 
 
     <!-- submit button -->
