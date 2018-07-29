@@ -22,6 +22,7 @@ class SeedGroupController extends Controller
 
             'config_name' => ['required', 'string'],
             'group_title' => 'required|string',
+            'trim' => 'required|string',
             'syllables' => 'required|string',
 
 
@@ -36,15 +37,22 @@ class SeedGroupController extends Controller
 
         $syllables = explode(',', $syllables);
 
+
         // get rid of white space
 
         $newSyllables = [];
 
-        foreach($syllables as $value){
+        if($request->trim == 'yes'){
 
-            $newSyllables[] = trim($value);
+            $newSyllables = $this->trim($syllables, $newSyllables);
+
+        } else {
+
+            $newSyllables = $syllables;
 
         }
+
+
 
 
         AppendConfigFile::make($configName, $groupTitle, $newSyllables);
@@ -53,5 +61,21 @@ class SeedGroupController extends Controller
         return view('seed-group.confirmation', compact('configName'));
 
 
+    }
+
+    /**
+     * @param $syllables
+     * @param $newSyllables
+     * @return array
+     */
+    private function trim($syllables, $newSyllables)
+    {
+        foreach ($syllables as $value) {
+
+            $newSyllables[] = trim($value);
+
+        }
+
+        return $newSyllables;
     }
 }

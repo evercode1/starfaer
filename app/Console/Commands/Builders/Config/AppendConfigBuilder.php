@@ -187,11 +187,11 @@ class AppendConfigBuilder
             case 'vowels' :
 
                 $contents = file($form);
-                $contents[123] = $contents[123] . "\n\n"; // Gives a new line
+                $contents[150] = $contents[150] . "\n\n"; // Gives a new line
                 file_put_contents($form, implode('',$contents));
 
                 $contents = file($form);
-                $contents[124] = '<option value="'.
+                $contents[151] = '<option value="'.
                     $this->initialValues['groupTitle'] .'">'
                     . $this->initialValues['groupTitle'] . '</option>';
                 file_put_contents($form, implode('',$contents));
@@ -200,11 +200,11 @@ class AppendConfigBuilder
             case 'consonants' :
 
                 $contents = file($form);
-                $contents[159] = $contents[159] . "\n\n"; // Gives a new line
+                $contents[182] = $contents[182] . "\n\n"; // Gives a new line
                 file_put_contents($form, implode('',$contents));
 
                 $contents = file($form);
-                $contents[160] = '<option value="'.
+                $contents[183] = '<option value="'.
                     $this->initialValues['groupTitle'] .'">'
                     . $this->initialValues['groupTitle'] . '</option>';
                 file_put_contents($form, implode('',$contents));

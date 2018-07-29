@@ -147,17 +147,11 @@
 
             <select id="vowels" name="vowels">
 
+
+
                 <option value="">Please Choose One</option>
-
-
-
-
-
-
                 <option value="astro">astro</option>
                 <option value="star-words">star-words</option>
-
-
 
             </select>
 
@@ -187,11 +181,8 @@
 
 
 
-
-
-<option value="sentimental">sentimental</option>
-
-
+<option value="wonder-words">wonder-words</option>
+            <option value="sentimental">sentimental</option>
             <option value="astro">astro</option>
             <option value="star">star</option>
             <option value="star-words">star-words</option>

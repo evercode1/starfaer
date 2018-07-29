@@ -12,6 +12,7 @@ use Faker\Generator as Faker;
 use App\Utilities\RandomWordGenerator;
 use App\Utilities\CreateSeeds;
 use App\Utilities\AppendConfigFile;
+use App\Utilities\UniqueNames;
 
 class TestController extends Controller
 {
@@ -27,30 +28,13 @@ class TestController extends Controller
     public function index()
     {
 
+        $array = config('bak-planets-one');
 
-        $arr = ['some', 'things', 'are', 'hard'];
-
-        AppendConfigFile::make('consonants', 'thingy', $arr);
+        $destination = base_path('config/planets-one.php');
 
 
-//       $words = array_unique($words);
-//
-//
-//        $filename = base_path('/config/' . 'star-name-seeds' . '.php');
-//
-//
-//
-//        foreach( $words as $key => $value){
-//
-//            $contents = file($filename);
-//            $contents[12] = $contents[12] . "\n\n"; // Gives a new line
-//            file_put_contents($filename, implode('',$contents));
-//
-//            $contents = file($filename);
-//            $contents[13] = "'" . $value . "',";
-//            file_put_contents($filename, implode('',$contents));
-//
-//        }
+         UniqueNames::filter($array, $destination);
+
 
 
 
