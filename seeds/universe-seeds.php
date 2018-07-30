@@ -12,12 +12,13 @@ return [
 
     'universes' => [
 
-        [
 
-            'name' => 'Star Faer',
-            'author' => 'William F. Keck'
+            ['name' => 'Star Faer',
+             'author' => 'William F. Keck',
+             'description' => 'Star Faer is the fictional universe created by William F. Keck.'
+            ]
 
-        ]
+
 
 
 

@@ -1,5 +1,10 @@
 @extends('layouts.masters.master-admin-dash')
 
+@section('meta')
+
+    <script src="/ckeditor/ckeditor.js"></script>
+
+@endsection
 
 @section('content')
 

@@ -22,6 +22,7 @@
                 <li class="collection-item">Type:
                         <b><a href="/galaxy-type/{{ $galaxy->galaxyType->id }}">
                                         {{ $galaxy->galaxyType->name }}</a></b></li>
+                <li class="collection-item">Description:  {!! $galaxy->description !!}</li>
 
         </ul>
 

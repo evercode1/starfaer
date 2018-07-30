@@ -24,11 +24,13 @@ class GalaxySeeder extends Seeder
         $values = FetchInsideArrayFile::getFirstColumnValues($file);
 
 
-        foreach( $values as $value){
+
+        foreach( $values as $key => $value){
 
             DB::table('galaxies')->insert([
-                'name' => $value,
-                'slug' => str_slug($value, "-"),
+                'name' => $value['name'],
+                'slug' => str_slug($value['name'], "-"),
+                'description' => $value['description'],
                 'universe_id' => 1,
                 'galaxy_type_id' => 1,
                 'is_active' => 1,

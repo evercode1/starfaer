@@ -55,7 +55,8 @@ class UniverseController extends Controller
         $this->validate($request, [
 
             'name' => 'required|unique:levels|string|max:100',
-            'author' => 'required|string|max:100'
+            'author' => 'required|string|max:100',
+            'body' => 'required|string'
 
         ]);
 
@@ -65,6 +66,7 @@ class UniverseController extends Controller
 
         $universe = Universe::create(['name' => $request->name,
                                       'author' => $request->author,
+                                      'description' => $request->body,
                                       'slug' => $slug]);
 
 
@@ -117,7 +119,8 @@ class UniverseController extends Controller
         $this->validate($request, [
 
             'name' => 'required|string|max:40|unique:levels,name,' .$id,
-            'author' => 'required|string|max:100'
+            'author' => 'required|string|max:100',
+            'body' => 'required|string'
 
         ]);
 
@@ -127,7 +130,8 @@ class UniverseController extends Controller
 
         $universe->update(['name' => $request->name,
                            'author' => $request->author,
-                           'slug' => $slug]);
+                           'slug' => $slug,
+                           'description' => $request->body]);
 
 
         return Redirect::route('universe.index');

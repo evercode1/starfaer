@@ -30,6 +30,7 @@ class UniverseSeeder extends Seeder
                 'name' => $value['name'],
                 'slug' => str_slug($value['name'], "-"),
                 'author' => $value['author'],
+                'description' => $value['description'],
                 'created_at' => now(),
                 'updated_at' => now()
             ]);

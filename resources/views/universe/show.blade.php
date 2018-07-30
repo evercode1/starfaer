@@ -18,6 +18,7 @@
             <ul class="collection with-header">
                 <li class="collection-header"><h4>{{ $universe->name }}</h4></li>
                 <li class="collection-item">Author:  {{ $universe->author }}</li>
+                <li class="collection-item">Description: <p><b>{!! $universe->description !!}</b></p></li>
 
             </ul>
 

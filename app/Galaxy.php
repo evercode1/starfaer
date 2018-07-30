@@ -11,6 +11,7 @@ class Galaxy extends Model
                            'galaxy_type_id',
                            'slug',
                            'is_active',
+                           'description',
                            'universe_id'];
 
     public function universe()

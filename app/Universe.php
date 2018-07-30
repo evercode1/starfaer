@@ -10,6 +10,7 @@ class Universe extends Model
 
                             'name',
                             'author',
+                            'description',
                             'slug'
 
 

@@ -47,12 +47,33 @@
 
     </div>
 
-    <!-- end level  name input -->
+    <!-- end author input -->
+
+    <!-- body input -->
+
+    <div class="{{ $errors->has('body') ? ' has-error' : '' }}">
+
+        <label>Description</label>
+
+        <textarea name="body"></textarea>
+
+
+        @if ($errors->has('body'))
+
+            <span class="help-block">
+                <strong>{{ $errors->first('body') }}</strong>
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end body input -->
 
 
     <!-- submit button -->
 
-    <div class="row">
+    <div class="row mt-20">
 
         <button type="submit"
                 class="waves-effect waves-light btn">
@@ -66,4 +87,12 @@
     <!-- end submit button -->
 
 </form>
+
+@section('scripts')
+
+    <script>
+        CKEDITOR.replace( 'body' );
+    </script>
+
+@endsection
 

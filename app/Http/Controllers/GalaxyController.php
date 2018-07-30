@@ -63,6 +63,7 @@ class GalaxyController extends Controller
 
             'name' => 'required|unique:galaxies|string|max:100',
             'is_active' => 'required|boolean',
+            'body' => 'required|string',
             'universe_id' => 'required',
             'galaxy_type_id' => 'required'
 
@@ -73,6 +74,7 @@ class GalaxyController extends Controller
         $galaxy = Galaxy::create(['name' => $request->name,
                                   'is_active' => $request->is_active,
                                   'slug' => $slug,
+                                  'description' => $request->body,
                                   'universe_id' => $request->universe_id,
                                   'galaxy_type_id' => $request->galaxy_type_id]);
         $galaxy->save();
@@ -137,6 +139,7 @@ class GalaxyController extends Controller
 
             'name' => 'required|string|max:100|unique:galaxies,name,' . $galaxy->id,
             'is_active' => 'required|boolean',
+            'body' => 'required|string',
             'universe_id' => 'required',
             'galaxy_type_id' => 'required'
 
@@ -148,6 +151,7 @@ class GalaxyController extends Controller
         $galaxy->update(['name' => $request->name,
                          'slug' => $slug,
                          'is_active' => $request->is_active,
+                         'description' => $request->body,
                          'universe_id' => $request->universe_id,
                          'galaxy_type_id' => $request->galaxy_type_id]);
 
