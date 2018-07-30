@@ -7,6 +7,37 @@
 */
 return [
 
+'lush-consonants'=> [
+
+
+'vis',
+'vas',
+'ver',
+'vol',
+'vid',
+'lop',
+'gal',
+'kro',
+'rel',
+'jop',
+'jul',
+'kra',
+'kro',
+'qui',
+'das',
+'dax',
+'pax',
+'pol',
+'hect',
+'magna',
+
+
+
+
+],
+
+
+
 
 'sentimental'=> [
 

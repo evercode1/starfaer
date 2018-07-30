@@ -30,25 +30,18 @@ class TestController extends Controller
     public function index()
     {
 
-        $file = base_path('seeds/star-name-seeds.php');
+        $file = base_path('seeds/archive.php');
 
 
         $names = FetchInsideArrayFile::get($file);
 
-        foreach ($names as $name){
+        shuffle($names);
 
 
-            echo $name . '<br />';
+        $destination = base_path('seeds/star-seeds.php');
 
 
-        }
-
-//        $array = config('archive');
-//
-//        $destination = base_path('seeds/planets-one.php');
-//
-//
-//         UniqueNames::filter($array, $destination);
+         UniqueNames::filter($names, $destination);
 
 
 

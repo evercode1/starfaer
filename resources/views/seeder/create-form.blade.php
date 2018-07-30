@@ -89,6 +89,8 @@
 
 
 
+<option value="front-vowels">front-vowels</option>
+<option value="lush-vowels">lush-vowels</option>
 
                 <option value="astro">astro</option>
                 <option value="star-words">star-words</option>
@@ -120,6 +122,7 @@
             <option value="">Please Choose One</option>
 
 
+<option value="lush-consonants">lush-consonants</option>
 
 
             <option value="sentimental">sentimental</option>
@@ -144,6 +147,37 @@
     </div>
 
     <!-- end consonants select -->
+
+    <!-- start_with select -->
+
+    <div class="{{ $errors->has('start_with') ? ' has-error' : '' }}">
+
+        <label>start_with</label>
+
+        <select id="start_with" name="start_with">
+
+            <option value="">Please Choose One</option>
+            <option value="vowels_first">Vowels First</option>
+            <option value="consonants_first">Consonants First</option>
+
+
+
+
+        </select>
+
+        @if ($errors->has('start_with'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('start_with') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end start_with select -->
 
     <!-- direction select -->
 

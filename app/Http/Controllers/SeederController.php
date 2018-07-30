@@ -24,6 +24,7 @@ class SeederController extends Controller
         $this->validate($request, [
 
             'name' => ['required', 'string', 'max:200', new NameIsAllowed()],
+            'start_with' => 'required|string',
             'direction' => 'required|string',
             'word_length' => 'required|integer',
             'total_count' => 'required|integer',
@@ -33,8 +34,11 @@ class SeederController extends Controller
         ]);
 
 
+
+
         $name = $request->name;
         $type = 'advanced';
+        $startWith = $request->start_with;
         $direction = $request->direction;
         $wordLength = $request->word_length;
         $totalCount = $request->total_count;
@@ -42,7 +46,8 @@ class SeederController extends Controller
         $consonants = config('consonants.' . $request->consonants);
 
 
-        CreateSeeds::generate($name, $type, $direction, $wordLength, $totalCount, $vowels, $consonants);
+
+        CreateSeeds::generate($name, $type, $direction, $wordLength, $totalCount, $vowels, $consonants, $startWith);
 
 
 

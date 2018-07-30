@@ -6,7 +6,7 @@ class AdvancedRandomWordGenerator{
 
 
 
-    public static function makeWord($direction, $length, $vowels=[], $consonants=[])
+    public static function makeWord($direction, $length, $vowels=[], $consonants=[], $startWith)
     {
 
 
@@ -62,14 +62,43 @@ class AdvancedRandomWordGenerator{
 
         $max = $length/2;
 
-        for ($i = 1; $i <= $max; $i++)
-        {
-            $word .= $consonants[rand(0, $countConsonants)];
+        switch($startWith){
 
-            $word .= $vowels[rand(0, $countVowels)];
+            case 'vowels_first':
+
+                for ($i = 1; $i <= $max; $i++)
+                {
+
+                    $word .= $vowels[rand(0, $countVowels)];
+                    $word .= $consonants[rand(0, $countConsonants)];
+
+
+                }
+
+                return $word;
+                break;
+
+            case 'consonants_first' :
+
+                for ($i = 1; $i <= $max; $i++)
+                {
+                    $word .= $consonants[rand(0, $countConsonants)];
+
+                    $word .= $vowels[rand(0, $countVowels)];
+                }
+
+                return $word;
+                break;
+
+            default:
+
+                return 'I did not get the start_with value';
+                break;
+
+
         }
 
-        return $word;
+
 
 
 
