@@ -25,7 +25,18 @@
             <li class="bold waves-effect"><a class="collapsible-header">Generators<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/star-type-generator" class="waves-effect">Star Type Generator<i class="fa fa-star"></i></a></li>
+                        <li><a href="/galaxy-generator" class="waves-effect">Galaxy Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/galaxy-type-generator" class="waves-effect">Galaxy Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/star-type-generator" class="waves-effect">Star Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/universe-generator" class="waves-effect">Universe Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/zone-type-generator" class="waves-effect">Zone Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/zone-generator" class="waves-effect">Zone Generator
+                                <i class="fa fa-star"></i></a></li>
 
                     </ul>
                 </div>

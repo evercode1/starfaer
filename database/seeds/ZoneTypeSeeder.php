@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Utilities\FetchInsideArrayFile;
 
-class ZoneSeeder extends Seeder
+class ZoneTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,10 +13,11 @@ class ZoneSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('zone_types')->truncate();
 
-        DB::table('zones')->truncate();
 
-        $file = base_path('seeds/zone-seeds.php');
+
+        $file = base_path('seeds/zone-type-seeds.php');
 
 
 
@@ -25,20 +26,17 @@ class ZoneSeeder extends Seeder
 
         foreach( $values as $key => $value){
 
-            DB::table('zones')->insert([
+            DB::table('zone_types')->insert([
                 'name' => $value['name'],
                 'slug' => str_slug($value['name'], "-"),
                 'universe_id' => 1,
-                'zone_type_id' => 1,
                 'is_active' => 1,
-                'is_featured' => 0,
+                'is_featured' => 1,
+                'weight' => 100,
                 'description' => $value['description'],
-                'coordinates' => $value['coordinates'],
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
         }
-
-
     }
 }

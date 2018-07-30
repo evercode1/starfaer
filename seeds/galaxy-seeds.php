@@ -11,10 +11,10 @@ return [
 
     'names' =>
 
-        ['milky way',
-         'andromeda',
-         'kaedra',
-        ]
+        ['name' => 'milky way'],
+        ['name' => 'andromeda'],
+        ['name' => 'kaedra'],
+
 
 
 ];

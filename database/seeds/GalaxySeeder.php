@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Utilities\FetchInsideArrayFile;
 
-class StarTypeSeeder extends Seeder
+class GalaxySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,34 +13,28 @@ class StarTypeSeeder extends Seeder
      */
     public function run()
     {
-
-        DB::table('star_types')->truncate();
-
+        DB::table('galaxies')->truncate();
 
 
-        $file = base_path('seeds/star-type-seeds.php');
+
+        $file = base_path('seeds/galaxy-seeds.php');
 
 
 
         $values = FetchInsideArrayFile::getFirstColumnValues($file);
 
 
-        foreach( $values as $key => $value){
+        foreach( $values as $value){
 
-            DB::table('star_types')->insert([
-                'name' => $value['name'],
-                'slug' => str_slug($value['name'], "-"),
+            DB::table('galaxies')->insert([
+                'name' => $value,
+                'slug' => str_slug($value, "-"),
                 'universe_id' => 1,
+                'galaxy_type_id' => 1,
                 'is_active' => 1,
-                'description' => $value['description'],
-                'wiki_url' => $value['wiki'],
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
         }
-
-
-
-
     }
 }

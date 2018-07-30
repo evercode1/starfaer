@@ -105,6 +105,16 @@ Route::post('/contact-topic-delete/{id}', 'ContactTopicController@destroy')->nam
 
 Route::resource('/contact-topic', 'ContactTopicController', ['except' => ['destroy']]);
 
+// Galaxy Generator
+
+Route::get('galaxy-generator', 'GalaxyGeneratorController@create');
+Route::post('galaxy-generator', 'GalaxyGeneratorController@store');
+
+// Galaxy Type Generator
+
+Route::get('galaxy-type-generator', 'GalaxyTypeGeneratorController@create');
+Route::post('galaxy-type-generator', 'GalaxyTypeGeneratorController@store');
+
 // Home Routes
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -197,6 +207,11 @@ Route::get('universe/{universe}-{slug?}', 'UniverseController@show')->name('univ
 
 Route::resource('universe', 'UniverseController', ['except' => ['show', 'create','destroy']]);
 
+// Universe Generator
+
+Route::get('universe-generator', 'UniverseGeneratorController@create');
+Route::post('universe-generator', 'UniverseGeneratorController@store');
+
 // Unsubscribe Routes
 
 Route::get('/unsubscribe', 'UnsubscribeController@edit')->name('unsubscribe');
@@ -217,6 +232,16 @@ Route::get('videos-by-level/{id}', 'VideosByLevelController@index');
 Route::post('video-delete/{video}', 'VideoController@destroy');
 
 Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
+
+// Zone Generator
+
+Route::get('zone-generator', 'ZoneGeneratorController@create');
+Route::post('zone-generator', 'ZoneGeneratorController@store');
+
+// Zone Type Generator
+
+Route::get('zone-type-generator', 'ZoneTypeGeneratorController@create');
+Route::post('zone-type-generator', 'ZoneTypeGeneratorController@store');
 
 
 // Begin Galaxy Routes

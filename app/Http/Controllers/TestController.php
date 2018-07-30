@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Utilities\FetchInsideArrayFile;
 use App\Utilities\FindOrCreateFolders;
 use App\Utilities\MakeConfigFile;
 use App\Utilities\MakeWords;
@@ -13,6 +14,7 @@ use App\Utilities\RandomWordGenerator;
 use App\Utilities\CreateSeeds;
 use App\Utilities\AppendConfigFile;
 use App\Utilities\UniqueNames;
+
 
 class TestController extends Controller
 {
@@ -28,12 +30,25 @@ class TestController extends Controller
     public function index()
     {
 
-        $array = config('archive');
-
-        $destination = base_path('seeds/planets-one.php');
+        $file = base_path('seeds/star-name-seeds.php');
 
 
-         UniqueNames::filter($array, $destination);
+        $names = FetchInsideArrayFile::get($file);
+
+        foreach ($names as $name){
+
+
+            echo $name . '<br />';
+
+
+        }
+
+//        $array = config('archive');
+//
+//        $destination = base_path('seeds/planets-one.php');
+//
+//
+//         UniqueNames::filter($array, $destination);
 
 
 
