@@ -30,15 +30,18 @@ class TestController extends Controller
     public function index()
     {
 
-        $file = base_path('seeds/aliabab.php');
 
+        dd(env('APP_ENV'));
 
-        $names = FetchInsideArrayFile::get($file);
-
-        shuffle($names);
-
-
-        $destination = base_path('seeds/planets-one-seeds.php');
+//        $file = base_path('seeds/aliabab.php');
+//
+//
+//        $names = FetchInsideArrayFile::get($file);
+//
+//        shuffle($names);
+//
+//
+//        $destination = base_path('seeds/planets-one-seeds.php');
 
 
         // UniqueNames::filter($names, $destination);

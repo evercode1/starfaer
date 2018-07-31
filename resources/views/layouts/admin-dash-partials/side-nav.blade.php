@@ -11,6 +11,8 @@
                     </ul>
                 </div>
             </li>
+
+            @if( env('APP_ENV') == "local")
             <li class="bold waves-effect"><a class="collapsible-header">Seeders<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
@@ -20,6 +22,7 @@
                     </ul>
                 </div>
             </li>
+            @endif
 
             <li class="bold waves-effect"><a class="collapsible-header">Generators<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
