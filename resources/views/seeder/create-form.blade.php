@@ -183,7 +183,7 @@
 
     <div class="{{ $errors->has('merge') ? ' has-error' : '' }}">
 
-        <label>Merge In Base Vowels and Consonants?</label>
+        <label>Merge In All Base Vowels and Consonants?</label>
 
         <select id="merge" name="merge">
 
