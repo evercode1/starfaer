@@ -6,16 +6,16 @@ class CreateSeeds
 {
 
 
-    public Static function generate($name, $type, $direction, $wordLength, $count, $vowels=[], $consonants=[], $startWith)
+    public Static function generate(Array $config)
     {
 
 
-        MakeSeedsFile::make($name);
+        MakeSeedsFile::make($config['name']);
 
 
-        $words = MakeWords::generate($type, $direction, $wordLength, $count, $vowels, $consonants, $startWith);
+        $words = MakeWords::generate($config);
 
-        $filename = base_path('/seeds/' . $name . '.php');
+        $filename = base_path('/seeds/' . $config['name'] . '.php');
 
 
 

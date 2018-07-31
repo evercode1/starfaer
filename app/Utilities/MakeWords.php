@@ -7,12 +7,14 @@ use App\Utilities\RandomWordGenerator;
 class MakeWords
 {
 
-    public static function generate($type, $direction, $length, $count, $vowels=[], $consonants=[], $startWith)
+    public static function generate($config)
     {
+
+        $count = $config['totalCount'];
 
         $words = [];
 
-        switch ($type){
+        switch ($config['type']){
 
             case 'advanced' :
 
@@ -21,7 +23,7 @@ class MakeWords
 
             default:
 
-                $generator = '\\App\Utilities\RandomWordGenerator::makeWord';
+                $generator = '\\App\Utilities\AdvancedRandomWordGenerator::makeWord';
                 break;
 
 
@@ -29,7 +31,7 @@ class MakeWords
 
         for( $i = 0; $i < $count; $i++){
 
-            $word = $generator($direction, $length, $vowels, $consonants, $startWith);
+            $word = $generator($config);
 
             array_push($words, $word);
 

@@ -6,8 +6,15 @@ class AdvancedRandomWordGenerator{
 
 
 
-    public static function makeWord($direction, $length, $vowels=[], $consonants=[], $startWith)
+    public static function makeWord($config)
     {
+
+        $length = $config['wordLength'];
+        $direction = $config['direction'];
+        $vowels = $config['vowels'];
+        $consonants = $config['consonants'];
+        $startWith = $config['startWith'];
+        $merge = $config['merge'] == 'yes' ? true : false;
 
 
         $length = rand(1, $length) * 2;
@@ -27,26 +34,32 @@ class AdvancedRandomWordGenerator{
                        'dr', 'tr', 'br', 'st', 'k', 'cr', 'kl', 'pr', 'th'
                 ];
 
-        // merge with config values
+        // if we want to merge the base values, then we determine the order
 
+        if($merge) {
 
-        switch($direction){
+            switch($direction){
 
-            case 'seed_first' :
+                case 'seed_first' :
 
-                $vowels =  array_merge($vowels, $baseVowels);
+                    $vowels =  array_merge($vowels, $baseVowels);
 
-                $consonants = array_merge($consonants, $baseConsonants);
-                break;
+                    $consonants = array_merge($consonants, $baseConsonants);
+                    break;
 
-            default:
+                default:
 
-                $vowels =  array_merge($baseVowels, $vowels);
+                    $vowels =  array_merge($baseVowels, $vowels);
 
-                $consonants = array_merge($baseConsonants, $consonants);
-                break;
+                    $consonants = array_merge($baseConsonants, $consonants);
+                    break;
+
+            }
+
 
         }
+
+
 
 
 

@@ -26,6 +26,7 @@ class SeederController extends Controller
             'name' => ['required', 'string', 'max:200', new NameIsAllowed()],
             'start_with' => 'required|string',
             'direction' => 'required|string',
+            'merge' => 'required|string',
             'word_length' => 'required|integer',
             'total_count' => 'required|integer',
             'vowels' => 'required|string',
@@ -33,22 +34,25 @@ class SeederController extends Controller
 
         ]);
 
-
-
-
-        $name = $request->name;
-        $type = 'advanced';
-        $startWith = $request->start_with;
-        $direction = $request->direction;
-        $wordLength = $request->word_length;
-        $totalCount = $request->total_count;
         $vowels= config('vowels.'. $request->vowels);
         $consonants = config('consonants.' . $request->consonants);
 
 
+        $config = ['name' => $request->name,
+                   'type' => 'advanced',
+                   'startWith' => $request->start_with,
+                   'direction' => $request->direction,
+                   'merge' => $request->merge,
+                   'wordLength' => $request->word_length,
+                   'totalCount' => $request->total_count,
+                   'vowels' => $vowels,
+                   'consonants' => $consonants];
 
-        CreateSeeds::generate($name, $type, $direction, $wordLength, $totalCount, $vowels, $consonants, $startWith);
 
+
+        CreateSeeds::generate($config);
+
+        $name = $config['name'];
 
 
         return view('seeder.confirmation', compact('name'));

@@ -30,7 +30,7 @@ class TestController extends Controller
     public function index()
     {
 
-        $file = base_path('seeds/archive.php');
+        $file = base_path('seeds/aliabab.php');
 
 
         $names = FetchInsideArrayFile::get($file);
@@ -38,7 +38,7 @@ class TestController extends Controller
         shuffle($names);
 
 
-        $destination = base_path('seeds/star-seeds.php');
+        $destination = base_path('seeds/planets-one-seeds.php');
 
 
          UniqueNames::filter($names, $destination);

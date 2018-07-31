@@ -179,6 +179,37 @@
 
     <!-- end start_with select -->
 
+    <!-- merge select -->
+
+    <div class="{{ $errors->has('merge') ? ' has-error' : '' }}">
+
+        <label>Merge In Base Vowels and Consonants?</label>
+
+        <select id="merge" name="merge">
+
+            <option value="">Please Choose One</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+
+
+
+
+        </select>
+
+        @if ($errors->has('merge'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('merge') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end start_with select -->
+
     <!-- direction select -->
 
     <div class="{{ $errors->has('direction') ? ' has-error' : '' }}">
