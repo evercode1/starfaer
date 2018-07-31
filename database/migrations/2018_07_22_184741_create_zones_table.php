@@ -21,7 +21,7 @@ class CreateZonesTable extends Migration
             $table->string('slug', 100);
             $table->boolean('is_active')->default(1);
             $table->boolean('is_featured')->default(0);
-            $table->string('coordinates', 50);
+            $table->string('coordinates', 60);
             $table->unsignedInteger('universe_id');
             $table->unsignedInteger('zone_type_id');
             $table->longText('description');
