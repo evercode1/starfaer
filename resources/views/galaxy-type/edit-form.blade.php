@@ -118,7 +118,7 @@
         @endif
 
     </div>  <!-- end is_featured select -->
-    
+
 
     <!-- description input -->
 
