@@ -188,7 +188,7 @@ Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
-// Star Type Populator Routes
+// Star Type Generator Routes
 
 Route::get('star-type-generator', 'StarTypeGeneratorController@create');
 Route::post('star-type-generator', 'StarTypeGeneratorController@store');
@@ -332,8 +332,4 @@ Route::get('star-type/{id}', 'StarTypeController@show')->name('star-type.show');
 Route::resource('star-type', 'StarTypeController', ['except' => ['show', 'create','destroy']]);
 
 // End StarType Routes
-
-
-
-
 

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\UnauthorizedException;
 use Illuminate\Http\Request;
-use GalaxySeeder;
+use :::model:::Seeder;
 use Illuminate\Support\Facades\Redirect;
 
-class GalaxyGeneratorController extends Controller
+class :::model:::GeneratorController extends Controller
 {
     public function __construct()
     {
@@ -19,7 +19,7 @@ class GalaxyGeneratorController extends Controller
     public function create()
     {
 
-        return view('galaxy-generator.create');
+        return view(':::modelPath:::-generator.create');
 
     }
 
@@ -32,7 +32,7 @@ class GalaxyGeneratorController extends Controller
 
              $this->seed();
 
-            Return Redirect::route('galaxy.index');
+            Return Redirect::route(':::modelPath:::.index');
 
 
          }
@@ -47,7 +47,7 @@ class GalaxyGeneratorController extends Controller
 
         $seed = new \DatabaseSeeder();
 
-        $seed->call(GalaxySeeder::class);
+        $seed->call(:::model:::Seeder::class);
 
 
     }
