@@ -15,6 +15,23 @@ return [
 
 
 
+    // Begin Star Image Config Array Method
+
+
+        'star' => [
+                'destinationFolder'     => '/imgs/star/',
+                'createFolder'          => '/imgs/star',
+                'destinationThumbnail'  => '/imgs/star/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/star/',
+                'thumbnailPath'         => '/imgs/star/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End Star Image Config Array Method
     // Begin StarType Image Config Array Method
 
 

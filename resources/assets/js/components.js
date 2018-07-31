@@ -80,3 +80,13 @@ Vue.component('star-type-grid', require('./components/StarTypeGrid.vue'));
 Vue.component('all-star-types', require('./components/AllStarTypes.vue'));
 
 /** End StarType All Models Call */
+/** Begin Star Grid Component Call */
+
+Vue.component('star-grid', require('./components/StarGrid.vue'));
+
+/** End Star Grid Component Call */
+/** Begin Star All Models Call */
+
+Vue.component('all-stars', require('./components/AllStars.vue'));
+
+/** End Star All Models Call */

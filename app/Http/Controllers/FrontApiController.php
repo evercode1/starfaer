@@ -9,6 +9,19 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+    // Begin Star Api All Models Method
+
+    public function allStarsData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'StarQuery');
+
+    }
+
+    // End Star Api All Models Method
+
+
+
     // Begin StarType Api All Models Method
 
     public function allStarTypesData(Request $request)

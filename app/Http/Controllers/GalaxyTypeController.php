@@ -72,7 +72,6 @@ class GalaxyTypeController extends Controller
             'name' => 'required|unique:galaxy_types|string|max:100',
             'is_active' => 'required|boolean',
             'is_featured' => 'required|boolean',
-            'weight' => 'required|integer|between:1,100',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000',
             'universe_id' => 'required',
@@ -90,7 +89,6 @@ class GalaxyTypeController extends Controller
                                           'slug' => $slug,
                                           'is_active' => $request->is_active,
                                           'is_featured' => $request->is_featured,
-                                          'weight' => $request->weight,
                                           'universe_id' => $request->universe_id,
                                           'description' => $request->body,
                                           'image_name' => $imageName,
@@ -172,7 +170,6 @@ class GalaxyTypeController extends Controller
             'name' => 'required|string|max:100|unique:galaxy_types,name,' .$galaxyType->id,
             'is_active' => 'required|boolean',
             'is_featured' => 'required|boolean',
-            'weight' => 'required|integer|between:1,100',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000',
             'universe_id' => 'required'
@@ -246,7 +243,6 @@ class GalaxyTypeController extends Controller
     {
 
         $galaxyType->name= $request->get('name');
-        $galaxyType->weight = $request->get('weight');
         $galaxyType->is_featured = $request->get('is_featured');
         $galaxyType->is_active = $request->get('is_active');
         $galaxyType->description = $request->get('body');

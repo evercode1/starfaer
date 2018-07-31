@@ -108,25 +108,6 @@
 
     </div>  <!-- end is_featured select -->
 
-    <!-- weight input -->
-
-    <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
-
-        <label>Weight</label>
-
-        <input type="text"
-               name="weight"
-               value="{{ old('weight') ? old('weight') : 100 }}" />
-
-        @if ($errors->has('weight'))
-
-            <span class="help-block">
-                <strong>{{ $errors->first('weight') }}</strong>
-            </span>
-
-        @endif
-
-    </div>  <!-- end weight input -->
 
     <!-- description input -->
 

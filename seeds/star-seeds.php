@@ -947,7 +947,7 @@ return [
     'mireum',
     'atracyon',
     'geoven',
-    'medimaxus',
+    'medimax',
     'calloc',
     'klehu',
     'kalmares',

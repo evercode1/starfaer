@@ -41,7 +41,7 @@ class TestController extends Controller
         $destination = base_path('seeds/planets-one-seeds.php');
 
 
-         UniqueNames::filter($names, $destination);
+        // UniqueNames::filter($names, $destination);
 
 
 

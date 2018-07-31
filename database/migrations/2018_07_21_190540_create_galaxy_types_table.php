@@ -21,7 +21,6 @@ class CreateGalaxyTypesTable extends Migration
             $table->string('slug', 100);
             $table->boolean('is_active')->default(1);
             $table->boolean('is_featured')->default(0);
-            $table->integer('weight')->default(100);
             $table->unsignedInteger('universe_id');
             $table->longText('description');
             $table->string('image_name')->unique()->nullable();

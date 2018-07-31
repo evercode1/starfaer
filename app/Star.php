@@ -4,13 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GalaxyType extends Model
+class Star extends Model
 {
 
     protected $fillable = ['name',
                            'slug',
                            'is_active',
                            'is_featured',
+                           'weight',
                            'description',
                            'universe_id',
                            'image_name',
@@ -20,13 +21,6 @@ class GalaxyType extends Model
     {
 
        return $this->belongsTo('App\Universe');
-
-    }
-
-    public function galaxies()
-    {
-
-        return $this->hasMany('App\Galaxy');
 
     }
 

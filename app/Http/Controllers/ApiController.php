@@ -22,6 +22,19 @@ use App\Queries\AlarmAdminQuery;
 class ApiController extends Controller
 {
 
+    // Begin Star Api Data Grid Method
+
+    public function starData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'StarQuery');
+
+    }
+
+    // End Star Api Data Grid Method
+
+
+
     // Begin StarType Api Data Grid Method
 
     public function starTypeData(Request $request)

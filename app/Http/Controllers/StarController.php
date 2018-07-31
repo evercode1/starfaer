@@ -7,11 +7,10 @@ use App\UtilityTraits\ManagesImages;
 use Illuminate\Http\Request;
 use App\Universe;
 use Illuminate\Support\Facades\Redirect;
-use App\Zone;
-use App\ZoneType;
+use App\Star;
 
 
-class ZoneController extends Controller
+class StarController extends Controller
 {
     use ManagesImages, KebabHelper;
 
@@ -22,7 +21,7 @@ class ZoneController extends Controller
 
         $this->middleware(['admin'], ['except' => 'show']);
 
-        $this->setImageDefaultsFromConfig('zone');
+        $this->setImageDefaultsFromConfig('star');
 
 
     }
@@ -36,7 +35,7 @@ class ZoneController extends Controller
     public function index()
     {
 
-        return view('zone.index');
+        return view('star.index');
 
     }
 
@@ -49,12 +48,10 @@ class ZoneController extends Controller
     public function create()
     {
 
-        $universes = Universe::all();
-
-        $zoneTypes = ZoneType::all();
+           $universes = Universe::all();
 
 
-        return view('zone.create', compact('universes', 'zoneTypes'));
+           return view('star.create', compact('universes'));
 
     }
 
@@ -72,14 +69,13 @@ class ZoneController extends Controller
 
                 $this->validate($request, [
 
-                    'name' => 'required|unique:zones|string|max:100',
+                    'name' => 'required|unique:stars|string|max:100',
                     'is_active' => 'required|boolean',
                     'is_featured' => 'required|boolean',
-                    'coordinates' => 'required|string|max:50',
+                    'weight' => 'required|integer|between:1,100',
                     'body' => 'required|string|max:1000',
                     'image' => 'max:1000',
                     'universe_id' => 'required',
-                    'zone_type_id' => 'required'
 
                 ]);
 
@@ -89,18 +85,17 @@ class ZoneController extends Controller
 
         $image = $request->file('image') == null ? null : $request->file('image')->getClientOriginalExtension();
 
-        $zone = Zone::create([ 'name' => $request->name,
+        $star = Star::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
                                                                   'is_active' => $request->is_active,
                                                                   'is_featured' => $request->is_featured,
-                                                                  'coordinates' => $request->coordinates,
+                                                                  'weight' => $request->weight,
                                                                   'universe_id' => $request->universe_id,
-                                                                  'zone_type_id' => $request->zone_type_id,
                                                                   'description' => $request->body,
                                                                   'image_name' => $imageName,
                                                                   'image_extension' => $image]);
 
-        $zone->save();
+        $star->save();
 
         if ($request->has('image')){
 
@@ -110,11 +105,11 @@ class ZoneController extends Controller
 
             // pass in the file and the model
 
-            $this->saveImageFiles($file, $zone);
+            $this->saveImageFiles($file, $star);
 
         }
 
-        return Redirect::route('zone.index');
+        return Redirect::route('star.index');
 
     }
 
@@ -125,16 +120,16 @@ class ZoneController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(Zone $zone, $slug='')
+    public function show(Star $star, $slug='')
     {
 
-        if ($zone->slug !== $slug) {
+        if ($star->slug !== $slug) {
 
-            return Redirect::route('zone.show', ['id' => $zone->id,
-                                                   'slug' => $zone->slug], 301);
+            return Redirect::route('star.show', ['id' => $star->id,
+                                                   'slug' => $star->slug], 301);
         }
 
-        return view('zone.show', compact('zone'));
+        return view('star.show', compact('star'));
     }
 
     /**
@@ -147,29 +142,16 @@ class ZoneController extends Controller
     public function edit($id)
     {
 
-        $zone = Zone::findOrFail($id);
+        $star = Star::findOrFail($id);
 
-        $universeId = $zone->universe_id;
+        $universeId = $star->universe_id;
 
-        $universeName = $zone->universe->name;
+        $universeName = Universe::getUniverseName($star->universe_id);
 
         $universes = Universe::all();
 
-        $zoneTypeId = $zone->zone_type_id;
 
-        $zoneTypeName = $zone->zoneType->name;
-
-        $zoneTypes = ZoneType::all();
-
-
-
-        return view('zone.edit', compact('zone' ,
-                                         'universeId',
-                                         'universeName',
-                                         'universes',
-                                         'zoneTypeId',
-                                         'zoneTypeName',
-                                         'zoneTypes'));
+        return view('star.edit', compact('star' , 'universeId', 'universeName', 'universes'));
 
     }
 
@@ -187,49 +169,48 @@ class ZoneController extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required|string|max:100|unique:zones,name,' .$id,
+            'name' => 'required|string|max:100|unique:stars,name,' .$id,
             'is_active' => 'required|boolean',
             'is_featured' => 'required|boolean',
-            'coordinates' => 'required|string|max:50',
+            'weight' => 'required|integer|between:1,100',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000',
-            'universe_id' => 'required',
-            'zone_type_id' => 'required'
+            'universe_id' => 'required'
 
             ]);
 
-        $zone = Zone::findOrFail($id);
+        $star = Star::findOrFail($id);
 
         $slug = str_slug($request->name, "-");
 
-        $this->setUpdatedModelValues($request, $zone);
+        $this->setUpdatedModelValues($request, $star);
 
         // if file, we have additional requirements before saving
 
                 if ($this->newFileIsUploaded()) {
 
-                    $this->deleteExistingImages($zone);
+                    $this->deleteExistingImages($star);
 
-                    $this->setNewFileExtension($request, $zone);
-
-                }
-
-        $zone->save();
-
-
-                // check for file, if new file, overwrite existing file
-
-                if ($this->newFileIsUploaded()){
-
-                    $file = $this->getUploadedFile();
-
-                    $this->saveImageFiles($file, $zone);
+                    $this->setNewFileExtension($request, $star);
 
                 }
 
+        $star->save();
 
 
-        return Redirect::route('zone.show', ['zone' => $zone, $slug]);
+            // check for file, if new file, overwrite existing file
+
+            if ($this->newFileIsUploaded()){
+
+                $file = $this->getUploadedFile();
+
+                $this->saveImageFiles($file, $star);
+
+            }
+
+
+
+        return Redirect::route('star.show', ['star' => $star, $slug]);
 
     }
 
@@ -243,13 +224,13 @@ class ZoneController extends Controller
     public function destroy($id)
     {
 
-        $zone = Zone::findOrFail($id);
+        $star = Star::findOrFail($id);
 
-        $this->deleteExistingImages($zone);
+        $this->deleteExistingImages($star);
 
-        Zone::destroy($id);
+        Star::destroy($id);
 
-        return Redirect::route('zone.index');
+        return Redirect::route('star.index');
 
     }
 
@@ -265,18 +246,17 @@ class ZoneController extends Controller
          * @param $marketingImage
          */
 
-        private function setUpdatedModelValues(Request $request, $modelInstance)
-        {
+    private function setUpdatedModelValues(Request $request, $modelInstance)
+    {
 
-            $modelInstance->name= $request->get('name');
-            $modelInstance->coordinates = $request->get('coordinates');
-            $modelInstance->is_featured = $request->get('is_featured');
-            $modelInstance->is_active = $request->get('is_active');
-            $modelInstance->description = $request->get('body');
-            $modelInstance->universe_id = $request->get('universe_id');
-            $modelInstance->zone_type_id = $request->get('zone_type_id');
-            $modelInstance->image_name = $this->formatString($request->get('name'));
+        $modelInstance->name= $request->get('name');
+        $modelInstance->weight = $request->get('weight');
+        $modelInstance->is_featured = $request->get('is_featured');
+        $modelInstance->is_active = $request->get('is_active');
+        $modelInstance->description = $request->get('body');
+        $modelInstance->universe_id = $request->get('universe_id');
+        $modelInstance->image_name = $this->formatString($request->get('name'));
 
-        }
+    }
 
 }

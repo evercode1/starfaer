@@ -333,3 +333,32 @@ Route::resource('star-type', 'StarTypeController', ['except' => ['show', 'create
 
 // End StarType Routes
 
+
+// Begin Star Routes
+
+Route::get('all-stars', 'AllStarsController@index');
+
+Route::get('/api/all-stars-data', 'FrontApiController@allStarsData');
+
+Route::any('api/star-data', 'ApiController@starData');
+
+Route::post('star-delete/{id}', 'StarController@destroy');
+
+Route::get('/star/create', 'StarController@create')->name('star.create');
+
+Route::get('star/{star}-{slug?}', 'StarController@show')->name('star.show');
+
+Route::resource('star', 'StarController', ['except' => ['show', 'create','destroy']]);
+
+// End Star Routes
+
+
+
+
+
+// Begin Star Generator Routes
+
+Route::get('star-generator', 'StarGeneratorController@create');
+Route::post('star-generator', 'StarGeneratorController@store');
+
+// End Star Generator Routes

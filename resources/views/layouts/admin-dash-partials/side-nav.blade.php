@@ -7,7 +7,6 @@
                     <ul>
                         <li><a href="/admin" class="waves-effect active">Dashboard<i class="material-icons">web</i></a></li>
                         <li><a href="/user" class="waves-effect">Users<i class="material-icons">list</i></a></li>
-                        <li><a href="/content" class="waves-effect">Content<i class="material-icons">dashboard</i></a></li>
                         <li><a href="pages-chat.html" class="waves-effect">Chat<i class="material-icons">chat</i></a></li>
                     </ul>
                 </div>
@@ -28,6 +27,8 @@
                         <li><a href="/galaxy-generator" class="waves-effect">Galaxy Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/galaxy-type-generator" class="waves-effect">Galaxy Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/star-generator" class="waves-effect">Star Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/star-type-generator" class="waves-effect">Star Type Generator
                                 <i class="fa fa-star"></i></a></li>
@@ -51,7 +52,7 @@
                         <li><a href="/zone" class="waves-effect">Zones<i class="fa fa-star"></i></a></li>
                         <li><a href="/zone-type" class="waves-effect">Zone Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/star-type" class="waves-effect">Star Types<i class="fa fa-star"></i></a></li>
-                        <li><a href="/system" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
+                        <li><a href="/star" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                     </ul>
                 </div>
@@ -85,6 +86,14 @@
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="/book" class="waves-effect">All Books<i class="material-icons">book</i></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="bold waves-effect"><a class="collapsible-header">Content<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/content" class="waves-effect">Content<i class="material-icons">dashboard</i></a></li>
+                        <li><a href="/category" class="waves-effect">Categories<i class="material-icons">dashboard</i></a></li>
                     </ul>
                 </div>
             </li>

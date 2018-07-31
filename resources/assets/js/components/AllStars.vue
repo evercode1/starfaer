@@ -4,7 +4,7 @@
 
 
 
-        <h1 class="flow-text grey-text text-darken-1">Categories</h1>
+        <h1 class="flow-text grey-text text-darken-1">All Stars</h1>
 
             <search-box></search-box>
 
@@ -23,7 +23,7 @@
 
                     <table>
 
-                        <table-head></table-head>
+                        <all-table-head></all-table-head>
 
                         <tbody>
 
@@ -37,7 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/category/' + row.Id + '/edit'"> {{ row.Name }}</a>
+                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
 
                             </td>
 
@@ -49,29 +49,7 @@
 
                             </td>
 
-                            <td >
 
-                                <a v-bind:href="'/category/' + row.Id + '/edit'">
-
-                                <button type="button" class="waves-effect waves-light btn mt-5">
-
-                                        Edit
-
-                                </button>
-
-                                </a>
-
-
-                                <button class="waves-effect waves-light btn mt-5"
-                                        @click="confirmDelete(row.Id)">
-
-                                        Delete
-
-                                </button>
-
-
-
-                            </td>
 
                         </tr>
 
@@ -86,6 +64,8 @@
             </section>
 
             <pagination></pagination>
+
+
 
     </div>
 
@@ -102,11 +82,11 @@
                      'search-box' : require('./SearchBox'),
                      'grid-count' : require('./GridCount'),
                      'page-number' : require('./PageNumber'),
-                     'table-head' : require('./TableHead')},
+                     'all-table-head' : require('./AllTableHead')},
 
         mounted: function () {
 
-            gridData.loadData('api/category-data', this);
+            gridData.loadData('/api/all-stars-data', this);
 
         },
         data: function () {
@@ -125,8 +105,8 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/category/create',
-                showCreateButton: true
+                createUrl: '/star/create',
+                showCreateButton: false
             }
         },
 
@@ -145,7 +125,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/category-data', this);
+                gridData.getQueryData(request, '/api/all-stars-data', this);
 
             },
 
@@ -177,24 +157,6 @@
 
             pageInRange: function(){
                 return this.go_to_page <= parseInt(this.last_page);
-            },
-
-            confirmDelete: function(id){
-
-                if(confirm("Are you sure you want to delete?")){
-
-                    axios.post('/category-delete/' + id)
-                            .then(response => {
-
-                                gridData.loadData('api/category-data', this);
-
-                            })
-
-
-                }
-
-
-
             }
 
 

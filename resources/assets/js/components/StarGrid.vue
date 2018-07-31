@@ -4,7 +4,7 @@
 
 
 
-        <h1 class="flow-text grey-text text-darken-1">Categories</h1>
+        <h1 class="flow-text grey-text text-darken-1">Star</h1>
 
             <search-box></search-box>
 
@@ -37,11 +37,15 @@
 
                             <td>
 
-                                <a v-bind:href="'/category/' + row.Id + '/edit'"> {{ row.Name }}</a>
+                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
 
                             </td>
 
+                            <td>
 
+                                {{ formatActive(row.Active) }}
+
+                            </td>
 
                             <td>
 
@@ -51,7 +55,7 @@
 
                             <td >
 
-                                <a v-bind:href="'/category/' + row.Id + '/edit'">
+                                <a v-bind:href="'/star/' + row.Id + '/edit'">
 
                                 <button type="button" class="waves-effect waves-light btn mt-5">
 
@@ -87,6 +91,8 @@
 
             <pagination></pagination>
 
+
+
     </div>
 
 </template>
@@ -106,13 +112,13 @@
 
         mounted: function () {
 
-            gridData.loadData('api/category-data', this);
+            gridData.loadData('/api/star-data', this);
 
         },
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Created'],
+                gridColumns: ['Id', 'Name', 'Active', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -125,7 +131,7 @@
                 go_to_page: null,
                 sortOrder: 1,
                 sortKey: 'id',
-                createUrl: '/category/create',
+                createUrl: '/star/create',
                 showCreateButton: true
             }
         },
@@ -145,7 +151,7 @@
 
             getData:  function(request){
 
-                gridData.getQueryData(request, 'api/category-data', this);
+                gridData.getQueryData(request, '/api/star-data', this);
 
             },
 
@@ -168,27 +174,39 @@
             },
 
             checkUrlNotNull: function(url){
+
                 return url != null;
+
             },
 
             clearPageNumberInputBox: function(){
+
                 return this.go_to_page = '';
+
             },
 
             pageInRange: function(){
+
                 return this.go_to_page <= parseInt(this.last_page);
+
+            },
+
+                formatActive: function(active){
+
+                    return  active === 1 ? 'Active' : 'Inactive';
+
             },
 
             confirmDelete: function(id){
 
                 if(confirm("Are you sure you want to delete?")){
 
-                    axios.post('/category-delete/' + id)
+                    axios.post('/star-delete/' + id)
                             .then(response => {
 
-                                gridData.loadData('api/category-data', this);
+                                gridData.loadData('/api/star-data', this);
 
-                            })
+                            });
 
 
                 }
