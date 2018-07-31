@@ -31,7 +31,6 @@ class GalaxyTypeSeeder extends Seeder
                 'universe_id' => 1,
                 'is_active' => 1,
                 'is_featured' => 1,
-                'weight' => 100,
                 'description' => $value['description'],
                 'created_at' => now(),
                 'updated_at' => now()
