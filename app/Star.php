@@ -11,9 +11,17 @@ class Star extends Model
                            'slug',
                            'is_active',
                            'is_featured',
-                           'weight',
+                           'is_binary',
+                           'has_planets',
+                           'planet_count',
+                           'age',
+                           'size',
+                           'star_type_id',
+                           'zone_id',
                            'description',
                            'universe_id',
+                           'galaxy_id',
+                           'constellation_id',
                            'image_name',
                            'image_extension'];
 
