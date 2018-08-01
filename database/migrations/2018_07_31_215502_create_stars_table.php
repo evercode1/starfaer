@@ -20,7 +20,7 @@ class CreateStarsTable extends Migration
             $table->boolean('is_active')->default(1);
             $table->boolean('is_featured')->default(0);
             $table->boolean('is_binary')->default(0);
-            $table->boolean('has planets')->default(0);
+            $table->boolean('has_planets')->default(0);
             $table->integer('planet_count')->nullable();
             $table->integer('age');
             $table->integer('size');
@@ -28,7 +28,7 @@ class CreateStarsTable extends Migration
             $table->unsignedInteger('zone_id');
             $table->unsignedInteger('universe_id');
             $table->unsignedInteger('galaxy_id');
-            $table->unsignedInteger('constellation_id');
+            $table->string('coordinates', 60)->nullable();
             $table->longText('description');
             $table->string('image_name')->unique()->nullable();
             $table->string('image_extension', 10)->nullable();

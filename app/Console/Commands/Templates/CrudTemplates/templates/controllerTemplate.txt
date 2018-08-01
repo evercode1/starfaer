@@ -146,7 +146,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $universeId = $:::modelInstance:::->universe_id;
 
-        $universeName = Universe::getUniverseName($:::modelInstance:::->universe_id);
+        $universeName = $:::modelInstance:::->universe->name;
 
         $universes = Universe::all();
 
@@ -183,7 +183,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $slug = str_slug($request->name, "-");
 
-        $this->setUpdatedModelValues($request, $:::modelInstance:::);
+        $this->setUpdatedModelValues($request, $star, $slug);
 
         // if file, we have additional requirements before saving
 
@@ -246,10 +246,11 @@ class :::upperCaseModelName:::Controller extends Controller
          * @param $marketingImage
          */
 
-    private function setUpdatedModelValues(Request $request, $modelInstance)
+    private function setUpdatedModelValues(Request $request, $modelInstance, $slug)
     {
 
-        $modelInstance->name= $request->get('name');
+        $modelInstance->name = $request->get('name');
+        $modelInstance->slug = $slug;
         $modelInstance->weight = $request->get('weight');
         $modelInstance->is_featured = $request->get('is_featured');
         $modelInstance->is_active = $request->get('is_active');

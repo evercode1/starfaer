@@ -158,8 +158,8 @@ class StarSeeder extends Seeder
 
 
             DB::table('stars')->insert([
-                'name' => $value['name'],
-                'slug' => str_slug($value['name'], "-"),
+                'name' => $value,
+                'slug' => str_slug($value, "-"),
                 'universe_id' => 1,
                 'star_type_id' => $typeKey,
                 'galaxy_id' => 3,
@@ -167,12 +167,12 @@ class StarSeeder extends Seeder
                 'is_binary' => 0,
                 'is_featured' => 0,
                 'has_planets' => 1,
-                'constellation_id' => 0,
+                'coordinates' => 0,
                 'planet_count' => rand(6, 12),
                 'age' => $age,
                 'size' => $size,
                 'zone_id' => rand(1, 100),
-                'description' => $value['name'] . ' is'
+                'description' => $value . ' is'
                                                 . $this->formatA($typeKey)
                                                 . $types[$typeKey]
                                                 . ' star that is '

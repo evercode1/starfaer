@@ -10,7 +10,7 @@
 
         <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
 
-            <label>Star Name</label>
+            <label>Name</label>
 
             <input type="text"
                    name="name"
@@ -29,6 +29,38 @@
         </div>
 
     <!-- end name input -->
+
+    <!-- star_type_id select -->
+
+    <div class="{{ $errors->has('star_type_id') ? ' has-error' : '' }}">
+
+        <label>Star Type</label>
+
+        <select id="star_type_id" name="star_type_id">
+
+            <option value="">Please Choose One</option>
+
+            @foreach($starTypes as $starType)
+
+                <option value={{ $starType->id }}>{{ $starType->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('star_type_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('star_type_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end star_type_id select -->
 
     <!-- universe select -->
 
@@ -62,11 +94,229 @@
 
     <!-- end universe select -->
 
+    <!-- galaxy select -->
+
+    <div class="{{ $errors->has('galaxy_id') ? ' has-error' : '' }}">
+
+        <label>Galaxy</label>
+
+        <select id="galaxy_id" name="galaxy_id">
+
+            <option value="">Please Choose One</option>
+
+            @foreach($galaxies as $galaxy)
+
+                <option value={{ $galaxy->id }}>{{ $galaxy->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('galaxy_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('galaxy_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end galaxy select -->
+
+    <!-- zone select -->
+
+    <div class="{{ $errors->has('zone_id') ? ' has-error' : '' }}">
+
+        <label>Zone</label>
+
+        <select id="zone_id" name="zone_id">
+
+            <option value="">Please Choose One</option>
+
+            @foreach($zones as $zone)
+
+                <option value={{ $zone->id }}>{{ $zone->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('zone_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('zone_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end zone select -->
+
+    <!-- is_binary select -->
+
+    <div class="{{ $errors->has('is_binary') ? ' has-error' : '' }}">
+
+        <label>Is Binary</label>
+
+        <select id="is_binary" name="is_binary">
+
+            <option value="">Please Choose One</option>
+
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+
+        </select>
+
+        @if ($errors->has('is_binary'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('is_binary') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end is_binary select -->
+
+    <!-- has_planets select -->
+
+    <div class="{{ $errors->has('has_planets') ? ' has-error' : '' }}">
+
+        <label>Has Planets</label>
+
+        <select id="has_planets" name="has_planets">
+
+            <option value="">Please Choose One</option>
+
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+
+        </select>
+
+        @if ($errors->has('has_planets'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('has_planets') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end has_planets select -->
+
+    <!-- planet_count input -->
+
+    <div class="{{ $errors->has('planet_count') ? ' has-error' : '' }}">
+
+        <label>Planet Count</label>
+
+        <input type="number"
+               name="planet_count"
+               value="{{ old('planet_count') }}" />
+
+        @if ($errors->has('planet_count'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('planet_count') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end planet_count input -->
+
+    <!-- age input -->
+
+    <div class="{{ $errors->has('age') ? ' has-error' : '' }}">
+
+        <label>Age</label>
+
+        <input type="number"
+               name="age"
+               value="{{ old('age') }}" />
+
+        @if ($errors->has('age'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('age') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end age input -->
+
+    <!-- size input -->
+
+    <div class="{{ $errors->has('size') ? ' has-error' : '' }}">
+
+        <label>Size</label>
+
+        <input type="number"
+               name="size"
+               value="{{ old('size') }}" />
+
+        @if ($errors->has('size'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('size') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end size input -->
+
+    <!-- coordinates input -->
+
+    <div class="{{ $errors->has('coordinates') ? ' has-error' : '' }}">
+
+        <label>Coordinates</label>
+
+        <input type="text"
+               name="coordinates"
+               value="{{ old('coordinates') }}" />
+
+        @if ($errors->has('coordinates'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('coordinates') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end coordinates input -->
+
     <!-- is_active select -->
 
         <div class="{{ $errors->has('is_published') ? ' has-error' : '' }}">
 
-            <label>Status</label>
+            <label>Is Active?</label>
 
             <select id="is_active" name="is_active">
 
@@ -115,30 +365,6 @@
         </div>
 
     <!-- end is_featured select -->
-
-    <!-- weight input -->
-
-        <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
-
-            <label>Weight</label>
-
-            <input type="text"
-                   name="weight"
-                   value="{{ old('weight') ? old('weight') : 100 }}" />
-
-            @if ($errors->has('weight'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('weight') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-    <!-- end weight input -->
 
     <!-- description input -->
 

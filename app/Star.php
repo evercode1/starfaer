@@ -17,11 +17,11 @@ class Star extends Model
                            'age',
                            'size',
                            'star_type_id',
+                           'coordinates',
                            'zone_id',
                            'description',
                            'universe_id',
                            'galaxy_id',
-                           'constellation_id',
                            'image_name',
                            'image_extension'];
 
@@ -32,4 +32,24 @@ class Star extends Model
 
     }
 
+    public function galaxy()
+    {
+
+        return $this->belongsTo('App\Galaxy');
+
+    }
+
+    public function starType()
+    {
+
+        return $this->belongsTo('App\StarType');
+
+    }
+
+    public function zone()
+    {
+
+        return $this->belongsTo('App\Zone');
+
+    }
 }

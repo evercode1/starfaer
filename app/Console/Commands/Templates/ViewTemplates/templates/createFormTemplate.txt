@@ -64,9 +64,9 @@
 
     <!-- is_active select -->
 
-        <div class="{{ $errors->has('is_published') ? ' has-error' : '' }}">
+        <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">
 
-            <label>Status</label>
+            <label>Is Active?</label>
 
             <select id="is_active" name="is_active">
 

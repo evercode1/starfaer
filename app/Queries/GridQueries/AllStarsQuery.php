@@ -14,7 +14,6 @@ class AllStarsQuery implements DataQuery
                     ->select('id as Id',
                              'name as Name',
                              'slug as Slug',
-                             'weight as Weight',
                              DB::raw('DATE_FORMAT(created_at,
                              "%m-%d-%Y") as Created'))
                     ->where('is_active', 1)
@@ -33,7 +32,6 @@ class AllStarsQuery implements DataQuery
                 ->select('id as Id',
                          'name as Name',
                          'slug as Slug',
-                         'weight as Weight',
                          DB::raw('DATE_FORMAT(created_at,
                                  "%m-%d-%Y") as Created'))
                 ->where([['name', 'like', '%' . $keyword . '%'], ['is_active', 1]])

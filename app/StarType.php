@@ -23,4 +23,11 @@ class StarType extends Model
 
     }
 
+    public function stars()
+    {
+
+        return $this->hasMany('App\Star');
+
+    }
+
 }

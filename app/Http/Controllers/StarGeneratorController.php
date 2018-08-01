@@ -32,7 +32,7 @@ class StarGeneratorController extends Controller
 
              $this->seed();
 
-            //Return Redirect::route('star.index');
+            Return Redirect::route('star.index');
 
 
          }
