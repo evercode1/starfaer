@@ -15,8 +15,10 @@
         <div class="row">
 
         <ul class="collection with-header">
-                        <li class="collection-header"><h4>{{ $star->name }}</h4></li>
-                        <li class="collection-item">Type:  {{ $star->starType->name }}</li>
+                        <li class="collection-header"><h4>{{ ucfirst($star->name) }}</h4></li>
+                       <li class="collection-item">Star Type:
+                       <b><a href="/star-type/{{ $star->starType->id }} - {{ $star->starType->slug }}">
+                        {{ $star->starType->name }}</a></b></li>
                         @if($star->is_binary == 1)
 
                         <li class="collection-item">{{ $star->name }} is part of a binary system</li>

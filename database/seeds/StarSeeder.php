@@ -172,10 +172,10 @@ class StarSeeder extends Seeder
                 'age' => $age,
                 'size' => $size,
                 'zone_id' => rand(1, 100),
-                'description' => $value . ' is'
+                'description' => ucwords($value) . ' is'
                                                 . $this->formatA($typeKey)
                                                 . $types[$typeKey]
-                                                . ' star that is '
+                                                . ' that is '
                                                 . $age
                                                 . ' billion years old and '
                                                 . $this->formatSize($size)
