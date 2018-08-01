@@ -15,7 +15,7 @@
         <div class="row">
 
         <ul class="collection with-header">
-                        <li class="collection-header"><h4>{{ ucfirst($star->name) }}</h4></li>
+                        <li class="collection-header"><h4>{{ ucwords($star->name) }}</h4></li>
                        <li class="collection-item">Star Type:
                        <b><a href="/star-type/{{ $star->starType->id }} - {{ $star->starType->slug }}">
                         {{ $star->starType->name }}</a></b></li>
@@ -38,12 +38,14 @@
                         <li class="collection-item">In Zone:
                         <b><a href="/zone/{{ $star->zone->id }} - {{ $star->zone->slug }}">
                         {{ $star->zone->name }}</a></b></li>
+                        @if( $star->coordinates > 0)
                         <li class="collection-item">Coordinates:  {{ $star->coordinates }}</li>
+                        @endif
                         <li class="collection-item">From Universe:
                         <b><a href="/universe/{{ $star->universe->id }} - {{ $star->universe->slug }}">
                         {{ $star->universe->name }}</a></b></li>
 
-                        <li class="collection-item">{!! $star->description !!}</li>
+                        <li class="collection-item"><b>{!! $star->description !!}</b></li>
 
         </ul>
 

@@ -51,105 +51,105 @@ class StarSeeder extends Seeder
 
                 case 1 :
 
-                   $size = 180;
-                   $age = 1;
+                   $size = rand(180, 220);
+                   $age = rand(1, 2);
                     break;
 
                 case 4 :
 
-                    $size = 900;
-                    $age = 8;
+                    $size = rand(900, 1100);
+                    $age = rand(6,9);
                     break;
 
                 case 5 :
 
-                    $size = 120;
-                    $age = 9;
+                    $size = rand(120, 140);
+                    $age = rand(7,10);
                     break;
 
 
                 case 20 :
 
-                    $size = 1100;
-                    $age = 11;
+                    $size = rand(1100, 2200);
+                    $age = rand(8,11);
                     break;
 
                 case 25 :
 
-                    $size = 60;
-                    $age = 8;
+                    $size = rand(60, 75);
+                    $age = rand(5,8);
                     break;
 
                 case 36 :
 
-                    $size = 1200;
-                    $age = 6;
+                    $size = rand(1200, 1500);
+                    $age = rand(4, 7);
                     break;
 
                 case 37 :
 
-                    $size = 1200;
-                    $age = 10;
+                    $size = rand(1200, 1600);
+                    $age = rand(7, 11);
                     break;
 
                 case 42 :
 
-                    $size = 100;
-                    $age = 7;
+                    $size = rand(90, 120);
+                    $age = rand(5, 9);
                     break;
 
                 case 46 :
 
-                    $size = 2000;
-                    $age = 5;
+                    $size = rand(2000, 2400);
+                    $age = rand(4, 6);
                     break;
 
                 case 52 :
 
-                    $size = 70;
-                    $age = 9;
+                    $size = rand(45, 70);
+                    $age = rand(7, 10);
                     break;
 
                 case 63 :
 
-                    $size = 4000;
-                    $age = 6;
+                    $size = rand(4000, 6000);
+                    $age = rand(4, 8);
                     break;
 
                 case 86 :
 
-                    $size = 60;
-                    $age = 4;
+                    $size = rand(60, 70);
+                    $age = rand(4, 6);
                     break;
 
                 case 98 :
 
-                    $size = 50;
-                    $age = 5;
+                    $size = rand(50, 60);
+                    $age = rand(4, 7);
                     break;
 
                 case  106 :
 
-                    $size = 100;
-                    $age = 7;
+                    $size = rand(90, 100);
+                    $age = rand( 5, 9);
                     break;
 
                 case  107 :
 
-                    $size = 100;
-                    $age =6;
+                    $size = rand(90, 100);
+                    $age = rand(4, 8);
                     break;
 
                 case 109 :
 
-                    $size = 600;
-                    $age = 8;
+                    $size = rand(600, 800);
+                    $age = rand(7, 10);
                     break;
 
                 default:
 
-                    $size = 100;
-                    $age = 7;
+                    $size = rand(90, 110);
+                    $age = rand(5,9);
                     break;
 
 
