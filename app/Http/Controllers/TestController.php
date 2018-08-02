@@ -34,15 +34,16 @@ class TestController extends Controller
 
 
 
-        $file = base_path('seeds/archive.php');
+        $file = base_path('seeds/bak-planets-one-seeds.php');
 
 
         $names = FetchInsideArrayFile::get($file);
 
+
         shuffle($names);
 
 
-        $destination = base_path('seeds/star-seeds.php');
+        $destination = base_path('seeds/planets-seeds.php');
 
 
          UniqueNames::filter($names, $destination);

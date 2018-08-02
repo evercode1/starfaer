@@ -89,6 +89,8 @@
 
 
 
+<option value="latin vowels">latin vowels</option>
+<option value="i vowels with one consonant">i vowels with one consonant</option>
 <option value="front-vowels">front-vowels</option>
 <option value="lush-vowels">lush-vowels</option>
 
@@ -120,6 +122,8 @@
         <select id="consonants" name="consonants">
 
             <option value="">Please Choose One</option>
+<option value="latin consonants">latin consonants</option>
+<option value="or-ar consonants">or-ar consonants</option>
 
 
 <option value="lush-consonants">lush-consonants</option>
