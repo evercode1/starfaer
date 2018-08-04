@@ -25,6 +25,7 @@ class Planet extends Model
                            'is_life_present',
                            'is_in_goldilocks_zone',
                            'is_ringed',
+                           'coordinates',
                            'description',
                            'image_name',
                            'image_extension'];

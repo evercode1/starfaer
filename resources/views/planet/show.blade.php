@@ -57,13 +57,16 @@
 
                         <li class="collection-item">Atmospheric Density:
 
-                        <b>{{ $planet->atmospheric_density }}</b></li>
-
+                        <b>{{ $planet->atmospheric_density }} %</b></li>
 
 
                         <li class="collection-item">Mass:
 
-                        <b>{{ $planet->mass }}</b></li>
+                        <b>{{ $planet->mass / 100 }} times the mass of Earth</b></li>
+
+                       <li class="collection-item">Coordinates:
+
+                      <b>{{ $planet->coordinates }}</b></li>
 
 
                         <li class="collection-item">Moon Count:

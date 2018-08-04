@@ -103,6 +103,7 @@ class PlanetController extends Controller
                     'is_life_present' => 'required|boolean',
                     'is_in_goldilocks_zone' => 'required|boolean',
                     'is_ringed' => 'required|boolean',
+                    'coordinates' => 'required|string',
                     'is_active' => 'required|boolean',
                     'body' => 'required|string|max:1000',
                     'image' => 'max:1000',
@@ -134,6 +135,7 @@ class PlanetController extends Controller
                                    'is_life_present' => $request->is_life_present,
                                    'is_in_goldilocks_zone' => $request->is_in_goldilocks_zone,
                                    'is_ringed' => $request->is_ringed,
+                                   'coordinates' => $request->coordinates,
                                    'is_active' => $request->is_active,
                                    'description' => $request->body,
                                    'image_name' => $imageName,
@@ -268,6 +270,7 @@ class PlanetController extends Controller
             'is_life_present' => 'required|boolean',
             'is_in_goldilocks_zone' => 'required|boolean',
             'is_ringed' => 'required|boolean',
+            'coordinates' => 'required|string',
             'is_active' => 'required|boolean',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000'
@@ -363,6 +366,7 @@ class PlanetController extends Controller
         $modelInstance->is_life_present = $request->get('is_life_present');
         $modelInstance->is_in_goldilocks_zone = $request->get('is_in_goldilocks_zone');
         $modelInstance->is_ringed = $request->get('is_ringed');
+        $modelInstance->coordinates = $request->get('coordinates');
         $modelInstance->description = $request->get('body');
         $modelInstance->image_name = $this->formatString($request->get('name'));
 

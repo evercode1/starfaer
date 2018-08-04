@@ -62,6 +62,7 @@ class PlanetSeeder extends Seeder
                 'is_life_present' => 0,
                 'is_in_goldilocks_zone' => 0,
                 'is_ringed' => 0,
+                'coordinates' => rand(1,259),
                 'is_active' => 1,
                 'description' => 0,
                 'created_at' => now(),

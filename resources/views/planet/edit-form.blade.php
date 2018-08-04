@@ -467,6 +467,30 @@
 
         <!-- end galaxy select -->
 
+    <!-- coordinates input -->
+
+    <div class="{{ $errors->has('coordinates') ? ' has-error' : '' }}">
+
+        <label>Coordinates</label>
+
+        <input type="text"
+               name="coordinates"
+               value="{{ $planet->coordinates }}" />
+
+        @if ($errors->has('coordinates'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('coordinates') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end coordinates input -->
+
     <!-- is_active select -->
 
             <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">

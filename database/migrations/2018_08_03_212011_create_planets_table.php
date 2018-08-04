@@ -35,6 +35,7 @@ class CreatePlanetsTable extends Migration
             $table->boolean('is_life_present')->default(0);
             $table->boolean('is_in_goldilocks_zone')->default(0);
             $table->boolean('is_ringed')->default(0);
+            $table->string('coordinates');
             $table->longText('description');
             $table->string('image_name')->unique()->nullable();
             $table->string('image_extension', 10)->nullable();

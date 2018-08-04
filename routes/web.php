@@ -147,6 +147,12 @@ Route::get('/terms-of-service', 'PagesController@terms')->name('pages.terms');
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 
+// Planet List
+// id is the id of the star
+
+Route::get('planet-list/{id}', 'PlanetListController@show');
+
+
 // Post Routes
 
 Route::get('post-by-category/{id}', 'PostsByCategoryController@index')->name('post.by-category');

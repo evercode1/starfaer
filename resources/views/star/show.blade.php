@@ -26,7 +26,8 @@
                         @endif
                         @if($star->has_planets == 1)
 
-                        <li class="collection-item">{{ $star->name }} has {{ $star->planet_count }} planets</li>
+                        <li class="collection-item">{{ $star->name }} has
+                            <a href="/planet-list/{{ $star->id }}">{{ $star->planet_count }} planets</a></li>
 
                         @endif
 
