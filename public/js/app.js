@@ -6507,6 +6507,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -6526,7 +6532,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Active', 'Created'],
+            gridColumns: ['Id', 'Name', 'Star', 'Active', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -47153,6 +47159,18 @@ var render = function() {
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/star/" + row.Starid + "-" + row.Slug
+                            }
+                          },
+                          [_vm._v(" " + _vm._s(row.Starname))]
                         )
                       ]),
                       _vm._v(" "),

@@ -28,9 +28,12 @@ class PlanetGeneratorController extends Controller
 
 
 
+
         if ($request->seed === 'seed') {
 
-             $this->seed();
+            $filename = $request->filename;
+
+             $this->seed($filename);
 
             Return Redirect::route('planet.index');
 
@@ -42,12 +45,12 @@ class PlanetGeneratorController extends Controller
 
     }
 
-    private function seed()
+    public function seed($filename)
     {
 
-        $seed = new \DatabaseSeeder();
+        $seeder = new PlanetSeeder($filename);
 
-        $seed->call(PlanetSeeder::class);
+        $seeder->run();
 
 
     }

@@ -9,6 +9,30 @@
 
               <input type="hidden" id="seed" name="seed" value="seed">
 
+    <!-- filename input -->
+
+    <div class="{{ $errors->has('filename') ? ' has-error' : '' }}">
+
+        <label>File Name</label>
+
+        <input type="text"
+               name="filename"
+               value="{{ old('filename') }}" />
+
+        @if ($errors->has('filename'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('filename') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end filename input -->
+
 
     <!-- submit button -->
 

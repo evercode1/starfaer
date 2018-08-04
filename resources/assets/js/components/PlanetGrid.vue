@@ -43,6 +43,12 @@
 
                             <td>
 
+                                <a v-bind:href="'/star/' + row.Starid + '-' + row.Slug"> {{ row.Starname }}</a>
+
+                            </td>
+
+                            <td>
+
                                 {{ formatActive(row.Active) }}
 
                             </td>
@@ -118,7 +124,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Active', 'Created'],
+                gridColumns: ['Id', 'Name', 'Star', 'Active', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
