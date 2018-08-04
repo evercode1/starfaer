@@ -15,6 +15,58 @@ return [
 
 
 
+    // Begin Planet Image Config Array Method
+
+
+        'planet' => [
+                'destinationFolder'     => '/imgs/planet/',
+                'createFolder'          => '/imgs/planet',
+                'destinationThumbnail'  => '/imgs/planet/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/planet/',
+                'thumbnailPath'         => '/imgs/planet/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End Planet Image Config Array Method
+    // Begin Atmosphere Image Config Array Method
+
+
+        'atmosphere' => [
+                'destinationFolder'     => '/imgs/atmosphere/',
+                'createFolder'          => '/imgs/atmosphere',
+                'destinationThumbnail'  => '/imgs/atmosphere/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/atmosphere/',
+                'thumbnailPath'         => '/imgs/atmosphere/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End Atmosphere Image Config Array Method
+    
+    // Begin PlanetType Image Config Array Method
+
+
+        'planettype' => [
+                'destinationFolder'     => '/imgs/planettype/',
+                'createFolder'          => '/imgs/planettype',
+                'destinationThumbnail'  => '/imgs/planettype/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/planettype/',
+                'thumbnailPath'         => '/imgs/planettype/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End PlanetType Image Config Array Method
     // Begin Star Image Config Array Method
 
 

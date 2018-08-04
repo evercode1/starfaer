@@ -361,4 +361,95 @@ Route::resource('star', 'StarController', ['except' => ['show', 'create','destro
 Route::get('star-generator', 'StarGeneratorController@create');
 Route::post('star-generator', 'StarGeneratorController@store');
 
-// End Star Generator Routes
+// End Star Generator Routes// Begin PlanetType Generator Routes
+
+Route::get('planet-type-generator', 'PlanetTypeGeneratorController@create');
+Route::post('planet-type-generator', 'PlanetTypeGeneratorController@store');
+
+// End PlanetType Generator Routes
+// Begin PlanetType Routes
+
+Route::get('all-planet-types', 'AllPlanetTypesController@index');
+
+Route::get('/api/all-planet-types-data', 'FrontApiController@allPlanetTypesData');
+
+Route::any('api/planet-type-data', 'ApiController@planetTypeData');
+
+Route::post('planet-type-delete/{id}', 'PlanetTypeController@destroy');
+
+Route::get('/planet-type/create', 'PlanetTypeController@create')->name('planet-type.create');
+
+Route::get('planet-type/{id}', 'PlanetTypeController@show')->name('planet-type.show');
+
+Route::resource('planet-type', 'PlanetTypeController', ['except' => ['show', 'create','destroy']]);
+
+// End PlanetType Routes
+
+
+
+
+
+
+
+
+
+
+
+
+// Begin Atmosphere Generator Routes
+
+Route::get('atmosphere-generator', 'AtmosphereGeneratorController@create');
+Route::post('atmosphere-generator', 'AtmosphereGeneratorController@store');
+
+// End Atmosphere Generator Routes
+// Begin Atmosphere Routes
+
+Route::get('all-atmospheres', 'AllAtmospheresController@index');
+
+Route::get('/api/all-atmospheres-data', 'FrontApiController@allAtmospheresData');
+
+Route::any('api/atmosphere-data', 'ApiController@atmosphereData');
+
+Route::post('atmosphere-delete/{id}', 'AtmosphereController@destroy');
+
+Route::get('/atmosphere/create', 'AtmosphereController@create')->name('atmosphere.create');
+
+Route::get('atmosphere/{atmosphere}-{slug?}', 'AtmosphereController@show')->name('atmosphere.show');
+
+Route::resource('atmosphere', 'AtmosphereController', ['except' => ['show', 'create','destroy']]);
+
+// End Atmosphere Routes
+
+
+
+
+
+
+// Begin Planet Routes
+
+Route::get('all-planets', 'AllPlanetsController@index');
+
+Route::get('/api/all-planets-data', 'FrontApiController@allPlanetsData');
+
+Route::any('api/planet-data', 'ApiController@planetData');
+
+Route::post('planet-delete/{id}', 'PlanetController@destroy');
+
+Route::get('/planet/create', 'PlanetController@create')->name('planet.create');
+
+Route::get('planet/{planet}-{slug?}', 'PlanetController@show')->name('planet.show');
+
+Route::resource('planet', 'PlanetController', ['except' => ['show', 'create','destroy']]);
+
+// End Planet Routes
+
+
+
+
+
+// Begin Planet Generator Routes
+
+Route::get('planet-generator', 'PlanetGeneratorController@create');
+Route::post('planet-generator', 'PlanetGeneratorController@store');
+
+// End Planet Generator Routes

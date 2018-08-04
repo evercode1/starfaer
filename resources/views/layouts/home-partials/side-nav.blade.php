@@ -20,6 +20,8 @@
                         <li><a href="/all-zones" class="waves-effect">All Zones<i class="fa fa-star"></i></a></li>
                         <li><a href="/all-star-types" class="waves-effect">All Star Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/all-stars" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
+                        <li><a href="/all-planet-types" class="waves-effect">Planet Types<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/all-atmospheres" class="waves-effect">All Atmospheres<i class="fa fa-globe"></i></a></li>
                         <li><a href="/all-planets" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                     </ul>
                 </div>

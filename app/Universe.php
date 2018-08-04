@@ -23,4 +23,11 @@ class Universe extends Model
         return $this->hasMany('App\Galaxy');
 
     }
+
+    public function planetTypes()
+    {
+
+        return $this->hasMany('App\PlanetType');
+
+    }
 }

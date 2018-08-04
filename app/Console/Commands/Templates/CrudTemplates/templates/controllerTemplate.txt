@@ -6,6 +6,7 @@ use App\UtilityTraits\KebabHelper;
 use App\UtilityTraits\ManagesImages;
 use Illuminate\Http\Request;
 use App\Universe;
+use App\Galaxy;
 use Illuminate\Support\Facades\Redirect;
 :::useModel:::;
 
@@ -50,8 +51,10 @@ class :::upperCaseModelName:::Controller extends Controller
 
            $universes = Universe::all();
 
+           $galaxies = Galaxy::all();
 
-           return view(':::modelPath:::.create', compact('universes'));
+
+           return view(':::modelPath:::.create', compact('universes', 'galaxies'));
 
     }
 
@@ -71,8 +74,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
                     'name' => 'required|unique::::tableName:::|string|max:100',
                     'is_active' => 'required|boolean',
-                    'is_featured' => 'required|boolean',
-                    'weight' => 'required|integer|between:1,100',
+                    'galaxy_id' => 'required|integer',
                     'body' => 'required|string|max:1000',
                     'image' => 'max:1000',
                     'universe_id' => 'required',
@@ -88,8 +90,7 @@ class :::upperCaseModelName:::Controller extends Controller
         $:::modelInstance::: = :::upperCaseModelName:::::create([ 'name' => $request->name,
                                                                   'slug' => $slug,
                                                                   'is_active' => $request->is_active,
-                                                                  'is_featured' => $request->is_featured,
-                                                                  'weight' => $request->weight,
+                                                                  'galaxy_id' => $request->galaxy_id,
                                                                   'universe_id' => $request->universe_id,
                                                                   'description' => $request->body,
                                                                   'image_name' => $imageName,
@@ -120,14 +121,10 @@ class :::upperCaseModelName:::Controller extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(:::upperCaseModelName::: $:::modelInstance:::, $slug='')
+    public function show($id)
     {
 
-        if ($:::modelInstance:::->slug !== $slug) {
-
-            return Redirect::route(':::modelPath:::.show', ['id' => $:::modelInstance:::->id,
-                                                   'slug' => $:::modelInstance:::->slug], 301);
-        }
+        $:::modelInstance::: = :::model:::::findOrFail($id);
 
         return view(':::modelPath:::.show', compact(':::modelInstance:::'));
     }
@@ -150,8 +147,20 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $universes = Universe::all();
 
+        $galaxyId = $:::modelInstance:::->galaxy->id;
 
-        return view(':::modelPath:::.edit', compact(':::modelInstance:::' , 'universeId', 'universeName', 'universes'));
+        $galaxyName = $:::modelInstance:::->galaxy->name;
+
+        $galaxies = Galaxy::all();
+
+
+        return view(':::modelPath:::.edit', compact(':::modelInstance:::' ,
+                                                    'universeId',
+                                                    'universeName',
+                                                    'universes',
+                                                    'galaxyId',
+                                                    'galaxyName',
+                                                    'galaxies'));
 
     }
 
@@ -171,8 +180,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
             'name' => 'required|string|max:100|unique::::tableName:::,name,' .$id,
             'is_active' => 'required|boolean',
-            'is_featured' => 'required|boolean',
-            'weight' => 'required|integer|between:1,100',
+            'galaxy_id' => 'required|integer',
             'body' => 'required|string|max:1000',
             'image' => 'max:1000',
             'universe_id' => 'required'
@@ -183,7 +191,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $slug = str_slug($request->name, "-");
 
-        $this->setUpdatedModelValues($request, $star, $slug);
+        $this->setUpdatedModelValues($request, $:::modelInstance:::, $slug);
 
         // if file, we have additional requirements before saving
 
@@ -251,8 +259,7 @@ class :::upperCaseModelName:::Controller extends Controller
 
         $modelInstance->name = $request->get('name');
         $modelInstance->slug = $slug;
-        $modelInstance->weight = $request->get('weight');
-        $modelInstance->is_featured = $request->get('is_featured');
+        $modelInstance->galaxy_id = $request->get('galaxy_id');
         $modelInstance->is_active = $request->get('is_active');
         $modelInstance->description = $request->get('body');
         $modelInstance->universe_id = $request->get('universe_id');

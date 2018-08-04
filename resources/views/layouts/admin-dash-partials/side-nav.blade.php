@@ -27,9 +27,15 @@
             <li class="bold waves-effect"><a class="collapsible-header">Generators<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
+                        <li><a href="/atmosphere-generator" class="waves-effect">Atmosphere Generator
+                                <i class="fa fa-star"></i></a></li>
                         <li><a href="/galaxy-generator" class="waves-effect">Galaxy Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/galaxy-type-generator" class="waves-effect">Galaxy Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/planet-type-generator" class="waves-effect">Planet Type Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/planet-generator" class="waves-effect">Planet Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/star-generator" class="waves-effect">Star Generator
                                 <i class="fa fa-star"></i></a></li>
@@ -56,6 +62,9 @@
                         <li><a href="/zone-type" class="waves-effect">Zone Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/star-type" class="waves-effect">Star Types<i class="fa fa-star"></i></a></li>
                         <li><a href="/star" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
+                        <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/planet-type" class="waves-effect">Planet Types<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/atmosphere" class="waves-effect">All Atmospheres<i class="fa fa-globe"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                     </ul>
                 </div>

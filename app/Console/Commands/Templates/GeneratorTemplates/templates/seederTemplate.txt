@@ -20,7 +20,7 @@ class :::model:::Seeder extends Seeder
 
 
 
-        $file = base_path('seeds/:::modelPath:::-seeds.php');
+        $file = base_path('seeds/:::modelPath:::s-seeds.php');
 
 
 
@@ -33,6 +33,7 @@ class :::model:::Seeder extends Seeder
                 'name' => $value['name'],
                 'slug' => str_slug($value['name'], "-"),
                 'universe_id' => 1,
+                'galaxy_id' => 3,
                 'is_active' => 1,
                 'description' => $value['description'],
                 'created_at' => now(),

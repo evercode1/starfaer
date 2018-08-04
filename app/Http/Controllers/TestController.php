@@ -34,32 +34,24 @@ class TestController extends Controller
 
 
 
-        $file = base_path('seeds/bak-planets-one-seeds.php');
+//        $file = base_path('seeds/planets-seeds.php');
+//
+//
+//        $names = FetchInsideArrayFile::get($file);
+        
 
 
-        $names = FetchInsideArrayFile::get($file);
-
-
-        shuffle($names);
-
-
-        $destination = base_path('seeds/planets-seeds.php');
-
-
-         UniqueNames::filter($names, $destination);
-
-
-
-
+//        shuffle($names);
+//
+//
+//        $destination = base_path('seeds/planets-seeds.php');
+//
+//
+//         UniqueNames::filter($names, $destination);
 
 
 
-
-
-
-
-
-           // return view('test.index');
+           return view('test.index');
 
     }
 

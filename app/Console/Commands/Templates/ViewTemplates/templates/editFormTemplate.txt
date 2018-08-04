@@ -63,6 +63,38 @@
 
     <!-- end universe select -->
 
+    <!-- galaxy select -->
+
+            <div class="{{ $errors->has('galaxy_id') ? ' has-error' : '' }}">
+
+                <label>Galaxy</label>
+
+                <select id="galaxy_id" name="galaxy_id">
+
+                    <option value="{{ $galaxyId }}">{{ $galaxyName }}</option>
+
+                    @foreach($galaxies as $galaxy)
+
+                        <option value={{ $galaxy->id }}>{{ $galaxy->name }}</option>
+
+                    @endforeach
+
+                </select>
+
+                @if ($errors->has('galaxy_id'))
+
+                    <span class="help-block">
+
+                        <strong>{{ $errors->first('galaxy_id') }}</strong>
+
+                    </span>
+
+                @endif
+
+            </div>
+
+        <!-- end galaxy select -->
+
     <!-- is_active select -->
 
             <div class="{{ $errors->has('is_active') ? ' has-error' : '' }}">
@@ -99,64 +131,6 @@
 
     <!-- end is_active select -->
 
-    <!-- is_featured select -->
-
-        <div class="{{ $errors->has('is_featured') ? 'has-error' : '' }}">
-
-            <label>Is Featured?</label>
-
-            <select id="is_featured" name="is_featured">
-
-                <option value="{{ $:::modelInstance:::->is_featured }}">{{ $:::modelInstance:::->is_featured == 1 ? 'Yes' : 'No' }}</option>
-
-                @if($:::modelInstance:::->is_featured == 1)
-
-                <option value="0">No</option>
-
-                @else
-
-                <option value="1">Yes</option>
-
-                @endif
-
-
-            </select>
-
-            @if ($errors->has('is_featured'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('is_featured') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-    <!-- end is_featured select -->
-
-    <!-- weight input -->
-
-        <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
-
-            <label>Weight</label>
-
-            <input type="text"
-                   name="weight"
-                   value="{{ old('weight') ?  old('weight') : $:::modelInstance:::->weight }}" />
-
-            @if ($errors->has('weight'))
-
-                <span class="help-block">
-                    <strong>{{ $errors->first('weight') }}</strong>
-                </span>
-
-            @endif
-
-        </div>
-
-    <!-- end weight input -->
 
     <!-- description input -->
 

@@ -9,6 +9,49 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+    // Begin Planet Api All Models Method
+
+    public function allPlanetsData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetQuery');
+
+    }
+
+    // End Planet Api All Models Method
+
+
+
+    // Begin Atmosphere Api All Models Method
+
+    public function allAtmospheresData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'AtmosphereQuery');
+
+    }
+
+    // End Atmosphere Api All Models Method
+
+
+
+    
+
+
+
+    // Begin PlanetType Api All Models Method
+
+    public function allPlanetTypesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetTypeQuery');
+
+    }
+
+    // End PlanetType Api All Models Method
+
+
+
     // Begin Star Api All Models Method
 
     public function allStarsData(Request $request)

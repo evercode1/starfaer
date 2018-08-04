@@ -90,3 +90,35 @@ Vue.component('star-grid', require('./components/StarGrid.vue'));
 Vue.component('all-stars', require('./components/AllStars.vue'));
 
 /** End Star All Models Call */
+/** Begin PlanetType Grid Component Call */
+
+Vue.component('planet-type-grid', require('./components/PlanetTypeGrid.vue'));
+
+/** End PlanetType Grid Component Call */
+/** Begin PlanetType All Models Call */
+
+Vue.component('all-planet-types', require('./components/AllPlanetTypes.vue'));
+
+/** End PlanetType All Models Call */
+
+
+/** Begin Atmosphere Grid Component Call */
+
+Vue.component('atmosphere-grid', require('./components/AtmosphereGrid.vue'));
+
+/** End Atmosphere Grid Component Call */
+/** Begin Atmosphere All Models Call */
+
+Vue.component('all-atmospheres', require('./components/AllAtmospheres.vue'));
+
+/** End Atmosphere All Models Call */
+/** Begin Planet Grid Component Call */
+
+Vue.component('planet-grid', require('./components/PlanetGrid.vue'));
+
+/** End Planet Grid Component Call */
+/** Begin Planet All Models Call */
+
+Vue.component('all-planets', require('./components/AllPlanets.vue'));
+
+/** End Planet All Models Call */

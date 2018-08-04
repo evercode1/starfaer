@@ -52,4 +52,11 @@ class Star extends Model
         return $this->belongsTo('App\Zone');
 
     }
+
+    public function planets()
+    {
+
+        return $this->hasMany('App\Planet');
+
+    }
 }

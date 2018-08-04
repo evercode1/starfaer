@@ -36,4 +36,25 @@ class Galaxy extends Model
 
     }
 
+    public function planetTypes()
+    {
+
+        return $this->hasMany('App\PlanetType');
+
+    }
+
+    public function atomospheres()
+    {
+
+        return $this->hasMany('App\Atmosphere');
+
+    }
+
+    public function galaxies()
+    {
+
+        return $this->hasMany('App\Galaxy');
+
+    }
+
 }
