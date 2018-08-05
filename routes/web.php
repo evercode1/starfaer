@@ -153,6 +153,11 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::get('planet-list/{id}', 'PlanetListController@show');
 
 
+// Planet Position Fixer
+
+Route::post('planet-position-fixer', 'PlanetPositionFixerController@update');
+
+
 // Post Routes
 
 Route::get('post-by-category/{id}', 'PostsByCategoryController@index')->name('post.by-category');

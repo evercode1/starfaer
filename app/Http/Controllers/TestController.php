@@ -32,25 +32,17 @@ class TestController extends Controller
 
 
 
-        $value = [0, 1, 0, 0, 0, 0, 0];
-
-        $result = array_rand($value);
-
-        $result = $value[$result];
-
-        dd($result);
 
 
 
 
-
-//        $file = base_path('seeds/planets-seeds.php');
+//        $file = base_path('seeds/all-stars.php');
 //
 //
 //        $names = FetchInsideArrayFile::get($file);
-        
-
-
+//
+//
+//
 //        shuffle($names);
 //
 //
@@ -61,7 +53,7 @@ class TestController extends Controller
 
 
 
-           return view('test.index');
+           //return view('test.index');
 
     }
 
