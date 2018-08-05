@@ -33,9 +33,13 @@
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/galaxy-type-generator" class="waves-effect">Galaxy Type Generator
                                 <i class="fa fa-star"></i></a></li>
+                        <li><a href="/moon-generator" class="waves-effect">Moon Generator
+                                <i class="fa fa-star"></i></a></li>
                         <li><a href="/planet-type-generator" class="waves-effect">Planet Type Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/planet-generator" class="waves-effect">Planet Generator
+                                <i class="fa fa-star"></i></a></li>
+                        <li><a href="/surface-type-generator" class="waves-effect">Surface Type Generator
                                 <i class="fa fa-star"></i></a></li>
                         <li><a href="/star-generator" class="waves-effect">Star Generator
                                 <i class="fa fa-star"></i></a></li>
@@ -64,6 +68,8 @@
                         <li><a href="/star" class="waves-effect">All Stars<i class="fa fa-star"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                         <li><a href="/planet-type" class="waves-effect">Planet Types<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/moon" class="waves-effect">All Moons<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/surface-type" class="waves-effect">All Surface Types<i class="fa fa-globe"></i></a></li>
                         <li><a href="/atmosphere" class="waves-effect">All Atmospheres<i class="fa fa-globe"></i></a></li>
                         <li><a href="/planet" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
                     </ul>

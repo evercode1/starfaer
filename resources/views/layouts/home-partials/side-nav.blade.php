@@ -23,6 +23,9 @@
                         <li><a href="/all-planet-types" class="waves-effect">Planet Types<i class="fa fa-globe"></i></a></li>
                         <li><a href="/all-atmospheres" class="waves-effect">All Atmospheres<i class="fa fa-globe"></i></a></li>
                         <li><a href="/all-planets" class="waves-effect">All Planets<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/all-moons" class="waves-effect">All Moons<i class="fa fa-globe"></i></a></li>
+                        <li><a href="/all-surface-types" class="waves-effect">All Surface Types<i class="fa fa-globe"></i></a></li>
+
                     </ul>
                 </div>
             </li>

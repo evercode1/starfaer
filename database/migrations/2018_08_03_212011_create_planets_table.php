@@ -33,7 +33,6 @@ class CreatePlanetsTable extends Migration
             $table->integer('continent_count')->default(0);
             $table->boolean('is_active')->default(1);
             $table->boolean('is_life_present')->default(0);
-            $table->boolean('is_in_goldilocks_zone')->default(0);
             $table->boolean('is_ringed')->default(0);
             $table->string('coordinates');
             $table->longText('description');

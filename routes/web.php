@@ -472,3 +472,59 @@ Route::get('planet-generator', 'PlanetGeneratorController@create');
 Route::post('planet-generator', 'PlanetGeneratorController@store');
 
 // End Planet Generator Routes
+// Begin Moon Routes
+
+Route::get('all-moons', 'AllMoonsController@index');
+
+Route::get('/api/all-moons-data', 'FrontApiController@allMoonsData');
+
+Route::any('api/moon-data', 'ApiController@moonData');
+
+Route::post('moon-delete/{id}', 'MoonController@destroy');
+
+Route::get('/moon/create', 'MoonController@create')->name('moon.create');
+
+Route::get('moon/{moon}-{slug?}', 'MoonController@show')->name('moon.show');
+
+Route::resource('moon', 'MoonController', ['except' => ['show', 'create','destroy']]);
+
+// End Moon Routes
+
+
+
+
+
+// Begin Moon Generator Routes
+
+Route::get('moon-generator', 'MoonGeneratorController@create');
+Route::post('moon-generator', 'MoonGeneratorController@store');
+
+// End Moon Generator Routes
+// Begin SurfaceType Routes
+
+Route::get('all-surface-types', 'AllSurfaceTypesController@index');
+
+Route::get('/api/all-surface-types-data', 'FrontApiController@allSurfaceTypesData');
+
+Route::any('api/surface-type-data', 'ApiController@surfaceTypeData');
+
+Route::post('surface-type-delete/{id}', 'SurfaceTypeController@destroy');
+
+Route::get('/surface-type/create', 'SurfaceTypeController@create')->name('surface-type.create');
+
+Route::get('surface-type/{surface-type}-{slug?}', 'SurfaceTypeController@show')->name('surface-type.show');
+
+Route::resource('surface-type', 'SurfaceTypeController', ['except' => ['show', 'create','destroy']]);
+
+// End SurfaceType Routes
+
+
+
+
+
+// Begin SurfaceType Generator Routes
+
+Route::get('surface-type-generator', 'SurfaceTypeGeneratorController@create');
+Route::post('surface-type-generator', 'SurfaceTypeGeneratorController@store');
+
+// End SurfaceType Generator Routes

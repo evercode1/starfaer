@@ -89,13 +89,9 @@
 
                          @endif
 
-                         <li class="collection-item">Life Present?:
+                         <li class="collection-item">Life Present?
 
                          <b>{{ $planet->is_life_present == 1 ? 'Yes' : 'No' }}</b></li>
-
-                         <li class="collection-item">Is In goldilocks Zone?:
-
-                         <b>{{ $planet->is_in_goldilocks_zone == 1 ? 'Yes' : 'No' }}</b></li>
 
                         <li class="collection-item"><b>{!! $planet->description !!}</b></li>
 

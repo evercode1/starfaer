@@ -38,7 +38,7 @@ class PlanetDescriptionFixerController extends Controller
 
                     $lifePresent = $life == 1 ? 'Life is present on the planet.  ' : 'There is no life on the planet.  ';
 
-                    $ringed =  $rings == 1 ? $name . ' has rings' : '';
+                    $ringed =  $rings == 1 ? $name . ' has rings.' : '';
 
 
                     $description = $name . ' is planet number ' . $planetNumber

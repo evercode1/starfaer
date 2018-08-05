@@ -22,6 +22,32 @@ use App\Queries\AlarmAdminQuery;
 class ApiController extends Controller
 {
 
+    // Begin SurfaceType Api Data Grid Method
+
+    public function surfaceTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'SurfaceTypeQuery');
+
+    }
+
+    // End SurfaceType Api Data Grid Method
+
+
+
+    // Begin Moon Api Data Grid Method
+
+    public function moonData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'MoonQuery');
+
+    }
+
+    // End Moon Api Data Grid Method
+
+
+
     // Begin Planet Api Data Grid Method
 
     public function planetData(Request $request)

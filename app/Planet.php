@@ -23,7 +23,6 @@ class Planet extends Model
                            'continent_count',
                            'is_active',
                            'is_life_present',
-                           'is_in_goldilocks_zone',
                            'is_ringed',
                            'coordinates',
                            'description',

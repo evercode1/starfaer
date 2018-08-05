@@ -101,7 +101,6 @@ class PlanetController extends Controller
                     'ocean_count' => 'required|integer',
                     'continent_count' => 'required|integer',
                     'is_life_present' => 'required|boolean',
-                    'is_in_goldilocks_zone' => 'required|boolean',
                     'is_ringed' => 'required|boolean',
                     'coordinates' => 'required|string',
                     'is_active' => 'required|boolean',
@@ -133,7 +132,6 @@ class PlanetController extends Controller
                                    'ocean_count' => $request->ocean_count,
                                    'continent_count' => $request->continent_count,
                                    'is_life_present' => $request->is_life_present,
-                                   'is_in_goldilocks_zone' => $request->is_in_goldilocks_zone,
                                    'is_ringed' => $request->is_ringed,
                                    'coordinates' => $request->coordinates,
                                    'is_active' => $request->is_active,
@@ -268,7 +266,6 @@ class PlanetController extends Controller
             'ocean_count' => 'required|integer',
             'continent_count' => 'required|integer',
             'is_life_present' => 'required|boolean',
-            'is_in_goldilocks_zone' => 'required|boolean',
             'is_ringed' => 'required|boolean',
             'coordinates' => 'required|string',
             'is_active' => 'required|boolean',
@@ -364,7 +361,6 @@ class PlanetController extends Controller
         $modelInstance->continent_count = $request->get('continent_count');
         $modelInstance->is_active = $request->get('is_active');
         $modelInstance->is_life_present = $request->get('is_life_present');
-        $modelInstance->is_in_goldilocks_zone = $request->get('is_in_goldilocks_zone');
         $modelInstance->is_ringed = $request->get('is_ringed');
         $modelInstance->coordinates = $request->get('coordinates');
         $modelInstance->description = $request->get('body');

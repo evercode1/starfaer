@@ -122,3 +122,23 @@ Vue.component('planet-grid', require('./components/PlanetGrid.vue'));
 Vue.component('all-planets', require('./components/AllPlanets.vue'));
 
 /** End Planet All Models Call */
+/** Begin Moon Grid Component Call */
+
+Vue.component('moon-grid', require('./components/MoonGrid.vue'));
+
+/** End Moon Grid Component Call */
+/** Begin Moon All Models Call */
+
+Vue.component('all-moons', require('./components/AllMoons.vue'));
+
+/** End Moon All Models Call */
+/** Begin SurfaceType Grid Component Call */
+
+Vue.component('surface-type-grid', require('./components/SurfaceTypeGrid.vue'));
+
+/** End SurfaceType Grid Component Call */
+/** Begin SurfaceType All Models Call */
+
+Vue.component('all-surface-types', require('./components/AllSurfaceTypes.vue'));
+
+/** End SurfaceType All Models Call */

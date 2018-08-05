@@ -43,7 +43,6 @@ class PlanetSeeder extends Seeder
 
         $life = 0;
 
-        $goldilocks = 0;
 
         $continentCount = 0;
 
@@ -90,8 +89,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 1;
 
-                    $goldilocks = 1;
-
                     $ring = 0;
 
 
@@ -113,8 +110,6 @@ class PlanetSeeder extends Seeder
 
                     $atmosphereId == 2 ? $life = 1 : $life = 0;
 
-                    $atmosphereId == 2 ? $goldilocks = 1 : $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -134,8 +129,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -162,8 +155,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 1;
 
-                    $goldilocks = 1;
-
                     $ring = 0;
 
                     break;
@@ -183,8 +174,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -210,8 +199,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 0;
 
-                    $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -231,8 +218,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -258,8 +243,6 @@ class PlanetSeeder extends Seeder
 
                     $life = rand(0, 1);
 
-                    $goldilocks = 0;
-
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
                     $result = array_rand($rings);
@@ -283,8 +266,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = rand(1, 8);
 
                     $life = 1;
-
-                    $goldilocks = 1;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -311,8 +292,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 1;
 
-                    $goldilocks = 1;
-
                     $ring = 0;
 
                     break;
@@ -334,8 +313,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = rand(0, 3);
 
                     $atmosphereId == 2 ? $life = 1 : $life = 0;
-
-                    $atmosphereId == 2 ? $goldilocks = 1 : $goldilocks = 0;
 
                     $ring = 0;
 
@@ -359,8 +336,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 0;
 
-                    $goldilocks = 0;
-
                     $ring = 0;
 
 
@@ -381,8 +356,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -409,8 +382,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 0;
 
-                    $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -433,8 +404,6 @@ class PlanetSeeder extends Seeder
 
                     $atmosphereId == 2 ? $life = 1 : $life = 0;
 
-                    $atmosphereId == 2 ? $goldilocks = 1 : $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -454,8 +423,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -481,8 +448,6 @@ class PlanetSeeder extends Seeder
 
                     $life = rand(0, 1);
 
-                    $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -505,8 +470,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 0;
 
-                    $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -526,8 +489,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -553,8 +514,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 0;
 
-                    $goldilocks = 0;
-
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
                     $result = array_rand($rings);
@@ -578,8 +537,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 0;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $rings = [0, 1, 0, 0, 0, 0, 0];
 
@@ -607,8 +564,6 @@ class PlanetSeeder extends Seeder
 
                     $atmosphereId == 2 ? $life = 1 : $life = 0;
 
-                    $atmosphereId == 2 ? $goldilocks = 1 : $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -631,8 +586,6 @@ class PlanetSeeder extends Seeder
 
                     $atmosphereId == 2 ? $life = 1 : $life = 0;
 
-                    $atmosphereId == 2 ? $goldilocks = 1 : $goldilocks = 0;
-
                     $ring = 0;
 
                     break;
@@ -654,8 +607,6 @@ class PlanetSeeder extends Seeder
 
                     $life = 1;
 
-                    $goldilocks = 1;
-
                     $ring = 0;
 
                     break;
@@ -675,8 +626,6 @@ class PlanetSeeder extends Seeder
                     $continentCount = 1;
 
                     $life = 0;
-
-                    $goldilocks = 0;
 
                     $ring = 0;
 
@@ -702,7 +651,6 @@ class PlanetSeeder extends Seeder
                 'ocean_count' => $oceanCount,
                 'continent_count' => $continentCount,
                 'is_life_present' => $life,
-                'is_in_goldilocks_zone' => $goldilocks,
                 'is_ringed' => $ring,
                 'coordinates' => rand(1,259),
                 'is_active' => 1,

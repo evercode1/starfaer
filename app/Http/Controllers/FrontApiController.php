@@ -9,6 +9,32 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+    // Begin SurfaceType Api All Models Method
+
+    public function allSurfaceTypesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'SurfaceTypeQuery');
+
+    }
+
+    // End SurfaceType Api All Models Method
+
+
+
+    // Begin Moon Api All Models Method
+
+    public function allMoonsData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'MoonQuery');
+
+    }
+
+    // End Moon Api All Models Method
+
+
+
     // Begin Planet Api All Models Method
 
     public function allPlanetsData(Request $request)

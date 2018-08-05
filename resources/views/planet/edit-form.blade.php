@@ -163,42 +163,6 @@
 
     <!-- end is_life_present select -->
 
-    <!-- is_in_goldilocks_zone select -->
-
-    <div class="{{ $errors->has('is_in_goldilocks_zone') ? ' has-error' : '' }}">
-
-        <label>Is In Goldilocks Zone?</label>
-
-        <select id="is_in_goldilocks_zone" name="is_in_goldilocks_zone">
-
-            <option value="{{ $planet->is_in_goldilocks_zone }}">{{ $planet->is_in_goldilocks_zone == 1 ? 'Yes' : 'No' }}</option>
-
-            @if($planet->is_in_goldilocks_zone == 1)
-
-                <option value="0">No</option>
-
-            @else
-
-                <option value="1">Yes</option>
-
-            @endif
-
-        </select>
-
-        @if ($errors->has('is_in_goldilocks_zone'))
-
-            <span class="help-block">
-
-                        <strong>{{ $errors->first('is_in_goldilocks_zone') }}</strong>
-
-                    </span>
-
-        @endif
-
-    </div>
-
-    <!-- end is_in_goldilocks_zone select -->
-
     <!-- is_ringed select -->
 
     <div class="{{ $errors->has('is_ringed') ? ' has-error' : '' }}">

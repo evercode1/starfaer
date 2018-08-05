@@ -15,6 +15,40 @@ return [
 
 
 
+    // Begin SurfaceType Image Config Array Method
+
+
+        'surfacetype' => [
+                'destinationFolder'     => '/imgs/surfacetype/',
+                'createFolder'          => '/imgs/surfacetype',
+                'destinationThumbnail'  => '/imgs/surfacetype/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/surfacetype/',
+                'thumbnailPath'         => '/imgs/surfacetype/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End SurfaceType Image Config Array Method
+    // Begin Moon Image Config Array Method
+
+
+        'moon' => [
+                'destinationFolder'     => '/imgs/moon/',
+                'createFolder'          => '/imgs/moon',
+                'destinationThumbnail'  => '/imgs/moon/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/moon/',
+                'thumbnailPath'         => '/imgs/moon/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End Moon Image Config Array Method
     // Begin Planet Image Config Array Method
 
 
