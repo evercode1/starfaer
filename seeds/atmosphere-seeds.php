@@ -91,6 +91,31 @@ return [
 
         ],
 
+        [
+
+            'name' => 'neptonian',
+            'description' => 'hydrogen and helium dominate, but the trace methane, water, and ammonia
+                              give it more ice than other planets.',
+
+
+        ],
+
+        [
+
+            'name' => 'ice-dominant',
+            'description' => 'large amounts of oxygen, ice and water in the atmosphere.',
+
+
+        ],
+
+        [
+
+            'name' => 'helium',
+            'description' => 'helium dominant atmosphere.',
+
+
+        ],
+
 
 
 
