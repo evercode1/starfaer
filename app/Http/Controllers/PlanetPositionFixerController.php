@@ -31,11 +31,6 @@ class PlanetPositionFixerController extends Controller
                            ->orderBy('planet_number_from_star', 'asc')
                            ->get();
 
-                $count = Planet::where('star_id', $star->id)
-                         ->orderBy('planet_number_from_star', 'asc')
-                         ->count();
-
-                $star->update(['planet_count' => $count]);
 
                 $position = 1;
 
@@ -49,7 +44,7 @@ class PlanetPositionFixerController extends Controller
 
             }
 
-            return view('planet-generator.confirmation');
+            return view('planet-generator.confirmation-planet-number-from-star');
 
         }
 

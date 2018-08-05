@@ -97,7 +97,7 @@
 
                          <b>{{ $planet->is_in_goldilocks_zone == 1 ? 'Yes' : 'No' }}</b></li>
 
-                        <li class="collection-item">{!! $planet->description !!}</li>
+                        <li class="collection-item"><b>{!! $planet->description !!}</b></li>
 
         </ul>
 

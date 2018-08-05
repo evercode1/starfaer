@@ -73,6 +73,49 @@
     <form class="mt-20"
           role="form"
           method="POST"
+          action="{{ url('/fix-star-planet-count') }}">
+
+        {{ csrf_field() }}
+
+        <input type="hidden" id="fix" name="fix" value="fix">
+
+
+
+
+        <!-- submit button -->
+
+        <ul class="collection">
+            <li class="collection-item"><p>
+
+                    This button corrects each star's count of planets
+
+
+                </p></li>
+            <li class="collection-item">
+
+                <button type="submit" class="waves-effect waves-light btn">
+
+                    Fix Star Planet Count
+
+                </button>
+
+
+
+            </li>
+
+        </ul>
+
+        <!-- end submit button -->
+
+    </form>
+
+</div>
+
+<div class="row">
+
+    <form class="mt-20"
+          role="form"
+          method="POST"
           action="{{ url('/planet-position-fixer') }}">
 
         {{ csrf_field() }}
@@ -105,9 +148,50 @@
 
         </ul>
 
+        <!-- end submit button -->
+
+    </form>
+
+</div>
 
 
 
+<div class="row">
+
+    <form class="mt-20"
+          role="form"
+          method="POST"
+          action="{{ url('/planet-description-fixer') }}">
+
+        {{ csrf_field() }}
+
+        <input type="hidden" id="fix" name="fix" value="fix">
+
+
+
+
+        <!-- submit button -->
+
+        <ul class="collection">
+            <li class="collection-item"><p>
+
+                    This button corrects the planets descriptions
+
+
+                </p></li>
+            <li class="collection-item">
+
+                <button type="submit" class="waves-effect waves-light btn">
+
+                    Fix Planet Descriptions
+
+                </button>
+
+
+
+            </li>
+
+        </ul>
 
         <!-- end submit button -->
 

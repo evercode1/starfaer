@@ -157,6 +157,10 @@ Route::get('planet-list/{id}', 'PlanetListController@show');
 
 Route::post('planet-position-fixer', 'PlanetPositionFixerController@update');
 
+// Planet Description Fixer
+
+Route::post('planet-description-fixer', 'PlanetDescriptionFixerController@update');
+
 
 // Post Routes
 
@@ -198,6 +202,10 @@ Route::patch('settings', 'SettingsController@update')->name('user-update');
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+// Star Planet Count Fixer
+
+Route::post('fix-star-planet-count', 'FixStarPlanetCountController@update');
 
 // Star Type Generator Routes
 

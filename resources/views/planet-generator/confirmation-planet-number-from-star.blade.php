@@ -13,6 +13,13 @@
 
         </div>
 
+        <div class="row">
+
+            <a href="/planet-generator" class="waves-effect waves-light btn">Fix More Planet Issues</a>
+
+
+        </div>
+
 
 
     </div>
