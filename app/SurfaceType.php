@@ -23,4 +23,18 @@ class SurfaceType extends Model
 
     }
 
+    public function galaxy()
+    {
+
+        return $this->belongsTo('App\Galaxy');
+
+    }
+
+    public function moons()
+    {
+
+        return $this->hasMany('App\Moon');
+
+    }
+
 }

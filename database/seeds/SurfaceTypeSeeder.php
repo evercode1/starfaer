@@ -14,13 +14,11 @@ class SurfaceTypeSeeder extends Seeder
     public function run()
     {
 
-        dd('you need to configure the seeder file before this will work.');
-
         DB::table('surface_types')->truncate();
 
 
 
-        $file = base_path('seeds/surface-types-seeds.php');
+        $file = base_path('seeds/surface-type-seeds.php');
 
 
 

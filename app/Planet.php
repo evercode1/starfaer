@@ -64,4 +64,11 @@ class Planet extends Model
 
     }
 
+    public function moons()
+    {
+
+        return $this->hasMany('App\Moon');
+
+    }
+
 }

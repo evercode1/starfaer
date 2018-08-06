@@ -31,6 +31,142 @@
 
     <!-- end name input -->
 
+    <!-- planet_name input -->
+
+    <div class="{{ $errors->has('planet_name') ? ' has-error' : '' }}">
+
+        <label>Name</label>
+
+        <input type="text"
+               name="planet_name"
+               value="{{ $moon->planet->name }}" />
+
+        @if ($errors->has('planet_name'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('planet_name') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end planet_name input -->
+
+    <!-- orbital_position input -->
+
+    <div class="{{ $errors->has('orbital_position') ? ' has-error' : '' }}">
+
+        <label>Orbital Position</label>
+
+        <input type="number"
+               name="orbital_position"
+               value="{{ $moon->orbital_position }}" />
+
+        @if ($errors->has('orbital_position'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('orbital_position') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end orbital_position input -->
+
+    <!-- mass input -->
+
+    <div class="{{ $errors->has('mass') ? ' has-error' : '' }}">
+
+        <label>Mass</label>
+
+        <input type="number"
+               name="mass"
+               value="{{ $moon->mass }}" />
+
+        @if ($errors->has('mass'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('mass') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end mass input -->
+
+    <!-- surface_type_id select -->
+
+    <div class="{{ $errors->has('surface_type_id') ? ' has-error' : '' }}">
+
+        <label>Surface Type</label>
+
+        <select id="surface_type_id" name="surface_type_id">
+
+            <option value="{{ $surfaceTypeId }}">{{ $surfaceTypeName }}</option>
+
+            @foreach($surfaceTypes as $surfaceType)
+
+                <option value={{ $surfaceType->id }}>{{ $surfaceType->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('surface_type_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('surface_type_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end surface_type_id select -->
+
+    <!-- atmosphere_id select -->
+
+    <div class="{{ $errors->has('atmosphere_id') ? ' has-error' : '' }}">
+
+        <label>Atmosphere Type</label>
+
+        <select id="atmosphere_id" name="atmosphere_id">
+
+            <option value="{{ $atmosphereId }}">{{ $atmosphereName }}</option>
+
+            @foreach($atmospheres as $atmosphere)
+
+                <option value={{ $atmosphere->id }}>{{ $atmosphere->name }}</option>
+
+            @endforeach
+
+        </select>
+
+        @if ($errors->has('atmosphere_id'))
+
+            <span class="help-block">
+
+                    <strong>{{ $errors->first('atmosphere_id') }}</strong>
+
+                </span>
+
+        @endif
+
+    </div>
+
+    <!-- end atmosphere_id select -->
+
     <!-- universe select -->
 
         <div class="{{ $errors->has('universe_id') ? ' has-error' : '' }}">

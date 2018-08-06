@@ -512,7 +512,7 @@ Route::post('surface-type-delete/{id}', 'SurfaceTypeController@destroy');
 
 Route::get('/surface-type/create', 'SurfaceTypeController@create')->name('surface-type.create');
 
-Route::get('surface-type/{surface-type}-{slug?}', 'SurfaceTypeController@show')->name('surface-type.show');
+Route::get('surface-type/{id}', 'SurfaceTypeController@show')->name('surface-type.show');
 
 Route::resource('surface-type', 'SurfaceTypeController', ['except' => ['show', 'create','destroy']]);
 

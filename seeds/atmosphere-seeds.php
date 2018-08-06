@@ -116,6 +116,15 @@ return [
 
         ],
 
+        [
+
+            'name' => 'no substanital atomosphere',
+            'description' => 'Although there may be a thin layer of trace elements, there is no discernable or signifcant
+                              atmosphere.',
+
+
+        ],
+
 
 
 

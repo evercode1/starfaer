@@ -24,7 +24,7 @@
 
             <button type="submit" class="waves-effect waves-light btn">
 
-                Generate SurfaceType
+                Generate Surface Types
 
             </button>
 

@@ -30,4 +30,18 @@ class Universe extends Model
         return $this->hasMany('App\PlanetType');
 
     }
+
+    public function surfaceType()
+    {
+
+        return $this->hasMany('App\SurfaceType');
+
+    }
+
+    public function moons()
+    {
+
+        return $this->hasMany('App\Moon');
+
+    }
 }

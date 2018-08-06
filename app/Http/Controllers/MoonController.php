@@ -9,6 +9,9 @@ use App\Universe;
 use App\Galaxy;
 use Illuminate\Support\Facades\Redirect;
 use App\Moon;
+use App\Atmosphere;
+use App\SurfaceType;
+use App\Planet;
 
 
 class MoonController extends Controller
@@ -53,8 +56,15 @@ class MoonController extends Controller
 
            $galaxies = Galaxy::all();
 
+           $surfaceTypes = SurfaceType::all();
 
-           return view('moon.create', compact('universes', 'galaxies'));
+           $atmospheres = Atmosphere::all();
+
+
+           return view('moon.create', compact('universes',
+                                              'galaxies',
+                                              'surfaceTypes',
+                                              'atmospheres'));
 
     }
 
@@ -73,11 +83,17 @@ class MoonController extends Controller
                 $this->validate($request, [
 
                     'name' => 'required|unique:moons|string|max:100',
+                    'planet_name' => 'required|string',
                     'is_active' => 'required|boolean',
+                    'surface_type_id' => 'required|integer',
+                    'atmosphere_id' => 'required|integer',
+                    'mass' => 'required|integer',
+                    'orbital_position' => 'required|integer',
                     'galaxy_id' => 'required|integer',
+                    'universe_id' => 'required|integer',
                     'body' => 'required|string|max:1000',
                     'image' => 'max:1000',
-                    'universe_id' => 'required',
+
 
                 ]);
 
@@ -88,13 +104,18 @@ class MoonController extends Controller
         $image = $request->file('image') == null ? null : $request->file('image')->getClientOriginalExtension();
 
         $moon = Moon::create([ 'name' => $request->name,
-                                                                  'slug' => $slug,
-                                                                  'is_active' => $request->is_active,
-                                                                  'galaxy_id' => $request->galaxy_id,
-                                                                  'universe_id' => $request->universe_id,
-                                                                  'description' => $request->body,
-                                                                  'image_name' => $imageName,
-                                                                  'image_extension' => $image]);
+                               'slug' => $slug,
+                               'is_active' => $request->is_active,
+                               'planet_id' => $this->getPlanetId($request->planet_name),
+                               'surface_type_id' => $request->surface_type_id,
+                               'atmosphere_id' => $request->atmosphere_id,
+                               'mass' => $request->mass,
+                               'orbital_position' => $request->orbital_position,
+                               'galaxy_id' => $request->galaxy_id,
+                               'universe_id' => $request->universe_id,
+                               'description' => $request->body,
+                               'image_name' => $imageName,
+                               'image_extension' => $image]);
 
         $moon->save();
 
@@ -153,14 +174,32 @@ class MoonController extends Controller
 
         $galaxies = Galaxy::all();
 
+        $atmosphereId = $moon->atmosphere->id;
+
+        $atmosphereName = $moon->atmosphere->name;
+
+        $atmospheres = Atmosphere::all();
+
+        $surfaceTypeId = $moon->surfaceType->id;
+
+        $surfaceTypeName = $moon->surfaceType->name;
+
+        $surfaceTypes = SurfaceType::all();
+
 
         return view('moon.edit', compact('moon' ,
-                                                    'universeId',
-                                                    'universeName',
-                                                    'universes',
-                                                    'galaxyId',
-                                                    'galaxyName',
-                                                    'galaxies'));
+                                         'universeId',
+                                         'universeName',
+                                         'universes',
+                                         'galaxyId',
+                                         'galaxyName',
+                                         'galaxies',
+                                         'atmosphereId',
+                                         'atmosphereName',
+                                         'atmospheres',
+                                         'surfaceTypeId',
+                                         'surfaceTypeName',
+                                         'surfaceTypes'));
 
     }
 
@@ -179,11 +218,16 @@ class MoonController extends Controller
         $this->validate($request, [
 
             'name' => 'required|string|max:100|unique:moons,name,' .$id,
+            'planet_name' => 'required|string',
             'is_active' => 'required|boolean',
+            'surface_type_id' => 'required|integer',
+            'atmosphere_id' => 'required|integer',
+            'mass' => 'required|integer',
+            'orbital_position' => 'required|integer',
             'galaxy_id' => 'required|integer',
+            'universe_id' => 'required|integer',
             'body' => 'required|string|max:1000',
-            'image' => 'max:1000',
-            'universe_id' => 'required'
+            'image' => 'max:1000'
 
             ]);
 
@@ -259,11 +303,26 @@ class MoonController extends Controller
 
         $modelInstance->name = $request->get('name');
         $modelInstance->slug = $slug;
+        $modelInstance->planet_id = $this->getPlanetId($request->get('planet_name'));
+        $modelInstance->surface_type_id = $request->get('surface_type_id');
+        $modelInstance->atmosphere_id = $request->get('atmosphere_id');
+        $modelInstance->orbital_position = $request->get('orbital_position');
+        $modelInstance->mass = $request->get('mass');
         $modelInstance->galaxy_id = $request->get('galaxy_id');
+        $modelInstance->universe_id = $request->get('universe_id');
         $modelInstance->is_active = $request->get('is_active');
         $modelInstance->description = $request->get('body');
-        $modelInstance->universe_id = $request->get('universe_id');
         $modelInstance->image_name = $this->formatString($request->get('name'));
+
+    }
+
+    private function getPlanetId($name)
+    {
+
+        $planet = Planet::where('name', $name)->first();
+
+        return $planet->id;
+
 
     }
 

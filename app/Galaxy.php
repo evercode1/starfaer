@@ -50,10 +50,18 @@ class Galaxy extends Model
 
     }
 
-    public function galaxies()
+    public function surfaceTypes()
     {
 
-        return $this->hasMany('App\Galaxy');
+        return $this->hasMany('App\SurfaceType');
+
+
+    }
+
+    public function moons()
+    {
+
+        return $this->hasMany('App\Moon');
 
     }
 
