@@ -25,7 +25,7 @@ class FixPlanetMoonCountController extends Controller
 
 
             $planets = Planet::where('is_active', 1)->skip($request->count_offset)->limit($request->count_limit)->get();
-            
+
 
             foreach ($planets as $planet){
 

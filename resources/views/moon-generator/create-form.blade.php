@@ -398,7 +398,7 @@
         <ul class="collection">
             <li class="collection-item"><p>
 
-                    This button corrects each planet's count of moons
+                    This button corrects each planet's count of moons.  Suggested limit is 2000, need to iterate 7 times.
 
 
                 </p></li>
@@ -491,8 +491,8 @@
         <ul class="collection">
             <li class="collection-item"><p>
 
-                    This button corrects each moon's orbital position.  Suggested limit is 2000.  Need to iterate
-                    with that limit 7 times to cover all planets.
+                    This button corrects each moon's orbital position.  Suggested limit is 1000.  Need to iterate
+                    with that limit 14 times to cover all planets.
 
 
                 </p></li>
