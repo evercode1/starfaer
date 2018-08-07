@@ -437,53 +437,6 @@
 
         <input type="hidden" id="fix" name="fix" value="fix">
 
-        <!-- planet_limit input -->
-
-        <div class="{{ $errors->has('planet_limit') ? ' has-error' : '' }}">
-
-            <label>Planet Limit</label>
-
-            <input type="text"
-                   name="planet_limit"
-                   value="{{ old('planet_limit') }}" />
-
-            @if ($errors->has('planet_limit'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('planet_limit') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-        <!-- end planet_limit input -->
-
-        <!-- offset input -->
-
-        <div class="{{ $errors->has('offset') ? ' has-error' : '' }}">
-
-            <label>Offset</label>
-
-            <input type="text"
-                   name="offset"
-                   value="{{ old('offset') }}" />
-
-            @if ($errors->has('offset'))
-
-                <span class="help-block">
-
-                    <strong>{{ $errors->first('offset') }}</strong>
-
-                </span>
-
-            @endif
-
-        </div>
-
-        <!-- end offset input -->
 
 
         <!-- submit button -->
@@ -491,8 +444,7 @@
         <ul class="collection">
             <li class="collection-item"><p>
 
-                    This button corrects each moon's orbital position.  Suggested limit is 1000.  Need to iterate
-                    with that limit 14 times to cover all planets.
+                    This button corrects each moon's orbital position.  Runs as a job in the qeue.
 
 
                 </p></li>

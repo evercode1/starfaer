@@ -162,6 +162,10 @@ Route::get('planet-list/{id}', 'PlanetListController@show');
 
 Route::post('planet-position-fixer', 'PlanetPositionFixerController@update');
 
+// Planet Position Fixer
+
+Route::post('planet-type-fixer', 'PlanetTypeFixerController@update');
+
 // Planet Description Fixer
 
 Route::post('planet-description-fixer', 'PlanetDescriptionFixerController@update');

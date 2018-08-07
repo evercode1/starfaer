@@ -160,6 +160,168 @@
 
 <!-- end fix planet position -->
 
+<!-- start fix planet type -->
+
+<div class="row">
+
+    <form class="mt-20"
+          role="form"
+          method="POST"
+          action="{{ url('/planet-type-fixer') }}">
+
+        {{ csrf_field() }}
+
+        <input type="hidden" id="fix" name="fix" value="fix">
+
+        <!-- planet_type_id select -->
+
+        <div class="{{ $errors->has('planet_type_id') ? ' has-error' : '' }}">
+
+            <label>Planet Type</label>
+
+            <select id="planet_type_id" name="planet_type_id">
+
+                <option value="">Please Choose One</option>
+
+                @foreach($planetTypes as $planetType)
+
+                    <option value={{ $planetType->id }}>{{ $planetType->name }}</option>
+
+                @endforeach
+
+            </select>
+
+            @if ($errors->has('planet_type_id'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('planet_type_id') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end planet_type_id select -->
+
+        <!-- less_or_greater_than select -->
+
+        <div class="{{ $errors->has('less_or_greater_than') ? ' has-error' : '' }}">
+
+            <label>Less or Greater Than?</label>
+
+            <select id="less_or_greater_than" name="less_or_greater_than">
+
+                <option value="0">Less Than</option>
+                <option value="1">Greater Than</option>
+
+            </select>
+
+            @if ($errors->has('less_or_greater_than'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('less_or_greater_than') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end less_or_greater_than select -->
+
+        <!-- position -->
+
+        <div class="{{ $errors->has('position') ? ' has-error' : '' }}">
+
+            <label>Position</label>
+
+            <input type="number"
+                   name="position"
+                   value="{{ old('position') }}" />
+
+            @if ($errors->has('position'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('position') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end position input -->
+
+        <!-- change_planet_type_id select -->
+
+        <div class="{{ $errors->has('change_planet_type_id') ? ' has-error' : '' }}">
+
+            <label>Change To Planet Type</label>
+
+            <select id="change_planet_type_id" name="change_planet_type_id">
+
+                <option value="">Please Choose One</option>
+
+                @foreach($planetTypes as $planetType)
+
+                    <option value={{ $planetType->id }}>{{ $planetType->name }}</option>
+
+                @endforeach
+
+            </select>
+
+            @if ($errors->has('change_planet_type_id'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('change_planet_type_id') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end planet_type_id select -->
+
+
+
+
+        <!-- submit button -->
+
+        <ul class="collection">
+            <li class="collection-item"><p>
+
+                    This button corrects the planets type according to your input
+
+
+                </p></li>
+            <li class="collection-item">
+
+                <button type="submit" class="waves-effect waves-light btn">
+
+                    Fix Planet Types
+
+                </button>
+
+
+
+            </li>
+
+        </ul>
+
+        <!-- end submit button -->
+
+    </form>
+
+</div>
+
+<!-- end fix planet Type -->
+
 <!-- start fix planet description -->
 
 <div class="row">

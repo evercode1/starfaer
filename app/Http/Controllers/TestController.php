@@ -31,6 +31,18 @@ class TestController extends Controller
     public function index()
     {
 
+        $planets = Planet::where([['planet_type_id', '=', 6],
+                                  ['planet_number_from_star', '>', 2]])->get();
+
+        foreach($planets as $planet){
+
+
+            echo $planet->id . ' - ' . $planet->name . ' - '
+                . $planet->planet_number_from_star . '<br/>';
+
+
+        }
+
 
 //        $moons = Moon::where('description', 0)->count();
 //
@@ -49,14 +61,14 @@ class TestController extends Controller
 //        }
 
 
-        $moons = Moon::where('planet_id', 0)->get();
-
-        foreach($moons as $moon){
-
-            echo $moon->id . ' - ' . $moon->name . '<br/>';
-
-
-        }
+//        $moons = Moon::where('planet_id', 0)->get();
+//
+//        foreach($moons as $moon){
+//
+//            echo $moon->id . ' - ' . $moon->name . '<br/>';
+//
+//
+//        }
 
 
 
