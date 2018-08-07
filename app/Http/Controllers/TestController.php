@@ -32,21 +32,21 @@ class TestController extends Controller
     {
 
 
-        $moons = Moon::where('description', 0)->count();
-
-        dd($moons);
-
-
-
-
-//        $planets = Planet::with('moons')->where('planet_type_id', 3)->get();
+//        $moons = Moon::where('description', 0)->count();
 //
-//        foreach ($planets as $planet){
-//
-//            echo $planet->name . ' - ' . $planet->moons->count() . '<br/>';
-//
-//
-//        }
+//        dd($moons);
+
+
+
+
+        $planets = Planet::with('moons')->where('planet_type_id', 2)->get();
+
+        foreach ($planets as $planet){
+
+            echo $planet->name . ' - ' . $planet->moons->count() . '<br/>';
+
+
+        }
 
 
 //        $moons = Moon::where('planet_id', 0)->get();
