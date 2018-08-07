@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\UpdateMoonOrbitPosition;
 use Illuminate\Http\Request;
 use App\Planet;
 use App\Moon;
@@ -29,24 +30,11 @@ class FixMoonsOrbitalPositionController extends Controller
 
         if ($request->fix == 'fix') {
 
-            $planets = Planet::where('is_active', 1)->skip($request->offset)->limit($request->planet_limit)->get();
+            $planets = Planet::where('id', 1)->get();
 
             foreach ($planets as $planet) {
 
-                // get moons for that planet
-
-                $moons = Moon::where('planet_id', $planet->id)->get();
-
-
-                $position = 1;
-
-                foreach ($moons as $moon) {
-
-                    $moon->update(['orbital_position' => $position]);
-
-                    $position ++;
-
-                }
+                $this->dispatch(new UpdateMoonOrbitPosition($planet));
 
             }
 
