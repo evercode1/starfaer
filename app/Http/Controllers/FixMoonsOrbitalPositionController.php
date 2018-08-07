@@ -30,7 +30,7 @@ class FixMoonsOrbitalPositionController extends Controller
 
         if ($request->fix == 'fix') {
 
-            $planets = Planet::where('id', 1)->get();
+            $planets = Planet::all();
 
             foreach ($planets as $planet) {
 
