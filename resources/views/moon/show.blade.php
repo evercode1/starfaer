@@ -54,10 +54,14 @@
 
 
         <div>
+
+            @if(Auth::user()->isAdmin())
             <div class="row">
 
                 <a href="/moon/{{ $moon->id }}/edit"  class="waves-effect waves-light btn right">edit</a>
             </div>
+
+                @endif
 
         </div>
 

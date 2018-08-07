@@ -54,6 +54,14 @@
 
         <div>
 
+            @if(Auth::user()->isAdmin())
+                <div class="row">
+
+                    <a href="/star/{{ $star->id }}/edit"  class="waves-effect waves-light btn right">edit</a>
+                </div>
+
+            @endif
+
         </div>
 
 @endsection
