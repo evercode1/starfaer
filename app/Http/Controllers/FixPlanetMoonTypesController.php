@@ -19,9 +19,18 @@ class FixPlanetMoonTypesController extends Controller
     public function update(Request $request)
     {
 
+        $this->validate($request, [
+
+            'fix' => 'required',
+            'remove_offset' => 'required|integer',
+            'limit_offset' => 'required|integer'
+
+
+        ]);
+
         if($request->fix == 'fix'){
 
-            $planets = Planet::all();
+            $planets = Planet::where('is_active', 1)->skip($request->remove_offset)->limit($request->remove_limit)->get();
 
             foreach ($planets as $planet){
 

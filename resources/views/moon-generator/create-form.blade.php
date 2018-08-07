@@ -85,6 +85,54 @@
 
         <input type="hidden" id="fix" name="fix" value="fix">
 
+        <!-- remove_limit input -->
+
+        <div class="{{ $errors->has('remove_limit') ? ' has-error' : '' }}">
+
+            <label>Remove Limit</label>
+
+            <input type="text"
+                   name="remove_limit"
+                   value="{{ old('remove_limit') }}" />
+
+            @if ($errors->has('remove_limit'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('remove_limit') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end remove_limit input -->
+
+        <!-- remove_offset input -->
+
+        <div class="{{ $errors->has('remove_offset') ? ' has-error' : '' }}">
+
+            <label>Remove Offset</label>
+
+            <input type="text"
+                   name="remove_offset"
+                   value="{{ old('remove_offset') }}" />
+
+            @if ($errors->has('remove_offset'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('remove_offset') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end remove_offset input -->
+
 
         <!-- submit button -->
 
