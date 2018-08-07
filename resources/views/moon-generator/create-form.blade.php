@@ -256,7 +256,7 @@
 
             <input type="number"
                    name="leftover_limit"
-                   value="{{ old('remove_limit') }}" />
+                   value="{{ old('leftover_limit') }}" />
 
             @if ($errors->has('leftover_limit'))
 
@@ -343,6 +343,54 @@
         {{ csrf_field() }}
 
         <input type="hidden" id="fix" name="fix" value="fix">
+
+        <!-- count_limit input -->
+
+        <div class="{{ $errors->has('count_limit') ? ' has-error' : '' }}">
+
+            <label>Count Limit</label>
+
+            <input type="number"
+                   name="count_limit"
+                   value="{{ old('count_limit') }}" />
+
+            @if ($errors->has('count_limit'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('count_limit') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end count_limit input -->
+
+        <!-- count_offset input -->
+
+        <div class="{{ $errors->has('count_offset') ? ' has-error' : '' }}">
+
+            <label>Count Offset</label>
+
+            <input type="number"
+                   name="count_offset"
+                   value="{{ old('count_offset') }}" />
+
+            @if ($errors->has('count_offset'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('count_offset') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end count_offset input -->
 
 
         <!-- submit button -->
