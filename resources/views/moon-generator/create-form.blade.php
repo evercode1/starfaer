@@ -139,7 +139,7 @@
         <ul class="collection">
             <li class="collection-item"><p>
 
-                    This button removes moons from planets that should not have moons.
+                    This button removes moons from planets that should not have moons.  Suggested limit 5000.
 
 
                 </p></li>

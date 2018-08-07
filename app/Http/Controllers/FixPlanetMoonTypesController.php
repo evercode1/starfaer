@@ -18,7 +18,7 @@ class FixPlanetMoonTypesController extends Controller
 
     public function update(Request $request)
     {
-        
+
 
         if($request->fix == 'fix'){
 

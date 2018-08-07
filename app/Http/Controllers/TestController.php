@@ -39,11 +39,11 @@ class TestController extends Controller
 
 
 
-        $planets = Planet::with('moons')->where('planet_type_id', 2)->get();
+        $planets = Planet::with('moons')->where('planet_type_id', 3)->get();
 
         foreach ($planets as $planet){
 
-            echo $planet->name . ' - ' . $planet->moons->count() . '<br/>';
+            echo $planet->id . ' - ' . $planet->name . ' - ' . $planet->moons->count() . '<br/>';
 
 
         }
