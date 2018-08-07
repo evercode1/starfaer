@@ -68,6 +68,8 @@
 
 </div>
 
+<!-- start fix star planet count -->
+
 <div class="row">
 
     <form class="mt-20"
@@ -78,8 +80,6 @@
         {{ csrf_field() }}
 
         <input type="hidden" id="fix" name="fix" value="fix">
-
-
 
 
         <!-- submit button -->
@@ -110,6 +110,10 @@
     </form>
 
 </div>
+
+<!-- end fix star planet count -->
+
+<!-- start fix planet position -->
 
 <div class="row">
 
@@ -154,7 +158,9 @@
 
 </div>
 
+<!-- end fix planet position -->
 
+<!-- start fix planet description -->
 
 <div class="row">
 
@@ -198,4 +204,6 @@
     </form>
 
 </div>
+
+<!-- end fix planet descriptions -->
 

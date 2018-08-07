@@ -89,6 +89,7 @@
 
 
 
+<option value="moon-vowels">moon-vowels</option>
 <option value="latin vowels">latin vowels</option>
 <option value="i vowels with one consonant">i vowels with one consonant</option>
 <option value="front-vowels">front-vowels</option>
@@ -116,12 +117,14 @@
     <!-- consonants select -->
 
     <div class="{{ $errors->has('consonants') ? ' has-error' : '' }}">
-
         <label>Consonant Group</label>
-
         <select id="consonants" name="consonants">
+        <option value="">Please Choose One</option>
 
-            <option value="">Please Choose One</option>
+
+
+
+<option value="moon-consonants">moon-consonants</option>
 <option value="latin consonants">latin consonants</option>
 <option value="or-ar consonants">or-ar consonants</option>
 

@@ -14,7 +14,8 @@ use App\Utilities\RandomWordGenerator;
 use App\Utilities\CreateSeeds;
 use App\Utilities\AppendConfigFile;
 use App\Utilities\UniqueNames;
-
+use App\Planet;
+use App\Moon;
 
 class TestController extends Controller
 {
@@ -31,26 +32,32 @@ class TestController extends Controller
     {
 
 
+        $moons = Moon::where('description', 0)->count();
+
+        dd($moons);
 
 
 
 
+//        $planets = Planet::with('moons')->where('planet_type_id', 3)->get();
+//
+//        foreach ($planets as $planet){
+//
+//            echo $planet->name . ' - ' . $planet->moons->count() . '<br/>';
+//
+//
+//        }
 
-//        $file = base_path('seeds/all-stars.php');
-//
-//
-//        $names = FetchInsideArrayFile::get($file);
-//
-//
-//
-//        shuffle($names);
-//
-//
-//        $destination = base_path('seeds/planets-seeds.php');
-//
-//
-//         UniqueNames::filter($names, $destination);
 
+//        $moons = Moon::where('planet_id', 0)->get();
+//
+//        foreach($moons as $moon){
+//
+//            echo $moon->name . '<br/>';
+//
+//
+//        }
+//
 
 
            //return view('test.index');

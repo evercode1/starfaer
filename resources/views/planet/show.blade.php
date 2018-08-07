@@ -71,7 +71,7 @@
 
                         <li class="collection-item">Moon Count:
 
-                        <b>{{ $planet->moon_count }}</b></li>
+                        <a href="/moon-list/{{ $planet->id }}"><b>{{ $planet->moon_count }}</b></a></li>
 
                         @if($planet->ocean_count > 0)
 
@@ -98,6 +98,11 @@
         </ul>
 
            <div>
+
+               <div class="row">
+
+                   <a href="/planet/{{ $planet->id }}/edit"  class="waves-effect waves-light btn right">edit</a>
+               </div>
 
         </div>
 

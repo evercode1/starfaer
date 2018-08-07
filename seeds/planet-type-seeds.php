@@ -299,7 +299,8 @@ return [
             'name' => 'ice giant' ,
 
             'description' => 'A giant planet composed mainly of \'ices\'—volatile substances heavier than 
-            hydrogen and helium, such as water, methane, and ammonia—as opposed to \'gas\' (hydrogen and helium).',
+            hydrogen and helium, such as water, methane, and ammonia—as opposed to \'gas\' (hydrogen and helium).
+            Neptune and Uranus are considered to be ice giants.',
 
             'wiki_url' => 'https://en.wikipedia.org/wiki/Ice_giant'
 
@@ -406,12 +407,15 @@ return [
 
         [
 
-            'name' => 'chthonian planet' ,
+            'name' => 'neptune analog' ,
 
-            'description' => 'An extrasolar planet that orbits close to its parent star. Most Chthonian planets are 
-            expected to be gas giants that had their atmospheres stripped away, leaving their cores.',
+            'description' => 'Like Jupiter and Saturn, Neptune\'s atmosphere is composed primarily of hydrogen 
+            and helium, along with traces of hydrocarbons and possibly nitrogen, but it contains a higher 
+            proportion of "ices" such as water, ammonia, and methane. However, its interior, like that of 
+            Uranus, is primarily composed of ices and rock, which is why Uranus and Neptune are normally 
+            considered "ice giants" to emphasise this distinction.',
 
-            'wiki_url' => 'https://en.wikipedia.org/wiki/Chthonian_planet'
+            'wiki_url' => 'https://en.wikipedia.org/wiki/Neptune'
 
         ],
 

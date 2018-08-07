@@ -131,6 +131,11 @@ Route::get('support-messages', 'MessagesController@index');
 
 Route::get('support-messages-show/{message}', 'MessagesController@show');
 
+// Moon List
+// id is the id of the moon
+
+Route::get('moon-list/{id}', 'MoonListController@show');
+
 // Pages Routes
 
 Route::get('/', 'PagesController@index')->name('welcome');
@@ -160,6 +165,30 @@ Route::post('planet-position-fixer', 'PlanetPositionFixerController@update');
 // Planet Description Fixer
 
 Route::post('planet-description-fixer', 'PlanetDescriptionFixerController@update');
+
+// Planet Moon Count Fixer
+
+Route::post('fix-planet-moon-count', 'FixPlanetMoonCountController@update');
+
+// Planet Moon types Fixer
+
+Route::post('fix-planet-moon-types', 'FixPlanetMoonTypesController@update');
+
+// Planet moons fix leftovers
+
+Route::post('fix-planet-moon-leftovers', 'FixPlanetMoonLeftoversController@update');
+
+// Add Orphan Moons
+
+Route::post('add-orphan-moons', 'AddOrphanMoonsController@store');
+
+// fix Moons Orbital Position
+
+Route::post('fix-moons-orbital-position', 'FixMoonsOrbitalPositionController@update');
+
+// fix Moons Description
+
+Route::post('fix-moons-description', 'FixMoonsDescriptionController@update');
 
 
 // Post Routes

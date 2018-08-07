@@ -9,6 +9,74 @@
 
 return [
 
+'moon-vowels'=> [
+
+
+'alora',
+'alisha',
+'audri',
+'eri',
+'isabela',
+'aya',
+'adele',
+'ivia',
+'eil',
+'elsa',
+'emmi',
+'aza',
+'alea',
+'elisa',
+'eri',
+'amber',
+'averie',
+'elle',
+'ain',
+'evie',
+'allie',
+'amy',
+'eva',
+'oli',
+'elliana',
+'alana',
+'adel',
+'angelina',
+'elo',
+'ama',
+'ana',
+'ali',
+'iri',
+'alexi',
+'ede',
+'ary',
+'ash',
+'ada',
+'isla',
+'isa',
+'eliana',
+'aria',
+'ora',
+'eva',
+'ari',
+'addi',
+'ella',
+'aria',
+'oria',
+'sofi',
+'eliza',
+'emi',
+'abi',
+'evel',
+'ava',
+'ol',
+'em',
+
+
+
+
+],
+
+
+
 'latin vowels'=> [
 
 
