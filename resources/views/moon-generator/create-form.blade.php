@@ -248,6 +248,54 @@
 
         <input type="hidden" id="fix" name="fix" value="fix">
 
+        <!-- leftover_limit input -->
+
+        <div class="{{ $errors->has('leftover_limit') ? ' has-error' : '' }}">
+
+            <label>Leftover Limit</label>
+
+            <input type="number"
+                   name="leftover_limit"
+                   value="{{ old('remove_limit') }}" />
+
+            @if ($errors->has('leftover_limit'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('leftover_limit') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end leftover_limit input -->
+
+        <!-- leftover_offset input -->
+
+        <div class="{{ $errors->has('leftover_offset') ? ' has-error' : '' }}">
+
+            <label>Leftover Offset</label>
+
+            <input type="number"
+                   name="leftover_offset"
+                   value="{{ old('leftover_offset') }}" />
+
+            @if ($errors->has('leftover_offset'))
+
+                <span class="help-block">
+
+                    <strong>{{ $errors->first('leftover_offset') }}</strong>
+
+                </span>
+
+            @endif
+
+        </div>
+
+        <!-- end leftover_offset input -->
+
 
         <!-- submit button -->
 
@@ -255,6 +303,7 @@
             <li class="collection-item"><p>
 
                     This button takes moons with a planet id of 0 and adds them to planets that should have more moons.
+                    suggested limit is 5000.
 
 
                 </p></li>
