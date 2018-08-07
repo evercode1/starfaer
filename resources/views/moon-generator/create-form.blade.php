@@ -91,7 +91,7 @@
 
             <label>Remove Limit</label>
 
-            <input type="text"
+            <input type="number"
                    name="remove_limit"
                    value="{{ old('remove_limit') }}" />
 
@@ -115,7 +115,7 @@
 
             <label>Remove Offset</label>
 
-            <input type="text"
+            <input type="number"
                    name="remove_offset"
                    value="{{ old('remove_offset') }}" />
 
