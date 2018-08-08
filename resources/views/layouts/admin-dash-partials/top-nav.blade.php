@@ -27,7 +27,7 @@
     <div class="navbar-fixed">
         <nav class="navbar white">
             <div class="nav-wrapper">
-                <a href="/home" class="brand-logo grey-text text-darken-4 mr-20">Home</a>
+                <a href="/home" class="brand-logo grey-text text-darken-4 left ml-25">Home</a>
 
                     <ul id="nav-mobile" class="right">
                         <li><a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i></a></li>
