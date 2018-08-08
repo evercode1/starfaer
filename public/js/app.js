@@ -2967,7 +2967,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Created'],
+            gridColumns: ['Id', 'Planet Name', 'Star'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -48526,10 +48526,14 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._v(
-                          "\n\n                               " +
-                            _vm._s(row.Created) +
-                            "\n\n                        "
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/star/" + row.Starid + "-" + row.Slug
+                            }
+                          },
+                          [_vm._v(" " + _vm._s(row.Starname))]
                         )
                       ])
                     ])

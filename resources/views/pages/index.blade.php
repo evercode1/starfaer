@@ -1,53 +1,178 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.masters.master-landing')
 
-    <title>Star Faer</title>
+@section('content')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <div class="pimg1">
 
-    <!-- Styles -->
-    @include('layouts.master-partials.css')
-</head>
-<body>
-<div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-            <a href="{{ url('/home') }}">Home</a>
-            @else
-                <a href="{{ url('/auth/facebook') }}">FB</a>
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-                @endauth
-        </div>
-    @endif
+        <div class="ptext">
 
-    <div class="content">
-        <div class="title m-b-md">
-            Star Faer
+            <span class="border">
+
+                @if(! Auth::check())
+
+                    <a href="/login">Star Faer</a>
+
+                @else
+
+                    <a href="/home">Star Faer</a>
+
+                @endif
+
+
+
+            </span>
+
+            <br>
+
+            <div class="subtext">Galactic Adventures</div>
+
+
         </div>
 
-        <div class="links">
-            <a href="/">Galaxies</a>
-            <a href="/">Systems</a>
-            <a href="/">Worlds</a>
-            <a href="/">Civilizations</a>
-            <a href="/">Books</a>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center bluish"><i class="large material-icons">brightness_5</i></h2>
+                        <h5 class="center">1007 Stars</h5>
+
+                        <p class="light">Over 1000 star systems, including star type, number of planets,
+                            and more on the Kaedra Galaxy.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center bluish"><i class="large material-icons">brightness_1</i></h2>
+                        <h5 class="center">Over 12,000 Planets</h5>
+
+                        <p class="light">Eplore these worlds that are full of life and adventure.
+                         </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center bluish"><i class="large material-icons">brightness_2</i></h2>
+                        <h5 class="center">Over 43,000 Moons</h5>
+
+                        <p class="light">Unprecendented attention to details, each system is loaded with information.
+
+
+
+
+                            </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <div class="row center">
 
-</div>
 
-<div class="row">
+        <p>
 
-    @include('layouts.master-partials.footer')
+            @if(! Auth::check())
 
-</div>
-</body>
-</html>
+                <a href="/login">Click here to login or join</a>.
+
+            @else
+
+                <a href="/home">Home</a>.
+
+            @endif
+
+
+
+        </p>
+
+
+
+    </div>
+
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+
+                The Kaedra Galaxy Is Full Of Life
+
+            </span>
+        </div>
+    </div>
+
+    <section class="section section-dark">
+
+        <h2># Sci Fi Fans</h2>
+        <p>
+            Star Faer brings you epic advetures.
+
+        </p>
+
+    </section>
+
+    <div class="pimg3">
+        <div class="ptext">
+            <span class="border trans">
+
+                Life Started Out There
+
+            </span>
+        </div>
+    </div>
+
+    <section class="section section-dark">
+
+        <h2># Now It's Here</h2>
+        <p>
+
+            The Milky Way is almost fully devoid of life.  Kaedra is full of life.
+
+        </p>
+        <p>
+
+            @if(! Auth::check())
+
+                <a href="/login">Take the tour now</a>.
+
+            @else
+
+                <a href="/home">here</a>
+
+            @endif
+
+        </p>
+    </section>
+
+    <div class="pimg4">
+
+        <div class="ptext">
+
+
+
+            <span class="border">
+
+
+               <a href="/register">Join Now Free</a>
+
+            </span>
+
+            <br>
+
+            <div class="subtext">Start Your Adventure</div>
+
+
+        </div>
+
+
+
+    </div>
+
+@endsection

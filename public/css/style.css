@@ -1,0 +1,193 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+
+
+}
+
+a:link {
+    text-decoration: none;
+    color: #4c6a7f;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #4c6a7f;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #afacbf;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.p-link a:link {
+
+    text-decoration: underline;
+    color: #4c6a7f;
+
+}
+
+.pimg1, .pimg2, .pimg3, .pimg4 {
+
+    position: relative;
+    opacity:0.90;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.pimg1{
+
+    background-image:url(/imgs/home/station-eye.jpg);
+    min-height: 100%;
+
+}
+
+.pimg2{
+
+    background-image:url(/imgs/home/galaxy.jpg);
+    min-height: 400px;
+
+
+}
+
+.pimg3{
+
+    background-image:url(/imgs/home/planet-debri.jpg);
+    min-height: 400px;
+
+
+}
+
+.pimg4{
+
+    background-image:url(/imgs/home/evine-android.jpg);
+    min-height: 100%;
+
+}
+
+.section{
+
+    text-align: center;
+    padding: 50px 80px;
+
+
+}
+
+.section-light{
+
+    background-color: #f4f4f4;
+    color: #666;
+
+}
+
+.section-dark{
+
+    background-color: #282e34;
+    color: #ddd;
+
+}
+
+.ptext{
+
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+
+}
+
+.ptext a{
+
+    color: #4c6a7f;
+}
+
+.ptext a:hover{
+
+    color: #afacbf;
+}
+
+
+.subtext {
+
+    color: #b3b3b3;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 2px;
+
+
+}
+
+.ptext .border{
+
+    background-color: black;
+    color: #fff;
+    padding: 20px 20px 40px 20px;
+
+}
+
+.ptext .border.trans{
+
+    background-color: transparent;
+
+}
+
+@media(max-width:568px){
+
+    .pmg1, .pimg2, .pimg3, .pimg4{
+
+        background-attachemnt: scroll;
+    }
+
+    .ptext{
+
+
+        letter-spacing: 1px;
+
+
+    }
+
+    nav .brand-logo {
+        font-size: 1.5rem;
+    }
+
+}
+
+.bluish {
+
+    color: #364a5e;
+
+
+}
+
+/* circ is for gravatar */
+
+.circ{
+
+
+    width : 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff;
+
+
+}
+.circ:hover{
+    box-shadow: 0 0 0 3px #f00;
+}

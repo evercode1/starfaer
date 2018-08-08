@@ -11,14 +11,19 @@ class AllPlanetsQuery implements DataQuery
     {
 
         $rows = DB::table('planets')
-                    ->select('id as Id',
-                             'name as Name',
-                             'slug as Slug',
-                             DB::raw('DATE_FORMAT(created_at,
-                             "%m-%d-%Y") as Created'))
-                    ->where('is_active', 1)
-                    ->orderBy($column, $direction)
-                    ->paginate(10);
+            ->select('planets.id as Id',
+                'planets.name as Name',
+                'planets.slug as Slug',
+                'planets.is_active as Active',
+                'stars.name as Starname',
+                'stars.id as Starid',
+                'planets.image_extension as Extension',
+                DB::raw('DATE_FORMAT(planets.created_at,
+                                 "%m-%d-%Y") as Created'))
+            ->leftJoin('stars', 'star_id', '=', 'stars.id')
+            ->where('planets.is_active', 1)
+            ->orderBy($column, $direction)
+            ->paginate(10);
 
              return $rows;
 
@@ -29,14 +34,19 @@ class AllPlanetsQuery implements DataQuery
     {
 
         $rows = DB::table('planets')
-                ->select('id as Id',
-                         'name as Name',
-                         'slug as Slug',
-                         DB::raw('DATE_FORMAT(created_at,
+            ->select('planets.id as Id',
+                'planets.name as Name',
+                'planets.slug as Slug',
+                'planets.is_active as Active',
+                'stars.name as Starname',
+                'stars.id as Starid',
+                'planets.image_extension as Extension',
+                DB::raw('DATE_FORMAT(planets.created_at,
                                  "%m-%d-%Y") as Created'))
-                ->where([['name', 'like', '%' . $keyword . '%'], ['is_active', 1]])
-                ->orderBy($column, $direction)
-                ->paginate(10);
+            ->leftJoin('stars', 'star_id', '=', 'stars.id')
+            ->where([['planets.name', 'like', '%' . $keyword . '%'], ['planets.is_active', 1]])
+            ->orderBy($column, $direction)
+            ->paginate(10);
 
             return $rows;
 
