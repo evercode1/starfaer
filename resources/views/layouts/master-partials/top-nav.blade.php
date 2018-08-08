@@ -28,10 +28,10 @@
 <div class="navbar-fixed">
     <nav class="navbar blue darken-1">
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo ml-10">Star Faer</a>
+            <a href="/" class="brand-logo ml-10 left">Star Faer</a>
 
             @if(Auth::check())
-            <ul class="right hide-on-med-and-down">
+            <ul class="right">
                 <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{ Auth::user()->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -39,7 +39,7 @@
 
                 @else
 
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right">
 
                     <li><a href="{{ url('/auth/facebook') }}">FB</a></li>
                     <li><a href="{{ url('/login') }}">Login</a></li>
