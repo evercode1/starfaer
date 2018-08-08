@@ -10,6 +10,11 @@ body, html {
 
 }
 
+.med-grey {
+
+    color: #646464;
+}
+
 a:link {
     text-decoration: none;
     color: #4c6a7f;
