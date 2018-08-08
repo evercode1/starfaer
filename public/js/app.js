@@ -2955,6 +2955,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -2974,7 +2980,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Planet Name', 'Moons', 'Orbits Star'],
+            gridColumns: ['Id', 'Planet Name', 'Life Present', 'Moons', 'Orbits Star'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -3037,6 +3043,11 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
 
         pageInRange: function pageInRange() {
             return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        formatLifePresent: function formatLifePresent(life) {
+
+            return life == 1 ? 'Yes' : 'No';
         }
 
     }
@@ -48527,6 +48538,14 @@ var render = function() {
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(_vm.formatLifePresent(row.Life)) +
+                            "\n\n                        "
                         )
                       ]),
                       _vm._v(" "),

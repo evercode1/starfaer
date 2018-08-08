@@ -41,6 +41,12 @@
 
                             </td>
 
+                            <td>
+
+                                {{ formatLifePresent(row.Life)}}
+
+                            </td>
+
 
                             <td>
 
@@ -99,7 +105,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Planet Name', 'Moons', 'Orbits Star'],
+                gridColumns: ['Id', 'Planet Name', 'Life Present', 'Moons', 'Orbits Star'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -164,6 +170,14 @@
 
             pageInRange: function(){
                 return this.go_to_page <= parseInt(this.last_page);
+            },
+
+            formatLifePresent:  function(life){
+
+
+                return life == 1 ? 'Yes' : 'No';
+
+
             }
 
 

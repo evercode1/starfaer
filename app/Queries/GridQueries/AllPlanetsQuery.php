@@ -10,11 +10,19 @@ class AllPlanetsQuery implements DataQuery
     public function data($column, $direction)
     {
 
+        if($column == 'Life Present'){
+
+
+            $column = 'planets.is_life_present';
+
+        }
+        
         $rows = DB::table('planets')
             ->select('planets.id as Id',
                 'planets.name as Name',
                 'planets.slug as Slug',
                 'planets.is_active as Active',
+                'planets.is_life_present as Life',
                 'stars.name as Starname',
                 'stars.id as Starid',
                 'planets.image_extension as Extension',
@@ -39,11 +47,20 @@ class AllPlanetsQuery implements DataQuery
     public function filteredData($column, $direction, $keyword)
     {
 
+        if($column == 'Life Present'){
+
+
+            $column = 'planets.is_life_present';
+
+        }
+
+
         $rows = DB::table('planets')
             ->select('planets.id as Id',
                 'planets.name as Name',
                 'planets.slug as Slug',
                 'planets.is_active as Active',
+                'planets.is_life_present as Life',
                 'stars.name as Starname',
                 'stars.id as Starid',
                 'planets.image_extension as Extension',
