@@ -109,7 +109,7 @@
     </div>
 
     <section class="section section-dark">
-
+        
         <h2># Sci Fi Fans</h2>
         <p>
             Star Faer brings you epic advetures.
@@ -133,7 +133,7 @@
         <h2># Now It's Here</h2>
         <p>
 
-            The Milky Way is almost fully devoid of life.  Kaedra is full of life.
+            The Milky Way is devoid of life.  Kaedra is full of life.
 
         </p>
         <p>
