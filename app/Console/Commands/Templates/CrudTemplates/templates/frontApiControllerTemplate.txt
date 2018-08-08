@@ -14,7 +14,7 @@ class FrontApiController extends Controller
     public function :::allApiControllerMethod:::(Request $request)
     {
 
-        return GridQuery::sendData($request, ':::model:::Query');
+        return GridQuery::sendData($request, 'All:::model:::sQuery');
 
     }
 

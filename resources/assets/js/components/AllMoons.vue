@@ -41,13 +41,13 @@
 
                             </td>
 
-
-
                             <td>
 
-                                   {{ row.Created }}
+                                <a v-bind:href="'/planet/' + row.PlanetId"> {{ row.Planet }}</a>
 
                             </td>
+
+
 
 
 
@@ -92,7 +92,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Created'],
+                gridColumns: ['Id', 'Name', 'Orbits Planet'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

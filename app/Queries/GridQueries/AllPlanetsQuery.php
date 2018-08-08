@@ -19,13 +19,19 @@ class AllPlanetsQuery implements DataQuery
                 'stars.id as Starid',
                 'planets.image_extension as Extension',
                 DB::raw('DATE_FORMAT(planets.created_at,
-                                 "%m-%d-%Y") as Created'))
-            ->leftJoin('stars', 'star_id', '=', 'stars.id')
+                                 "%m-%d-%Y") as Created'),
+                DB::raw('COUNT(*) as Moon'))
+            ->leftJoin('stars', 'planets.star_id', '=', 'stars.id')
+            ->leftJoin('moons', 'planets.id', '=', 'moons.planet_id')
             ->where('planets.is_active', 1)
             ->orderBy($column, $direction)
+            ->groupBy('planets.id')
             ->paginate(10);
 
+
              return $rows;
+
+
 
 
     }

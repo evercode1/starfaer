@@ -27,7 +27,7 @@ class FrontApiController extends Controller
     public function allMoonsData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'MoonQuery');
+        return GridQuery::sendData($request, 'AllMoonsQuery');
 
     }
 
@@ -40,7 +40,7 @@ class FrontApiController extends Controller
     public function allPlanetsData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'PlanetQuery');
+        return GridQuery::sendData($request, 'AllPlanetsQuery');
 
     }
 
@@ -53,7 +53,7 @@ class FrontApiController extends Controller
     public function allAtmospheresData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'AtmosphereQuery');
+        return GridQuery::sendData($request, 'AllAtmospheresQuery');
 
     }
 
@@ -70,7 +70,7 @@ class FrontApiController extends Controller
     public function allPlanetTypesData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'PlanetTypeQuery');
+        return GridQuery::sendData($request, 'AllPlanetTypesQuery');
 
     }
 
@@ -83,7 +83,7 @@ class FrontApiController extends Controller
     public function allStarsData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'StarQuery');
+        return GridQuery::sendData($request, 'AllStarsQuery');
 
     }
 
@@ -96,7 +96,7 @@ class FrontApiController extends Controller
     public function allStarTypesData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'StarTypeQuery');
+        return GridQuery::sendData($request, 'AllStarTypesQuery');
 
     }
 
@@ -109,7 +109,7 @@ class FrontApiController extends Controller
     public function allZonesData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'ZoneQuery');
+        return GridQuery::sendData($request, 'AllZonesQuery');
 
     }
 

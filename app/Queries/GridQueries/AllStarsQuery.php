@@ -11,13 +11,15 @@ class AllStarsQuery implements DataQuery
     {
 
         $rows = DB::table('stars')
-                    ->select('id as Id',
-                             'name as Name',
-                             'slug as Slug',
-                             DB::raw('DATE_FORMAT(created_at,
-                             "%m-%d-%Y") as Created'))
-                    ->where('is_active', 1)
+                    ->select('stars.id as Id',
+                             'stars.name as Name',
+                             'stars.slug as Slug',
+                        DB::raw('COUNT(*) as Planets'))
+
+                    ->leftJoin('planets', 'stars.id', '=', 'planets.star_id')
+                    ->where('stars.is_active', 1)
                     ->orderBy($column, $direction)
+                    ->groupBy('stars.id')
                     ->paginate(10);
 
              return $rows;
@@ -29,14 +31,16 @@ class AllStarsQuery implements DataQuery
     {
 
         $rows = DB::table('stars')
-                ->select('id as Id',
-                         'name as Name',
-                         'slug as Slug',
-                         DB::raw('DATE_FORMAT(created_at,
-                                 "%m-%d-%Y") as Created'))
-                ->where([['name', 'like', '%' . $keyword . '%'], ['is_active', 1]])
-                ->orderBy($column, $direction)
-                ->paginate(10);
+                   ->select('stars.id as Id',
+                            'stars.name as Name',
+                            'stars.slug as Slug',
+                       DB::raw('COUNT(*) as Planets'))
+
+                   ->leftJoin('planets', 'stars.id', '=', 'planets.star_id')
+                   ->where([['stars.name', 'like', '%' . $keyword . '%'], ['stars.is_active', 1]])
+                   ->orderBy($column, $direction)
+                   ->groupBy('stars.id')
+                   ->paginate(10);
 
             return $rows;
 

@@ -42,6 +42,13 @@
                             </td>
 
 
+                            <td>
+
+                                <a v-bind:href="'/moon-list/' + row.Id">{{ row.Moon }}</a>
+
+                            </td>
+
+
 
                             <td>
 
@@ -92,7 +99,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Planet Name', 'Star'],
+                gridColumns: ['Id', 'Planet Name', 'Moons', 'Orbits Star'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

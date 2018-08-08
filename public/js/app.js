@@ -2631,7 +2631,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Created'],
+            gridColumns: ['Id', 'Name', 'Orbits Planet'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -2948,6 +2948,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -2967,7 +2974,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Planet Name', 'Star'],
+            gridColumns: ['Id', 'Planet Name', 'Moons', 'Orbits Star'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -3282,8 +3289,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -3303,7 +3308,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Created'],
+            gridColumns: ['Id', 'Name', 'Planets'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -45509,10 +45514,10 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._v(
-                          "\n\n                               " +
-                            _vm._s(row.Created) +
-                            "\n\n                        "
+                        _c(
+                          "a",
+                          { attrs: { href: "/planet/" + row.PlanetId } },
+                          [_vm._v(" " + _vm._s(row.Planet))]
                         )
                       ])
                     ])
@@ -48526,6 +48531,12 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
+                        _c("a", { attrs: { href: "/moon-list/" + row.Id } }, [
+                          _vm._v(_vm._s(row.Moon))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
                         _c(
                           "a",
                           {
@@ -49869,11 +49880,9 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._v(
-                          "\n\n                               " +
-                            _vm._s(row.Created) +
-                            "\n\n                        "
-                        )
+                        _c("a", { attrs: { href: "/planet-list/" + row.Id } }, [
+                          _vm._v(" " + _vm._s(row.Planets))
+                        ])
                       ])
                     ])
                   })
