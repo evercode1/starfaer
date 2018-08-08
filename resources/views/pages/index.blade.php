@@ -144,7 +144,7 @@
 
             @else
 
-                <a href="/home">here</a>
+                <a href="/home">Home</a>
 
             @endif
 
