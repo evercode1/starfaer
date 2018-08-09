@@ -24,7 +24,7 @@
 
             <br>
 
-            <div class="subtext">Galactic Adventures</div>
+            <div class="subtext">Galactic Adventuring</div>
 
 
         </div>
