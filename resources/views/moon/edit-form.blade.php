@@ -35,7 +35,7 @@
 
     <div class="{{ $errors->has('planet_name') ? ' has-error' : '' }}">
 
-        <label>Name</label>
+        <label>Planet Name</label>
 
         <input type="text"
                name="planet_name"
