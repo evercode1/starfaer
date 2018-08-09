@@ -15,7 +15,7 @@
             <div class="col s6 m3">
                 <h5>Connect</h5>
                 <ul>
-                    <li><a href="/all-posts">Blog Posts</a></li>
+                    <li><a href="/all-articles">Blog Posts</a></li>
                     <li><a href="/all-videos">Videos</a></li>
                     <li><a href="/all-books">books</a></li>
 
