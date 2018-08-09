@@ -161,7 +161,7 @@ a:active {
 
     .pmg1, .pimg2, .pimg3, .pimg4{
 
-        background-attachemnt: scroll;
+        background-attachemnt: inherit !important;
     }
 
     .ptext{
