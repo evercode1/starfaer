@@ -6,7 +6,18 @@
 
         <div class="row">
 
-            <h1 class="flow-text grey-text text-darken-1">Planets Orbiting The Star {{ ucwords($star->name) }}</h1>
+            <h1 class="flow-text grey-text text-darken-1">Planets Orbiting
+                The Star <a href="/star/{{ $star->id }}" target="_blank">{{ ucwords($star->name) }}</a></h1>
+
+            @if(count($planets) < 1)
+
+               <p>
+
+                   Sorry, <a href="/star/{{ $star->id }}" target="_blank">{{ ucwords($star->name) }}</a>
+                   has no planets.
+
+               </p>
+                @endif
 
             <ol class="collection">
 

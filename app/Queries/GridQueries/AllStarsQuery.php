@@ -30,6 +30,18 @@ class AllStarsQuery implements DataQuery
     public function filteredData($column, $direction, $keyword)
     {
 
+        switch($column){
+
+
+            case 'Name' :
+
+                $column = 'stars.name';
+                break;
+
+
+
+        }
+
         $rows = DB::table('stars')
                    ->select('stars.id as Id',
                             'stars.name as Name',

@@ -10,6 +10,21 @@ class AllMoonsQuery implements DataQuery
     public function data($column, $direction)
     {
 
+        switch($column){
+
+            case 'Name' :
+
+                $column = 'moons.name';
+                break;
+
+            case 'Orbits Planet' :
+
+                $column = 'planets.name';
+                break;
+
+
+        }
+
         $rows = DB::table('moons')
                     ->select('moons.id as Id',
                              'moons.name as Name',
@@ -29,6 +44,21 @@ class AllMoonsQuery implements DataQuery
 
     public function filteredData($column, $direction, $keyword)
     {
+
+        switch($column){
+
+            case 'Name' :
+
+                $column = 'moons.name';
+                break;
+
+            case 'Orbits Planet' :
+
+                $column = 'planets.name';
+                break;
+
+
+        }
 
         $rows = DB::table('moons')
                 ->select('moons.id as Id',

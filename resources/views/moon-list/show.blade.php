@@ -6,8 +6,15 @@
 
         <div class="row">
 
-            <h1 class="flow-text grey-text text-darken-1">Moons Orbiting {{ ucwords($planet->name) }}</h1>
+            <h1 class="flow-text grey-text text-darken-1">Moons Orbiting <a href="/planet/{{ $planet->id }}">
+                    {{ ucwords($planet->name) }}</a></h1>
 
+            @if(count($moons) < 1)
+
+                <p>Sorry, <a href="/planet/{{ $planet->id }}">
+                        {{ ucwords($planet->name) }}</a> has no moons.</p>
+
+                @endif
             <ol class="collection">
 
                 @foreach($moons as $moon)
