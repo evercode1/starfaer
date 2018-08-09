@@ -10,6 +10,31 @@ class AllPlanetsQuery implements DataQuery
     public function data($column, $direction)
     {
 
+        switch($column){
+
+            case 'Planet Name' :
+
+                $column = 'planets.name';
+                break;
+
+            case 'Moons' :
+
+                $column = 'Moon';
+                break;
+
+            case 'Life Present' :
+
+                $column = 'planets.is_life_present';
+                break;
+
+            case 'Orbits Star' :
+
+                $column = 'stars.name';
+                break;
+
+
+        }
+
 
         $rows = DB::table('planets')
             ->select('planets.id as Id',
