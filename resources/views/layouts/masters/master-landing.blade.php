@@ -20,7 +20,7 @@
 
     @yield('meta')
 
-    <link rel="stylesheet" href="/css/style.css?time={{ now() }}">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 
