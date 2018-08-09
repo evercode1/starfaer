@@ -7079,6 +7079,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -7098,7 +7113,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Star', 'Active', 'Created'],
+            gridColumns: ['Id', 'Name', 'Life Present', 'Moons', 'Orbits Star', 'Active', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -7181,6 +7196,11 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
                     gridData.loadData('/api/planet-data', _this);
                 });
             }
+        },
+
+        formatLifePresent: function formatLifePresent(life) {
+
+            return life == 1 ? 'Yes' : 'No';
         }
 
     }
@@ -45518,7 +45538,10 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "/moon/" + row.Id + "-" + row.Slug }
+                            attrs: {
+                              href: "/moon/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
+                            }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
                         )
@@ -45527,7 +45550,12 @@ var render = function() {
                       _c("td", [
                         _c(
                           "a",
-                          { attrs: { href: "/planet/" + row.PlanetId } },
+                          {
+                            attrs: {
+                              href: "/planet/" + row.PlanetId,
+                              target: "_blank"
+                            }
+                          },
                           [_vm._v(" " + _vm._s(row.Planet))]
                         )
                       ])
@@ -46205,7 +46233,9 @@ var render = function() {
             }
           },
           [
-            _vm._v("\n\n        " + _vm._s(key) + "\n\n        "),
+            _vm._v("\n\n        " + _vm._s(key) + " "),
+            _c("i", { staticClass: "fa fa-angle-down" }),
+            _vm._v(" "),
             _c("span", { class: _vm.$parent.sortOrder > 0 ? "asc" : "dsc" })
           ]
         )
@@ -47034,7 +47064,9 @@ var render = function() {
             }
           },
           [
-            _vm._v("\n\n        " + _vm._s(key) + "\n\n        "),
+            _vm._v("\n\n        " + _vm._s(key) + " "),
+            _c("i", { staticClass: "fa fa-angle-down" }),
+            _vm._v(" "),
             _c("span", {
               staticClass: "arrow",
               class: _vm.$parent.sortOrder > 0 ? "asc" : "dsc"
@@ -48113,10 +48145,19 @@ var render = function() {
                           "a",
                           {
                             attrs: {
-                              href: "/planet/" + row.Id + "-" + row.Slug
+                              href: "/planet/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(_vm.formatLifePresent(row.Life)) +
+                            "\n\n                        "
                         )
                       ]),
                       _vm._v(" "),
@@ -48125,7 +48166,21 @@ var render = function() {
                           "a",
                           {
                             attrs: {
-                              href: "/star/" + row.Starid + "-" + row.Slug
+                              href: "/moon-list/" + row.Id,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v(_vm._s(row.Moon))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/star/" + row.Starid + "-" + row.Slug,
+                              target: "_blank"
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Starname))]
@@ -48151,7 +48206,12 @@ var render = function() {
                       _c("td", [
                         _c(
                           "a",
-                          { attrs: { href: "/planet/" + row.Id + "/edit" } },
+                          {
+                            attrs: {
+                              href: "/planet/" + row.Id + "/edit",
+                              target: "_blank"
+                            }
+                          },
                           [
                             _c(
                               "button",
@@ -48534,7 +48594,8 @@ var render = function() {
                           "a",
                           {
                             attrs: {
-                              href: "/planet/" + row.Id + "-" + row.Slug
+                              href: "/planet/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
@@ -48550,9 +48611,16 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "/moon-list/" + row.Id } }, [
-                          _vm._v(_vm._s(row.Moon))
-                        ])
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/moon-list/" + row.Id,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v(_vm._s(row.Moon))]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("td", [
@@ -48560,7 +48628,8 @@ var render = function() {
                           "a",
                           {
                             attrs: {
-                              href: "/star/" + row.Starid + "-" + row.Slug
+                              href: "/star/" + row.Starid + "-" + row.Slug,
+                              target: "_blank"
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Starname))]
@@ -49570,7 +49639,10 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "/moon/" + row.Id + "-" + row.Slug }
+                            attrs: {
+                              href: "/moon/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
+                            }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
                         )
@@ -49595,7 +49667,12 @@ var render = function() {
                       _c("td", [
                         _c(
                           "a",
-                          { attrs: { href: "/moon/" + row.Id + "/edit" } },
+                          {
+                            attrs: {
+                              href: "/moon/" + row.Id + "/edit",
+                              target: "_blank"
+                            }
+                          },
                           [
                             _c(
                               "button",
@@ -49892,16 +49969,26 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "/star/" + row.Id + "-" + row.Slug }
+                            attrs: {
+                              href: "/star/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
+                            }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
                         )
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "/planet-list/" + row.Id } }, [
-                          _vm._v(" " + _vm._s(row.Planets))
-                        ])
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/planet-list/" + row.Id,
+                              target: "_blank"
+                            }
+                          },
+                          [_vm._v(" " + _vm._s(row.Planets))]
+                        )
                       ])
                     ])
                   })
@@ -50642,7 +50729,9 @@ var render = function() {
               }
             },
             [
-              _vm._v("\n\n        " + _vm._s(key) + "\n\n        "),
+              _vm._v("\n\n        " + _vm._s(key) + " "),
+              _c("i", { staticClass: "fa fa-angle-down" }),
+              _vm._v(" "),
               _c("span", { class: _vm.$parent.sortOrder > 0 ? "asc" : "dsc" })
             ]
           )
@@ -51037,7 +51126,10 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "/star/" + row.Id + "-" + row.Slug }
+                            attrs: {
+                              href: "/star/" + row.Id + "-" + row.Slug,
+                              target: "_blank"
+                            }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
                         )
@@ -51062,7 +51154,12 @@ var render = function() {
                       _c("td", [
                         _c(
                           "a",
-                          { attrs: { href: "/star/" + row.Id + "/edit" } },
+                          {
+                            attrs: {
+                              href: "/star/" + row.Id + "/edit",
+                              target: "_blank"
+                            }
+                          },
                           [
                             _c(
                               "button",

@@ -37,7 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug" target="_blank"> {{ row.Name }}</a>
 
                             </td>
 
@@ -55,7 +55,7 @@
 
                             <td >
 
-                                <a v-bind:href="'/star/' + row.Id + '/edit'">
+                                <a v-bind:href="'/star/' + row.Id + '/edit'" target="_blank">
 
                                 <button type="button" class="waves-effect waves-light btn mt-5">
 

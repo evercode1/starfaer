@@ -6,7 +6,7 @@
             @click="$parent.sortBy(key)"
             v-bind:class="{active: $parent.sortKey == key}">
 
-            {{ key }}
+            {{ key }} <i class="fa fa-angle-down"></i>
 
             <span
 

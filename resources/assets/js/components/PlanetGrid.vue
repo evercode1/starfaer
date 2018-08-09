@@ -37,13 +37,28 @@
 
                             <td>
 
-                                <a v-bind:href="'/planet/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/planet/' + row.Id + '-' + row.Slug" target="_blank"> {{ row.Name }}</a>
 
                             </td>
 
                             <td>
 
-                                <a v-bind:href="'/star/' + row.Starid + '-' + row.Slug"> {{ row.Starname }}</a>
+                                {{ formatLifePresent(row.Life)}}
+
+                            </td>
+
+
+                            <td>
+
+                                <a v-bind:href="'/moon-list/' + row.Id" target="_blank">{{ row.Moon }}</a>
+
+                            </td>
+
+
+
+                            <td>
+
+                                <a v-bind:href="'/star/' + row.Starid + '-' + row.Slug" target="_blank"> {{ row.Starname }}</a>
 
                             </td>
 
@@ -61,7 +76,7 @@
 
                             <td >
 
-                                <a v-bind:href="'/planet/' + row.Id + '/edit'">
+                                <a v-bind:href="'/planet/' + row.Id + '/edit'" target="_blank">
 
                                 <button type="button" class="waves-effect waves-light btn mt-5">
 
@@ -124,7 +139,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Star', 'Active', 'Created'],
+                gridColumns: ['Id', 'Name', 'Life Present', 'Moons', 'Orbits Star', 'Active', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -217,6 +232,14 @@
 
                 }
 
+
+
+            },
+
+            formatLifePresent:  function(life){
+
+
+                return life == 1 ? 'Yes' : 'No';
 
 
             }

@@ -37,7 +37,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/planet/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/planet/' + row.Id + '-' + row.Slug" target="_blank"> {{ row.Name }}</a>
 
                             </td>
 
@@ -50,7 +50,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/moon-list/' + row.Id">{{ row.Moon }}</a>
+                                <a v-bind:href="'/moon-list/' + row.Id" target="_blank">{{ row.Moon }}</a>
 
                             </td>
 
@@ -58,7 +58,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/star/' + row.Starid + '-' + row.Slug"> {{ row.Starname }}</a>
+                                <a v-bind:href="'/star/' + row.Starid + '-' + row.Slug" target="_blank"> {{ row.Starname }}</a>
 
                             </td>
 

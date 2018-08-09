@@ -37,13 +37,13 @@
 
                             <td>
 
-                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug"> {{ row.Name }}</a>
+                                <a v-bind:href="'/star/' + row.Id + '-' + row.Slug" target="_blank"> {{ row.Name }}</a>
 
                             </td>
 
                             <td>
 
-                                <a v-bind:href="'/planet-list/' + row.Id"> {{ row.Planets }}</a>
+                                <a v-bind:href="'/planet-list/' + row.Id" target="_blank"> {{ row.Planets }}</a>
 
                             </td>
 
