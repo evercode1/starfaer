@@ -161,7 +161,7 @@ a:active {
 
 @media only screen and (max-width: 568px){
 
-    .pmg1, .pimg2, .pimg3, .pimg4{
+    .pimg1, .pimg2, .pimg3, .pimg4{
 
         background-attachment: scroll;
     }
@@ -187,18 +187,3 @@ a:active {
 
 }
 
-/* circ is for gravatar */
-
-.circ{
-
-
-    width : 40px;
-    vertical-align: middle;
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #fff;
-
-
-}
-.circ:hover{
-    box-shadow: 0 0 0 3px #f00;
-}
