@@ -18,7 +18,7 @@
 
                 @foreach($zones as $zone)
 
-                <li class="collection-item">{{ $zone->Zone }}
+                <li class="collection-item"><a href="/zone/{{ $zone->Id }}">{{ $zone->Zone }}</a>
                     <a href="/life-zones-show?zone={{ $zone->Id }}"
                        class="secondary-content">{{ $zone->Planets }} - planets
                     </a>
