@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Queries\LifeZonesQuery;
 use Illuminate\Http\Request;
 use DB;
 use App\Queries\GridQueries\GridQuery;
@@ -114,6 +115,14 @@ class FrontApiController extends Controller
     }
 
     // End Zone Api All Models Method
+
+
+    public function lifeZonesData(Request $request)
+    {
+
+        return LifeZonesQuery::sendData($request);
+
+    }
 
 
 

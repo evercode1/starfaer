@@ -52,6 +52,7 @@ Route::get('api/contact-data', 'ApiController@ContactData');
 Route::get('api/contact-topic-data', 'ApiController@ContactTopicData');
 Route::get('api/content-data', 'ApiController@contentData');
 Route::get('api/level-data', 'ApiController@levelData');
+Route::get('api/life-zones-data', 'FrontApiController@lifeZonesData');
 Route::get('api/open-contact-data', 'ApiController@openContactData');
 Route::get('api/post-data', 'ApiController@postData');
 Route::get('api/total-videos', 'ApiController@totalVideos');
@@ -124,6 +125,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('level-delete/{level}', 'LevelController@destroy');
 
 Route::resource('level', 'LevelController', ['except' => ['destroy']]);
+
+// Life Zone grid
+
+Route::get('life-zones', 'LifeZonesController@index')->name('life-zones.index');
+Route::get('life-zones-show', 'LifeZonesController@show')->name('life-zones-show.show');
 
 // Messages route
 
