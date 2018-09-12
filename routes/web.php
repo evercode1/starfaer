@@ -54,6 +54,7 @@ Route::get('api/content-data', 'ApiController@contentData');
 Route::get('api/level-data', 'ApiController@levelData');
 Route::get('api/life-zones-data', 'FrontApiController@lifeZonesData');
 Route::get('api/open-contact-data', 'ApiController@openContactData');
+Route::get('api/planets-with-life-data', 'FrontApiController@planetsWithLifeData');
 Route::get('api/post-data', 'ApiController@postData');
 Route::get('api/total-videos', 'ApiController@totalVideos');
 Route::get('api/universe-data', 'ApiController@universeData');
@@ -162,6 +163,10 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 // id is the id of the star
 
 Route::get('planet-list/{id}', 'PlanetListController@show');
+
+// Planets with Life
+
+Route::get('planets-with-life', 'PlanetsWithLifeController@index')->name('planets-with-life.index');
 
 
 // Planet Position Fixer

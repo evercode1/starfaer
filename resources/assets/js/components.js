@@ -15,6 +15,7 @@ Vue.component('content-grid', require('./components/ContentGrid.vue'));
 Vue.component('level-grid', require('./components/LevelGrid.vue'));
 Vue.component('open-contact-grid', require('./components/OpenContactGrid.vue'));
 Vue.component('post-grid', require('./components/PostGrid.vue'));
+Vue.component('planets-with-life', require('./components/PlanetsWithLife.vue'));
 Vue.component('total-videos', require('./components/TotalVideos.vue'));
 Vue.component('universe-grid', require('./components/UniverseGrid.vue'));
 Vue.component('user-grid', require('./components/UserGrid.vue'));

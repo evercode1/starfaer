@@ -10,6 +10,17 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+    // Begin Galaxy Api All Models Method
+
+    public function allGalaxiesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'AllGalaxiesQuery');
+
+    }
+
+    // End Galaxy Api All Models Method
+
     // Begin SurfaceType Api All Models Method
 
     public function allSurfaceTypesData(Request $request)
@@ -117,35 +128,6 @@ class FrontApiController extends Controller
     // End Zone Api All Models Method
 
 
-    public function lifeZonesData(Request $request)
-    {
-
-        return LifeZonesQuery::sendData($request);
-
-    }
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
-    
-
-
-
 
     // Begin GalaxyType Api All Models Method
 
@@ -159,21 +141,20 @@ class FrontApiController extends Controller
     // End GalaxyType Api All Models Method
 
 
-
-    // Begin Galaxy Api All Models Method
-
-    public function allGalaxiesData(Request $request)
+    public function lifeZonesData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'AllGalaxiesQuery');
+        return LifeZonesQuery::sendData($request);
 
     }
 
-    // End Galaxy Api All Models Method
+    public function planetsWithLifeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetsWithLifeQuery');
 
 
-
-    
+    }
 
 
 
