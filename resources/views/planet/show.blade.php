@@ -15,7 +15,7 @@
         <div class="row">
 
         <ul class="collection with-header">
-                        <li class="collection-header"><h4>{{ $planet->name }}</h4></li>
+                        <li class="collection-header"><h4>{{ ucwords($planet->name) }}</h4></li>
 
                         <li class="collection-item">From Universe:
                         <b><a href="/universe/{{ $planet->universe->id }} -
