@@ -25,9 +25,9 @@
 
                 <li class="collection-item">
                     <a href="/planet/{{ $planet->id }}">
-                        {{ ucwords($planet->name) }} </a>- planet type is {{ $planet->planetType->name }}
-                    - has {{ $planet->is_life_present == 1 ? 'life' : 'no life' }}
-                    - has {{ $planet->moon_count }} moons</li>
+                        <h6>{{ ucwords($planet->name) }}</h6> </a> <p>planet type is {{ $planet->planetType->name }}</p>
+                    {!!   $planet->is_life_present == 1 ? '<p class="green-text">has life</p>' : '<p>has no life</p>' !!}
+                    <p> has {{ $planet->moon_count }} moons</p></li>
 
                     @endforeach
 
