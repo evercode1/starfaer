@@ -56,9 +56,9 @@ class PlanetController extends Controller
 
            $galaxies = Galaxy::all();
 
-           $planetTypes = PlanetType::all();
+           $planetTypes = PlanetType::where('is_active', 1)->orderBy('name', 'asc')->get();
 
-           $atmospheres = Atmosphere::all();
+           $atmospheres = Atmosphere::where('is_active', 1)->orderBy('name', 'asc')->get();
 
            $stars = Star::all();
 
@@ -196,13 +196,13 @@ class PlanetController extends Controller
 
         $galaxies = Galaxy::all();
 
-        $planetTypes = PlanetType::all();
+        $planetTypes = PlanetType::where('is_active', 1)->orderBy('name', 'asc')->get();
 
         $planetTypeId = $planet->planetType->id;
 
         $planetTypeName = $planet->planetType->name;
 
-        $atmospheres = Atmosphere::all();
+        $atmospheres = Atmosphere::where('is_active', 1)->orderBy('name', 'asc')->get();
 
         $atmosphereId = $planet->atmosphere->id;
 
