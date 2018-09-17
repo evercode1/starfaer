@@ -107,6 +107,11 @@ Route::post('/contact-topic-delete/{id}', 'ContactTopicController@destroy')->nam
 
 Route::resource('/contact-topic', 'ContactTopicController', ['except' => ['destroy']]);
 
+// Detach Moons
+
+Route::get('/detach-moons', 'DetachMoonsController@edit')->name('detach-moons.edit');
+Route::post('/detach-moons', 'DetachMoonsController@update')->name('detach-moons.update');
+
 // Galaxy Generator
 
 Route::get('galaxy-generator', 'GalaxyGeneratorController@create');

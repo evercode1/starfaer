@@ -9,6 +9,8 @@
                         <li><a href="/all-stars" class="waves-effect">All Stars<i class="material-icons">star</i></a></li>
                         <li><a href="/all-planets" class="waves-effect">All Planets<i class="material-icons">star</i></a></li>
                         <li><a href="/all-moons" class="waves-effect">All Moons<i class="material-icons">star</i></a></li>
+                        <li><a href="/planets-with-life" class="waves-effect">Planets With Life<i class="material-icons">star</i></a></li>
+                        <li><a href="/life-zones" class="waves-effect">Zones With Life<i class="material-icons">star</i></a></li>
                     </ul>
                 </div>
             </li>
@@ -24,6 +26,15 @@
                 </div>
             </li>
             @endif
+
+            <li class="bold waves-effect"><a class="collapsible-header">Tools<i class="material-icons chevron">chevron_left</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="/detach-moons" class="waves-effect">Detach Moons
+                                <i class="fa fa-star"></i></a></li>
+                    </ul>
+                </div>
+            </li>
 
             <li class="bold waves-effect"><a class="collapsible-header">Generators<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">

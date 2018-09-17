@@ -42,12 +42,12 @@ class AllPlanetsQuery implements DataQuery
                 'planets.slug as Slug',
                 'planets.is_active as Active',
                 'planets.is_life_present as Life',
+                'planets.moon_count as Moon',
                 'stars.name as Starname',
                 'stars.id as Starid',
                 'planets.image_extension as Extension',
                 DB::raw('DATE_FORMAT(planets.created_at,
-                                 "%m-%d-%Y") as Created'),
-                DB::raw('COUNT(*) as Moon'))
+                                 "%m-%d-%Y") as Created'))
             ->leftJoin('stars', 'planets.star_id', '=', 'stars.id')
             ->leftJoin('moons', 'planets.id', '=', 'moons.planet_id')
             ->where('planets.is_active', 1)
@@ -100,12 +100,12 @@ class AllPlanetsQuery implements DataQuery
                 'planets.slug as Slug',
                 'planets.is_active as Active',
                 'planets.is_life_present as Life',
+                'planets.moon_count as Moon',
                 'stars.name as Starname',
                 'stars.id as Starid',
                 'planets.image_extension as Extension',
                 DB::raw('DATE_FORMAT(planets.created_at,
-                                 "%m-%d-%Y") as Created'),
-                DB::raw('COUNT(*) as Moon'))
+                                 "%m-%d-%Y") as Created'))
             ->leftJoin('stars', 'planets.star_id', '=', 'stars.id')
             ->leftJoin('moons', 'planets.id', '=', 'moons.planet_id')
             ->where([['planets.name', 'like', '%' . $keyword . '%'], ['planets.is_active', 1]])

@@ -21,7 +21,10 @@ class FixPlanetMoonLeftoversController extends Controller
 
         if($request->fix == 'fix'){
 
-            $planets = Planet::where('is_active', 1)->skip($request->leftover_offset)->limit($request->leftover_limit)->get();
+            $planets = Planet::where('is_active', 1)
+                       ->skip($request->leftover_offset)
+                       ->limit($request->leftover_limit)
+                       ->get();
 
             foreach ($planets as $planet){
 

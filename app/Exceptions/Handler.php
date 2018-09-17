@@ -132,6 +132,15 @@ class Handler extends ExceptionHandler
                 return response()->view('errors.no-active-account-exception', compact('exception'), 500);
                 break;
 
+            case $exception instanceof NoMoonsException:
+
+                if ($request->ajax()) {
+                    return response()->json(['error' => 'No Moons'], 500);
+                }
+
+                return response()->view('errors.no-moons-exception', compact('exception'), 500);
+                break;
+
             case $exception instanceof TokenMismatchException :
 
                 if ($request->ajax()) {

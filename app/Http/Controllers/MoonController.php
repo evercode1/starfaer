@@ -131,6 +131,16 @@ class MoonController extends Controller
 
         }
 
+        // update moon count on planet
+
+        $planet = Planet::where('id', $moon->planet_id)->first();
+
+        $count = Moon::where('planet_id', $planet->id)
+            ->orderBy('orbital_position', 'asc')
+            ->count();
+
+        $planet->update(['moon_count' => $count]);
+
         return Redirect::route('moon.index');
 
     }
@@ -259,6 +269,7 @@ class MoonController extends Controller
                 $this->saveImageFiles($file, $moon);
 
             }
+
 
 
 
