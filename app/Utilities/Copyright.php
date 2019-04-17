@@ -11,7 +11,7 @@ class Copyright
         $date = date('Y') > 2018 ? '2018 - ' . date ('Y') : 2018;
 
 
-        return '&copy ' . $date . ' &nbsp; <a href="/about">William F. Keck</a> &nbsp; All rights Reserved.';
+        return '&copy ' . $date . ' &nbsp; <a href="/about">Max Vonne</a> &nbsp; All rights Reserved.';
 
 
     }
