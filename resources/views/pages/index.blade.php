@@ -24,7 +24,7 @@
 
             <br>
 
-            <div class="subtext">Galactic Adventures</div>
+            <div class="subtext">Science Fantasy</div>
 
 
         </div>
@@ -102,7 +102,7 @@
         <div class="ptext">
             <span class="border trans">
 
-                The Kaedra Galaxy Is Full Of Life
+                The Queen of Zori
 
             </span>
         </div>
@@ -110,7 +110,7 @@
 
     <section class="section section-dark">
         
-        <h2># Sci Fi Fans</h2>
+        <h2># Science Fantasy Fans</h2>
         <p>
             Star Faer brings you epic advetures.
 
