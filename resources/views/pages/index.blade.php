@@ -112,7 +112,7 @@
         
         <h2># Science Fantasy Fans</h2>
         <p>
-            Star Faer brings you epic advetures.
+            Max Vonne's Star Faer brings you epic advetures.
 
         </p>
 
