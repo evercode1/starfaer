@@ -34,9 +34,14 @@
     <div class="container">
         <div class="section">
 
+            <div><h1 class="center bluish"># Star Faer</h1></div>
+
+            <div><h2 >Epic Stories</h2></div>
+
             <!--   Icon Section   -->
             <div class="row">
                 <div class="col s12 m4">
+
                     <div class="icon-block">
                         <h2 class="center bluish"><i class="large material-icons">brightness_5</i></h2>
                         <h5 class="center">1007 Stars</h5>
@@ -122,7 +127,7 @@
         <div class="ptext">
             <span class="border trans">
 
-                Life Started Out There
+
 
             </span>
         </div>
@@ -130,10 +135,10 @@
 
     <section class="section section-dark">
 
-        <h2># Now It's Here</h2>
+        <h2># Fantasy Meets Sci Fi</h2>
         <p>
 
-            The Milky Way is devoid of life.  Kaedra is full of life.
+            Queens.  Slaves.  Barbarians.  Elves.  Magic.  Tech.
 
         </p>
         <p>
