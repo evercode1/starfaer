@@ -58,14 +58,14 @@ a:active {
 
 .pimg1{
 
-    background-image:url(/imgs/home/ship-lander.jpg);
+    background-image:url(/imgs/home/zori-book-cover.jpg);
     min-height: 100%;
 
 }
 
 .pimg2{
 
-    background-image:url(/imgs/home/zori-book-cover.jpg);
+    background-image:url(/imgs/home/ship-lander.jpg);
     min-height: 100%;
 
 
@@ -112,10 +112,24 @@ a:active {
 .ptext{
 
     position: absolute;
-    top: 50%;
+    top: 75%;
     width: 100%;
     text-align: center;
     color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+
+
+}
+
+.ptext-black{
+
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #343434;
     font-size: 27px;
     letter-spacing: 8px;
     text-transform: uppercase;
@@ -136,14 +150,24 @@ a:active {
 
 .subtext {
 
-    color: #b3b3b3;
+     color: #b3b3b3;
+     font-size: 12px;
+     text-align: center;
+     letter-spacing: 2px;
+
+
+ }
+
+
+.subtext-dark {
+
+    color: #343434;
     font-size: 12px;
     text-align: center;
     letter-spacing: 2px;
 
 
 }
-
 .ptext .border{
 
     background-color: black;

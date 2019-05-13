@@ -36,7 +36,7 @@
 
             <div><h1 class="center bluish"># Star Faer</h1></div>
 
-            <div><h2 >Epic Stories</h2></div>
+
 
             <!--   Icon Section   -->
             <div class="row">
@@ -104,10 +104,18 @@
     </div>
 
     <div class="pimg2">
-        <div class="ptext">
+
+
+        <div class="ptext-black">
             <span class="border trans">
 
-                The Queen of Zori
+                <div><h2 >Epic Stories</h2></div>
+
+                <div class="subtext-dark">War. Glory. Love.  Betrayal.</div>
+
+                Max Vonne
+
+
 
             </span>
         </div>
@@ -116,8 +124,9 @@
     <section class="section section-dark">
         
         <h2># Science Fantasy Fans</h2>
+
         <p>
-            Max Vonne's Star Faer brings you epic advetures.
+            Max Vonne's Star Faer brings you a blend of Sci Fi and Fantasy.
 
         </p>
 
@@ -138,7 +147,7 @@
         <h2># Fantasy Meets Sci Fi</h2>
         <p>
 
-            Queens.  Slaves.  Barbarians.  Elves.  Magic.  Tech.
+            Queens.  Slaves.  Barbarians.  Elves.  Magic. Tech.
 
         </p>
         <p>
