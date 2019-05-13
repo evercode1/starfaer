@@ -47,7 +47,7 @@
                         <h5 class="center">1007 Stars</h5>
 
                         <p class="light">Over 1000 star systems, including star type, number of planets,
-                            and more on the Kaedra Galaxy.
+                            and more in the Kaedra Galaxy.
                         </p>
                     </div>
                 </div>
