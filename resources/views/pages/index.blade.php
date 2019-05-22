@@ -36,8 +36,14 @@
 
             <div><h1 class="center bluish"># Star Faer</h1></div>
 
+            <div><h5 class="center bluish">The Queen of Zori</h5></div>
+
+            <div><h6 class="center bluish">coming 2019</h6></div>
+
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
+
+
 
 
 
