@@ -60,6 +60,7 @@ a:active {
 
     background-image:url(/imgs/home/zori-book-cover.jpg);
     min-height: 100%;
+    background-position-y: 0%;
 
 }
 
@@ -75,7 +76,7 @@ a:active {
 .pimg3{
 
     background-image:url(/imgs/home/map-zori.jpg);
-    min-height: 400px;
+    min-height: 100%;
 
 
 }
@@ -87,10 +88,15 @@ a:active {
 
 }
 
+
+
+
+
 .section{
 
     text-align: center;
     padding: 50px 80px;
+
 
 
 }
@@ -202,6 +208,8 @@ a:active {
     nav .brand-logo {
         font-size: 1.5rem;
     }
+
+
 
 }
 

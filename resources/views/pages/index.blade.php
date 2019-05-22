@@ -37,6 +37,9 @@
             <div><h1 class="center bluish"># Star Faer</h1></div>
 
 
+            <div><h4 class="center bluish">Max Vonne</h4></div>
+
+
 
             <!--   Icon Section   -->
             <div class="row">
@@ -79,7 +82,6 @@
 
         </div>
     </div>
-
     <div class="row center">
 
 
@@ -102,6 +104,11 @@
 
 
     </div>
+
+
+    <div><h6 class="center bluish">Book cover by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
+
+
 
     <div class="pimg2">
 
