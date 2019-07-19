@@ -12,7 +12,7 @@ return [
     */
 
     'thumbnail' => [
-        'url' => 'https://www.starfaer.com/imgs/twitter/thumbnail.jpg']
+        'url' => 'https://www.starfaer.com/imgs/twitter/thumbnail.jpg?time=now']
 
 
 
