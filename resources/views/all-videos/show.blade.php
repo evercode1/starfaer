@@ -58,7 +58,7 @@
 
                 </div>
 
-            </div> <!-- end column -->
+            </div> <!-- end row -->
 
         </div><!-- end container -->
 
