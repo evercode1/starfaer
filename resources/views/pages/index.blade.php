@@ -1,5 +1,11 @@
 @extends('layouts.masters.master-landing')
 
+@section('title')
+
+    <title>Star Faer</title>
+
+@endsection
+
 @section('content')
 
     <div class="pimg1">
