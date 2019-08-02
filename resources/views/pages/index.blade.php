@@ -72,7 +72,7 @@
                         <h2 class="center bluish"><i class="large material-icons">brightness_1</i></h2>
                         <h5 class="center">Over 12,000 Planets</h5>
 
-                        <p class="light">Eplore these worlds that are full of life and adventure.
+                        <p class="light">Explore these worlds that are full of life and adventure.
                          </p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                         <h2 class="center bluish"><i class="large material-icons">brightness_2</i></h2>
                         <h5 class="center">Over 43,000 Moons</h5>
 
-                        <p class="light">Unprecendented attention to details, each system is loaded with information.
+                        <p class="light">Unprecedented attention to details, each system is loaded with information.
 
 
 
