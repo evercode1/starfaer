@@ -86,6 +86,13 @@
 
                                 </a>
 
+                                <button type="button" class="waves-effect waves-light btn mt-5"
+                                        @click="confirmDelete(row.Id)">
+
+                                    Delete
+
+                                </button>
+
                             </td>
 
                         </tr>
@@ -211,6 +218,24 @@
             showSubscribed: function(subscribed){
 
                 return subscribed == 1 ? 'Yes'  : 'No';
+
+            },
+
+            confirmDelete: function(id){
+
+                if(confirm("Are you sure you want to delete?")){
+
+                    axios.post('/user-delete/' + id)
+                            .then(response => {
+
+                                gridData.loadData('/api/user-data', this);
+
+                            });
+
+
+                }
+
+
 
             }
 

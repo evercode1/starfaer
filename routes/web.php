@@ -289,6 +289,7 @@ Route::get('/unsubscribe/confirmation', 'UnsubscribeController@confirm')->name('
 
 // User routes
 
+Route::post('user-delete/{id}', 'UserController@destroy');
 Route::resource('user', 'UserController');
 
 // Video Routes

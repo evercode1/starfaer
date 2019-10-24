@@ -8853,6 +8853,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -8950,6 +8957,18 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
         showSubscribed: function showSubscribed(subscribed) {
 
             return subscribed == 1 ? 'Yes' : 'No';
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/user-delete/' + id).then(function (response) {
+
+                    gridData.loadData('/api/user-data', _this);
+                });
+            }
         }
 
     }
@@ -49269,6 +49288,24 @@ var render = function() {
                                     "\n\n                                    Edit\n\n                            "
                                   )
                                 ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "waves-effect waves-light btn mt-5",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  _vm.confirmDelete(row.Id)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n\n                                Delete\n\n                            "
                               )
                             ]
                           )
