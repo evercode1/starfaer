@@ -42,9 +42,11 @@
 
             <div><h1 class="center bluish"># Star Faer</h1></div>
 
-            <div><h5 class="center bluish">The Queen of Zori</h5></div>
+            <div><h5 class="center bluish">C'artha's Kiss</h5></div>
+            <div><h5 class="center bluish">Shadow of the Ring</h5></div>
+            <div><h5 class="center bluish">Infinity Flower</h5></div>
 
-            <div><h6 class="center bluish">coming 2019</h6></div>
+            <div><h6 class="center bluish">coming early 2020</h6></div>
 
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
