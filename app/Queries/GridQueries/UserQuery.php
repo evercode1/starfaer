@@ -11,7 +11,6 @@ class UserQuery implements DataQuery
     {
         $rows = DB::table('users')
               ->select('id as Id',
-                       'name as Name',
                        'email as Email',
                        'status_id as Status',
                        'is_subscribed as Subscribed',
@@ -28,7 +27,6 @@ class UserQuery implements DataQuery
     {
         $rows = DB::table('users')
                 ->select('id as Id',
-                         'name as Name',
                          'email as Email',
                          'status_id as Status',
                          'is_subscribed as Subscribed',
