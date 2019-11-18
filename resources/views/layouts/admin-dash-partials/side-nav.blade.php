@@ -68,7 +68,7 @@
                 </div>
             </li>
 
-            <li class="bold waves-effect"><a class="collapsible-header">Components<i class="material-icons chevron">chevron_left</i></a>
+            <li class="bold waves-effect"><a class="collapsible-header">Cosmic Components<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="/universe" class="waves-effect">All Universes<i class="fa fa-globe"></i></a></li>

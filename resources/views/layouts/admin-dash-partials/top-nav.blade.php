@@ -33,7 +33,7 @@
                         <li><a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i></a></li>
                         <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
                         <!-- Dropdown Trigger -->
-                        <li><a class="dropdown-trigger" href="#!" data-target="user-links">{{ Auth::user()->name }}
+                        <li><a class="dropdown-trigger" href="#!" data-target="user-links">
                                 <i class="material-icons right">arrow_drop_down</i></a></li>
                     </ul><a href="#!" data-target="sidenav-left" class="sidenav-trigger left"><i class="material-icons black-text">menu</i></a>
                     <alarm-bell-admin></alarm-bell-admin>

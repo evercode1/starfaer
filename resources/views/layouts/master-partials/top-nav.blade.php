@@ -34,7 +34,7 @@
             <ul class="right">
                 <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
                 <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{ Auth::user()->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
 
                 @else
