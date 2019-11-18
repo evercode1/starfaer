@@ -52,13 +52,27 @@
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
+            <div> <h3  class="center bluish"><a href="#">Read Book One Free</a></h3> </div>
 
 
+            <div><h1 class="center bluish"># Join the Email List</h1></div>
+            <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
+            <div><h6 class="center bluish">New Release Notifications</h6></div>
+            <div><h6 class="center bluish">Live Events</h6></div>
+            <div><h6 class="center bluish">Merch and Collectibles</h6></div>
+
+            <div> <h4  class="center bluish"><a href="#">Join Free Now</a></h4> </div>
+
+
+
+            <div><h5 class="center bluish">Max Vonne's Cosmic Fantasy Features Rich Worlds</h5></div>
 
 
             <!--   Icon Section   -->
             <div class="row">
                 <div class="col s12 m4">
+
+
 
                     <div class="icon-block">
                         <h2 class="center bluish"><i class="large material-icons">brightness_5</i></h2>
@@ -176,7 +190,7 @@
 
             @if(! Auth::check())
 
-                <a href="/login">Take the tour now</a>.
+                <a href="/login">Join the Mailing List for Free Now</a>.
 
             @else
 
