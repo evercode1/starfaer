@@ -37,7 +37,7 @@
 
                             <td>
 
-                                {{ row.User }}
+                                {{ row.Email }}
 
                             </td>
 
@@ -135,7 +135,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id','User', 'Topic', 'Message', 'Status', 'Created'],
+                gridColumns: ['Id','Email', 'Topic', 'Message', 'Status', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

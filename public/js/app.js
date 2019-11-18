@@ -5116,7 +5116,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'User', 'Topic', 'Message', 'Status', 'Created'],
+            gridColumns: ['Id', 'Email', 'Topic', 'Message', 'Status', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -5360,7 +5360,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'User', 'Topic', 'Message', 'Status', 'Created'],
+            gridColumns: ['Id', 'Email', 'Topic', 'Message', 'Status', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -8855,11 +8855,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -8879,7 +8874,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Email', 'Status', 'Subscribed', 'Admin', 'Joined'],
+            gridColumns: ['Id', 'Email', 'Status', 'Subscribed', 'Admin', 'Joined'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -46430,7 +46425,7 @@ var render = function() {
                         _c("td", [
                           _vm._v(
                             "\n\n                            " +
-                              _vm._s(row.User) +
+                              _vm._s(row.Email) +
                               "\n\n                        "
                           )
                         ]),
@@ -48767,7 +48762,7 @@ var render = function() {
                         _c("td", [
                           _vm._v(
                             "\n\n                            " +
-                              _vm._s(row.User) +
+                              _vm._s(row.Email) +
                               "\n\n                        "
                           )
                         ]),
@@ -49221,14 +49216,6 @@ var render = function() {
                             "\n\n                               " +
                               _vm._s(row.Id) +
                               "\n\n                        "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            { attrs: { href: "/user/" + row.Id + "/edit" } },
-                            [_vm._v(" " + _vm._s(row.Name))]
                           )
                         ]),
                         _vm._v(" "),

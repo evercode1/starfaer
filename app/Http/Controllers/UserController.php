@@ -79,7 +79,6 @@ class UserController extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required|string|max:20|unique:users,name,' . $user->id,
             'is_subscribed' => new OnOrNull,
             'is_admin' => new OnOrNull,
             'status_id' => 'in:7,10',

@@ -50,7 +50,6 @@ class SettingsController extends Controller
 
         $this->validate($request, [
 
-            'name' => 'required|string|max:20|unique:users,name,' . $user->id,
             'email' => 'required|email|max:255|unique:users,email,' .$user->id,
             'is_subscribed' => new OnOrNull,
 
@@ -61,8 +60,7 @@ class SettingsController extends Controller
         $request->is_subscribed === 'on' ? $isSubscribed = true : $isSubscribed = false;
 
 
-        $user->update(['name'  => $request->name,
-                       'email' => $request->email,
+        $user->update(['email' => $request->email,
                        'is_subscribed' => $isSubscribed]);
 
         return redirect()->action('SettingsController@edit', [$user]);

@@ -83,7 +83,7 @@ a:active {
 
 .pimg4{
 
-    background-image:url(/imgs/home/cartha.jpeg);
+    background-image:url(/imgs/home/cartha-front.jpg);
     min-height: 100%;
     background-position-y: 0%;
 
@@ -164,6 +164,16 @@ a:active {
 
 
  }
+
+.subtext-white a{
+
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 2px;
+
+
+}
 
 
 .subtext-dark {

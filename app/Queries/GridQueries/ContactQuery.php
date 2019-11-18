@@ -15,7 +15,7 @@ class ContactQuery implements DataQuery
                 'contacts.contact_topic_id as Topic',
                 'contacts.status_id as Status',
                 'contact_topics.name as Topic',
-                'users.name as User',
+                'users.email as Email',
                 DB::raw('DATE_FORMAT(contacts.created_at,
                                  "%m-%d-%Y") as Created'))
             ->leftJoin('contact_topics', 'contact_topic_id', '=', 'contact_topics.id')
@@ -35,12 +35,12 @@ class ContactQuery implements DataQuery
                 'contacts.contact_topic_id as Topic',
                 'contacts.status_id as Status',
                 'contact_topics.name as Topic',
-                'users.name as User',
+                'users.email as Email',
                 DB::raw('DATE_FORMAT(contacts.created_at,
                                  "%m-%d-%Y") as Created'))
             ->leftJoin('contact_topics', 'contact_topic_id', '=', 'contact_topics.id')
             ->leftJoin('users', 'user_id', '=', 'users.id')
-            ->where('users.name', 'like', '%' . $keyword . '%')
+            ->where('users.email', 'like', '%' . $keyword . '%')
             ->orWhere('contacts.message', 'like', '%' . $keyword . '%')
             ->orWhere('contact_topics.name', 'like', '%' . $keyword . '%')
             ->orderBy($column, $direction)

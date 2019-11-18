@@ -13,33 +13,6 @@
 
       {{ csrf_field() }}
 
-    <!-- name input -->
-
-
-      <div class="row">
-          <div class="input-field col s12">
-              <input placeholder="enter name..."
-                     id="name"
-                     name="name"
-                     type="text"
-                     value="{{ old('name') }}"
-                     class="validate">
-              <label for="name">Name</label>
-          </div>
-
-
-
-        @if ($errors->has('name'))
-
-            <span class="form-error">
-                <strong>{{ $errors->first('name') }}</strong>
-            </span>
-
-        @endif
-
-    </div>
-
-    <!-- end name input -->
 
     <!-- email input -->
 

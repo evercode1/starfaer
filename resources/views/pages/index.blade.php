@@ -30,7 +30,8 @@
 
             <br>
 
-            <div class="subtext">Science Fantasy</div>
+            <div class="subtext">Cosmic Fantasy  </div>
+            <div class="subtext-white"> <p><a href="#">Get book One Free</a></p>  </div>
 
 
         </div>
@@ -188,23 +189,7 @@
 
     <div class="pimg4">
 
-        <div class="ptext">
-
-
-
-            <span class="border">
-
-
-               <a href="/register">Join Now Free</a>
-
-            </span>
-
-            <br>
-
-            <div class="subtext">Start Your Adventure</div>
-
-
-        </div>
+        
 
 
 

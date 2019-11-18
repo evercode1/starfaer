@@ -35,11 +35,6 @@
 
                             </td>
 
-                            <td>
-
-                                <a v-bind:href="'/user/' + row.Id + '/edit'"> {{ row.Name }}</a>
-
-                            </td>
 
                             <td>
 
@@ -136,7 +131,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Email', 'Status', 'Subscribed','Admin', 'Joined'],
+                gridColumns: ['Id', 'Email', 'Status', 'Subscribed','Admin', 'Joined'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

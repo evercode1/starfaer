@@ -18,7 +18,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
 
-        'name',
         'email',
         'password',
         'is_subscribed',
@@ -43,7 +42,7 @@ class User extends Authenticatable
         $request->is_admin === 'on' ? $isAdmin = true : $isAdmin = false;
         $request->is_subscribed === 'on' ? $isSubscribed = true : $isSubscribed = false;
 
-        return  $user->update(['name'  => $request->name,
+        return  $user->update([
                                'email' => $request->email,
                                'is_subscribed' => $isSubscribed,
                                'is_admin' => $isAdmin,

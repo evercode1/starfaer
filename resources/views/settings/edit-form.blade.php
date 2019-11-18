@@ -19,30 +19,6 @@
 
     {{ csrf_field() }}
 
-    <!-- name input -->
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="name"
-                       name="name"
-                       type="text"
-                       class="validate"
-                       value="{{ old('name') ? old('name') : $user->name }}"
-                       placeholder="enter your username...">
-                <label for="name">User Name</label>
-            </div>
-
-            @if ($errors->has('name'))
-
-                <span class="form-error">
-                     <strong>{{ $errors->first('name') }}</strong>
-                </span>
-
-            @endif
-        </div>
-
-
-
-    <!-- end name input -->
 
     <!-- email input -->
 
