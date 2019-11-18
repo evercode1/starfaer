@@ -168,6 +168,7 @@ a:active {
 .subtext-white a{
 
     color: white;
+    background-color: #141818;
     font-size: 12px;
     text-align: center;
     letter-spacing: 2px;
