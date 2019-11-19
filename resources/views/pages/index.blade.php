@@ -50,7 +50,7 @@
             <div><h6 class="center bluish">coming early 2020</h6></div>
 
             <div class="center">
-                <img src="/imgs/home/me.jpg" height="200px" class="mt-50 mb-50" alt="Max Vonne">
+                <img src="/imgs/home/me.jpg" height="200px" class="mt-50" alt="Max Vonne">
 
             </div>
 
