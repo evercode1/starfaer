@@ -28,9 +28,11 @@ class UnsubscribeController extends Controller
     public function store()
     {
 
-        $user = Auth::user();
+        $user = Auth::id();
+        
 
-        $user->update(['is_subscribed' => 0]);
+        User::destroy($user);
+
 
         return Redirect::route('unsubscribe-confirmation');
 
