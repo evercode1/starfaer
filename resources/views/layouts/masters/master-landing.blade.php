@@ -20,7 +20,7 @@
 
     @yield('meta')
 
-    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="/css/index-kludge.css">
 
 </head>
 
