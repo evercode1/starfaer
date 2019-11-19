@@ -32,8 +32,7 @@ class UserQuery implements DataQuery
                          'is_subscribed as Subscribed',
                          'is_admin as Admin',
                 DB::raw('DATE_FORMAT(created_at,"%m-%d-%Y") as Joined'))
-                ->where('name', 'like', '%' . $keyword . '%')
-                ->orWhere('email', 'like', '%' . $keyword . '%')
+                ->Where('email', 'like', '%' . $keyword . '%')
                 ->orderBy($column, $direction)
                 ->paginate(5);
 
