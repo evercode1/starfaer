@@ -105,6 +105,10 @@ class GridQuery
                 $column = 'id';
                 $direction = 'desc';
                 break;
+            case $query instanceof UserQuery :
+                $column = 'id';
+                $direction = 'desc';
+                break;
 
             default:
                 $column = 'id';
