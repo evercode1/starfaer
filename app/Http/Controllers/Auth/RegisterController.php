@@ -53,6 +53,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
+
         event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
@@ -71,9 +72,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+        $data['is_subscribed'] = empty($data['is_subscribed']) ? 0 : 1;
+        $data['terms'] = empty($data['terms']) ? 0 : 1;
+
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
+            'is_subscribed' => 'boolean',
             'password' => 'required|string|min:6|confirmed',
+            'terms' => 'accepted'
         ]);
     }
 
@@ -85,9 +92,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $data['is_subscribed'] = empty($data['is_subscribed']) ? 0 : 1;
+
         return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'is_subscribed' => $data['is_subscribed'],
         ]);
     }
 }
