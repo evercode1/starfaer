@@ -49,6 +49,11 @@
 
             <div><h6 class="center bluish">coming early 2020</h6></div>
 
+            <div class="center">
+                <img src="/imgs/home/me.jpg" height="200px" class="rotate90 m-50" alt="Max Vonne">
+
+            </div>
+
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
@@ -62,6 +67,16 @@
             <div><h6 class="center bluish">Merch and Collectibles</h6></div>
 
             <div> <h4  class="center bluish"><a href="#">Join Free Now</a></h4> </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

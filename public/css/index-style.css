@@ -200,7 +200,13 @@ a:active {
 
 }
 
-
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
 
 @media only screen and (max-width: 568px){
 
@@ -222,13 +228,24 @@ a:active {
     }
 
 
-
 }
 
 .bluish {
 
     color: #364a5e;
 
+
+}
+
+.mt-50 {
+
+    margin-top:  50px;
+
+}
+
+.m-50 {
+
+    margin:  50px;
 
 }
 
