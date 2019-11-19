@@ -11,7 +11,8 @@
             </div>
 
                 <div class="row">
-                    <a href="/about">About</a> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Use</a> | <a href="/contact/create">Contact</a>
+                    <a href="/about">About</a> | <a href="/privacy-policy">Privacy Policy</a> |
+                    <a href="/terms-of-service">Terms of Use</a> | <a href="/contact/create">Contact</a> | <a href="/unsubscribe">Unsubscribe</a>
                 </div>
 
             </div>  <!--  end center column -->

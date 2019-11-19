@@ -30,7 +30,9 @@
 
                 <ul id="nav-mobile" class="right">
                     <li><a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i></a></li>
+                    @if(Auth::user())
                     <li><img class="circ" src="{{ Gravatar::get(Auth::user()->email)  }}"></li>
+                    @endif
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" href="#!" data-target="user-links">
                             <i class="material-icons right">arrow_drop_down</i></a></li>

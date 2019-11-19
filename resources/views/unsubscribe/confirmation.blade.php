@@ -12,7 +12,7 @@
 
     <div class="row">
 
-        <h1 class="flow-text grey-text text-darken-1">You have successfully unsubscribed from emails and alerts.</h1>
+        <h1 class="flow-text grey-text text-darken-1">You have successfully unsubscribed from Star Faer.</h1>
 
 
     </div>  <!-- end row -->

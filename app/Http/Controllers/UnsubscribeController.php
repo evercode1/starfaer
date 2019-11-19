@@ -12,7 +12,7 @@ class UnsubscribeController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth');
+        $this->middleware(['auth'], ['except' => 'confirm']);
     }
 
 
@@ -29,7 +29,7 @@ class UnsubscribeController extends Controller
     {
 
         $user = Auth::id();
-        
+
 
         User::destroy($user);
 
