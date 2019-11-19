@@ -31,7 +31,7 @@
             <br>
 
             <div class="subtext">Cosmic Fantasy  </div>
-            <div class="subtext-white"> <p><a href="#">Get book One Free</a> (1/15/2020)</p>  </div>
+            <div class="subtext-white"> <p><a href="#">Get book One Free (1/15/2020)</a></p>  </div>
 
 
         </div>
@@ -52,7 +52,7 @@
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
-            <div> <h3  class="center bluish"><a href="#">Read Book One Free</a> (1/15/2020)</h3> </div>
+            <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
 
 
             <div><h1 class="center bluish"># Join the Email List</h1></div>
