@@ -61,7 +61,7 @@
             <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
 
 
-            <div><h1 class="center bluish"># Join the Email List</h1></div>
+            <div><h1 class="center bluish"># Join the Reader's club</h1></div>
             <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
             <div><h6 class="center bluish">New Release Notifications</h6></div>
             <div><h6 class="center bluish">Live Events</h6></div>
