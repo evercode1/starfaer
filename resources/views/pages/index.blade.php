@@ -58,6 +58,11 @@
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
+
+            <div class="center">
+                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
+
+            </div>
             <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
 
 
