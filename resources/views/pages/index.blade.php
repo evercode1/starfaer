@@ -43,6 +43,16 @@
 
             <div><h1 class="center bluish"># Star Faer</h1></div>
 
+            <div class="center">
+                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
+
+            </div>
+
+
+            <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
+
+            <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
+
             <div><h5 class="center bluish">C'artha's Kiss</h5></div>
             <div><h5 class="center bluish">Shadow of the Ring</h5></div>
             <div><h5 class="center bluish">Infinity Flower</h5></div>
@@ -57,13 +67,9 @@
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
-            <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
 
-            <div class="center">
-                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
 
-            </div>
-            <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
+
 
 
             <div><h1 class="center bluish"># Join the Reader's club</h1></div>
@@ -72,21 +78,12 @@
             <div><h6 class="center bluish">Live Events</h6></div>
             <div><h6 class="center bluish">Merch and Collectibles</h6></div>
 
-            <div> <h4  class="center bluish"><a href="#">Join Free Now</a></h4> </div>
+            <div class="mt-20"> <h4  class="center"><a href="/register"> <u>Join Free Now</u>  </a></h4> </div>
 
 
 
 
-
-
-
-
-
-
-
-
-
-            <div><h5 class="center bluish">Max Vonne's Cosmic Fantasy Features Rich Worlds</h5></div>
+            <div class="mt-50"><h5 class="center bluish">Max Vonne's Cosmic Fantasy Features Rich Worlds</h5></div>
 
 
             <!--   Icon Section   -->
