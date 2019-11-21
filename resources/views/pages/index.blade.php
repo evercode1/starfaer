@@ -51,13 +51,14 @@
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
 
-            <div><h6 class="center bluish">Star Faer is a ten book series by Max Vonne</h6></div>
+            <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
+            <div class="mb-20"><h6 class="center bluish">by Max Vonne</h6></div>
 
             <div><h5 class="center bluish">C'artha's Kiss</h5></div>
             <div><h5 class="center bluish">Shadow of the Ring</h5></div>
             <div><h5 class="center bluish">Infinity Flower</h5></div>
 
-            <div><h6 class="center bluish">coming early 2020</h6></div>
+            <div class="mt-20"><h6 class="center bluish">coming early 2020</h6></div>
 
             <div class="center">
                 <img src="/imgs/home/me.jpg" height="200px" class="mt-50" alt="Max Vonne">
@@ -72,7 +73,7 @@
 
 
 
-            <div><h1 class="center bluish"># Join the Reader's club</h1></div>
+            <div><h1 class="center bluish"># Reader's club</h1></div>
             <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
             <div><h6 class="center bluish">New Release Notifications</h6></div>
             <div><h6 class="center bluish">Live Events</h6></div>
