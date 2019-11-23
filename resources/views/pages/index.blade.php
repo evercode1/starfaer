@@ -225,7 +225,7 @@
 
     <section class="section section-dark">
 
-        <h2># Fantasy Meets Sci Fi</h2>
+        <h2># Organically Grown</h2>
         <p>
 
             Join the growing community of Star Faer fans.
