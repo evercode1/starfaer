@@ -8,37 +8,14 @@
 
 @section('content')
 
-    <div class="pimg1">
 
-        <div class="ptext">
-
-            <span class="border">
-
-                @if(! Auth::check())
-
-                    <a href="/login">Star Faer</a>
-
-                @else
-
-                    <a href="/home">Star Faer</a>
-
-                @endif
-
-
-
-            </span>
-
-
-
-
-        </div>
-
-    </div>
 
     <div class="container">
-        <div class="section">
+        <div class="section center">
 
-            <div><h1 class="center bluish"># Star Faer</h1></div>
+
+
+            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" width="200px" class="center" alt="Max Vonne"></a></div>
 
             <div class="center">
                 <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
@@ -47,7 +24,8 @@
 
             </div>
 
-            
+
+
 
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
@@ -221,11 +199,37 @@
         </p>
     </section>
 
-    <div class="pimg4">
+    <div class="pimg1">
 
-        
+        <div class="ptext">
+
+            <span class="">
+
+                <div class="">
+
+                     @if(! Auth::check())
+
+                        <a href="/login"><img src="/imgs/home/logo.png" width="200px" class="mt-50" alt="Max Vonne"></a>
+
+                    @else
+
+                        <a href="/home"><img src="/imgs/home/logo.png" width="200px" class="mt-50" alt="Max Vonne"></a>
+
+                    @endif
 
 
+                </div>
+
+
+
+
+
+            </span>
+
+
+
+
+        </div>
 
     </div>
 

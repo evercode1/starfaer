@@ -195,6 +195,16 @@ a:active {
 
 }
 
+.black-background {
+
+    background-color: black;
+    opacity: 0.90;
+    width: 100%;
+
+
+
+}
+
 .ptext .border.trans{
 
     background-color: transparent;
