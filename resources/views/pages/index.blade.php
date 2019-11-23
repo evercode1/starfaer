@@ -97,17 +97,13 @@
 
     <section class="section section-dark">
 
-        <h2># Organically Grown</h2>
-        <p>
-
-            Join the growing community of Star Faer fans.
-
-        </p>
+        <h2 class="flow-text"># Organically Grown</h2>
+        
         <p>
 
             @if(! Auth::check())
 
-                <a href="/login">Join the Reader's Club for Free Now</a>.
+                <a href="/login">Join the growing community of Star Faer Now</a>.
 
             @else
 
