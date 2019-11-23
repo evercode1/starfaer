@@ -18,9 +18,9 @@
             <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" width="200px" class="center" alt="Star Faer"></a></div>
 
             <div class="center">
-                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss">
+                <a href=""><img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
 
-                <img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring">
+                <a href=""><img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
 
             </div>
 
