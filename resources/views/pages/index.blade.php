@@ -15,7 +15,12 @@
 
 
 
-            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" height="150" class="image-scale" alt="Star Faer"></a></div>
+            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png"
+                                                                       height="150"
+                                                                       class="image-scale"
+                                                                       alt="Star Faer"></a>
+                <div class="center white-text">Max Vonne</div>
+            </div>
 
             <div class="center">
                 <a href=""><img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
@@ -30,14 +35,14 @@
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
 
-            <div><h6 class="center bluish">Star Faer is a ten book series</h6></div>
-            <div class="mb-20"><h6 class="center bluish">by Max Vonne</h6></div>
+            <div><h6 class="center bluish mb-20">Star Faer is a ten book series</h6></div>
+
 
             <div class="row">
                 <div class="center">
                     <div class="card blue-grey darken-3">
                         <div class="card-content white-text">
-                            <span class="card-title"><u>C'artha's Kiss</u></span>
+                            <span class="card-title"><u>Book One:  C'artha's Kiss</u></span>
                             <p>C’artha is a teenage Elf with a secret.  She can talk to dragons.  It’s an unusual talent, hinting at her emerging magical
                                 abilities.  With her older sister destined for the throne, C’artha carefully avoids doing anything to spoil the wedding.
                                 Little does she know that war is coming, along with palace intrigues that will shake her world to the core.
@@ -53,7 +58,7 @@
                 <div class="center">
                     <div class="card blue-grey darken-3">
                         <div class="card-content white-text">
-                            <span class="card-title"><u>Shadow of the Ring</u></span>
+                            <span class="card-title"><u>Book Two:  Shadow of the Ring</u></span>
                             <p>C’artha’s adventures continue on Tyra, a world with a planetary ring around it.
                                 The ring has left debris on the planet in the form of crystals with unusual properties.
                                 The Tyrans mine the crystals to trade for gold.  Business is booming but they have to burn the
@@ -72,7 +77,7 @@
                 <div class="center">
                     <div class="card blue-grey darken-3">
                         <div class="card-content white-text">
-                            <span class="card-title"><u>Infinity Flower</u></span>
+                            <span class="card-title"><u>Book Three:  Infinity Flower</u></span>
                             <p>coming early 2020.</p>
                         </div>
 
@@ -175,7 +180,7 @@
     </div>
 
 
-    <div><h6 class="center bluish">Book cover by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
+    <div><h6 class="center bluish">Book covers by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
 
 
 
@@ -230,7 +235,7 @@
 
             @if(! Auth::check())
 
-                <a href="/login">Join the Mailing List for Free Now</a>.
+                <a href="/login">Join the Reader's Club for Free Now</a>.
 
             @else
 
@@ -241,38 +246,6 @@
         </p>
     </section>
 
-    <div class="pimg1">
-
-        <div class="ptext">
-
-            <span class="">
-
-                <div class="">
-
-                     @if(! Auth::check())
-
-                        <a href="/login"><img src="/imgs/home/logo.png" width="200px" class="mt-50" alt="Max Vonne"></a>
-
-                    @else
-
-                        <a href="/home"><img src="/imgs/home/logo.png" width="200px" class="mt-50" alt="Max Vonne"></a>
-
-                    @endif
-
-
-                </div>
-
-
-
-
-
-            </span>
-
-
-
-
-        </div>
-
-    </div>
+    
 
 @endsection
