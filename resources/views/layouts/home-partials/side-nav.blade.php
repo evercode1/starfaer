@@ -8,12 +8,13 @@
             <li class="bold waves-effect active"><a class="collapsible-header">Pages<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/home" class="waves-effect active">Dashboard<i class="material-icons">web</i></a></li>
+                        <li><a href="/home" class="waves-effect active">Worlds of Star Faer<i class="material-icons">star</i></a></li>
                         <li><a href="/all-stars" class="waves-effect">All Stars<i class="material-icons">star</i></a></li>
                         <li><a href="/all-planets" class="waves-effect">All Planets<i class="material-icons">star</i></a></li>
                         <li><a href="/all-moons" class="waves-effect">All Moons<i class="material-icons">star</i></a></li>
                         <li><a href="/planets-with-life" class="waves-effect">Planets With Life<i class="material-icons">star</i></a></li>
                         <li><a href="/life-zones" class="waves-effect">Zones With Life<i class="material-icons">star</i></a></li>
+                        <li><a href="/" class="waves-effect active">Splash Page<i class="material-icons">star</i></a></li>
                     </ul>
                 </div>
             </li>

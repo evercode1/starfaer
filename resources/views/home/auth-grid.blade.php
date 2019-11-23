@@ -70,11 +70,6 @@
             </div>
         <div class="row">
 
-            <all-articles></all-articles>
-
-        </div>
-        <div class="row">
-
             <all-planets></all-planets>
 
         </div>
