@@ -98,7 +98,7 @@
     <section class="section section-dark">
 
         <h2 class="flow-text"># Organically Grown</h2>
-        
+
         <p>
 
             @if(! Auth::check())

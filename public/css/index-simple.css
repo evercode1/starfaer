@@ -24,6 +24,11 @@ body, html {
     color: #646464;
 }
 
+.final-call a:link {
+    text-decoration: none;
+    color: #f3f8fb; !important
+}
+
 a:link {
     text-decoration: none;
     color: #4c6a7f;
