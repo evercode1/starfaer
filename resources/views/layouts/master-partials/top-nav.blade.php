@@ -26,9 +26,12 @@
     </li>
 </ul>
 <div class="navbar-fixed">
-    <nav class="navbar blue darken-1">
+    <nav class="navbar blue-grey darken-1">
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo ml-10 left">Star Faer</a>
+            <a href="/" class="brand-logo ml-10 left"><img src="/imgs/home/logo.png"
+                                                           height="50"
+                                                           class="image-scale"
+                                                           alt="Star Faer"></a>
 
             @if(Auth::check())
             <ul class="right">
