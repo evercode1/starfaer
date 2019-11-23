@@ -10,6 +10,15 @@ body, html {
 
 }
 
+.text-box {
+
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+
+
+}
+
 .med-grey {
 
     color: #646464;
@@ -197,7 +206,7 @@ a:active {
 
 .black-background {
 
-    background-color: black;
+    background-color: #304148;
     opacity: 0.90;
     width: 100%;
 
