@@ -228,7 +228,7 @@
         <h2># Fantasy Meets Sci Fi</h2>
         <p>
 
-            Queens.  Slaves.  Barbarians.  Elves.  Magic. Tech.
+            Join the growing community of Star Faer fans.
 
         </p>
         <p>
