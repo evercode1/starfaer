@@ -15,12 +15,12 @@
 
 
 
-            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" width="200px" class="center" alt="Max Vonne"></a></div>
+            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" width="200px" class="center" alt="Star Faer"></a></div>
 
             <div class="center">
-                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
+                <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss">
 
-                <img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Max Vonne">
+                <img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring">
 
             </div>
 
