@@ -25,7 +25,7 @@
             <div class="center">
                 <a href=""><img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
 
-                <a href=""><img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
+                <a href=""><img src="/imgs/home/shadow-front-cover-2.jpg" height="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
 
             </div>
 
