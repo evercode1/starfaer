@@ -15,6 +15,7 @@
                         <li><a href="/planets-with-life" class="waves-effect">Planets With Life<i class="material-icons">star</i></a></li>
                         <li><a href="/life-zones" class="waves-effect">Zones With Life<i class="material-icons">star</i></a></li>
                         <li><a href="/" class="waves-effect active">Splash Page<i class="material-icons">star</i></a></li>
+                        <li><a href="/about" class="waves-effect active">About<i class="material-icons">star</i></a></li>
                     </ul>
                 </div>
             </li>
