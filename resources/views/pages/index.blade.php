@@ -28,10 +28,7 @@
 
             </span>
 
-            <br>
 
-            <div class="subtext">Cosmic Fantasy  </div>
-            <div class="subtext-white"> <p><a href="#">Get book One Free (1/15/2020)</a></p>  </div>
 
 
         </div>
@@ -46,7 +43,11 @@
             <div class="center">
                 <img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Max Vonne">
 
+                <img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" height="200px" class="mt-50" alt="Max Vonne">
+
             </div>
+
+            
 
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
