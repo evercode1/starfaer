@@ -121,9 +121,9 @@
 
                     <div class="icon-block">
                         <h2 class="center bluish"><i class="large material-icons">brightness_5</i></h2>
-                        <h5 class="center">1007 Stars</h5>
+                        <h5 class="center blue-grey-text darken-2">1007 Stars</h5>
 
-                        <p class="light">Over 1000 star systems, including star type, number of planets,
+                        <p class="blue-grey-text">Over 1000 star systems, including star type, number of planets,
                             and more in the Kaedra Galaxy.
                         </p>
                     </div>
@@ -132,9 +132,9 @@
                 <div class="col s12 m4">
                     <div class="icon-block">
                         <h2 class="center bluish"><i class="large material-icons">brightness_1</i></h2>
-                        <h5 class="center">Over 12,000 Planets</h5>
+                        <h5 class="center blue-grey-text darken-2">Over 12,000 Planets</h5>
 
-                        <p class="light">Explore these worlds that are full of life and adventure.
+                        <p class="blue-grey-text">Explore these worlds that are full of life and adventure.
                          </p>
                     </div>
                 </div>
@@ -142,9 +142,9 @@
                 <div class="col s12 m4">
                     <div class="icon-block">
                         <h2 class="center bluish"><i class="large material-icons">brightness_2</i></h2>
-                        <h5 class="center">Over 43,000 Moons</h5>
+                        <h5 class="center blue-grey-text darken-2">Over 43,000 Moons</h5>
 
-                        <p class="light">Unprecedented attention to details, each system is loaded with information.
+                        <p class="blue-grey-text">Unprecedented attention to details, each system is loaded with information.
 
 
 
@@ -246,6 +246,6 @@
         </p>
     </section>
 
-    
+
 
 @endsection
