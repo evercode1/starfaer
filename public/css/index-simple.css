@@ -242,6 +242,17 @@ a:active {
 
 }
 
+@media only screen and (max-width: 568px){
+
+    .image-scale {
+
+        height: 50px;
+
+    }
+
+
+}
+
 .bluish {
 
     color: #364a5e;

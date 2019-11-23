@@ -15,7 +15,7 @@
 
 
 
-            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" width="200px" class="center" alt="Star Faer"></a></div>
+            <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png" height="150" class="image-scale" alt="Star Faer"></a></div>
 
             <div class="center">
                 <a href=""><img src="/imgs/home/cartha-front.jpg" height="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
