@@ -103,7 +103,7 @@
 
             @if(! Auth::check())
 
-                <a href="/login">Join the growing community of Star Faer Now</a>.
+                <a href="/login">Join the growing community of Star Faer</a>.
 
             @else
 
