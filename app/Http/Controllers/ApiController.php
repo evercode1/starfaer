@@ -209,10 +209,10 @@ class ApiController extends Controller
 
     }
 
-    public function allBooksData()
+    public function allBooksData(Request $request)
     {
 
-        return AllBooksQuery::sendData();
+        return GridQuery::sendData($request, 'BookQuery');
 
     }
 

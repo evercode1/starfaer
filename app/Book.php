@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     protected $fillable = ['title',
-                           'subtitle',
-                           'weight',
+                           'series_name',
                            'author',
                            'url',
+                           'number',
                            'is_featured',
                            'is_active',
                            'published_at',

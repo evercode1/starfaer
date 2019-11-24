@@ -65,10 +65,10 @@ class BookController extends Controller
         $this->validate($request, [
 
             'title' => 'required|unique:books|string|max:100',
-            'subtitle' => 'required|unique:books|string|max:150',
+            'series_name' => 'required|string|max:150',
             'url' => 'required|unique:books|string|max:150',
             'author' => 'required|string|max:100',
-            'weight' => 'required|integer|between:1,100',
+            'number' => 'required|integer|between:1,100',
             'is_featured' => 'required|boolean',
             'is_active' => 'required|boolean',
             'published_at' => 'date',
@@ -84,9 +84,9 @@ class BookController extends Controller
 
 
         $book = Book::create(['title' => $request->title,
-                              'subtitle' => $request->subtitle,
+                              'series_name' => $request->series_name,
                               'url'   => $request->url,
-                              'weight'   => $request->weight,
+                              'number'   => $request->number,
                               'author' => $request->author,
                               'is_featured' => $request->is_featured,
                               'is_active' => $request->is_active,
@@ -142,10 +142,10 @@ class BookController extends Controller
         $this->validate($request, [
 
             'title' => 'required|string|max:100|unique:books,title,' .$book->id,
-            'subtitle' => 'required|string|max:150|unique:books,subtitle,' .$book->id,
+            'series_name' => 'required|string|max:150',
             'url' => 'required|string|max:150|unique:books,url,' .$book->id,
             'author' => 'required|string|max:100',
-            'weight' => 'required|integer|between:1,100',
+            'number' => 'required|integer|between:1,100',
             'is_featured' => 'required|boolean',
             'is_active' => 'required|boolean',
             'published_at' => 'date'
@@ -225,10 +225,10 @@ class BookController extends Controller
     {
 
         $book->title = $request->get('title');
-        $book->subtitle = $request->get('subtitle');
+        $book->series_name = $request->get('series_name');
         $book->url = $request->get('url');
         $book->author = $request->get('author');
-        $book->weight = $request->get('weight');
+        $book->number = $request->get('number');
         $book->is_featured = $request->get('is_featured');
         $book->is_active = $request->get('is_active');
         $book->published_at = $request->get('published_at');

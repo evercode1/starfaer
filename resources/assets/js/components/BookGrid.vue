@@ -27,33 +27,37 @@
 
                         <tr v-for="row in gridData">
 
-                            <td> <a v-bind:href="'/book/' + row.Id ">
-                                <img v-bind:src="'/imgs/books/thumbnails/thumb-' + formatImageName(row.Title) + '.' + row.Ext "></a>
-                            </td>
-
                             <td>
 
-                                 {{ row.Title }}
+                                <a v-bind:href="row.Url"><img v-bind:src="'/imgs/books/thumbnails/thumb-'
+                            + formatImageName(row.Title) + '.' + row.Ext"></a>
 
                             </td>
 
                             <td>
 
-                                {{ row.Weight }}
+                                <a v-bind:href="'/all-Books/' + row.Id">{{ row.Series }}</a>
 
                             </td>
+
+                            <td>
+
+                                {{ row.Number }}
+
+                            </td>
+
+
+                            <td>
+
+                                <a v-bind:href="'/all-Books/' + row.Id">{{ row.Title }}</a>
+
+                            </td>
+
+
 
                             <td>
 
                                 {{ row.Author }}
-
-
-
-                            </td>
-
-                            <td>
-
-                               <a v-bind:href="row.Url" target="_blank"> {{ row.Url }} </a>
 
                             </td>
 
@@ -149,7 +153,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Thumbnail', 'Title', 'Weight','Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
+                gridColumns: ['Thumbnail', 'Series', 'Number', 'Title', 'Author', 'Featured', 'Active', 'Publish', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

@@ -2160,40 +2160,164 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'video-table-head': __webpack_require__("./resources/assets/js/components/VideoTableHead.vue") },
+
     mounted: function mounted() {
 
-        this.loadData();
+        gridData.loadData('api/book-data', this);
     },
-
     data: function data() {
         return {
-
-            books: []
-
+            query: '',
+            gridColumns: ['Thumb', 'Series', 'Book Number', 'Title', 'Author'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: -1,
+            sortKey: 'id',
+            createUrl: '/video/create',
+            showCreateButton: false
         };
     },
 
     methods: {
-        loadData: function loadData() {
-            var _this = this;
 
-            axios.get('/api/all-books-data').then(function (response) {
-
-                _this.books = response.data;
-            });
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(this.current_page);
         },
 
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, 'api/book-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        formatFeatured: function formatFeatured(featured) {
+
+            return featured == 1 ? 'Yes' : 'No';
+        },
 
         formatImageName: function formatImageName(imageName) {
-
             return imageName.split(" ").join("-").toLowerCase();
         }
 
     }
+
 });
 
 /***/ }),
@@ -4607,6 +4731,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -4627,7 +4755,7 @@ var kebabCase = __webpack_require__("./node_modules/kebab-case/index.js");
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Thumbnail', 'Title', 'Weight', 'Author', 'Url', 'Featured', 'Active', 'Publish', 'Created'],
+            gridColumns: ['Thumbnail', 'Series', 'Number', 'Title', 'Author', 'Featured', 'Active', 'Publish', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -49456,7 +49584,7 @@ var render = function() {
                   _vm._l(_vm.gridData, function(row) {
                     return _c("tr", [
                       _c("td", [
-                        _c("a", { attrs: { href: "/book/" + row.Id } }, [
+                        _c("a", { attrs: { href: row.Url } }, [
                           _c("img", {
                             attrs: {
                               src:
@@ -49470,34 +49598,30 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._v(
-                          "\n\n                             " +
-                            _vm._s(row.Title) +
-                            "\n\n                        "
-                        )
+                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                          _vm._v(_vm._s(row.Series))
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
                           "\n\n                            " +
-                            _vm._s(row.Weight) +
+                            _vm._s(row.Number) +
                             "\n\n                        "
                         )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                          _vm._v(_vm._s(row.Title))
+                        ])
                       ]),
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
                           "\n\n                            " +
                             _vm._s(row.Author) +
-                            "\n\n\n\n                        "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          { attrs: { href: row.Url, target: "_blank" } },
-                          [_vm._v(" " + _vm._s(row.Url) + " ")]
+                            "\n\n                        "
                         )
                       ]),
                       _vm._v(" "),
@@ -50588,42 +50712,90 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c(
-      "ul",
-      { staticClass: "collection" },
-      _vm._l(_vm.books, function(book) {
-        return _c("li", { staticClass: "collection-item avatar" }, [
-          _c("a", { attrs: { href: book.url, target: "_blank" } }, [
-            _c("img", {
-              attrs: {
-                src:
-                  "/imgs/books/thumbnails/thumb-" +
-                  _vm.formatImageName(book.title) +
-                  "." +
-                  book.image_extension
-              }
-            })
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+        _vm._v("All Books")
+      ]),
+      _vm._v(" "),
+      _c("search-box"),
+      _vm._v(" "),
+      _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "mt-20" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "table",
+              [
+                _c("video-table-head"),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.gridData, function(row) {
+                    return _c("tr", [
+                      _c("td", [
+                        _c("a", { attrs: { href: row.Url } }, [
+                          _c("img", {
+                            attrs: {
+                              src:
+                                "/imgs/books/thumbnails/thumb-" +
+                                _vm.formatImageName(row.Title) +
+                                "." +
+                                row.Ext
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                          _vm._v(_vm._s(row.Series))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                        " +
+                            _vm._s(row.Number) +
+                            "\n\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                          _vm._v(_vm._s(row.Title))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                        " +
+                            _vm._s(row.Author) +
+                            "\n\n                    "
+                        )
+                      ])
+                    ])
+                  })
+                )
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: book.url, target: "_blank" } }, [
-              _c("span", { staticClass: "title" }, [_vm._v(_vm._s(book.title))])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "secondary-content blue-text mt-20",
-              attrs: { href: book.url }
-            },
-            [_vm._v(_vm._s(book.subtitle))]
-          )
-        ])
-      })
-    )
-  ])
+          _c("page-number")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("pagination")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

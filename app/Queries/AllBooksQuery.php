@@ -9,33 +9,56 @@ use DB;
 class AllBooksQuery
 {
 
-    public static function sendData()
+    public function data($column, $direction)
     {
 
+        $rows = DB::table('books')
+            ->select('id as Id',
+                'title as Title',
+                'author as Author',
+                'number as Number',
+                'series_name as Series',
+                'url as Url',
+                'is_featured as Featured',
+                'is_active as Active',
+                'image_extension as Ext',
+                DB::raw('DATE_FORMAT(published_at,
+                             "%m-%d-%Y") as Published'),
+                DB::raw('DATE_FORMAT(created_at,
+                             "%m-%d-%Y") as Created')
+            )
+            ->orderBy($column, $direction)
+            ->paginate(5);
 
+        return $rows;
+
+
+    }
+
+    public function filteredData($column, $direction, $keyword)
+    {
 
         $rows = DB::table('books')
-            ->select('id',
-                'title',
-                'subtitle',
-                'author',
-                'weight',
-                'url',
-                'is_featured',
-                'is_active',
-                'image_extension',
+            ->select('id as Id',
+                'title as Title',
+                'author as Author',
+                'number as Number',
+                'series_name as Series',
+                'url as Url',
+                'is_featured as Featured',
+                'is_active as Active',
+                'image_extension as Ext',
                 DB::raw('DATE_FORMAT(published_at,
-                             "%m-%d-%Y") as published'),
+                             "%m-%d-%Y") as Published'),
                 DB::raw('DATE_FORMAT(created_at,
-                             "%m-%d-%Y") as created')
+                             "%m-%d-%Y") as Created')
+
             )
-            ->orderBy('weight', 'asc')
-            ->get();
+            ->where('title', 'like', '%' . $keyword . '%')
+            ->orderBy($column, $direction)
+            ->paginate(5);
 
-
-
-
-        return json_encode($rows);
+        return $rows;
 
     }
 

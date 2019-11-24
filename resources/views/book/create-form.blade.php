@@ -26,45 +26,45 @@
 
     </div>  <!-- end title input -->
 
-    <!-- subtitle input -->
+    <!-- series_name input -->
 
-    <div class="{{ $errors->has('subtitle') ? 'has-error' : '' }}">
+    <div class="{{ $errors->has('series_name') ? 'has-error' : '' }}">
 
-        <label>Book Subtitle</label>
+        <label>Series Name</label>
 
         <input type="text"
-               name="subtitle"
-               value="{{ old('subtitle') }}" />
+               name="series_name"
+               value="{{ old('series_name') }}" />
 
-        @if ($errors->has('subtitle'))
+        @if ($errors->has('series_name'))
 
             <span class="help-block">
-                <strong>{{ $errors->first('subtitle') }}</strong>
+                <strong>{{ $errors->first('series_name') }}</strong>
             </span>
 
         @endif
 
-    </div>  <!-- end subtitle input -->
+    </div>  <!-- end series_name input -->
 
-    <!-- weight input -->
+    <!-- number input -->
 
-    <div class="{{ $errors->has('weight') ? 'has-error' : '' }}">
+    <div class="{{ $errors->has('number') ? 'has-error' : '' }}">
 
-        <label>Weight</label>
+        <label>Number</label>
 
         <input type="text"
-               name="weight"
-               value="{{ old('weight') }}" />
+               name="number"
+               value="{{ old('number') }}" />
 
-        @if ($errors->has('weight'))
+        @if ($errors->has('number'))
 
             <span class="help-block">
-                <strong>{{ $errors->first('weight') }}</strong>
+                <strong>{{ $errors->first('number') }}</strong>
             </span>
 
         @endif
 
-    </div>  <!-- end weight input -->
+    </div>  <!-- end number input -->
 
 
     <!-- author input -->
