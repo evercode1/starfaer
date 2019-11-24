@@ -8,15 +8,18 @@
             <li class="bold waves-effect active"><a class="collapsible-header">Pages<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/home" class="waves-effect active">Worlds of Star Faer<i class="material-icons">star</i></a></li>
+                        <li><a href="/home" class="waves-effect active">Books<i class="material-icons">star</i></a></li>
+                        <li><a href="/worlds" class="waves-effect active">Worlds of Star Faer<i class="material-icons">star</i></a></li>
+                        <li><a href="/all-articles" class="waves-effect active">Articles<i class="material-icons">star</i></a></li>
+                        <li><a href="/all-videos" class="waves-effect active">Videos<i class="material-icons">star</i></a></li>
+                        <li><a href="/about" class="waves-effect active">About<i class="material-icons">star</i></a></li>
+                        <li><a href="/" class="waves-effect active">Splash Page<i class="material-icons">star</i></a></li>
                         <li><a href="/all-stars" class="waves-effect">All Stars<i class="material-icons">star</i></a></li>
                         <li><a href="/all-planets" class="waves-effect">All Planets<i class="material-icons">star</i></a></li>
                         <li><a href="/all-moons" class="waves-effect">All Moons<i class="material-icons">star</i></a></li>
                         <li><a href="/planets-with-life" class="waves-effect">Planets With Life<i class="material-icons">star</i></a></li>
                         <li><a href="/life-zones" class="waves-effect">Zones With Life<i class="material-icons">star</i></a></li>
-                        <li><a href="/" class="waves-effect active">Splash Page<i class="material-icons">star</i></a></li>
-                        <li><a href="/about" class="waves-effect active">About<i class="material-icons">star</i></a></li>
-                    </ul>
+                        </ul>
                 </div>
             </li>
             <li class="bold waves-effect"><a class="collapsible-header">Cosmic Components<i class="material-icons chevron">chevron_left</i></a>
@@ -36,27 +39,15 @@
                     </ul>
                 </div>
             </li>
-            <li class="bold waves-effect"><a class="collapsible-header">Videos<i class="material-icons chevron">chevron_left</i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="/all-videos" class="waves-effect">All Videos<i class="material-icons">videocam</i></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="bold waves-effect"><a class="collapsible-header">Articles<i class="material-icons chevron">chevron_left</i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="/all-articles" class="waves-effect">All Articles<i class="material-icons">collections</i></a></li>
-                    </ul>
-                </div>
-            </li>
             <li class="bold waves-effect"><a class="collapsible-header">Books<i class="material-icons chevron">chevron_left</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/all-books" class="waves-effect">All Books<i class="material-icons">book</i></a></li>
+                        <li><a href="/all-books" class="waves-effect">All Books<i class="material-icons">videocam</i></a></li>
                     </ul>
                 </div>
             </li>
+
+
 
         </ul>
     </li>

@@ -302,6 +302,11 @@ Route::post('video-delete/{video}', 'VideoController@destroy');
 
 Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
 
+// Worlds
+
+Route::get('worlds', 'WorldsController@index')->name('worlds.index');
+
+
 // Zone Generator
 
 Route::get('zone-generator', 'ZoneGeneratorController@create');

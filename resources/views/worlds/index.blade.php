@@ -2,12 +2,7 @@
 
 @section('content')
 
-    <div class="container">
-
-        <all-books></all-books>
-
-    </div>
-
+    @include('worlds.worlds-grid')
 
     
 @endsection

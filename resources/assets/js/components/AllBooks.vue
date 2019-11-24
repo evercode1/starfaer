@@ -29,8 +29,8 @@
 
                         <td>
 
-                            <a v-bind:href="row.Url"><img v-bind:src="'/imgs/books/thumbnails/thumb-'
-                            + formatImageName(row.Title) + '.' + row.Ext"></a>
+                            <a v-bind:href="row.Url"><img v-bind:src="'/imgs/books/'
+                            + formatImageName(row.Title) + '.' + row.Ext" width="200"></a>
 
                         </td>
 
@@ -40,7 +40,7 @@
 
                         </td>
 
-                        <td>
+                        <td class="center">
 
                             {{ row.Number }}
 

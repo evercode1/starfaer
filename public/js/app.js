@@ -49588,10 +49588,11 @@ var render = function() {
                           _c("img", {
                             attrs: {
                               src:
-                                "/imgs/books/thumbnails/thumb-" +
+                                "/imgs/books/" +
                                 _vm.formatImageName(row.Title) +
                                 "." +
-                                row.Ext
+                                row.Ext,
+                              width: "200"
                             }
                           })
                         ])
@@ -50743,10 +50744,11 @@ var render = function() {
                           _c("img", {
                             attrs: {
                               src:
-                                "/imgs/books/thumbnails/thumb-" +
+                                "/imgs/books/" +
                                 _vm.formatImageName(row.Title) +
                                 "." +
-                                row.Ext
+                                row.Ext,
+                              width: "200"
                             }
                           })
                         ])
@@ -50758,7 +50760,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("td", [
+                      _c("td", { staticClass: "center" }, [
                         _vm._v(
                           "\n\n                        " +
                             _vm._s(row.Number) +
