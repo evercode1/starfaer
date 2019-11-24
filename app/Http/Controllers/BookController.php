@@ -100,11 +100,11 @@ class BookController extends Controller
 
         // get instance of file
 
-        $file = $this->getUploadedFile();
+        // $file = $this->getUploadedFile();
 
         // pass in the file and the model
 
-        $this->saveImageFiles($file, $book);
+        // $this->saveImageFiles($file, $book);
 
 
 
