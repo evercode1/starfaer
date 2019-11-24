@@ -92,7 +92,7 @@ class BookController extends Controller
                               'is_active' => $request->is_active,
                               'published_at' => $publishedAt,
                               'image_name'        => $this->formatString($request->get('title')),
-                              'image_extension'   => $request->file('image')->getClientOriginalExtension()
+                              'image_extension'   => 'jpg'
 
         ]);
 
