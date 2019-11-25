@@ -24,6 +24,11 @@
 
                 <h1 class="flow-text grey-text text-darken-1">{{ ucwords($content->name) }}</h1>
 
+                @if(ucwords($content->name) == 'About')
+                    <img src="/imgs/home/me.jpg" width="200" alt="Max Vonne">
+
+                    @endif
+
                 <div class="row">
 
                 {!! $content->body !!}
