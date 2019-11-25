@@ -40,11 +40,6 @@
 
                             </td>
 
-                            <td>
-
-                                {{ row.Author }}
-
-                            </td>
 
                             <td>
 
@@ -131,7 +126,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Title', 'Author', 'Category', 'Status','Published', 'Created'],
+                gridColumns: ['Id', 'Title', 'Category', 'Status','Published', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,

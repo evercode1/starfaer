@@ -7850,11 +7850,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -7874,7 +7869,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Title', 'Author', 'Category', 'Status', 'Published', 'Created'],
+            gridColumns: ['Id', 'Title', 'Category', 'Status', 'Published', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -48439,14 +48434,6 @@ var render = function() {
                         _c("a", { attrs: { href: "/post/" + row.Id } }, [
                           _vm._v(" " + _vm._s(row.Title))
                         ])
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          "\n\n                            " +
-                            _vm._s(row.Author) +
-                            "\n\n                        "
-                        )
                       ]),
                       _vm._v(" "),
                       _c("td", [
