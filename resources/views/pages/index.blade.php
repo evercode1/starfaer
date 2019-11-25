@@ -82,7 +82,7 @@
             <div><h6 class="center bluish">Free Access to the Worlds of Star Faer</h6></div>
 
 
-            <div class="mt-20 mb-50"> <h4  class="center"><a href="/register"> <u>Join Free Now</u>  </a></h4> </div>
+            <div class="mt-20"> <h4  class="center"><a href="/register"> <u>Join Free Now</u>  </a></h4> </div>
 
 
 
