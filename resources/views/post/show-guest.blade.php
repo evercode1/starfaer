@@ -24,7 +24,7 @@
 
         <div class="row">
 
-            <p class="grey-text text-lighten-1">{{ $post->published_at }} by <a href="#">{{ $post->user->name }}</a></p>
+            <p class="grey-text text-lighten-1">{{ $post->published_at }} by Max Vonne</p>
 
             <div class="card-panel">
 
