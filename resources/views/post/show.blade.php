@@ -25,6 +25,8 @@
         <div class="row">
 
             <p class="grey-text text-lighten-1">{{ $post->published_at }} by Max Vonne</p>
+            <a href="https://twitter.com/StarFaerSaga?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @StarFaerSaga</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
             <div class="card-panel">
 
