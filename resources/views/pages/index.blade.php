@@ -35,7 +35,9 @@
 
             <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/15/2020)</a></h3> </div>
 
-            <div><h6 class="center bluish mb-20">Star Faer is a ten book series</h6></div>
+            <div><h6 class="center bluish mb-20">Star Faer is a ten book fantasy series</h6></div>
+
+            <div><h6 class="center bluish mb-20">Faer is an old English word that means 'travelling, a journey or expedition'</h6></div>
 
 
             <div><a href="https://twitter.com/StarFaerSaga?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @StarFaerSaga</a>
@@ -43,7 +45,17 @@
 
             </div>
 
-            <div><h6 class="center bluish">Book covers by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
+            <h1 class="flow-text bluish"><a href="https://teespring.com/stores/star-faer-merch">Star Faer Merch</a></h1>
+
+            <div class="center">
+
+                <a href="https://teespring.com/stores/star-faer-merch" target="_blank"><img src="/imgs/home/blue-t.png" alt="blue t-shirt" width="200"></a>
+
+                <a href="https://teespring.com/stores/star-faer-merch" target="_blank"><img src="/imgs/home/black-t.png" alt="back t-shirt" width="200"></a>
+
+            </div>
+
+            <div><h6 class="center bluish">Logo and Book Covers by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
 
 
 
@@ -79,40 +91,9 @@
 
 
 
-<section class="center">
-
-    <div>
 
 
-        <a class="twitter-timeline tw-align-center" href="https://twitter.com/StarFaerSaga?ref_src=twsrc%5Etfw"
-                                                    data-tweet-limit="3"
-                                                    width="300">Tweets by StarFaerSaga</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-
-    </div>
-
-</section>
-
-    <section class="section section-dark">
-
-        <h2 class="flow-text"># Organically Grown</h2>
-
-        <p>
-
-            @if(! Auth::check())
-
-                <a href="/login">Join the growing community of Star Faer</a>.
-
-            @else
-
-                <a href="/home">Home</a>
-
-            @endif
-
-        </p>
-    </section>
+    
 
     </div>
 

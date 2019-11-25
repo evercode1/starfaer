@@ -9,6 +9,7 @@
                 <div class="collapsible-body">
                     <ul>
                         <li><a href="/home" class="waves-effect active">Books<i class="material-icons">star</i></a></li>
+                        <li><a href="https://teespring.com/stores/star-faer-merch" class="waves-effect active" target="_blank">Merch<i class="material-icons">star</i></a></li>
                         <li><a href="/worlds" class="waves-effect active">Worlds of Star Faer<i class="material-icons">star</i></a></li>
                         <li><a href="/all-articles" class="waves-effect active">Articles<i class="material-icons">star</i></a></li>
                         <li><a href="/all-videos" class="waves-effect active">Videos<i class="material-icons">star</i></a></li>
