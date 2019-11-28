@@ -75,4 +75,12 @@ class LoginController extends Controller
             throw new NoActiveAccountException;
         }
     }
+
+    public function redirectPath()
+    {
+        if (Auth::user()->isAdmin()){
+            return 'user';
+        }
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+    }
 }

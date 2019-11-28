@@ -41,7 +41,7 @@ class AuthController extends RegisterController
     public function redirectPath()
     {
         if (Auth::user()->isAdmin()){
-            return 'admin';
+            return 'user';
         }
         return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
