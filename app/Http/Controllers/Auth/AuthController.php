@@ -16,7 +16,7 @@ class AuthController extends RegisterController
 {
     use AuthenticatesUsers, ManagesSocialAuth;
 
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
     /**
      * Create a new controller instance.
      *
