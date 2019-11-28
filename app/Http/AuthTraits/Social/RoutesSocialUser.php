@@ -40,7 +40,7 @@ trait RoutesSocialUser
 
         if (Auth::user()->isAdmin()){
 
-            return redirect()->route('admin');
+            return redirect()->route('user');
 
         }
 
