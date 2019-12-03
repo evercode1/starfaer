@@ -257,16 +257,13 @@ a:active {
 
 }
 
-@media only screen and (max-width: 568px){
+.image-scale {
 
-    .image-scale {
-
-        height: 50px;
-
-    }
-
+    width: 100%;
 
 }
+
+
 
 .bluish {
 

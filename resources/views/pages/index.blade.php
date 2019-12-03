@@ -16,7 +16,7 @@
 
 
             <div class="center black-background"><a href="/login"><img src="/imgs/home/logo.png"
-                                                                       height="150"
+
                                                                        class="image-scale"
                                                                        alt="Star Faer"></a>
                 <div class="center white-text">Max Vonne</div>
