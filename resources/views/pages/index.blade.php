@@ -19,7 +19,6 @@
 
                                                                        class="image-scale"
                                                                        alt="Star Faer"></a>
-                <div class="center white-text "><h5 class="flow-text">Max Vonne</h5></div>
             </div>
 
             <div class="center">
