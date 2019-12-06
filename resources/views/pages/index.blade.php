@@ -45,7 +45,7 @@
 
             </div>
 
-            <div> <h6  class="center bluish mt-20">Help Us Give Away</h6> </div>
+            <div> <h6  class="center bluish mt-20">Help Us Give Away</h6></div>
             <div> <h6  class="center bluish mt-20  mb-20"><u>1 Million Free Books</u></h6> </div>
             <div><h6 class="center bluish mb-20">Download, Review, and Recommend</h6></div>
 
