@@ -36,7 +36,7 @@
 
             <div><h6 class="center bluish mb-20">Star Faer is a ten book fantasy series</h6></div>
 
-            <div><h6 class="center bluish mb-20">Faer is an old English word that means 'travelling, a journey or expedition'</h6></div>
+            <div><h6 class="center bluish mb-20">Faer is an old English word that means 'traveling, a journey or expedition'</h6></div>
 
 
             <div><a href="https://twitter.com/StarFaerSaga?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @StarFaerSaga</a>
