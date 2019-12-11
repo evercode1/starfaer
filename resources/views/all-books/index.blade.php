@@ -1,6 +1,6 @@
 @extends('layouts.masters.master-auth')
 
-@section('title')
+@section('books')
 
     <title>Star Faer Books</title>
 
