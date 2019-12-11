@@ -20,7 +20,7 @@ class AllZonesQuery implements DataQuery
                              DB::raw('DATE_FORMAT(zones.created_at,
                              "%m-%d-%Y") as Created'))
                     ->leftJoin('zone_types', 'zone_type_id', '=', 'zone_types.id')
-                    ->where('is_active', 1)
+                    ->where('zones.is_active', 1)
                     ->orderBy($column, $direction)
                     ->paginate(10);
 
@@ -42,7 +42,7 @@ class AllZonesQuery implements DataQuery
                          DB::raw('DATE_FORMAT(zones.created_at,
                                  "%m-%d-%Y") as Created'))
                 ->leftJoin('zone_types', 'zone_type_id', '=', 'zone_types.id')
-                ->where([['name', 'like', '%' . $keyword . '%'], ['is_active', 1]])
+                ->where([['zones.name', 'like', '%' . $keyword . '%'], ['zones.is_active', 1]])
                 ->orderBy($column, $direction)
                 ->paginate(10);
 
