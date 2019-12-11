@@ -5,7 +5,7 @@
 
 
 
-    <title>{{ ucwords($content->name) }}</title>
+    <title>Star Faer {{ ucwords($content->name) }}</title>
 
 @endsection
 
