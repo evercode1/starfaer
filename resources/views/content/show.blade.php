@@ -5,7 +5,7 @@
 
 
 
-    <title>Star Faer Privacy Policy</title>
+    <title>{{ ucwords($content->name) }}</title>
 
 @endsection
 

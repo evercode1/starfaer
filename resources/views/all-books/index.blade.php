@@ -2,10 +2,9 @@
 
 @section('title')
 
-    <title>All Books</title>
+    <title>Star Faer Books</title>
 
-
-    @endsection
+@endsection
 
 @section('content')
 
