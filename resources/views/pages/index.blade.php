@@ -26,6 +26,8 @@
 
                 <a href=""><img src="/imgs/home/shadow-front-cover-2.jpg" width="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
 
+                <a href=""><img src="/imgs/home/infinity-flower-cover.jpg" width="200px" class="mt-50" alt="Star Faer: Inifnity Flower"></a>
+
             </div>
 
 
@@ -62,7 +64,7 @@
             <div><h6 class="center bluish">Logo and Book Covers by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
 
 
-            
+
 
 
             <div class="center">
