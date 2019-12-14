@@ -62,7 +62,7 @@
             <div><h6 class="center bluish">Logo and Book Covers by <a href="https://www.anacruz-arts.com" target="new">Ana Cruz Cover Art</a></h6></div>
 
 
-
+            
 
 
             <div class="center">
