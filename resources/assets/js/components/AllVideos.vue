@@ -73,7 +73,7 @@
 
         </div>
 
-    </div>
+    
 
 </template>
 
@@ -92,7 +92,7 @@
 
         mounted: function () {
 
-            gridData.loadData('api/all-video-data');
+            this.loadData();
 
         },
         data: function () {

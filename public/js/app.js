@@ -3891,7 +3891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     mounted: function mounted() {
 
-        gridData.loadData('api/all-video-data');
+        this.loadData();
     },
     data: function data() {
         return {
