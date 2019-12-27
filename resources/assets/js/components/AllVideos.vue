@@ -73,7 +73,7 @@
 
         </div>
 
-    
+
 
 </template>
 
@@ -171,7 +171,7 @@
 
                     case this.query :
 
-                        getPage = '/api/api/all-video-data?' +
+                        getPage = '/api/all-video-data?' +
                             'keyword=' + this.query +
                             '&column=' + name +
                             '&direction=' + this.sortOrder;
@@ -199,7 +199,7 @@
 
                     default :
 
-                        getPage = '/api/api/all-video-data?' +
+                        getPage = '/api/all-video-data?' +
                             'page=' + request +
                             '&column=' + name +
                             '&direction=' + this.sortOrder +
@@ -229,7 +229,7 @@
                             this.last_page =  data.last_page;
                             this.next_page_url = (data.next_page_url == null) ? null : data.next_page_url + '&keyword=' +this.query;
                             this.prev_page_url = (data.prev_page_url == null) ? null : data.prev_page_url + '&keyword=' +this.query;
-                            this.first_page_url = '/api/api/all-video-data?page=1&keyword=' +this.query;
+                            this.first_page_url = '/api/all-video-data?page=1&keyword=' +this.query;
                             this.last_page_url = 'api/all-video-data?page=' + this.last_page + '&keyword=' +this.query;
                             this.current_page = data.current_page;
                             this.resetPageNumbers();
@@ -242,7 +242,7 @@
             },
 
             loadData: function (){
-                $.getJSON('/api/api/all-video-data', function (data) {
+                $.getJSON('/api/all-video-data', function (data) {
                     this.gridData = data.data;
                     this.total = data.total;
                     this.last_page =  data.last_page;
