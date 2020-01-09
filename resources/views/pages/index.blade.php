@@ -1,10 +1,21 @@
 @extends('layouts.masters.master-landing')
 
-@section('title')
+@section('meta')
 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://www.starfaer.com" />
+    <meta name="twitter:title" content="Star Faer" />
+    <meta name="twitter:description" content="Official Star Faer Site" />
+    <meta name="twitter:image" content="{{ config('twitter-cards.thumbnail.url') }}" />
+
+    <meta name="description" content="Official Star Faer Site.  Star Faer books by Max Vonne.  C'artha's Kiss, Shadow of the Ring, Infinity Flower.  Bonus material by Max Vonne.  Star Faer merchandise.">
+    <meta name="keywords" content="star faer, cosmic fantasy, epic fantasy, science fantasy, science fiction, Max Vonne">
+    <meta name="author" content="Max Vonne">
     <title>Star Faer</title>
 
 @endsection
+
+
 
 @section('content')
 
