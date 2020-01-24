@@ -45,7 +45,7 @@
 
 
 
-            <div> <h3  class="center bluish"><a href="#">Read Book One Free (1/30/2020)</a></h3> </div>
+            <div> <h3  class="center bluish"><a href="#">Read Book One Free (2/15/2020)</a></h3> </div>
 
             <div><h6 class="center bluish mb-20">Star Faer is a ten book fantasy series</h6></div>
 
