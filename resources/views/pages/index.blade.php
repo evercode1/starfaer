@@ -87,11 +87,7 @@
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
 
-
-
-
-
-            <div><h1 class="center bluish"># Reader's club</h1></div>
+            <div><h1 class="center bluish"># Bonuses</h1></div>
             <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
             <div><h6 class="center bluish">New Release Notifications</h6></div>
             <div><h6 class="center bluish">Live Events</h6></div>
@@ -100,6 +96,20 @@
 
 
             <div class="mt-20"> <h4  class="center"><a href="/register"> <u>Join Free Now</u>  </a></h4> </div>
+
+            <div class="mt-50">
+                <a class="twitter-timeline"
+                   href="https://twitter.com/StarFaerSaga"
+                   data-chrome="nofooter noborders"
+                   data-width="450"
+                   data-height="450"
+                   data-tweet-limit="3">
+                    Tweets by @TwitterDev
+                </a>
+
+
+
+            </div>
 
 
 
