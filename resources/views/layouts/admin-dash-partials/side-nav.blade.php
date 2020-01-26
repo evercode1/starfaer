@@ -130,6 +130,7 @@
                     <ul>
                         <li><a href="/content" class="waves-effect">Content<i class="material-icons">dashboard</i></a></li>
                         <li><a href="/category" class="waves-effect">Categories<i class="material-icons">dashboard</i></a></li>
+                        <li><a href="/world-term-type" class="waves-effect">Wrold Term Types<i class="material-icons">dashboard</i></a></li>
                     </ul>
                 </div>
             </li>

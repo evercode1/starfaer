@@ -10544,6 +10544,220 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/WorldTermTypeGrid.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    components: { 'pagination': __webpack_require__("./resources/assets/js/components/Pagination.vue"),
+        'search-box': __webpack_require__("./resources/assets/js/components/SearchBox.vue"),
+        'grid-count': __webpack_require__("./resources/assets/js/components/GridCount.vue"),
+        'page-number': __webpack_require__("./resources/assets/js/components/PageNumber.vue"),
+        'table-head': __webpack_require__("./resources/assets/js/components/TableHead.vue") },
+
+    mounted: function mounted() {
+
+        gridData.loadData('/api/world-term-type-data', this);
+    },
+    data: function data() {
+        return {
+            query: '',
+            gridColumns: ['Id', 'Name', 'Active', 'Created'],
+            gridData: [],
+            total: null,
+            next_page_url: null,
+            prev_page_url: null,
+            last_page: null,
+            current_page: null,
+            pages: [],
+            first_page_url: null,
+            last_page_url: null,
+            go_to_page: null,
+            sortOrder: 1,
+            sortKey: 'id',
+            createUrl: '/world-term-type/create',
+            showCreateButton: true
+        };
+    },
+
+    methods: {
+
+        sortBy: function sortBy(key) {
+            this.sortKey = key;
+            this.sortOrder = this.sortOrder == 1 ? -1 : 1;
+            this.getData(1);
+        },
+
+        search: function search(query) {
+            this.getData(query);
+        },
+
+        getData: function getData(request) {
+
+            gridData.getQueryData(request, '/api/world-term-type-data', this);
+        },
+
+        setPageNumbers: function setPageNumbers() {
+
+            this.pages = [];
+
+            for (var i = 1; i <= this.last_page; i++) {
+                this.pages.push(i);
+            }
+        },
+
+        checkPage: function checkPage(page) {
+            return page == this.current_page;
+        },
+
+        resetPageNumbers: function resetPageNumbers() {
+
+            this.setPageNumbers();
+        },
+
+        checkUrlNotNull: function checkUrlNotNull(url) {
+
+            return url != null;
+        },
+
+        clearPageNumberInputBox: function clearPageNumberInputBox() {
+
+            return this.go_to_page = '';
+        },
+
+        pageInRange: function pageInRange() {
+
+            return this.go_to_page <= parseInt(this.last_page);
+        },
+
+        formatActive: function formatActive(active) {
+
+            return active === 1 ? 'Active' : 'Inactive';
+        },
+
+        confirmDelete: function confirmDelete(id) {
+            var _this = this;
+
+            if (confirm("Are you sure you want to delete?")) {
+
+                axios.post('/world-term-type-delete/' + id).then(function (response) {
+
+                    gridData.loadData('/api/world-term-type-data', _this);
+                });
+            }
+        }
+
+    }
+
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/ZoneGrid.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -48758,6 +48972,144 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-49205a92\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/WorldTermTypeGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row" },
+    [
+      _c("h1", { staticClass: "flow-text grey-text text-darken-1" }, [
+        _vm._v("WorldTermType")
+      ]),
+      _vm._v(" "),
+      _c("search-box"),
+      _vm._v(" "),
+      _c("div", { staticClass: "right" }, [_c("grid-count")], 1),
+      _vm._v(" "),
+      _c(
+        "section",
+        { staticClass: "mt-20" },
+        [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "table",
+              [
+                _c("table-head"),
+                _vm._v(" "),
+                _c(
+                  "tbody",
+                  _vm._l(_vm.gridData, function(row) {
+                    return _c("tr", [
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Id) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          { attrs: { href: "/world-term-type/" + row.Id } },
+                          [_vm._v(" " + _vm._s(row.Name))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                            " +
+                            _vm._s(_vm.formatActive(row.Active)) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          "\n\n                               " +
+                            _vm._s(row.Created) +
+                            "\n\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/world-term-type/" + row.Id + "/edit"
+                            }
+                          },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "waves-effect waves-light btn mt-5",
+                                attrs: { type: "button" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n\n                                    Edit\n\n                            "
+                                )
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "waves-effect waves-light btn mt-5",
+                            on: {
+                              click: function($event) {
+                                return _vm.confirmDelete(row.Id)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n\n                                    Delete\n\n                            "
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  }),
+                  0
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("page-number")
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("pagination")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-49205a92", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4bc03b5d\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/AllZones.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65355,6 +65707,11 @@ Vue.component('surface-type-grid', __webpack_require__("./resources/assets/js/co
 Vue.component('all-surface-types', __webpack_require__("./resources/assets/js/components/AllSurfaceTypes.vue"));
 
 /** End SurfaceType All Models Call */
+/** Begin WorldTermType Grid Component Call */
+
+Vue.component('world-term-type-grid', __webpack_require__("./resources/assets/js/components/WorldTermTypeGrid.vue"));
+
+/** End WorldTermType Grid Component Call */
 
 /***/ }),
 
@@ -67995,6 +68352,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-3ef5a68c", Component.options)
   } else {
     hotAPI.reload("data-v-3ef5a68c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/WorldTermTypeGrid.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/WorldTermTypeGrid.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-49205a92\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/WorldTermTypeGrid.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/WorldTermTypeGrid.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-49205a92", Component.options)
+  } else {
+    hotAPI.reload("data-v-49205a92", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

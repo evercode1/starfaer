@@ -15,6 +15,23 @@ return [
 
 
 
+    // Begin WorldTermType Image Config Array Method
+
+
+        'worldtermtype' => [
+                'destinationFolder'     => '/imgs/worldtermtype/',
+                'createFolder'          => '/imgs/worldtermtype',
+                'destinationThumbnail'  => '/imgs/worldtermtype/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/worldtermtype/',
+                'thumbnailPath'         => '/imgs/worldtermtype/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End WorldTermType Image Config Array Method
     // Begin SurfaceType Image Config Array Method
 
 

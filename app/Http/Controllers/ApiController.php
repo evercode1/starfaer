@@ -22,162 +22,6 @@ use App\Queries\AlarmAdminQuery;
 class ApiController extends Controller
 {
 
-    // Begin SurfaceType Api Data Grid Method
-
-    public function surfaceTypeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'SurfaceTypeQuery');
-
-    }
-
-    // End SurfaceType Api Data Grid Method
-
-
-
-    // Begin Moon Api Data Grid Method
-
-    public function moonData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'MoonQuery');
-
-    }
-
-    // End Moon Api Data Grid Method
-
-
-
-    // Begin Planet Api Data Grid Method
-
-    public function planetData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'PlanetQuery');
-
-    }
-
-    // End Planet Api Data Grid Method
-
-
-
-    // Begin Atmosphere Api Data Grid Method
-
-    public function atmosphereData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'AtmosphereQuery');
-
-    }
-
-    // End Atmosphere Api Data Grid Method
-
-
-
-    
-
-
-
-    // Begin PlanetType Api Data Grid Method
-
-    public function planetTypeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'PlanetTypeQuery');
-
-    }
-
-    // End PlanetType Api Data Grid Method
-
-
-
-    // Begin Star Api Data Grid Method
-
-    public function starData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'StarQuery');
-
-    }
-
-    // End Star Api Data Grid Method
-
-
-
-    // Begin StarType Api Data Grid Method
-
-    public function starTypeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'StarTypeQuery');
-
-    }
-
-    // End StarType Api Data Grid Method
-
-
-
-    // Begin Zone Api Data Grid Method
-
-    public function zoneData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'ZoneQuery');
-
-    }
-
-    // End Zone Api Data Grid Method
-
-
-
-    
-
-
-
-    // Begin ZoneType Api Data Grid Method
-
-    public function zoneTypeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'ZoneTypeQuery');
-
-    }
-
-    // End ZoneType Api Data Grid Method
-
-
-
-    
-
-
-
-    
-
-
-    // Begin GalaxyType Api Data Grid Method
-
-    public function galaxyTypeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'GalaxyTypeQuery');
-
-    }
-
-    // End GalaxyType Api Data Grid Method
-
-
-
-    // Begin Galaxy Api Data Grid Method
-
-    public function galaxyData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'GalaxyQuery');
-
-    }
-
-    // End Galaxy Api Data Grid Method
-
 
 
     public function alarmData()
@@ -244,6 +88,17 @@ class ApiController extends Controller
 
     }
 
+    // Begin Atmosphere Api Data Grid Method
+
+    public function atmosphereData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'AtmosphereQuery');
+
+    }
+
+    // End Atmosphere Api Data Grid Method
+
     public function bookData(Request $request)
     {
 
@@ -293,12 +148,47 @@ class ApiController extends Controller
 
     }
 
+    // Begin GalaxyType Api Data Grid Method
+
+    public function galaxyTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'GalaxyTypeQuery');
+
+    }
+
+    // End GalaxyType Api Data Grid Method
+
+
+
+    // Begin Galaxy Api Data Grid Method
+
+    public function galaxyData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'GalaxyQuery');
+
+    }
+
+    // End Galaxy Api Data Grid Method
+
     public function levelData(Request $request)
     {
 
         return GridQuery::sendData($request, 'LevelQuery');
 
     }
+
+    // Begin Moon Api Data Grid Method
+
+    public function moonData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'MoonQuery');
+
+    }
+
+    // End Moon Api Data Grid Method
 
     public function openContactData(Request $request)
     {
@@ -307,12 +197,67 @@ class ApiController extends Controller
 
     }
 
+    // Begin Planet Api Data Grid Method
+
+    public function planetData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetQuery');
+
+    }
+
+    // End Planet Api Data Grid Method
+
+    // Begin PlanetType Api Data Grid Method
+
+    public function planetTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetTypeQuery');
+
+    }
+
+    // End PlanetType Api Data Grid Method
+
     public function postData(Request $request)
     {
 
         return GridQuery::sendData($request, 'PostQuery');
 
     }
+
+    // Begin Star Api Data Grid Method
+
+    public function starData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'StarQuery');
+
+    }
+
+    // End Star Api Data Grid Method
+
+    // Begin StarType Api Data Grid Method
+
+    public function starTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'StarTypeQuery');
+
+    }
+
+    // End StarType Api Data Grid Method
+
+    // Begin SurfaceType Api Data Grid Method
+
+    public function surfaceTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'SurfaceTypeQuery');
+
+    }
+
+    // End SurfaceType Api Data Grid Method
 
     public function totalVideos()
     {
@@ -376,4 +321,38 @@ class ApiController extends Controller
         return GridQuery::sendData($request, 'VideoQuery');
 
     }
+
+    // Begin WorldTermType Api Data Grid Method
+
+    public function worldTermTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'WorldTermTypeQuery');
+
+    }
+
+    // End WorldTermType Api Data Grid Method
+
+    // Begin Zone Api Data Grid Method
+
+    public function zoneData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'ZoneQuery');
+
+    }
+
+    // End Zone Api Data Grid Method
+
+
+    // Begin ZoneType Api Data Grid Method
+
+    public function zoneTypeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'ZoneTypeQuery');
+
+    }
+
+    // End ZoneType Api Data Grid Method
 }
