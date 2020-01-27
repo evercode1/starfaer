@@ -10,6 +10,19 @@ use App\Queries\GridQueries\GridQuery;
 class FrontApiController extends Controller
 {
 
+
+    // Begin Atmosphere Api All Models Method
+
+    public function allAtmospheresData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'AllAtmospheresQuery');
+
+    }
+
+    // End Atmosphere Api All Models Method
+
+
     // Begin Galaxy Api All Models Method
 
     public function allGalaxiesData(Request $request)
@@ -21,17 +34,24 @@ class FrontApiController extends Controller
 
     // End Galaxy Api All Models Method
 
-    // Begin SurfaceType Api All Models Method
+    // Begin GalaxyType Api All Models Method
 
-    public function allSurfaceTypesData(Request $request)
+    public function allGalaxyTypesData(Request $request)
     {
 
-        return GridQuery::sendData($request, 'SurfaceTypeQuery');
+        return GridQuery::sendData($request, 'GalaxyTypeQuery');
 
     }
 
-    // End SurfaceType Api All Models Method
+    // End GalaxyType Api All Models Method
 
+
+    public function lifeZonesData(Request $request)
+    {
+
+        return LifeZonesQuery::sendData($request);
+
+    }
 
 
     // Begin Moon Api All Models Method
@@ -57,23 +77,6 @@ class FrontApiController extends Controller
     }
 
     // End Planet Api All Models Method
-
-
-
-    // Begin Atmosphere Api All Models Method
-
-    public function allAtmospheresData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'AllAtmospheresQuery');
-
-    }
-
-    // End Atmosphere Api All Models Method
-
-
-
-    
 
 
 
@@ -114,6 +117,35 @@ class FrontApiController extends Controller
 
     // End StarType Api All Models Method
 
+    public function planetsWithLifeData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'PlanetsWithLifeQuery');
+
+
+    }
+
+    // Begin SurfaceType Api All Models Method
+
+    public function allSurfaceTypesData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'SurfaceTypeQuery');
+
+    }
+
+    // End SurfaceType Api All Models Method
+
+    // Begin WorldTerm Api All Models Method
+
+    public function allWorldTermsData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'WorldTermQuery');
+
+    }
+
+    // End WorldTerm Api All Models Method
 
 
     // Begin Zone Api All Models Method
@@ -126,35 +158,6 @@ class FrontApiController extends Controller
     }
 
     // End Zone Api All Models Method
-
-
-
-    // Begin GalaxyType Api All Models Method
-
-    public function allGalaxyTypesData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'GalaxyTypeQuery');
-
-    }
-
-    // End GalaxyType Api All Models Method
-
-
-    public function lifeZonesData(Request $request)
-    {
-
-        return LifeZonesQuery::sendData($request);
-
-    }
-
-    public function planetsWithLifeData(Request $request)
-    {
-
-        return GridQuery::sendData($request, 'PlanetsWithLifeQuery');
-
-
-    }
 
 
 

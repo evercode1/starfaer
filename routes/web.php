@@ -513,6 +513,24 @@ Route::resource('/video', 'VideoController', ['except' => ['destroy']]);
 
 Route::get('worlds', 'WorldsController@index')->name('worlds.index');
 
+// Begin WorldTerm Routes
+
+Route::get('all-world-terms', 'AllWorldTermsController@index');
+
+Route::get('/api/all-world-terms-data', 'FrontApiController@allWorldTermsData');
+
+Route::any('api/world-term-data', 'ApiController@worldTermData');
+
+Route::post('world-term-delete/{id}', 'WorldTermController@destroy');
+
+Route::get('/world-term/create', 'WorldTermController@create')->name('world-term.create');
+
+Route::get('world-term/{id}', 'WorldTermController@show')->name('world-term.show');
+
+Route::resource('world-term', 'WorldTermController', ['except' => ['show', 'create','destroy']]);
+
+// End WorldTerm Routes
+
 // Begin WorldTermType Routes
 
 
@@ -572,3 +590,9 @@ Route::get('zone/{zone}-{slug?}', 'ZoneController@show')->name('zone.show');
 Route::resource('zone', 'ZoneController', ['except' => ['show', 'create','destroy']]);
 
 // End Zone Routes
+
+
+
+
+
+

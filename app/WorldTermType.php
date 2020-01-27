@@ -9,8 +9,14 @@ class WorldTermType extends Model
 
     protected $fillable = ['name',
                            'is_active',
-                           'description'
                            ];
+
+    public function worldTypes()
+    {
+
+        return $this->hasMany('App\WorldTerm');
+
+    }
 
 
 

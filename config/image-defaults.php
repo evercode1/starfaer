@@ -15,6 +15,23 @@ return [
 
 
 
+    // Begin WorldTerm Image Config Array Method
+
+
+        'worldterm' => [
+                'destinationFolder'     => '/imgs/worldterm/',
+                'createFolder'          => '/imgs/worldterm',
+                'destinationThumbnail'  => '/imgs/worldterm/thumbnails/',
+                'thumbPrefix'           => 'thumb-',
+                'imagePath'             => '/imgs/worldterm/',
+                'thumbnailPath'         => '/imgs/worldterm/thumbnails/thumb-',
+                'thumbHeight'           => 60,
+                'thumbWidth'            => 60,
+            ],
+
+
+
+    // End WorldTerm Image Config Array Method
     // Begin WorldTermType Image Config Array Method
 
 

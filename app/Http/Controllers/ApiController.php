@@ -24,6 +24,7 @@ class ApiController extends Controller
 
 
 
+
     public function alarmData()
     {
 
@@ -321,6 +322,17 @@ class ApiController extends Controller
         return GridQuery::sendData($request, 'VideoQuery');
 
     }
+
+    // Begin WorldTerm Api Data Grid Method
+
+    public function worldTermData(Request $request)
+    {
+
+        return GridQuery::sendData($request, 'WorldTermQuery');
+
+    }
+
+    // End WorldTerm Api Data Grid Method
 
     // Begin WorldTermType Api Data Grid Method
 

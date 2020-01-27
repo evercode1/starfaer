@@ -148,3 +148,13 @@ Vue.component('all-surface-types', require('./components/AllSurfaceTypes.vue'));
 Vue.component('world-term-type-grid', require('./components/WorldTermTypeGrid.vue'));
 
 /** End WorldTermType Grid Component Call */
+/** Begin WorldTerm Grid Component Call */
+
+Vue.component('world-term-grid', require('./components/WorldTermGrid.vue'));
+
+/** End WorldTerm Grid Component Call */
+/** Begin WorldTerm All Models Call */
+
+Vue.component('all-world-terms', require('./components/AllWorldTerms.vue'));
+
+/** End WorldTerm All Models Call */

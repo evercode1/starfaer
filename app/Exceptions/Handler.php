@@ -114,6 +114,15 @@ class Handler extends ExceptionHandler
                 return response()->view('errors.file-already-exists-exception', compact('exception'), 500);
                 break;
 
+            case $exception instanceof InvalidPlanetNameException :
+
+                if ($request->ajax()) {
+                    return response()->json(['error' => 'FileAlready Exists'], 500);
+                }
+
+                return response()->view('errors.invalid-planet-name-exception', compact('exception'), 500);
+                break;
+
             case $exception instanceof NameException:
 
                 if ($request->ajax()) {

@@ -14,6 +14,7 @@
                         <li><a href="/all-moons" class="waves-effect">All Moons<i class="material-icons">star</i></a></li>
                         <li><a href="/planets-with-life" class="waves-effect">Planets With Life<i class="material-icons">star</i></a></li>
                         <li><a href="/life-zones" class="waves-effect">Zones With Life<i class="material-icons">star</i></a></li>
+                        <li><a href="/world-term" class="waves-effect">World Terms<i class="material-icons">star</i></a></li>
                     </ul>
                 </div>
             </li>
