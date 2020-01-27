@@ -52728,7 +52728,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                        _c("a", { attrs: { href: row.Url } }, [
                           _vm._v(_vm._s(row.Series))
                         ])
                       ]),
@@ -52742,7 +52742,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "/all-Books/" + row.Id } }, [
+                        _c("a", { attrs: { href: row.URL } }, [
                           _vm._v(_vm._s(row.Title))
                         ])
                       ]),
