@@ -49,7 +49,7 @@
 
                         <td>
 
-                            <a v-bind:href="row.URL">{{ row.Title }}</a>
+                            <a v-bind:href="row.Url">{{ row.Title }}</a>
 
                         </td>
 
