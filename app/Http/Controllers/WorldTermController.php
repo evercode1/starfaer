@@ -151,7 +151,7 @@ class WorldTermController extends Controller
 
         $oldTypeId = $worldTerm->WorldTermType->id;
 
-        $books = Book::orderBy('name', 'asc')->get();
+        $books = Book::orderBy('title', 'asc')->get();
 
         $book = Book::findOrFail($worldTerm->book_id);
 
