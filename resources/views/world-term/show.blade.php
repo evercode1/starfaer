@@ -18,7 +18,7 @@
                         <li class="collection-header"><h4>{{ $worldTerm->name }}</h4></li>
 
                          <li class="collection-item">Type:
-                             <b>{{ $type }}</b>
+                             <b><a href="">{{ $type }}</a></b>
                          </li>
 
                         <li class="collection-item">From Planet:
