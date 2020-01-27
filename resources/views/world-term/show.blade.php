@@ -22,7 +22,7 @@
                         {{ $planetName }}</a></b></li>
 
                         <li class="collection-item">First Appearance:
-                        <b><a href="/book/{{ $bookId }}">
+                        <b><a href="{{ $bookUrl }}">
                         {{ $bookTitle }}</a></b></li>
 
 
