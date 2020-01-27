@@ -21,7 +21,7 @@ class WorldTermQuery implements DataQuery
                              'planets.name as Planet',
                              'planets.id as Pid',
                              'books.title as BookTitle',
-                             'books.url as BookUrl',
+                             'books.url as Url',
                              DB::raw('DATE_FORMAT(world_terms.created_at,
                              "%m-%d-%Y") as Created'))
                              ->leftJoin('world_term_types', 'world_term_type_id', '=', 'world_term_types.id')
