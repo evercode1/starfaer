@@ -127,7 +127,9 @@ class WorldTermController extends Controller
 
         $bookUrl = $book->url;
 
-        return view('world-term.show', compact('worldTerm', 'planetName', 'planetId', 'bookTitle', 'bookUrl'));
+        $type = $worldTerm->worldTermType->name;
+
+        return view('world-term.show', compact('worldTerm', 'planetName', 'planetId', 'bookTitle', 'bookUrl', 'type'));
 
     }
 

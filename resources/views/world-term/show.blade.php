@@ -17,6 +17,10 @@
         <ul class="collection with-header">
                         <li class="collection-header"><h4>{{ $worldTerm->name }}</h4></li>
 
+                         <li class="collection-item">Type:
+                             <b>{{ $type }}</b>
+                         </li>
+
                         <li class="collection-item">From Planet:
                         <b><a href="/planet/{{ $planetId }}">
                         {{ $planetName }}</a></b></li>
