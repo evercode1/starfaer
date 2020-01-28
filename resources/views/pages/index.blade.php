@@ -89,6 +89,7 @@
 
             <div><h1 class="center bluish"># Bonuses</h1></div>
             <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
+            <div><h6 class="center bluish">Glossary of World Terms</h6></div>
             <div><h6 class="center bluish">New Release Notifications</h6></div>
             <div><h6 class="center bluish">Live Events</h6></div>
             <div><h6 class="center bluish">Merch and Collectibles</h6></div>
