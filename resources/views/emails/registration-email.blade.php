@@ -6,8 +6,9 @@
 You have joined the Star Faer email list and now have access to the following:
 
 * updates on New Releases
-* updates on Star Faer News
+* updates on Star Faer Site Features
 * updates on Star Faer Merch and Collectibles
+* updates on Star Faer News
 * updates on Star Faer Live Events and Meet Ups
 
 
