@@ -13,7 +13,7 @@
                         <li><a href="/all-world-terms" class="waves-effect active">World Terms Glossary<i class="material-icons">star</i></a></li>
                         <li><a href="/worlds" class="waves-effect active">Worlds of Star Faer<i class="material-icons">star</i></a></li>
                         <li><a href="/all-videos" class="waves-effect active">Max's Videos<i class="material-icons">star</i></a></li>
-                        <li><a href="/all-articles" class="waves-effect active">Max's Megaphone<i class="material-icons">star</i></a></li>
+                        <li><a href="https://www.goodreads.com/author/show/20017568.Max_Vonne/blog" target="_blank" class="waves-effect active">Max's Megaphone<i class="material-icons">star</i></a></li>
                         <li><a href="/about" class="waves-effect active">About<i class="material-icons">star</i></a></li>
                         <li><a href="/" class="waves-effect active">Splash Page<i class="material-icons">star</i></a></li>
                         </ul>
