@@ -137,7 +137,7 @@ class BookController extends Controller
 
     public function update(Request $request, Book $book)
     {
-        
+
 
         $this->validate($request, [
 
