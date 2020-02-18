@@ -137,7 +137,7 @@ class BookController extends Controller
 
     public function update(Request $request, Book $book)
     {
-
+        
 
         $this->validate($request, [
 
@@ -224,6 +224,10 @@ class BookController extends Controller
     private function setUpdatedModelValues(Request $request, $book)
     {
 
+        $date = new Carbon($request->get('published_at'));
+
+        $publishedAt = $date->toDateString();
+
         $book->title = $request->get('title');
         $book->series_name = $request->get('series_name');
         $book->url = $request->get('url');
@@ -231,7 +235,7 @@ class BookController extends Controller
         $book->number = $request->get('number');
         $book->is_featured = $request->get('is_featured');
         $book->is_active = $request->get('is_active');
-        $book->published_at = $request->get('published_at');
+        $book->published_at = $publishedAt;
         $book->image_name = $this->formatString($request->get('title'));
 
     }
