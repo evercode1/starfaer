@@ -36,7 +36,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/all-Books/' + row.Id">{{ row.Series }}</a>
+                                <a v-bind:href="row.Url">{{ row.Series }}</a>
 
                             </td>
 
@@ -49,7 +49,7 @@
 
                             <td>
 
-                                <a v-bind:href="'/all-Books/' + row.Id">{{ row.Title }}</a>
+                                <a v-bind:href="row.Url">{{ row.Title }}</a>
 
                             </td>
 

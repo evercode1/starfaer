@@ -27,25 +27,25 @@
 
     </div>  <!-- end title input -->
 
-    <!-- series input -->
+    <!-- series_name input -->
 
-    <div class="{{ $errors->has('series') ? 'has-error' : '' }}">
+    <div class="{{ $errors->has('series_name') ? 'has-error' : '' }}">
 
-        <label>Book Subtitle</label>
+        <label>Series Name</label>
 
         <input type="text"
-               name="series"
-               value="{{ old('series') ? old('series') : $book->series }}" />
+               name="series_name"
+               value="{{ old('series_name') ? old('series_name') : $book->series_name }}" />
 
-        @if ($errors->has('series'))
+        @if ($errors->has('series_name'))
 
             <span class="help-block">
-                <strong>{{ $errors->first('series') }}</strong>
+                <strong>{{ $errors->first('series_name') }}</strong>
             </span>
 
         @endif
 
-    </div>  <!-- end series input -->
+    </div>  <!-- end series_name input -->
 
     <!-- begin number input -->
 
