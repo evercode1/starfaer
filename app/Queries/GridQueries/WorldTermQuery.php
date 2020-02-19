@@ -38,6 +38,8 @@ class WorldTermQuery implements DataQuery
     public function filteredData($column, $direction, $keyword)
     {
 
+
+
         $rows = DB::table('world_terms')
             ->select('world_terms.id as Id',
                      'world_terms.name as Name',

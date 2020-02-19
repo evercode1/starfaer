@@ -96,7 +96,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Term', 'Type', 'Planet', 'First Appearance'],
+                gridColumns: ['Name', 'Type', 'Planet', 'First Appearance'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
