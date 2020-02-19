@@ -39,6 +39,11 @@ class WorldTermQuery implements DataQuery
     {
 
 
+        if($column == 'First Appears'){
+
+            $column = 'books.title';
+
+        }
 
         $rows = DB::table('world_terms')
             ->select('world_terms.id as Id',

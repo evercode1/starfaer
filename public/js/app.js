@@ -4164,7 +4164,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Name', 'Type', 'Planet', 'First Appearance'],
+            gridColumns: ['Name', 'Type', 'Planet', 'First Appears'],
             gridData: [],
             total: null,
             next_page_url: null,
