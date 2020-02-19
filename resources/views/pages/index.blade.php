@@ -33,11 +33,11 @@
             </div>
 
             <div class="center">
-                <a href="https://www.amazon.com/dp/B084SRGXHM"><img src="/imgs/home/cartha-cover-low-res.jpg" width="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
+                <a href="https://www.amazon.com/dp/B084SRGXHM"><img src="/imgs/home/cartha-front.jpg" width="200px" class="mt-50" alt="Star Faer: C'artha's Kiss"></a>
 
-                <a href="https://www.amazon.com/dp/B084WTGCP9"><img src="/imgs/home/shadow-cover-low-res.jpg" width="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
+                <a href="https://www.amazon.com/dp/B084WTGCP9"><img src="/imgs/home/shadow-of-the-ring-front-cover.jpg" width="200px" class="mt-50" alt="Star Faer:  Shadow of the Ring"></a>
 
-                <a href="https://www.amazon.com/dp/B084XB8TCZ"><img src="/imgs/home/infinity-cover-low-res.jpg" width="200px" class="mt-50" alt="Star Faer: Inifnity Flower"></a>
+                <a href="https://www.amazon.com/dp/B084XB8TCZ"><img src="/imgs/home/infinity-flower-cover.jpg" width="200px" class="mt-50" alt="Star Faer: Inifnity Flower"></a>
 
             </div>
 
