@@ -74,6 +74,7 @@ class WorldTermController extends Controller
                 $this->validate($request, [
 
                     'name' => 'required|unique:world_terms|string|max:100',
+                    'phonetic' => 'string|max:100',
                     'is_active' => 'required|boolean',
                     'planet' => 'required|alpha-dash',
                     'body' => 'required|string|max:1000',
@@ -90,6 +91,7 @@ class WorldTermController extends Controller
 
 
         $worldTerm = WorldTerm::create([ 'name' => $request->name,
+                                         'phonetic' => $request->phonetic,
                                          'slug' => $slug,
                                          'world_term_type_id' => $request->world_term_type_id,
                                          'book_id' => $request->book_id,
@@ -183,6 +185,7 @@ class WorldTermController extends Controller
         $this->validate($request, [
 
             'name' => 'required|string|max:100|unique:world_terms,name,' .$id,
+            'phonetic' => 'string|max:100',
             'is_active' => 'required|boolean',
             'planet' => 'required|alpha-dash',
             'body' => 'required|string|max:1000',
@@ -234,6 +237,7 @@ class WorldTermController extends Controller
     {
 
         $modelInstance->name = $request->get('name');
+        $modelInstance->phonetic = $request->get('phonetic');
         $modelInstance->slug = $slug;
         $modelInstance->world_term_type_id = $request->get('world_term_type_id');
         $modelInstance->book_id = $request->get('book_id');

@@ -13,6 +13,7 @@ class WorldTerm extends Model
                            'description',
                            'planet_id',
                            'book_id',
+                           'phonetic',
                            'world_term_type_id'
                            ];
 

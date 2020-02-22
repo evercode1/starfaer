@@ -17,6 +17,10 @@
         <ul class="collection with-header">
                         <li class="collection-header"><h4>{{ $worldTerm->name }}</h4></li>
 
+                        <li class="collection-item">Phonetic:
+                            <b><a href="">{{ $worldTerm->phonetic }}</a></b>
+                        </li>
+
                          <li class="collection-item">Type:
                              <b><a href="">{{ $type }}</a></b>
                          </li>

@@ -37,6 +37,12 @@
 
                             <td>
 
+                                <a v-bind:href="'/world-term/' + row.Id + '-' + row.Slug"> {{ formatPhonetic(row.Phonetic, row.Name) }}</a>
+
+                            </td>
+
+                            <td>
+
                                 <a v-bind:href="'/world-term-type/' + row.Tid"> {{ row.Type }}</a>
 
                             </td>
@@ -96,7 +102,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Name', 'Type', 'Planet', 'First Appears'],
+                gridColumns: ['Name', 'Phonetic', 'Type', 'Planet', 'First Appears'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
@@ -170,6 +176,14 @@
                 const upper = lower.charAt(0).toUpperCase() + lower.substring(1);
 
                 return upper;
+
+            },
+
+            formatPhonetic(phonetic, name){
+
+
+                return phonetic !== null ? phonetic : name;
+
 
             }
 

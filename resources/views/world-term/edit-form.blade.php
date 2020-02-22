@@ -63,6 +63,30 @@
 
     <!-- end name input -->
 
+    <!-- phonetic input -->
+
+    <div class="{{ $errors->has('phonetic') ? ' has-error' : '' }}">
+
+        <label>Phonetic</label>
+
+        <input type="text"
+               name="phonetic"
+               value="{{ $worldTerm->phonetic }}" />
+
+        @if ($errors->has('phonetic'))
+
+            <span class="help-block">
+
+                <strong>{{ $errors->first('phonetic') }}</strong>
+
+            </span>
+
+        @endif
+
+    </div>
+
+    <!-- end phonetic input -->
+
     <!-- planet input -->
 
     <div class="{{ $errors->has('planet') ? ' has-error' : '' }}">

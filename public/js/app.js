@@ -4145,6 +4145,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -4164,7 +4170,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Name', 'Type', 'Planet', 'First Appears'],
+            gridColumns: ['Name', 'Phonetic', 'Type', 'Planet', 'First Appears'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -4236,8 +4242,12 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
             var upper = lower.charAt(0).toUpperCase() + lower.substring(1);
 
             return upper;
-        }
+        },
 
+        formatPhonetic: function formatPhonetic(phonetic, name) {
+
+            return phonetic !== null ? phonetic : name;
+        }
     }
 
 });
@@ -10847,6 +10857,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js");
@@ -10866,7 +10882,7 @@ var gridData = __webpack_require__("./resources/assets/js/utilities/gridData.js"
     data: function data() {
         return {
             query: '',
-            gridColumns: ['Id', 'Name', 'Type', 'Planet', 'First Appears', 'Active', 'Created'],
+            gridColumns: ['Id', 'Name', 'Phonetic', 'Type', 'Planet', 'First Appears', 'Active', 'Created'],
             gridData: [],
             total: null,
             next_page_url: null,
@@ -48121,6 +48137,25 @@ var render = function() {
                       _c("td", [
                         _c(
                           "a",
+                          {
+                            attrs: {
+                              href: "/world-term/" + row.Id + "-" + row.Slug
+                            }
+                          },
+                          [
+                            _vm._v(
+                              " " +
+                                _vm._s(
+                                  _vm.formatPhonetic(row.Phonetic, row.Name)
+                                )
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
                           { attrs: { href: "/world-term-type/" + row.Tid } },
                           [_vm._v(" " + _vm._s(row.Type))]
                         )
@@ -52000,6 +52035,18 @@ var render = function() {
                             }
                           },
                           [_vm._v(" " + _vm._s(row.Name))]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "/world-term/" + row.Id + "-" + row.Slug
+                            }
+                          },
+                          [_vm._v(" " + _vm._s(row.Phonetic))]
                         )
                       ]),
                       _vm._v(" "),

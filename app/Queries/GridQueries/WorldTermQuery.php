@@ -13,6 +13,7 @@ class WorldTermQuery implements DataQuery
         $rows = DB::table('world_terms')
                     ->select('world_terms.id as Id',
                              'world_terms.name as Name',
+                             'world_terms.phonetic as Phonetic',
                              'world_terms.slug as Slug',
                              'world_terms.is_active as Active',
                              'world_terms.description as Description',
@@ -48,6 +49,7 @@ class WorldTermQuery implements DataQuery
         $rows = DB::table('world_terms')
             ->select('world_terms.id as Id',
                      'world_terms.name as Name',
+                     'world_terms.phonetic as Phonetic',
                      'world_terms.slug as Slug',
                      'world_terms.is_active as Active',
                      'world_terms.description as Description',

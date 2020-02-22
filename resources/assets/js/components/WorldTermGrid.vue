@@ -43,6 +43,12 @@
 
                             <td>
 
+                                <a v-bind:href="'/world-term/' + row.Id + '-' + row.Slug"> {{ row.Phonetic }}</a>
+
+                            </td>
+
+                            <td>
+
                                 <a v-bind:href="'/world-term-type/' + row.Tid"> {{ row.Type }}</a>
 
                             </td>
@@ -136,7 +142,7 @@
         data: function () {
             return {
                 query: '',
-                gridColumns: ['Id', 'Name', 'Type', 'Planet', 'First Appears', 'Active', 'Created'],
+                gridColumns: ['Id', 'Name', 'Phonetic', 'Type', 'Planet', 'First Appears', 'Active', 'Created'],
                 gridData: [],
                 total: null,
                 next_page_url: null,
