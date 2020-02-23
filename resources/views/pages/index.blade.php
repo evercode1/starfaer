@@ -31,7 +31,7 @@
 
                 @else
 
-                <row class="row right"><a href="/home">Main</a></row>
+                <row class="row right"><a href="/home">Members Page</a></row>
 
                 @endif
 
