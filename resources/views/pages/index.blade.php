@@ -22,6 +22,14 @@
 
 
     <div class="container">
+
+        <div class=" mt-20 mb-20">
+
+        <row class="row right"><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/auth/facebook">FB</a></row>
+
+        </div>
+
+
         <div class="section">
 
 

@@ -122,6 +122,26 @@ body {
   margin-left: 30px;
 }
 
+.mr-5 {
+  margin-left: 5px;
+}
+
+.mr-10 {
+  margin-left: 10px;
+}
+
+.mr-20 {
+  margin-left: 20px;
+}
+
+.mr-25 {
+  margin-left: 25px;
+}
+
+.mr-30 {
+  margin-left: 30px;
+}
+
 .square-badge-blue {
   border-radius: 3px;
   width: 50px;
