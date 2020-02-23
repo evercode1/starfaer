@@ -25,7 +25,11 @@
 
         <div class=" mt-20 mb-20">
 
+            @if(! Auth::check())
+
         <row class="row right"><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/auth/facebook">FB</a></row>
+
+                @endif
 
         </div>
 
