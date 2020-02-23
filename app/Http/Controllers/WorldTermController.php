@@ -207,7 +207,7 @@ class WorldTermController extends Controller
         $worldTerm->save();
 
 
-        return Redirect::route('world-term.show', ['worldTerm' => $worldTerm, $slug]);
+        return Redirect::route('world-term.index');
 
     }
 
