@@ -17,9 +17,14 @@
         <ul class="collection with-header">
                         <li class="collection-header"><h4>{{ $worldTerm->name }}</h4></li>
 
+
+            @if($worldTerm->phonetic != null)
+                
                         <li class="collection-item">Phonetic:
                             <b><a href="">{{ $worldTerm->phonetic }}</a></b>
                         </li>
+
+            @endif
 
                          <li class="collection-item">Type:
                              <b><a href="">{{ $type }}</a></b>
