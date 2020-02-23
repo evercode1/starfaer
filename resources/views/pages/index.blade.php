@@ -28,7 +28,10 @@
             @if(! Auth::check())
 
         <row class="row right"><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/auth/facebook">FB</a></row>
-                
+
+                @else
+
+                <row class="row right"><a href="/home">Main</a></row>
 
                 @endif
 
