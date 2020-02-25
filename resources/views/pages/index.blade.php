@@ -74,7 +74,7 @@
             </div>
 
             <div> <h6  class="center bluish mt-20">Help Us Give Away</h6></div>
-            <div> <h6  class="center bluish mt-20  mb-20"><u>1 Million Free Books</u></h6> </div>
+            <div> <h6  class="center bluish mt-20  mb-20"><u><a href="https://www.amazon.com/dp/B084SRGXHM">1 Million Free Books</a></u></h6> </div>
             <div><h6 class="center bluish mb-20">Download, Review, and Recommend</h6></div>
 
             <h1 class="flow-text bluish"><a href="https://teespring.com/stores/star-faer-merch">Star Faer Merch</a></h1>
