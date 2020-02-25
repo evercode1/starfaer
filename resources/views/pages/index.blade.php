@@ -61,7 +61,7 @@
 
 
 
-            <div> <h3  class="center bluish"><a href="https://www.amazon.com/dp/B084SRGXHM"><u>Read Book One Free</u></a></h3> </div>
+            <div> <h3  class="center bluish"><a href="https://www.amazon.com/dp/B084SRGXHM">Read Book One Free</a></h3> </div>
 
             <div><h6 class="center bluish mb-20">Star Faer is a ten book fantasy series</h6></div>
 
