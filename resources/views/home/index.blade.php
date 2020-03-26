@@ -7,7 +7,6 @@
         <all-books></all-books>
 
     </div>
-
-<!-- note -->
+    
     
 @endsection
