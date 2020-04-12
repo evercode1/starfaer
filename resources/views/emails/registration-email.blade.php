@@ -3,13 +3,31 @@
 
 ## Congratulations!
 
-You have joined the Star Faer email list and now have access to the following:
+Thank you for Joining Star Faer.  You now have access to:
 
 * updates on New Releases
 * updates on Star Faer Site Features
 * updates on Star Faer Merch and Collectibles
 * updates on Star Faer News
-* updates on Star Faer Live Events and Meet Ups
+
+If you've read any of the Star Faer books, please take a moment to share your thoughts with our community by leaving a review.
+
+Your review helps others with their reading choices:
+
+<a href="https://www.amazon.com/dp/B084SRGXHM">Amazon</a>
+
+
+<a href="https://www.goodreads.com/book/show/51243926-c-artha-s-kiss">Good Reads</a>
+
+
+My goal with Star Faer is to create a streaming series on Netflix or some other channel.  Wouldn't that be great?
+I can't do it alone.  If you'd like to see that happen, please spread the word about the Star Faer books and help us build
+our community.  Thanks again for being a part of it.
+
+Sincerely,
+
+Max Vonne
+
 
 
 @component('mail::button', ['url' => 'https://www.starfaer.com'])
