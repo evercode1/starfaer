@@ -36,7 +36,7 @@ Visit Now
 
 Follow us on Twitter:
 
-@StarFaerSaga
+<a href="https://www.twitter.com/StarFaerSaga">@StarFaerSaga</a>
 
 Our Good Reads blog:
 
