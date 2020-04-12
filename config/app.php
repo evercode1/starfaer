@@ -154,6 +154,7 @@ return [
         Creativeorange\Gravatar\GravatarServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Casinelli\CampaignMonitor\CampaignMonitorServiceProvider::class,
 
 
 
@@ -217,6 +218,7 @@ return [
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'CampaignMonitor' => Casinelli\CampaignMonitor\Facades\CampaignMonitor::class,
 
     ],
 
