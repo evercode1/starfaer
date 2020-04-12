@@ -27,11 +27,23 @@ our community.  Thanks again for being a part of it.
 Sincerely,
 
 Max Vonne
+Author of Star Faer
 
 
 @component('mail::button', ['url' => 'https://www.starfaer.com'])
 Visit Now
 @endcomponent
+
+Follow us on Twitter:
+
+@StarFaerSaga
+
+Our Good Reads blog:
+
+<a href="https://www.goodreads.com/author/show/20017568.Max_Vonne/blog">Good Reads Blog</a>
+
+If you'd like to receive updates via newsletter, please visit your account settings (under the sprocket icon) and update
+yourself to subscribe.
 
 
 @component('mail::panel', ['url' => ''])
