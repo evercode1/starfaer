@@ -12,7 +12,7 @@ Thank you for Joining Star Faer.  You now have access to:
 
 If you've read any of the Star Faer books, please take a moment to share your thoughts with our community by leaving a review.
 
-Your review helps others with their reading choices:
+Your review will help others with their reading choices:
 
 <a href="https://www.amazon.com/dp/B084SRGXHM">Amazon</a>
 
@@ -29,13 +29,10 @@ Sincerely,
 Max Vonne
 
 
-
 @component('mail::button', ['url' => 'https://www.starfaer.com'])
 Visit Now
 @endcomponent
 
-Thanks,<br>
-Max Vonne - {{ config('app.name') }}
 
 @component('mail::panel', ['url' => ''])
 You are receiving this email because you subscribed to Star Faer.
