@@ -3,16 +3,10 @@
 
 ## Congratulations!
 
-Thank you for Joining Star Faer.  You now have access to:
+Thank you for being a member of the Star Faer community.  We're a grass roots sci-fi fantasy group
+promoting the Star Faer book series.  We also love sci-fi and fantasy and will be cheering on others in the genre.
 
-* updates on New Releases
-* updates on Star Faer Site Features
-* updates on Star Faer Merch and Collectibles
-* updates on Star Faer News
-
-If you've read any of the Star Faer books, please take a moment to share your thoughts with our community by leaving a review.
-
-Your review will help others with their reading choices:
+If you've read any of the Star Faer books, please take a moment to share your thoughts with our community by leaving a review.  Your review will help others with their reading choices:
 
 <a href="https://www.amazon.com/dp/B084SRGXHM">Amazon</a>
 
