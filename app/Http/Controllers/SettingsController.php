@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use Redirect;
+use Illuminate\Support\Facades\Redirect;
 use App\Rules\OnOrNull;
 
 class SettingsController extends Controller

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Queries\LifeZonesQuery;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Queries\GridQueries\GridQuery;
 
 class FrontApiController extends Controller

@@ -7,7 +7,7 @@ use App\Utilities\MoonRandomWordGenerator;
 use App\Planet;
 use App\Moon;
 use App\Exceptions\UnauthorizedException;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class AddOrphanMoonsController extends Controller
 {

@@ -2,18 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Utilities\FetchInsideArrayFile;
-use App\Utilities\FindOrCreateFolders;
-use App\Utilities\MakeConfigFile;
-use App\Utilities\MakeWords;
-use Illuminate\Http\Request;
-
-use Carbon\Carbon;
-use Faker\Generator as Faker;
-use App\Utilities\RandomWordGenerator;
-use App\Utilities\CreateSeeds;
-use App\Utilities\AppendConfigFile;
-use App\Utilities\UniqueNames;
 use App\Planet;
 use App\Moon;
 

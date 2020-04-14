@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
-use DB;
 use App\User;
-use Redirect;
+use Illuminate\Support\Facades\Redirect;
 use App\Rules\OnOrNull;
 
 class UserController extends Controller
