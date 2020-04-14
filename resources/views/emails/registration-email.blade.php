@@ -21,6 +21,7 @@ our community.  Thanks again for being a part of it.
 Sincerely,
 
 Max Vonne
+
 Author of Star Faer
 
 
