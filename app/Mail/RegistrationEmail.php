@@ -31,6 +31,6 @@ class RegistrationEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.registration-email');
+        return $this->markdown('emails.registration-email')->subject('Welcome To Star Faer');
     }
 }
