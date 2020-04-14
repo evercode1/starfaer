@@ -41,7 +41,7 @@ yourself to subscribe.
 
 
 @component('mail::panel', ['url' => ''])
-You are receiving this email because you subscribed to Star Faer.
+You are receiving this email because you joined Star Faer.
 You may Unsubscribe by clicking <a href="https://www.starfaer.com/unsubscribe">here</a>.
 @endcomponent
 
