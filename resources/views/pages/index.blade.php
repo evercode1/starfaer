@@ -63,7 +63,7 @@
 
             <div> <h3  class="center bluish"><a href="https://www.amazon.com/dp/B084SRGXHM">Read Book One Free</a></h3> </div>
 
-            <div><h6 class="center bluish mb-20">Star Faer is a ten book fantasy series</h6></div>
+            <div><h6 class="center bluish mb-20">Star Faer is a fantasy series</h6></div>
 
             <div><h6 class="center bluish mb-20">Faer is an old English word that means 'traveling, a journey or expedition'</h6></div>
 
