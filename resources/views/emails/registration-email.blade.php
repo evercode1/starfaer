@@ -3,6 +3,10 @@
 
 ## You have successfully joined Star Faer
 
+Have you read the first Star Faer book?    Pick up your FREE copy at Amazon:
+
+<a href="https://www.amazon.com/dp/B084SRGXHM">Star Faer: C'artha's Kiss</a>
+
 Thank you for being a member of the Star Faer community.  We're a grass roots sci-fi fantasy group
 promoting the Star Faer book series.  We also love sci-fi and fantasy and will be cheering on others in the genre.
 
