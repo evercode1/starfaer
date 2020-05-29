@@ -44,9 +44,8 @@
 
                 <ul id="nav-mobile" class="right">
 
-                    <li><a href="{{ url('/auth/facebook') }}">FB</a></li>
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
+                    <li><a href="{{ url('/auth/facebook') }}">Facebook Login/Register</a></li>
+
                 </ul>
 
 
