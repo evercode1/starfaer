@@ -27,7 +27,7 @@
 
             @if(! Auth::check())
 
-        <row class="row right"><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/auth/facebook">FB</a></row>
+        <row class="row right"><a href="{{ url('/auth/facebook') }}">Facebook Login/Register</a></row>
 
                 @else
 
@@ -112,7 +112,7 @@
             <div><h6 class="center bluish">Free Access to the Worlds of Star Faer</h6></div>
 
 
-            <div class="mt-20"> <h4  class="center"><a href="/register"> <u>Join Free Now</u>  </a></h4> </div>
+            <div class="mt-20"> <h4  class="center"><a href="{{ url('/auth/facebook') }}"> <u>Join Free Now</u>  </a></h4> </div>
 
             <div class="mt-50">
                 <a class="twitter-timeline"
