@@ -94,7 +94,7 @@ Route::resource('atmosphere', 'AtmosphereController', ['except' => ['show', 'cre
 
 // Auth Routes
 
-Auth::routes();
+// Auth::routes();
 
 // Book Routes
 
