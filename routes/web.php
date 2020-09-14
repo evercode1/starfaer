@@ -94,7 +94,7 @@ Route::resource('atmosphere', 'AtmosphereController', ['except' => ['show', 'cre
 
 // Auth Routes
 
-Auth::routes();
+// Auth::routes();
 
 // Book Routes
 
@@ -386,9 +386,9 @@ Route::patch('settings', 'SettingsController@update')->name('user-update');
 
 // Socialite routes
 
-Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+// Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 
-Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+// Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 // Star Planet Count Fixer
 

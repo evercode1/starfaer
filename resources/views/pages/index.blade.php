@@ -27,11 +27,11 @@
 
             @if(! Auth::check())
 
-        <row class="row right"><a href="{{ url('/auth/facebook') }}">Facebook Login/Register</a></row>
+        <!-- <row class="row right"><a href="{{ url('/auth/facebook') }}">Facebook Login/Register</a></row>  -->
 
                 @else
 
-                <row class="row right"><a href="/home">Members Page</a></row>
+                <!-- <row class="row right"><a href="/home">Members Page</a></row>  -->
 
                 @endif
 
@@ -74,7 +74,7 @@
             </div>
 
             <div> <h6  class="center bluish mt-20">Help Us Give Away</h6></div>
-            <div> <h6  class="center bluish mt-20  mb-20"><u><a href="https://www.amazon.com/dp/B084SRGXHM">1 Million Free Books</a></u></h6> </div>
+            <div> <h6  class="center bluish mt-20  mb-20"><u><a href="https://www.amazon.com/dp/B084SRGXHM">Free Books</a></u></h6> </div>
             <div><h6 class="center bluish mb-20">Download, Review, and Recommend</h6></div>
 
             <h1 class="flow-text bluish"><a href="https://teespring.com/stores/star-faer-merch">Star Faer Merch</a></h1>
@@ -102,7 +102,7 @@
 
             <div><h4 class="center bluish">Max Vonne</h4></div>
 
-
+            <!--
             <div><h1 class="center bluish"># Bonuses</h1></div>
             <div><h5 class="center bluish">Get Free Access to Bonus Material</h5></div>
             <div><h6 class="center bluish">Glossary of World Terms</h6></div>
@@ -112,7 +112,9 @@
             <div><h6 class="center bluish">Free Access to the Worlds of Star Faer</h6></div>
 
 
-            <div class="mt-20"> <h4  class="center"><a href="{{ url('/auth/facebook') }}"> <u>Join Free Now</u>  </a></h4> </div>
+            <div class="mt-20"> <h4  class="center"><a href="{{ url('/auth/facebook') }}"> <u>Join Free Now</u>  </a></h4> </div> 
+            
+            -->
 
             <div class="mt-50">
                 <a class="twitter-timeline"
